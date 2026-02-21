@@ -1,0 +1,45 @@
+{
+  "parent": "minecraft:story/obtain_armor",
+  "criteria": {
+    "aluminum_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "curiosities:aluminum_helmet"
+          },
+          {
+            "items": "curiosities:aluminum_chestplate"
+          },
+          {
+            "items": "curiosities:aluminum_leggings"
+          },
+          {
+            "items": "curiosities:aluminum_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.curiosities.story.aluminum_armor.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "curiosities:aluminum_helmet"
+    },
+    "title": {
+      "translate": "advancements.curiosities.story.aluminum_armor.title"
+    }
+  },
+  "requirements": [
+    [
+      "aluminum_armor"
+    ]
+  ],
+  "rewards": {
+    "experience": 75
+  },
+  "sends_telemetry_event": true
+}

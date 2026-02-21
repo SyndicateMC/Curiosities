@@ -1,0 +1,46 @@
+{
+  "parent": "minecraft:nether/obtain_ancient_debris",
+  "criteria": {
+    "invar_armor": {
+      "conditions": {
+        "items": [
+          {
+            "items": "curiosities:invar_helmet"
+          },
+          {
+            "items": "curiosities:invar_chestplate"
+          },
+          {
+            "items": "curiosities:invar_leggings"
+          },
+          {
+            "items": "curiosities:invar_boots"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.curiosities.nether.invar_armor.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "curiosities:invar_chestplate"
+    },
+    "title": {
+      "translate": "advancements.curiosities.nether.invar_armor.title"
+    }
+  },
+  "requirements": [
+    [
+      "invar_armor"
+    ]
+  ],
+  "rewards": {
+    "experience": 75
+  },
+  "sends_telemetry_event": true
+}

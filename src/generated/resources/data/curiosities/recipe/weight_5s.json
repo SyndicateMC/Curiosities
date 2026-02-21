@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "redstone",
+  "key": {
+    "N": {
+      "tag": "c:nuggets/invar"
+    },
+    "R": {
+      "item": "minecraft:iron_ingot"
+    }
+  },
+  "pattern": [
+    "RNR",
+    "NNN",
+    "RNR"
+  ],
+  "result": {
+    "count": 4,
+    "id": "curiosities:weight_5s"
+  }
+}

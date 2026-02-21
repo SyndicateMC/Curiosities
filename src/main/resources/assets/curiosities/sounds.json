@@ -1,0 +1,149 @@
+{
+  "block.redstone_fuse.trip": {
+    "sounds": [
+      "minecraft:block/copper_bulb/break1",
+      "minecraft:block/copper_bulb/break2",
+      "minecraft:block/copper_bulb/break3",
+      "minecraft:block/copper_bulb/break4"
+    ],
+    "subtitle": "subtitles.curiosities.block.redstone_fuse.trip"
+  },
+  "block.redstone_fuse.fix": {
+    "sounds": [
+      "minecraft:block/copper_bulb/place1",
+      "minecraft:block/copper_bulb/place2",
+      "minecraft:block/copper_bulb/place3",
+      "minecraft:block/copper_bulb/place4"
+    ],
+    "subtitle": "subtitles.curiosities.block.redstone_fuse.fix"
+  },
+  "block.redstone_fuse.slider": {
+    "sounds": [
+      "minecraft:block/copper_bulb/toggle"
+    ],
+    "subtitle": "subtitles.curiosities.block.redstone_fuse.slider"
+  },
+  "block.cage_light.on": {
+    "sounds": [
+      "curiosities:block/cage_light_on"
+    ],
+    "subtitle": "subtitles.curiosities.block.cage_light.on"
+  },
+  "block.cage_light.off": {
+    "sounds": [
+      "curiosities:block/cage_light_off"
+    ],
+    "subtitle": "subtitles.curiosities.block.cage_light.off"
+  },
+  "block.concussion_fuse": {
+    "sounds": [
+      "curiosities:block/concussion_fuse"
+    ],
+    "subtitle": "subtitles.curiosities.block.concussion_fuse"
+  },
+  "block.ashlar_brick_shuffle": {
+    "sounds": [
+      "curiosities:block/ashlar_brick_shuffle1",
+      "curiosities:block/ashlar_brick_shuffle2",
+      "curiosities:block/ashlar_brick_shuffle3"
+    ],
+    "subtitle": "subtitles.curiosities.block.ashlar_brick_shuffle"
+  },
+  "block.note_block.trumpet": {
+    "sounds": [
+      "curiosities:note/trumpet"
+    ],
+    "subtitle": "subtitles.block.note_block.note"
+  },
+  "block.note_block.trumpet_exposed": {
+    "sounds": [
+      "curiosities:note/trumpet_exposed"
+    ],
+    "subtitle": "subtitles.block.note_block.note"
+  },
+  "block.note_block.trumpet_weathered": {
+    "sounds": [
+      "curiosities:note/trumpet_weathered"
+    ],
+    "subtitle": "subtitles.block.note_block.note"
+  },
+  "block.note_block.trumpet_oxidized": {
+    "sounds": [
+      "curiosities:note/trumpet_oxidized"
+    ],
+    "subtitle": "subtitles.block.note_block.note"
+  },
+  "item.armor.equip_aluminum": {
+    "sounds": [
+      "item/armor/equip_leather1",
+      "item/armor/equip_leather2",
+      "item/armor/equip_leather3",
+      "item/armor/equip_leather4",
+      "item/armor/equip_leather5",
+      "item/armor/equip_leather6"
+    ],
+    "subtitle": "subtitles.curiosities.item.armor.equip_aluminum"
+  },
+  "item.armor.equip_invar": {
+    "sounds": [
+      {
+        "name": "item/armor/equip_netherite1",
+        "volume": 0.8
+      },
+      {
+        "name": "item/armor/equip_netherite1",
+        "pitch": 0.9,
+        "volume": 0.8
+      },
+      {
+        "name": "item/armor/equip_netherite2",
+        "volume": 0.8
+      },
+      {
+        "name": "item/armor/equip_netherite2",
+        "pitch": 0.9,
+        "volume": 0.8
+      },
+      {
+        "name": "item/armor/equip_netherite3",
+        "volume": 0.8
+      },
+      {
+        "name": "item/armor/equip_netherite3",
+        "pitch": 0.9,
+        "volume": 0.8
+      },
+      {
+        "name": "item/armor/equip_netherite4",
+        "volume": 0.8
+      },
+      {
+        "name": "item/armor/equip_netherite4",
+        "pitch": 0.9,
+        "volume": 0.8
+      }
+    ],
+    "subtitle": "subtitles.curiosities.item.armor.equip_invar"
+  },
+  "item.armor.equip_heavy": {
+    "sounds": [
+      "block/heavy_core/break1",
+      "block/heavy_core/break2",
+      "block/heavy_core/break3",
+      "block/heavy_core/break4"
+    ],
+    "subtitle": "subtitles.curiosities.item.armor.equip_heavy"
+  },
+  "damage.damage_reduce": {
+    "sounds": [
+      "curiosities:damage/damage_reduce"
+    ],
+    "subtitle": "subtitles.curiosities.damage.damage_reduce"
+  },
+  "damage.damage_reduce_full": {
+    "sounds": [
+      "curiosities:damage/damage_reduce_full"
+    ],
+    "subtitle": "subtitles.curiosities.damage.damage_reduce_full"
+  }
+}

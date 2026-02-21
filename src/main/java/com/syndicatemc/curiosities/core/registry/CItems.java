@@ -1,0 +1,79 @@
+package com.syndicatemc.curiosities.core.registry;
+
+import com.syndicatemc.curiosities.common.item.AluminumArmorItem;
+import com.syndicatemc.curiosities.common.item.CSmithingTemplateItem;
+import com.syndicatemc.curiosities.common.item.InvarArmorItem;
+import com.syndicatemc.curiosities.core.Curiosities;
+import com.teamabnormals.blueprint.core.api.BlueprintItemTier;
+import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
+import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
+import net.minecraft.tags.BlockTags;
+import net.minecraft.world.item.*;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.neoforged.neoforge.registries.DeferredItem;
+
+import static net.minecraft.world.item.CreativeModeTabs.*;
+import static net.minecraft.world.item.crafting.Ingredient.of;
+
+public class CItems {
+    public static final ItemSubRegistryHelper ITEMS = Curiosities.REGISTRY_HELPER.getItemSubHelper();
+
+    public static final DeferredItem<Item> RAW_ALUMINUM = ITEMS.createItem("raw_aluminum", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> ALUMINUM_INGOT = ITEMS.createItem("aluminum_ingot", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> ALUMINUM_NUGGET = ITEMS.createItem("aluminum_nugget", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> RAW_NICKEL = ITEMS.createItem("raw_nickel", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> NICKEL_INGOT = ITEMS.createItem("nickel_ingot", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> NICKEL_NUGGET = ITEMS.createItem("nickel_nugget", () -> new Item(new Item.Properties()));
+    public static final DeferredItem<Item> INVAR_INGOT = ITEMS.createItem("invar_ingot", () -> new Item(new Item.Properties().fireResistant()));
+    public static final DeferredItem<Item> INVAR_NUGGET = ITEMS.createItem("invar_nugget", () -> new Item(new Item.Properties().fireResistant()));
+
+    public static final Tier ALUMINUM = new BlueprintItemTier(BlockTags.INCORRECT_FOR_IRON_TOOL, 250, 8.0F, 2.0F, 14, () -> Ingredient.of(ALUMINUM_INGOT));
+    public static final DeferredItem<Item> ALUMINUM_SWORD = ITEMS.createItem("aluminum_sword", () -> new SwordItem(ALUMINUM, new Item.Properties().attributes(SwordItem.createAttributes(ALUMINUM, 3, -2.4F))));
+    public static final DeferredItem<Item> ALUMINUM_SHOVEL = ITEMS.createItem("aluminum_shovel", () -> new ShovelItem(ALUMINUM, new Item.Properties().attributes(ShovelItem.createAttributes(ALUMINUM, 1.5F, -3.0F))));
+    public static final DeferredItem<Item> ALUMINUM_PICKAXE = ITEMS.createItem("aluminum_pickaxe", () -> new PickaxeItem(ALUMINUM, new Item.Properties().attributes(PickaxeItem.createAttributes(ALUMINUM, 1.0F, -2.8F))));
+    public static final DeferredItem<Item> ALUMINUM_AXE = ITEMS.createItem("aluminum_axe", () -> new AxeItem(ALUMINUM, new Item.Properties().attributes(AxeItem.createAttributes(ALUMINUM, 6.0F, -3.1F))));
+    public static final DeferredItem<Item> ALUMINUM_HOE = ITEMS.createItem("aluminum_hoe", () -> new HoeItem(ALUMINUM, new Item.Properties().attributes(HoeItem.createAttributes(ALUMINUM, -2.0F, -1.0F))));
+
+    public static final Tier INVAR = new BlueprintItemTier(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 2031, 9.0F, 2.0F, 15, () -> Ingredient.of(INVAR_INGOT));
+    public static final DeferredItem<Item> INVAR_SWORD = ITEMS.createItem("invar_sword", () -> new SwordItem(INVAR, new Item.Properties().attributes(SwordItem.createAttributes(INVAR, 3, -2.4F)).fireResistant()));
+    public static final DeferredItem<Item> INVAR_SHOVEL = ITEMS.createItem("invar_shovel", () -> new ShovelItem(INVAR, new Item.Properties().attributes(ShovelItem.createAttributes(INVAR, 1.5F, -3.0F)).fireResistant()));
+    public static final DeferredItem<Item> INVAR_PICKAXE = ITEMS.createItem("invar_pickaxe", () -> new PickaxeItem(INVAR, new Item.Properties().attributes(PickaxeItem.createAttributes(INVAR, 1.0F, -2.8F)).fireResistant()));
+    public static final DeferredItem<Item> INVAR_AXE = ITEMS.createItem("invar_axe", () -> new AxeItem(INVAR, new Item.Properties().attributes(AxeItem.createAttributes(INVAR, 5.0F, -3.0F)).fireResistant()));
+    public static final DeferredItem<Item> INVAR_HOE = ITEMS.createItem("invar_hoe", () -> new HoeItem(INVAR, new Item.Properties().attributes(HoeItem.createAttributes(INVAR, -2.0F, 0.0F)).fireResistant()));
+
+    public static final DeferredItem<ArmorItem> ALUMINUM_HELMET = ITEMS.createItem("aluminum_helmet", () -> new AluminumArmorItem(ArmorItem.Type.HELMET));
+    public static final DeferredItem<ArmorItem> ALUMINUM_CHESTPLATE = ITEMS.createItem("aluminum_chestplate", () -> new AluminumArmorItem(ArmorItem.Type.CHESTPLATE));
+    public static final DeferredItem<ArmorItem> ALUMINUM_LEGGINGS = ITEMS.createItem("aluminum_leggings", () -> new AluminumArmorItem(ArmorItem.Type.LEGGINGS));
+    public static final DeferredItem<ArmorItem> ALUMINUM_BOOTS = ITEMS.createItem("aluminum_boots", () -> new AluminumArmorItem(ArmorItem.Type.BOOTS));
+
+    public static final DeferredItem<ArmorItem> INVAR_HELMET = ITEMS.createItem("invar_helmet", () -> new InvarArmorItem(ArmorItem.Type.HELMET));
+    public static final DeferredItem<ArmorItem> INVAR_CHESTPLATE = ITEMS.createItem("invar_chestplate", () -> new InvarArmorItem(ArmorItem.Type.CHESTPLATE));
+    public static final DeferredItem<ArmorItem> INVAR_LEGGINGS = ITEMS.createItem("invar_leggings", () -> new InvarArmorItem(ArmorItem.Type.LEGGINGS));
+    public static final DeferredItem<ArmorItem> INVAR_BOOTS = ITEMS.createItem("invar_boots", () -> new InvarArmorItem(ArmorItem.Type.BOOTS));
+
+    public static final DeferredItem<ArmorItem> HEAVY_BOOTS = ITEMS.createItem("heavy_boots", () -> new ArmorItem(CArmorMaterials.HEAVY, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(10)).rarity(Rarity.EPIC)));
+
+    public static final DeferredItem<Item> ALUMINUM_UPGRADE_SMITHING_TEMPLATE = ITEMS.createItem("aluminum_upgrade_smithing_template", CSmithingTemplateItem::createAluminumUpgradeTemplate);
+
+    public static void setupTabEditors() {
+        CreativeModeTabContentsPopulator.mod(Curiosities.MOD_ID)
+                .tab(INGREDIENTS)
+                .addItemsAfter(of(Items.RAW_GOLD), RAW_ALUMINUM, RAW_NICKEL)
+                .addItemsAfter(of(Items.GOLD_INGOT), ALUMINUM_INGOT, NICKEL_INGOT)
+                .addItemsAfter(of(Items.NETHERITE_SCRAP), INVAR_INGOT)
+                .addItemsAfter(of(Items.GOLD_NUGGET), ALUMINUM_NUGGET, NICKEL_NUGGET, INVAR_NUGGET)
+                .addItemsAfter(of(Items.NETHERITE_UPGRADE_SMITHING_TEMPLATE), ALUMINUM_UPGRADE_SMITHING_TEMPLATE)
+                .tab(TOOLS_AND_UTILITIES)
+                .addItemsAfter(of(Items.GOLDEN_HOE), ALUMINUM_SHOVEL, ALUMINUM_PICKAXE, ALUMINUM_AXE, ALUMINUM_HOE)
+                .addItemsBefore(of(Items.NETHERITE_SHOVEL), INVAR_SHOVEL, INVAR_PICKAXE, INVAR_AXE, INVAR_HOE)
+                .tab(COMBAT)
+                .addItemsAfter(of(Items.GOLDEN_SWORD), ALUMINUM_SWORD)
+                .addItemsAfter(of(Items.GOLDEN_AXE), ALUMINUM_AXE)
+                .addItemsBefore(of(Items.NETHERITE_SWORD), INVAR_SWORD)
+                .addItemsBefore(of(Items.NETHERITE_AXE), INVAR_AXE)
+                .addItemsAfter(of(Items.GOLDEN_BOOTS), ALUMINUM_HELMET, ALUMINUM_CHESTPLATE, ALUMINUM_LEGGINGS, ALUMINUM_BOOTS)
+                .addItemsBefore(of(Items.NETHERITE_HELMET), INVAR_HELMET, INVAR_CHESTPLATE, INVAR_LEGGINGS, INVAR_BOOTS)
+                .addItemsAfter(of(Items.TURTLE_HELMET), HEAVY_BOOTS);
+    }
+}
+

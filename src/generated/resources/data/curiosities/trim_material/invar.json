@@ -1,0 +1,9 @@
+{
+  "asset_name": "curiosities_invar",
+  "description": {
+    "color": "#818779",
+    "translate": "trim_material.curiosities.invar"
+  },
+  "ingredient": "curiosities:invar_ingot",
+  "item_model_index": -1.0
+}

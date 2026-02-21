@@ -1,0 +1,19 @@
+{
+  "sources": [
+    {
+      "type": "blueprint:paletted_permutations",
+      "palette_key": "minecraft:trims/color_palettes/trim_palette",
+      "permutations": {
+        "curiosities_aluminum": "curiosities:trims/color_palettes/aluminum",
+        "curiosities_invar": "curiosities:trims/color_palettes/invar",
+        "curiosities_nickel": "curiosities:trims/color_palettes/nickel"
+      },
+      "textures": [
+        "minecraft:trims/items/helmet_trim",
+        "minecraft:trims/items/chestplate_trim",
+        "minecraft:trims/items/leggings_trim",
+        "minecraft:trims/items/boots_trim"
+      ]
+    }
+  ]
+}

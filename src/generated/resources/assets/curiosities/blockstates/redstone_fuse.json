@@ -1,0 +1,706 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse"
+      },
+      "when": {
+        "facing": "north",
+        "powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse_on"
+      },
+      "when": {
+        "facing": "north",
+        "powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/fuse"
+      },
+      "when": {
+        "broken": "false",
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/fuse_broken"
+      },
+      "when": {
+        "broken": "true",
+        "facing": "north"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_0"
+      },
+      "when": {
+        "facing": "north",
+        "threshold": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_1"
+      },
+      "when": {
+        "facing": "north",
+        "threshold": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_2"
+      },
+      "when": {
+        "facing": "north",
+        "threshold": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_3"
+      },
+      "when": {
+        "facing": "north",
+        "threshold": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_4"
+      },
+      "when": {
+        "facing": "north",
+        "threshold": "5"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_5"
+      },
+      "when": {
+        "facing": "north",
+        "threshold": "6"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_6"
+      },
+      "when": {
+        "facing": "north",
+        "threshold": "7"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_7"
+      },
+      "when": {
+        "facing": "north",
+        "threshold": "8"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_8"
+      },
+      "when": {
+        "facing": "north",
+        "threshold": "9"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_9"
+      },
+      "when": {
+        "facing": "north",
+        "threshold": "10"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_10"
+      },
+      "when": {
+        "facing": "north",
+        "threshold": "11"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_11"
+      },
+      "when": {
+        "facing": "north",
+        "threshold": "12"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_12"
+      },
+      "when": {
+        "facing": "north",
+        "threshold": "13"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_13"
+      },
+      "when": {
+        "facing": "north",
+        "threshold": "14"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse_on",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/fuse",
+        "y": 90
+      },
+      "when": {
+        "broken": "false",
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/fuse_broken",
+        "y": 90
+      },
+      "when": {
+        "broken": "true",
+        "facing": "east"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_0",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "threshold": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_1",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "threshold": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_2",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "threshold": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_3",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "threshold": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_4",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "threshold": "5"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_5",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "threshold": "6"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_6",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "threshold": "7"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_7",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "threshold": "8"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_8",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "threshold": "9"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_9",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "threshold": "10"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_10",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "threshold": "11"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_11",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "threshold": "12"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_12",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "threshold": "13"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_13",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "threshold": "14"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse_on",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/fuse",
+        "y": 180
+      },
+      "when": {
+        "broken": "false",
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/fuse_broken",
+        "y": 180
+      },
+      "when": {
+        "broken": "true",
+        "facing": "south"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_0",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "threshold": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_1",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "threshold": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_2",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "threshold": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_3",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "threshold": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_4",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "threshold": "5"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_5",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "threshold": "6"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_6",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "threshold": "7"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_7",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "threshold": "8"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_8",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "threshold": "9"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_9",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "threshold": "10"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_10",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "threshold": "11"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_11",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "threshold": "12"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_12",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "threshold": "13"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_13",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "threshold": "14"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse_on",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/fuse",
+        "y": 270
+      },
+      "when": {
+        "broken": "false",
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/fuse_broken",
+        "y": 270
+      },
+      "when": {
+        "broken": "true",
+        "facing": "west"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_0",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "threshold": "1"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_1",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "threshold": "2"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_2",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "threshold": "3"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_3",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "threshold": "4"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_4",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "threshold": "5"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_5",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "threshold": "6"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_6",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "threshold": "7"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_7",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "threshold": "8"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_8",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "threshold": "9"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_9",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "threshold": "10"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_10",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "threshold": "11"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_11",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "threshold": "12"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_12",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "threshold": "13"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_fuse/slider_13",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "threshold": "14"
+      }
+    }
+  ]
+}

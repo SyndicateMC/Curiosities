@@ -1,0 +1,9 @@
+{
+  "asset_name": "curiosities_nickel",
+  "description": {
+    "color": "#AE9F91",
+    "translate": "trim_material.curiosities.nickel"
+  },
+  "ingredient": "curiosities:nickel_ingot",
+  "item_model_index": -1.0
+}

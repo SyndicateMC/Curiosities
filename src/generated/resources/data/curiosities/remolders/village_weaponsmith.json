@@ -1,0 +1,15 @@
+{
+  "molding": "json",
+  "remolder": [
+    {
+      "type": "add",
+      "target": "pools[0].entries[]",
+      "value": {
+        "type": "minecraft:item",
+        "name": "curiosities:aluminum_upgrade_smithing_template",
+        "weight": 4
+      }
+    }
+  ],
+  "selector": "minecraft:loot_table/chests/village/village_weaponsmith"
+}

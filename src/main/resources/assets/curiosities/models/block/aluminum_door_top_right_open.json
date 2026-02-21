@@ -1,0 +1,14 @@
+{
+  "parent": "curiosities:block/templates/special_door_top_right_open",
+  "textures": {
+    "bottom": "curiosities:block/aluminum_door_bottom",
+    "front_bottom": "curiosities:block/aluminum_door_front_bottom",
+    "back_bottom": "curiosities:block/aluminum_door_back_bottom",
+    "left_bottom": "curiosities:block/aluminum_door_left_bottom",
+    "right_bottom": "curiosities:block/aluminum_door_right_bottom",
+    "front_top": "curiosities:block/aluminum_door_front_top",
+    "back_top": "curiosities:block/aluminum_door_back_top",
+    "left_top": "curiosities:block/aluminum_door_left_top",
+    "right_top": "curiosities:block/aluminum_door_right_top"
+  }
+}

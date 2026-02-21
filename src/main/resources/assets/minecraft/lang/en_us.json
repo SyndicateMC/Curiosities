@@ -1,0 +1,11 @@
+{
+  "item.minecraft.netherite_scrap": "Ancient Scrap",
+  "item.minecraft.smithing_template.netherite_upgrade.additions_slot_description": "Add any ancient metal ingot",
+  "item.minecraft.smithing_template.netherite_upgrade.ingredients": "Any Ancient Metal Ingot",
+
+  "attribute.name.player.block_interaction_range": "Block Reach",
+  "attribute.name.player.entity_interaction_range": "Entity Reach",
+  "attribute.name.player.block_break_speed": "Mining Speed",
+
+  "upgrade.minecraft.netherite_upgrade": "Ancient Upgrade"
+}

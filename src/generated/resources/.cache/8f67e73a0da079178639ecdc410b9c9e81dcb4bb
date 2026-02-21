@@ -1,0 +1,25 @@
+// 1.21.1	2026-02-06T16:46:27.4120096	Tags for minecraft:item mod id curiosities
+efe4cd5fe4448ec33cb6d4e2259076bd74bcb391 data/curiosities/tags/item/aluminum_tools.json
+79a136c142c15bb2d7e7f4ca3ce93ad5427cdc3e data/curiosities/tags/item/invar_tools.json
+be6d950b9d7b963f2e8a45735cce7b6f4afeb4ab data/c/tags/item/ingots/aluminum.json
+5e4cf87465089e2ae2c07e31388a4909a76e4331 data/c/tags/item/ingots/invar.json
+4ab99a0a766616dfcdbe93b0080264f0bc09d4da data/c/tags/item/ingots/nickel.json
+7915c72a7b2c5eb6c3b3ad95b8cf8b9d4ac702a9 data/c/tags/item/nuggets/aluminum.json
+ebdab7a51b0fe2ec8e21c645a4fb5c1f31ad94f7 data/c/tags/item/nuggets/invar.json
+ee52be1214c483b7f93b13c5e04c0216de8759d6 data/c/tags/item/nuggets/nickel.json
+596795991f49b4068b3192ce83fe545d3347a498 data/c/tags/item/ores/aluminum.json
+51022f46f1e9953da21e121dd441006e63abdc03 data/c/tags/item/ores/nickel.json
+35366f515ba452d7af1691a79e7ba4072fe87d3f data/c/tags/item/storage_blocks/aluminum.json
+3e88312f317a76b7bf05ff82a31f0e1f2e6f8e89 data/c/tags/item/storage_blocks/invar.json
+4e2c5551295529ba00da8374a299c9a3f66064ce data/c/tags/item/storage_blocks/nickel.json
+3213c86ba3e5bd0e48de80c7b0f7ad78f1412c8b data/c/tags/item/tools/melee_weapon.json
+ad5b6d9f0082eed6de4ff0d303c85d78b0dd49e2 data/minecraft/tags/item/axes.json
+096c16f51d00df172d605dcd50e645667f93d7ec data/minecraft/tags/item/chest_armor.json
+7c829f8440047208d3ba305d3b07429563feea97 data/minecraft/tags/item/foot_armor.json
+a5c4089bc43118b909692520f0b4eebaf9c0f719 data/minecraft/tags/item/head_armor.json
+c7196f0d6c0248bae9a10b9dc9b881639102bfb1 data/minecraft/tags/item/hoes.json
+156f5d8cb6ef93dfe8dae6227db175f49fcf9435 data/minecraft/tags/item/leg_armor.json
+588f1e528aeb32be23e091e2edfa78d24d409dfe data/minecraft/tags/item/pickaxes.json
+4bd5ec6e857fd652dce958348995ef5984c867b4 data/minecraft/tags/item/shovels.json
+b71fc81838ac94a6261f3de151dfe85496770bc8 data/minecraft/tags/item/swords.json
+6a545776f153dc28e853b510d5cd034236aa7c2a data/minecraft/tags/item/trim_materials.json

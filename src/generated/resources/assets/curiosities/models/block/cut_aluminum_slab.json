@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "curiosities:block/cut_aluminum",
+    "side": "curiosities:block/cut_aluminum",
+    "top": "curiosities:block/cut_aluminum"
+  }
+}

@@ -1,0 +1,22 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "curiosities:config",
+      "value": "invar_decor_bastions"
+    }
+  ],
+  "priority": 50,
+  "repaletter": [
+    {
+      "type": "blueprint:simple",
+      "replaces_block": "minecraft:chain",
+      "replaces_with": "curiosities:big_chain"
+    },
+    {
+      "type": "blueprint:simple",
+      "replaces_block": "minecraft:lantern",
+      "replaces_with": "curiosities:heavy_lantern"
+    }
+  ],
+  "structures": "minecraft:bastion_remnant"
+}

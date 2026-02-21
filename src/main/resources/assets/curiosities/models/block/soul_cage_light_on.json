@@ -1,0 +1,6 @@
+{
+  "parent": "curiosities:block/cage_light_on",
+  "textures": {
+    "texture": "curiosities:block/soul_cage_light_on"
+  }
+}

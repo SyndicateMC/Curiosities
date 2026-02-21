@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/iron_bars_post",
+  "textures": {
+    "bars": "curiosities:block/nickel_bars_edge",
+    "particle": "curiosities:block/nickel_bars"
+  }
+}

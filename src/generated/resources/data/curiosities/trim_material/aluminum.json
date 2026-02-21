@@ -1,0 +1,9 @@
+{
+  "asset_name": "curiosities_aluminum",
+  "description": {
+    "color": "#C2C7CC",
+    "translate": "trim_material.curiosities.aluminum"
+  },
+  "ingredient": "curiosities:aluminum_ingot",
+  "item_model_index": -1.0
+}

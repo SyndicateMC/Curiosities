@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "building",
+  "group": "metal_slab",
+  "key": {
+    "#": {
+      "item": "curiosities:cut_aluminum"
+    }
+  },
+  "pattern": [
+    "###"
+  ],
+  "result": {
+    "count": 6,
+    "id": "curiosities:cut_aluminum_slab"
+  }
+}

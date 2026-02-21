@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "curiosities:block/cut_aluminum_slab"
+    },
+    "type=double": {
+      "model": "curiosities:block/cut_aluminum"
+    },
+    "type=top": {
+      "model": "curiosities:block/cut_aluminum_slab_top"
+    }
+  }
+}

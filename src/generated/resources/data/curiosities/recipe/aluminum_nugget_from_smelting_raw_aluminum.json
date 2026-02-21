@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 300,
+  "experience": 0.8,
+  "group": "aluminum_nugget",
+  "ingredient": {
+    "item": "curiosities:raw_aluminum"
+  },
+  "result": {
+    "count": 3,
+    "id": "curiosities:aluminum_nugget"
+  }
+}

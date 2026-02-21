@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "group": "invar_ingot",
+  "ingredients": [
+    {
+      "item": "curiosities:invar_block"
+    }
+  ],
+  "result": {
+    "count": 9,
+    "id": "curiosities:invar_ingot"
+  }
+}

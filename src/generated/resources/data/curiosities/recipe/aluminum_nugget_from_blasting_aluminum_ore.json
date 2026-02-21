@@ -1,0 +1,14 @@
+{
+  "type": "minecraft:blasting",
+  "category": "misc",
+  "cookingtime": 150,
+  "experience": 0.8,
+  "group": "aluminum_nugget",
+  "ingredient": {
+    "item": "curiosities:aluminum_ore"
+  },
+  "result": {
+    "count": 3,
+    "id": "curiosities:aluminum_nugget"
+  }
+}

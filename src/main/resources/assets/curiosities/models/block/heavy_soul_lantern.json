@@ -1,0 +1,9 @@
+{
+  "parent": "curiosities:block/heavy_lantern",
+  "textures": {
+    "0": "curiosities:block/heavy_soul_lantern",
+    "1": "curiosities:block/heavy_lantern_top",
+    "2": "curiosities:block/heavy_lantern_grate",
+    "particle": "curiosities:block/heavy_soul_lantern"
+  }
+}

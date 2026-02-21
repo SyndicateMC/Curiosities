@@ -1,0 +1,26 @@
+{
+  "credit": "Made by vectorwing using Blockbench, originally from from Farmer's Delight in 'assets/curiosities/models/block/tatami_even.json'",
+  "parent": "block/block",
+  "textures": {
+    "particle": "curiosities:block/tile_light_even",
+    "even": "curiosities:block/tile_light_even",
+    "odd": "curiosities:block/tile_light_odd",
+    "half": "curiosities:block/tile_light_half",
+    "inner": "curiosities:block/tile_light_half"
+  },
+  "elements": [
+    {
+      "name": "full tile light",
+      "from": [0, 0, 0],
+      "to": [16, 16, 16],
+      "faces": {
+        "north": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#odd"},
+        "east": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#even"},
+        "south": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#odd"},
+        "west": {"uv": [0, 0, 16, 16], "rotation": 270, "texture": "#even"},
+        "up": {"uv": [0, 0, 16, 16], "texture": "#half"},
+        "down": {"uv": [0, 0, 16, 16], "rotation": 90, "texture": "#inner"}
+      }
+    }
+  ]
+}

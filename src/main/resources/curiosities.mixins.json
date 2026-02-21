@@ -1,0 +1,14 @@
+{
+  "required": true,
+  "package": "com.syndicatemc.curiosities.core.mixin",
+  "compatibilityLevel": "JAVA_21",
+  "client": [],
+  "mixins": [],
+  "server": [],
+  "injectors": {
+    "defaultRequire": 1
+  },
+  "overwrites": {
+    "requireAnnotations": true
+  }
+}

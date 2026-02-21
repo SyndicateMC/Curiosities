@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "curiosities:block/heavy_lantern"
+    },
+    "hanging=true": {
+      "model": "curiosities:block/heavy_lantern_hanging"
+    }
+  }
+}

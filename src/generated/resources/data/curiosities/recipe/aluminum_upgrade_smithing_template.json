@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "A": {
+      "tag": "c:ingots/aluminum"
+    },
+    "D": {
+      "item": "minecraft:polished_deepslate"
+    },
+    "L": {
+      "tag": "c:leathers"
+    },
+    "T": {
+      "item": "curiosities:aluminum_upgrade_smithing_template"
+    }
+  },
+  "pattern": [
+    "ATA",
+    "LDL",
+    "ALA"
+  ],
+  "result": {
+    "count": 2,
+    "id": "curiosities:aluminum_upgrade_smithing_template"
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "curiosities:block/smooth_stone_bricks",
+    "side": "curiosities:block/smooth_stone_bricks",
+    "top": "curiosities:block/smooth_stone_bricks"
+  }
+}

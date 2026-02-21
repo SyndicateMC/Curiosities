@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/iron_bars_cap_alt",
+  "textures": {
+    "bars": "curiosities:block/nickel_bars",
+    "edge": "curiosities:block/nickel_bars_edge",
+    "particle": "curiosities:block/nickel_bars"
+  }
+}

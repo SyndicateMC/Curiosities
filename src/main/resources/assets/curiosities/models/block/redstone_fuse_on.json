@@ -1,0 +1,22 @@
+{
+	"textures": {
+		"0": "curiosities:block/redstone_fuse_on",
+		"1": "curiosities:block/nickel_component_bottom",
+		"2": "curiosities:block/redstone_diode_side",
+		"particle": "curiosities:block/redstone_fuse_on"
+	},
+	"elements": [
+		{
+			"from": [0, 0, 0],
+			"to": [16, 2, 16],
+			"faces": {
+				"north": {"uv": [0, 14, 16, 16], "texture": "#2"},
+				"east": {"uv": [0, 14, 16, 16], "texture": "#2"},
+				"south": {"uv": [0, 14, 16, 16], "texture": "#2"},
+				"west": {"uv": [0, 14, 16, 16], "texture": "#2"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#0"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#1"}
+			}
+		}
+	]
+}

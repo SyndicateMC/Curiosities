@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "invar_ingot",
+  "key": {
+    "#": {
+      "item": "curiosities:invar_nugget"
+    }
+  },
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "result": {
+    "count": 1,
+    "id": "curiosities:invar_ingot"
+  }
+}

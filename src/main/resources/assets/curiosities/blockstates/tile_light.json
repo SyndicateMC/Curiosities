@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "facing=down,paired=false":  { "model": "curiosities:block/tile_light_half", "x": 180 },
+    "facing=up,paired=false":    { "model": "curiosities:block/tile_light_half"},
+    "facing=north,paired=false": { "model": "curiosities:block/tile_light_half", "x": 90 },
+    "facing=south,paired=false": { "model": "curiosities:block/tile_light_half", "x": 90, "y": 180 },
+    "facing=west,paired=false":  { "model": "curiosities:block/tile_light_half", "x": 90, "y": 270 },
+    "facing=east,paired=false":  { "model": "curiosities:block/tile_light_half", "x": 90, "y": 90 },
+    "facing=down,paired=true":  { "model": "curiosities:block/tile_light_even", "x": 180 },
+    "facing=up,paired=true":    { "model": "curiosities:block/tile_light_odd" },
+    "facing=north,paired=true": { "model": "curiosities:block/tile_light_even", "x": 90 },
+    "facing=south,paired=true": { "model": "curiosities:block/tile_light_odd", "x": 90, "y": 180 },
+    "facing=west,paired=true":  { "model": "curiosities:block/tile_light_even", "x": 90, "y": 270 },
+    "facing=east,paired=true":  { "model": "curiosities:block/tile_light_odd", "x": 90, "y": 90 }
+  }
+}

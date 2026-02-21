@@ -1,0 +1,82 @@
+{
+  "multipart": [
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_diode"
+      },
+      "when": {
+        "facing": "north",
+        "powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_diode_on"
+      },
+      "when": {
+        "facing": "north",
+        "powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_diode",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_diode_on",
+        "y": 90
+      },
+      "when": {
+        "facing": "east",
+        "powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_diode",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_diode_on",
+        "y": 180
+      },
+      "when": {
+        "facing": "south",
+        "powered": "true"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_diode",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "powered": "false"
+      }
+    },
+    {
+      "apply": {
+        "model": "curiosities:block/redstone_diode_on",
+        "y": 270
+      },
+      "when": {
+        "facing": "west",
+        "powered": "true"
+      }
+    }
+  ]
+}

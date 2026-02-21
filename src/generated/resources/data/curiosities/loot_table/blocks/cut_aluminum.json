@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "curiosities:cut_aluminum"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "curiosities:blocks/cut_aluminum"
+}
