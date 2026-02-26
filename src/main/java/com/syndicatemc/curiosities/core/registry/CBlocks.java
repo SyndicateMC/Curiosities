@@ -68,7 +68,30 @@ public class CBlocks {
     public static final DeferredBlock<Block> SMOOTH_STONE_BRICKS = BLOCKS.createBlock("smooth_stone_bricks", () -> new Block(CProperties.SMOOTH_STONE));
     public static final DeferredBlock<Block> SMOOTH_STONE_BRICK_STAIRS = BLOCKS.createBlock("smooth_stone_brick_stairs", () -> new StairBlock(CBlocks.SMOOTH_STONE_BRICKS.get().defaultBlockState(), CProperties.SMOOTH_STONE));
     public static final DeferredBlock<Block> SMOOTH_STONE_BRICK_SLAB = BLOCKS.createBlock("smooth_stone_brick_slab", () -> new SlabBlock(CProperties.SMOOTH_STONE));
+    public static final DeferredBlock<Block> SMOOTH_STONE_BRICK_WALL = BLOCKS.createBlock("smooth_stone_brick_wall", () -> new WallBlock(CProperties.SMOOTH_STONE));
     public static final DeferredBlock<Block> SMOOTH_STONE_ASHLAR = BLOCKS.createBlock("smooth_stone_ashlar", () -> new AshlarBlock(CProperties.SMOOTH_STONE));
+
+    //vanilla compat
+    public static final DeferredBlock<Block> QUARTZ_BRICK_SLAB = BLOCKS.createBlock("quartz_brick_slab", () -> new SlabBlock(CProperties.SMOOTH_STONE));
+
+    public static final DeferredBlock<Block> SMOOTH_STONE_STAIRS = BLOCKS.createBlock("smooth_stone_stairs", () -> new StairBlock(Blocks.SMOOTH_STONE.defaultBlockState(), CProperties.SMOOTH_STONE));
+    public static final DeferredBlock<Block> CUT_SANDSTONE_STAIRS = BLOCKS.createBlock("cut_sandstone_stairs", () -> new StairBlock(Blocks.CUT_SANDSTONE.defaultBlockState(), CProperties.SANDSTONE));
+    public static final DeferredBlock<Block> CUT_RED_SANDSTONE_STAIRS = BLOCKS.createBlock("cut_red_sandstone_stairs", () -> new StairBlock(Blocks.CUT_RED_SANDSTONE.defaultBlockState(), CProperties.RED_SANDSTONE));
+    public static final DeferredBlock<Block> QUARTZ_BRICK_STAIRS = BLOCKS.createBlock("quartz_brick_stairs", () -> new StairBlock(Blocks.QUARTZ_BRICKS.defaultBlockState(), CProperties.SMOOTH_STONE));
+
+    public static final DeferredBlock<Block> STONE_WALL = BLOCKS.createBlock("stone_wall", () -> new WallBlock(CProperties.STONE));
+    public static final DeferredBlock<Block> SMOOTH_STONE_WALL = BLOCKS.createBlock("smooth_stone_wall", () -> new WallBlock(CProperties.SMOOTH_STONE));
+    public static final DeferredBlock<Block> POLISHED_GRANITE_WALL = BLOCKS.createBlock("polished_granite_wall", () -> new WallBlock(CProperties.GRANITE));
+    public static final DeferredBlock<Block> POLISHED_DIORITE_WALL = BLOCKS.createBlock("polished_diorite_wall", () -> new WallBlock(CProperties.DIORITE));
+    public static final DeferredBlock<Block> POLISHED_ANDESITE_WALL = BLOCKS.createBlock("polished_andesite_wall", () -> new WallBlock(CProperties.ANDESITE));
+    public static final DeferredBlock<Block> CUT_SANDSTONE_WALL = BLOCKS.createBlock("cut_sandstone_wall", () -> new WallBlock(CProperties.SANDSTONE));
+    public static final DeferredBlock<Block> CUT_RED_SANDSTONE_WALL = BLOCKS.createBlock("cut_red_sandstone_wall", () -> new WallBlock(CProperties.RED_SANDSTONE));
+    public static final DeferredBlock<Block> PRISMARINE_BRICK_WALL = BLOCKS.createBlock("prismarine_brick_wall", () -> new WallBlock(CProperties.PRISMARINE_BRICKS));
+    public static final DeferredBlock<Block> DARK_PRISMARINE_WALL = BLOCKS.createBlock("dark_prismarine_wall", () -> new WallBlock(CProperties.DARK_PRISMARINE));
+    public static final DeferredBlock<Block> PURPUR_WALL = BLOCKS.createBlock("purpur_wall", () -> new WallBlock(CProperties.PURPUR));
+    public static final DeferredBlock<Block> QUARTZ_WALL = BLOCKS.createBlock("quartz_wall", () -> new WallBlock(CProperties.QUARTZ));
+    public static final DeferredBlock<Block> QUARTZ_BRICK_WALL = BLOCKS.createBlock("quartz_brick_wall", () -> new WallBlock(CProperties.QUARTZ));
+
 
     public static final class CProperties {
         public static final BlockBehaviour.Properties ALUMINUM_ORE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.GOLD_ORE).mapColor(MapColor.PODZOL);
@@ -108,7 +131,17 @@ public class CBlocks {
         public static final BlockBehaviour.Properties TUFF_ASHLAR = BlockBehaviour.Properties.ofLegacyCopy(Blocks.TUFF_BRICKS);
         public static final BlockBehaviour.Properties POLISHED_BLACKSTONE_ASHLAR = BlockBehaviour.Properties.ofLegacyCopy(Blocks.POLISHED_BLACKSTONE_BRICKS);
 
+        public static final BlockBehaviour.Properties STONE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.STONE);
         public static final BlockBehaviour.Properties SMOOTH_STONE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.SMOOTH_STONE);
+        public static final BlockBehaviour.Properties GRANITE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.GRANITE);
+        public static final BlockBehaviour.Properties DIORITE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.DIORITE);
+        public static final BlockBehaviour.Properties ANDESITE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.ANDESITE);
+        public static final BlockBehaviour.Properties SANDSTONE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.SANDSTONE);
+        public static final BlockBehaviour.Properties RED_SANDSTONE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.RED_SANDSTONE);
+        public static final BlockBehaviour.Properties PRISMARINE_BRICKS = BlockBehaviour.Properties.ofLegacyCopy(Blocks.PRISMARINE_BRICKS);
+        public static final BlockBehaviour.Properties DARK_PRISMARINE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.DARK_PRISMARINE);
+        public static final BlockBehaviour.Properties PURPUR = BlockBehaviour.Properties.ofLegacyCopy(Blocks.PURPUR_BLOCK);
+        public static final BlockBehaviour.Properties QUARTZ = BlockBehaviour.Properties.ofLegacyCopy(Blocks.QUARTZ_BLOCK);
     }
 
     public static final class CBlockSetTypes {
@@ -130,11 +163,25 @@ public class CBlocks {
                 .addItemsAfter(of(Items.LIGHT_WEIGHTED_PRESSURE_PLATE), ALUMINUM_BLOCK, SHEET_METAL, ALUMINUM_GRATE, CUT_ALUMINUM, CUT_ALUMINUM_STAIRS, CUT_ALUMINUM_SLAB, ALUMINUM_BARS, ALUMINUM_DOOR, ALUMINUM_TRAPDOOR, NICKEL_BLOCK, NICKEL_BARS)
                 .addItemsAfter(of(Items.DIAMOND_BLOCK), INVAR_BLOCK)
                 .addItemsAfter(of(Items.CHAIN), BIG_CHAIN)
-                .addItemsAfter(of(Items.SMOOTH_STONE_SLAB), SMOOTH_STONE_BRICKS, SMOOTH_STONE_ASHLAR, SMOOTH_STONE_BRICK_STAIRS, SMOOTH_STONE_BRICK_SLAB)
+                .addItemsAfter(of(Items.SMOOTH_STONE_SLAB), SMOOTH_STONE_BRICKS, SMOOTH_STONE_ASHLAR, SMOOTH_STONE_BRICK_STAIRS, SMOOTH_STONE_BRICK_SLAB, SMOOTH_STONE_BRICK_WALL)
                 .addItemsBefore(of(Items.STONE_BRICK_STAIRS), STONE_ASHLAR)
                 .addItemsBefore(of(Items.DEEPSLATE_BRICK_STAIRS), DEEPSLATE_ASHLAR)
                 .addItemsBefore(of(Items.TUFF_BRICK_STAIRS), TUFF_ASHLAR)
                 .addItemsBefore(of(Items.POLISHED_BLACKSTONE_BRICK_STAIRS), POLISHED_BLACKSTONE_ASHLAR)
+                /* vanilla comp */
+                .addItemsAfter(of(Items.STONE_SLAB), STONE_WALL)
+                .addItemsAfter(of(Items.SMOOTH_STONE), SMOOTH_STONE_STAIRS).addItemsAfter(of(Items.SMOOTH_STONE_SLAB), SMOOTH_STONE_WALL)
+                .addItemsAfter(of(Items.POLISHED_GRANITE_SLAB), POLISHED_GRANITE_WALL)
+                .addItemsAfter(of(Items.POLISHED_DIORITE_SLAB), POLISHED_DIORITE_WALL)
+                .addItemsAfter(of(Items.POLISHED_ANDESITE_SLAB), POLISHED_ANDESITE_WALL)
+                .addItemsAfter(of(Items.CUT_SANDSTONE), CUT_SANDSTONE_STAIRS).addItemsAfter(of(Items.CUT_STANDSTONE_SLAB), CUT_SANDSTONE_WALL)
+                .addItemsAfter(of(Items.CUT_RED_SANDSTONE), CUT_RED_SANDSTONE_STAIRS).addItemsAfter(of(Items.CUT_RED_SANDSTONE_SLAB), CUT_RED_SANDSTONE_WALL)
+                .addItemsAfter(of(Items.PRISMARINE_BRICK_SLAB), PRISMARINE_BRICK_WALL)
+                .addItemsAfter(of(Items.DARK_PRISMARINE_SLAB), DARK_PRISMARINE_WALL)
+                .addItemsAfter(of(Items.QUARTZ_SLAB), QUARTZ_WALL)
+                .addItemsAfter(of(Items.QUARTZ_BRICKS), QUARTZ_BRICK_STAIRS, QUARTZ_BRICK_SLAB, QUARTZ_BRICK_WALL)
+                .addItemsAfter(of(Items.PURPUR_SLAB), PURPUR_WALL)
+                // end
                 .tab(FUNCTIONAL_BLOCKS)
                 .addItemsBefore(of(Items.GLOWSTONE), TILE_LIGHT)
                 .addItemsAfter(of(Items.CHAIN), CAGE_LIGHT, SOUL_CAGE_LIGHT, HEAVY_LANTERN, HEAVY_SOUL_LANTERN, BIG_CHAIN)

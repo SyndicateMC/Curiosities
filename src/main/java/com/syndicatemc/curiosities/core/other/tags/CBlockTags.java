@@ -17,4 +17,6 @@ public class CBlockTags {
     public static final TagKey<Block> TRUMPET_EXPOSED_NOTE_BLOCKS = TagUtil.blockTag(Curiosities.MOD_ID, "trumpet_exposed_note_blocks");
     public static final TagKey<Block> TRUMPET_WEATHERED_NOTE_BLOCKS = TagUtil.blockTag(Curiosities.MOD_ID, "trumpet_weathered_note_blocks");
     public static final TagKey<Block> TRUMPET_OXIDIZED_NOTE_BLOCKS = TagUtil.blockTag(Curiosities.MOD_ID, "trumpet_oxidized_note_blocks");
+    public static final TagKey<Block> STEEL_DRUM_NOTE_BLOCKS = TagUtil.blockTag(Curiosities.MOD_ID, "steel_drum_note_blocks");
+    public static final TagKey<Block> SLAP_BASE_NOTE_BLOCKS = TagUtil.blockTag(Curiosities.MOD_ID, "slap_bass_note_blocks");
 }

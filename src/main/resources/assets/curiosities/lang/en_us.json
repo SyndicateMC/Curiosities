@@ -36,6 +36,7 @@
   "block.curiosities.smooth_stone_bricks": "Smooth Stone Bricks",
   "block.curiosities.smooth_stone_brick_stairs": "Smooth Stone Brick Stairs",
   "block.curiosities.smooth_stone_brick_slab": "Smooth Stone Brick Slab",
+  "block.curiosities.smooth_stone_brick_wall": "Smooth Stone Brick Wall",
   "block.curiosities.smooth_stone_ashlar": "Smooth Stone Ashlar",
 
   "item.curiosities.raw_aluminum": "Raw Aluminum",
@@ -99,5 +100,23 @@
   "subtitles.curiosities.damage.damage_reduce_full": "Damage deflected",
 
   "tooltip.curiosities.heavy_boots.exponential_fall_speed": " Increases fall speed exponentially",
-  "tooltip.curiosities.heavy_boots.fall_damage": " Reduces fall damage"
+  "tooltip.curiosities.heavy_boots.fall_damage": " Reduces fall damage",
+
+  "block.curiosities.smooth_stone_stairs": "Smooth Stone Stairs",
+  "block.curiosities.cut_sandstone_stairs": "Cut Sandstone Stairs",
+  "block.curiosities.cut_red_sandstone_stairs": "Cut Red Sandstone Stairs",
+  "block.curiosities.quartz_brick_stairs": "Quartz Brick Stairs",
+  "block.curiosities.quartz_brick_slab": "Quartz Brick Slab",
+  "block.curiosities.stone_wall": "Stone Wall",
+  "block.curiosities.smooth_stone_wall": "Smooth Stone Wall",
+  "block.curiosities.polished_granite_wall": "Polished Granite Wall",
+  "block.curiosities.polished_diorite_wall": "Polished Diorite Wall",
+  "block.curiosities.polished_andesite_wall": "Polished Andesite Wall",
+  "block.curiosities.cut_sandstone_wall": "Cut Sandstone Wall",
+  "block.curiosities.cut_red_sandstone_wall": "Cut Red Sandstone Wall",
+  "block.curiosities.prismarine_brick_wall": "Prismarine Brick Wall",
+  "block.curiosities.dark_prismarine_wall": "Dark Prismarine Wall",
+  "block.curiosities.quartz_wall": "Quartz Wall",
+  "block.curiosities.quartz_brick_wall": "Quartz Brick Wall",
+  "block.curiosities.purpur_wall": "Purpur Wall"
 }

@@ -4,9 +4,15 @@
     "minecraft:cut_copper",
     "minecraft:cut_copper_stairs",
     "minecraft:cut_copper_slab",
+    "minecraft:chiseled_copper",
+    "minecraft:copper_grate",
+    "minecraft:copper_bulb",
     "minecraft:waxed_copper_block",
     "minecraft:waxed_cut_copper",
     "minecraft:waxed_cut_copper_stairs",
-    "minecraft:waxed_cut_copper_slab"
+    "minecraft:waxed_cut_copper_slab",
+    "minecraft:waxed_chiseled_copper",
+    "minecraft:waxed_copper_grate",
+    "minecraft:waxed_copper_bulb"
   ]
 }

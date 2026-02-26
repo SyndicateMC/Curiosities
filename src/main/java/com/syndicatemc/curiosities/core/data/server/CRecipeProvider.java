@@ -167,8 +167,31 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
         stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.SMOOTH_STONE_BRICK_SLAB, CBlocks.SMOOTH_STONE_BRICKS, 2);
         stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.SMOOTH_STONE_BRICK_STAIRS, CBlocks.SMOOTH_STONE_BRICKS);
         ashlarRecipes(output, CBlocks.SMOOTH_STONE_ASHLAR, Items.SMOOTH_STONE, CBlocks.SMOOTH_STONE_BRICKS);
+        wallStoneRecipes(output, CBlocks.SMOOTH_STONE_BRICK_WALL, CBlocks.SMOOTH_STONE_BRICKS);
+        stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.SMOOTH_STONE_BRICK_WALL, Items.SMOOTH_STONE);
         cutBuilder(BUILDING_BLOCKS, CBlocks.SMOOTH_STONE_BRICKS, Ingredient.of(Items.SMOOTH_STONE)).unlockedBy("has_smooth_stone", has(Items.SMOOTH_STONE)).save(output);
         generateRecipes(output, CBlockFamilies.SMOOTH_STONE_BRICKS_BLOCK_FAMILY);
+
+        //vanilla compat
+        stairsStoneRecipes(output, CBlocks.SMOOTH_STONE_STAIRS, Items.SMOOTH_STONE);
+        stairsStoneRecipes(output, CBlocks.CUT_SANDSTONE_STAIRS, Items.CUT_SANDSTONE);
+        stairsStoneRecipes(output, CBlocks.CUT_RED_SANDSTONE_STAIRS, Items.CUT_RED_SANDSTONE);
+        stairsStoneRecipes(output, CBlocks.QUARTZ_BRICK_STAIRS, Items.QUARTZ_BRICKS);
+
+        slabStoneRecipes(output, CBlocks.QUARTZ_BRICK_SLAB, Items.QUARTZ_BRICKS);
+
+        wallStoneRecipes(output, CBlocks.STONE_WALL, Items.STONE);
+        wallStoneRecipes(output, CBlocks.SMOOTH_STONE_WALL, Items.SMOOTH_STONE);
+        wallStoneRecipes(output, CBlocks.POLISHED_GRANITE_WALL, Items.POLISHED_GRANITE);
+        wallStoneRecipes(output, CBlocks.POLISHED_DIORITE_WALL, Items.POLISHED_DIORITE);
+        wallStoneRecipes(output, CBlocks.POLISHED_ANDESITE_WALL, Items.POLISHED_ANDESITE);
+        wallStoneRecipes(output, CBlocks.CUT_SANDSTONE_WALL, Items.CUT_SANDSTONE);
+        wallStoneRecipes(output, CBlocks.CUT_RED_SANDSTONE_WALL, Items.CUT_RED_SANDSTONE);
+        wallStoneRecipes(output, CBlocks.PRISMARINE_BRICK_WALL, Items.PRISMARINE_BRICKS);
+        wallStoneRecipes(output, CBlocks.DARK_PRISMARINE_WALL, Items.DARK_PRISMARINE);
+        wallStoneRecipes(output, CBlocks.QUARTZ_WALL, Items.QUARTZ_BLOCK);
+        wallStoneRecipes(output, CBlocks.QUARTZ_BRICK_WALL, Items.QUARTZ_BRICKS);
+        wallStoneRecipes(output, CBlocks.PURPUR_WALL, Items.PURPUR_BLOCK);
     }
 
     public void oreRecipesAlt(RecipeOutput recipeOutput, List<ItemLike> inputs, RecipeCategory category, ItemLike output, int count, float xp, int cookTime, String group) {
@@ -215,9 +238,24 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
     protected void ashlarRecipes(RecipeOutput recipeOutput, ItemLike ashlarBlock, ItemLike requirement, ItemLike altRequirement) {
         stonecutterRecipe(recipeOutput, BUILDING_BLOCKS, ashlarBlock, requirement);
         stonecutterRecipe(recipeOutput, BUILDING_BLOCKS, ashlarBlock, altRequirement);
-        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, ashlarBlock)
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, ashlarBlock, 8)
                 .define('B', altRequirement)
                 .pattern("BBB").pattern("B B").pattern("BBB")
                 .unlockedBy("has_bricks", has(altRequirement)).save(recipeOutput);
+    }
+
+    public void stairsStoneRecipes(RecipeOutput output, ItemLike stairs, ItemLike requirement) {
+        stairBuilder(stairs, Ingredient.of(requirement)).unlockedBy("has_req", has(requirement)).save(output);
+        stonecutterRecipe(output, BUILDING_BLOCKS, stairs, requirement);
+    }
+
+    public void slabStoneRecipes(RecipeOutput output, ItemLike slab, ItemLike requirement) {
+        slabBuilder(BUILDING_BLOCKS, slab, Ingredient.of(requirement)).unlockedBy("has_req", has(requirement)).save(output);
+        stonecutterRecipe(output, BUILDING_BLOCKS, slab, requirement, 2);
+    }
+
+    public void wallStoneRecipes(RecipeOutput output, ItemLike wall, ItemLike requirement) {
+        wall(output, BUILDING_BLOCKS, wall, requirement);
+        stonecutterRecipe(output, BUILDING_BLOCKS, wall, requirement);
     }
 }

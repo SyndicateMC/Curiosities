@@ -69,13 +69,19 @@ public class CLootTableProvider extends LootTableProvider {
                     CONCUSSION_BOMB,
 
                     STONE_ASHLAR, DEEPSLATE_ASHLAR, TUFF_ASHLAR, POLISHED_BLACKSTONE_ASHLAR,
-                    SMOOTH_STONE_BRICKS, SMOOTH_STONE_BRICK_STAIRS, SMOOTH_STONE_ASHLAR
+                    SMOOTH_STONE_BRICKS, SMOOTH_STONE_BRICK_STAIRS, SMOOTH_STONE_BRICK_WALL, SMOOTH_STONE_ASHLAR,
+
+                    SMOOTH_STONE_STAIRS, CUT_SANDSTONE_STAIRS, CUT_RED_SANDSTONE_STAIRS, QUARTZ_BRICK_STAIRS,
+                    STONE_WALL, SMOOTH_STONE_WALL, POLISHED_GRANITE_WALL, POLISHED_DIORITE_WALL, POLISHED_ANDESITE_WALL, CUT_SANDSTONE_WALL, CUT_RED_SANDSTONE_WALL, PRISMARINE_BRICK_WALL, DARK_PRISMARINE_WALL, QUARTZ_WALL, QUARTZ_BRICK_WALL, PURPUR_WALL
             }) {
                 this.dropSelf(block.get());
             }
 
-            this.add(CUT_ALUMINUM_SLAB.get(), this::createSlabItemTable);
-            this.add(SMOOTH_STONE_BRICK_SLAB.get(), this::createSlabItemTable);
+            for (DeferredBlock<?> block : new DeferredBlock[]{
+                    CUT_ALUMINUM_SLAB, SMOOTH_STONE_BRICK_SLAB, QUARTZ_BRICK_SLAB
+            }) {
+                this.add(block.get(), this::createSlabItemTable);
+            }
 
             this.add(ALUMINUM_DOOR.get(), this::createDoorTable);
         }

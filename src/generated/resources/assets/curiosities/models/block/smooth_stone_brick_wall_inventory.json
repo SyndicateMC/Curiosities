@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "curiosities:block/smooth_stone_bricks"
+  }
+}

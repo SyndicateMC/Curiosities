@@ -27,4 +27,6 @@ public class CSoundEvents {
     public static final DeferredHolder<SoundEvent, SoundEvent> TRUMPET_EXPOSED = SOUND_EVENTS.createSoundEvent("block.note_block.trumpet_exposed");
     public static final DeferredHolder<SoundEvent, SoundEvent> TRUMPET_WEATHERED = SOUND_EVENTS.createSoundEvent("block.note_block.trumpet_weathered");
     public static final DeferredHolder<SoundEvent, SoundEvent> TRUMPET_OXIDIZED = SOUND_EVENTS.createSoundEvent("block.note_block.trumpet_oxidized");
+    public static final DeferredHolder<SoundEvent, SoundEvent> STEEL_DRUM = SOUND_EVENTS.createSoundEvent("block.note_block.steel_drum");
+    public static final DeferredHolder<SoundEvent, SoundEvent> SLAP_BASS = SOUND_EVENTS.createSoundEvent("block.note_block.slap_bass");
 }

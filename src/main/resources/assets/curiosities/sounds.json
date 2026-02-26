@@ -73,6 +73,18 @@
     ],
     "subtitle": "subtitles.block.note_block.note"
   },
+  "block.note_block.steel_drum": {
+    "sounds": [
+      "curiosities:note/steel_drum"
+    ],
+    "subtitle": "subtitles.block.note_block.note"
+  },
+  "block.note_block.slap_bass": {
+    "sounds": [
+      "curiosities:note/slap_bass"
+    ],
+    "subtitle": "subtitles.block.note_block.note"
+  },
   "item.armor.equip_aluminum": {
     "sounds": [
       "item/armor/equip_leather1",

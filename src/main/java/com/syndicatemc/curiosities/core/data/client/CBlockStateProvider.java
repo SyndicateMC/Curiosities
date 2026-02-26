@@ -10,10 +10,7 @@ import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.damagesource.DamageEffects;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.DirectionalBlock;
-import net.minecraft.world.level.block.HorizontalDirectionalBlock;
-import net.minecraft.world.level.block.StonecutterBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.DirectionProperty;
 import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
@@ -51,6 +48,38 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
         stairsBlock(CUT_ALUMINUM.get(), CUT_ALUMINUM_STAIRS.get());
         slabBlock(SMOOTH_STONE_BRICKS.get(), SMOOTH_STONE_BRICK_SLAB.get());
         stairsBlock(SMOOTH_STONE_BRICKS.get(), SMOOTH_STONE_BRICK_STAIRS.get());
+        wallBlock(SMOOTH_STONE_BRICKS.get(), SMOOTH_STONE_BRICK_WALL.get());
+
+        //vanilla compat
+        wallBlock(Blocks.STONE, STONE_WALL.get());
+
+        stairsBlock(Blocks.SMOOTH_STONE, SMOOTH_STONE_STAIRS.get());
+        wallBlock(Blocks.SMOOTH_STONE, SMOOTH_STONE_WALL.get());
+
+        wallBlock(Blocks.POLISHED_GRANITE, POLISHED_GRANITE_WALL.get());
+        wallBlock(Blocks.POLISHED_DIORITE, POLISHED_DIORITE_WALL.get());
+        wallBlock(Blocks.POLISHED_ANDESITE, POLISHED_ANDESITE_WALL.get());
+
+        stairsBlock((StairBlock)CUT_SANDSTONE_STAIRS.get(), Curiosities.location("block/cut_sandstone"));
+        blockItem(CUT_SANDSTONE_STAIRS.get());
+        wallBlock((WallBlock)CUT_SANDSTONE_WALL.get(), Curiosities.location("block/cut_sandstone"));
+        itemModels().getBuilder(name(CUT_SANDSTONE_WALL.get())).parent(this.models().wallInventory(name(CUT_SANDSTONE_WALL.get()) + "_inventory", Curiosities.location("block/cut_sandstone")));
+        stairsBlock((StairBlock)CUT_RED_SANDSTONE_STAIRS.get(), Curiosities.location("block/cut_red_sandstone"));
+        blockItem(CUT_RED_SANDSTONE_STAIRS.get());
+        wallBlock((WallBlock)CUT_RED_SANDSTONE_WALL.get(), Curiosities.location("block/cut_red_sandstone"));
+        itemModels().getBuilder(name(CUT_RED_SANDSTONE_WALL.get())).parent(this.models().wallInventory(name(CUT_RED_SANDSTONE_WALL.get()) + "_inventory", Curiosities.location("block/cut_red_sandstone")));
+
+        wallBlock(Blocks.PRISMARINE_BRICKS, PRISMARINE_BRICK_WALL.get());
+        wallBlock(Blocks.DARK_PRISMARINE, DARK_PRISMARINE_WALL.get());
+
+        wallBlock((WallBlock)QUARTZ_WALL.get(), ResourceLocation.withDefaultNamespace("block/quartz_block_top"));
+        itemModels().getBuilder(name(QUARTZ_WALL.get())).parent(this.models().wallInventory(name(QUARTZ_WALL.get()) + "_inventory", ResourceLocation.withDefaultNamespace("block/quartz_block_top")));
+        slabBlock(Blocks.QUARTZ_BRICKS, QUARTZ_BRICK_SLAB.get());
+        stairsBlock(Blocks.QUARTZ_BRICKS, QUARTZ_BRICK_STAIRS.get());
+        wallBlock(Blocks.QUARTZ_BRICKS, QUARTZ_BRICK_WALL.get());
+
+        wallBlock(Blocks.PURPUR_BLOCK, PURPUR_WALL.get());
+        //end
 
         redstoneDiodeBlock(REDSTONE_DIODE);
         redstoneFuseBlock(REDSTONE_FUSE);

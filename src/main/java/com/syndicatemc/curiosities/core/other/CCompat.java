@@ -17,5 +17,7 @@ public class CCompat {
         DataUtil.registerNoteBlockInstrument(new CustomNoteBlockInstrument(Curiosities.MOD_ID, source -> source.state().is(CBlockTags.TRUMPET_EXPOSED_NOTE_BLOCKS), CSoundEvents.TRUMPET_EXPOSED.get()));
         DataUtil.registerNoteBlockInstrument(new CustomNoteBlockInstrument(Curiosities.MOD_ID, source -> source.state().is(CBlockTags.TRUMPET_WEATHERED_NOTE_BLOCKS), CSoundEvents.TRUMPET_WEATHERED.get()));
         DataUtil.registerNoteBlockInstrument(new CustomNoteBlockInstrument(Curiosities.MOD_ID, source -> source.state().is(CBlockTags.TRUMPET_OXIDIZED_NOTE_BLOCKS), CSoundEvents.TRUMPET_OXIDIZED.get()));
+        DataUtil.registerNoteBlockInstrument(new CustomNoteBlockInstrument(Curiosities.MOD_ID, source -> source.state().is(CBlockTags.STEEL_DRUM_NOTE_BLOCKS), CSoundEvents.STEEL_DRUM.get()));
+        DataUtil.registerNoteBlockInstrument(new CustomNoteBlockInstrument(Curiosities.MOD_ID, source -> source.state().is(CBlockTags.SLAP_BASE_NOTE_BLOCKS), CSoundEvents.SLAP_BASS.get()));
     }
 }
