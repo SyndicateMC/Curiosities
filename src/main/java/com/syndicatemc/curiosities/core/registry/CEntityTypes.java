@@ -6,7 +6,6 @@ import com.teamabnormals.blueprint.core.util.registry.EntitySubRegistryHelper;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.MobCategory;
 import net.neoforged.neoforge.registries.DeferredHolder;
-import net.neoforged.neoforge.registries.DeferredRegister;
 
 public class CEntityTypes {
     public static final EntitySubRegistryHelper ENTITY_TYPES = Curiosities.REGISTRY_HELPER.getEntitySubHelper();

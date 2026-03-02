@@ -4,19 +4,39 @@ import com.syndicatemc.curiosities.common.item.AluminumArmorItem;
 import com.syndicatemc.curiosities.common.item.CSmithingTemplateItem;
 import com.syndicatemc.curiosities.common.item.InvarArmorItem;
 import com.syndicatemc.curiosities.core.Curiosities;
+import com.syndicatemc.curiosities.core.other.CConstants;
+import com.syndicatemc.curiosities.core.other.compat.CFDCompat;
 import com.teamabnormals.blueprint.core.api.BlueprintItemTier;
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
+import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.*;
 import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
+import net.neoforged.fml.ModList;
+import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
+import net.neoforged.neoforge.registries.DeferredRegister;
+import vectorwing.farmersdelight.common.item.KnifeItem;
+
+import java.util.function.Function;
+import java.util.function.Predicate;
+import java.util.function.Supplier;
 
 import static net.minecraft.world.item.CreativeModeTabs.*;
 import static net.minecraft.world.item.crafting.Ingredient.of;
 
 public class CItems {
     public static final ItemSubRegistryHelper ITEMS = Curiosities.REGISTRY_HELPER.getItemSubHelper();
+
+    public static Supplier<? extends Item> compat(String modid, Function<Item.Properties, ? extends Item> supplier, Item.Properties properties) {
+        if (ModList.get().isLoaded(modid)) return () -> supplier.apply(properties);
+        return () -> new Item(properties);
+    }
 
     public static final DeferredItem<Item> RAW_ALUMINUM = ITEMS.createItem("raw_aluminum", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> ALUMINUM_INGOT = ITEMS.createItem("aluminum_ingot", () -> new Item(new Item.Properties()));
@@ -34,12 +54,12 @@ public class CItems {
     public static final DeferredItem<Item> ALUMINUM_AXE = ITEMS.createItem("aluminum_axe", () -> new AxeItem(ALUMINUM, new Item.Properties().attributes(AxeItem.createAttributes(ALUMINUM, 6.0F, -3.1F))));
     public static final DeferredItem<Item> ALUMINUM_HOE = ITEMS.createItem("aluminum_hoe", () -> new HoeItem(ALUMINUM, new Item.Properties().attributes(HoeItem.createAttributes(ALUMINUM, -2.0F, -1.0F))));
 
-    public static final Tier INVAR = new BlueprintItemTier(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 2031, 9.0F, 2.0F, 15, () -> Ingredient.of(INVAR_INGOT));
+    public static final Tier INVAR = new BlueprintItemTier(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 2031, 9.0F, 3.0F, 15, () -> Ingredient.of(INVAR_INGOT));
     public static final DeferredItem<Item> INVAR_SWORD = ITEMS.createItem("invar_sword", () -> new SwordItem(INVAR, new Item.Properties().attributes(SwordItem.createAttributes(INVAR, 3, -2.4F)).fireResistant()));
     public static final DeferredItem<Item> INVAR_SHOVEL = ITEMS.createItem("invar_shovel", () -> new ShovelItem(INVAR, new Item.Properties().attributes(ShovelItem.createAttributes(INVAR, 1.5F, -3.0F)).fireResistant()));
     public static final DeferredItem<Item> INVAR_PICKAXE = ITEMS.createItem("invar_pickaxe", () -> new PickaxeItem(INVAR, new Item.Properties().attributes(PickaxeItem.createAttributes(INVAR, 1.0F, -2.8F)).fireResistant()));
     public static final DeferredItem<Item> INVAR_AXE = ITEMS.createItem("invar_axe", () -> new AxeItem(INVAR, new Item.Properties().attributes(AxeItem.createAttributes(INVAR, 5.0F, -3.0F)).fireResistant()));
-    public static final DeferredItem<Item> INVAR_HOE = ITEMS.createItem("invar_hoe", () -> new HoeItem(INVAR, new Item.Properties().attributes(HoeItem.createAttributes(INVAR, -2.0F, 0.0F)).fireResistant()));
+    public static final DeferredItem<Item> INVAR_HOE = ITEMS.createItem("invar_hoe", () -> new HoeItem(INVAR, new Item.Properties().attributes(HoeItem.createAttributes(INVAR, -3.0F, 0.0F)).fireResistant()));
 
     public static final DeferredItem<ArmorItem> ALUMINUM_HELMET = ITEMS.createItem("aluminum_helmet", () -> new AluminumArmorItem(ArmorItem.Type.HELMET));
     public static final DeferredItem<ArmorItem> ALUMINUM_CHESTPLATE = ITEMS.createItem("aluminum_chestplate", () -> new AluminumArmorItem(ArmorItem.Type.CHESTPLATE));
@@ -54,6 +74,10 @@ public class CItems {
     public static final DeferredItem<ArmorItem> HEAVY_BOOTS = ITEMS.createItem("heavy_boots", () -> new ArmorItem(CArmorMaterials.HEAVY, ArmorItem.Type.BOOTS, new Item.Properties().durability(ArmorItem.Type.BOOTS.getDurability(10)).rarity(Rarity.EPIC)));
 
     public static final DeferredItem<Item> ALUMINUM_UPGRADE_SMITHING_TEMPLATE = ITEMS.createItem("aluminum_upgrade_smithing_template", CSmithingTemplateItem::createAluminumUpgradeTemplate);
+
+    //fd compat
+    public static final DeferredHolder<Item, Item> ALUMINUM_KNIFE = ITEMS.createItem("aluminum_knife", compat(CConstants.FARMERS_DELIGHT, it -> CFDCompat.ALUMINUM_KNIFE_FACTORY.apply(it), new Item.Properties().attributes(DiggerItem.createAttributes(ALUMINUM, 0.5F, -2.0F))));
+    public static final DeferredHolder<Item, Item> INVAR_KNIFE = ITEMS.createItem("invar_knife", compat(CConstants.FARMERS_DELIGHT, it -> CFDCompat.INVAR_KNIFE_FACTORY.apply(it), new Item.Properties().attributes(DiggerItem.createAttributes(INVAR, 0.5F, -2.0F)).fireResistant()));
 
     public static void setupTabEditors() {
         CreativeModeTabContentsPopulator.mod(Curiosities.MOD_ID)
@@ -74,6 +98,18 @@ public class CItems {
                 .addItemsAfter(of(Items.GOLDEN_BOOTS), ALUMINUM_HELMET, ALUMINUM_CHESTPLATE, ALUMINUM_LEGGINGS, ALUMINUM_BOOTS)
                 .addItemsBefore(of(Items.NETHERITE_HELMET), INVAR_HELMET, INVAR_CHESTPLATE, INVAR_LEGGINGS, INVAR_BOOTS)
                 .addItemsAfter(of(Items.TURTLE_HELMET), HEAVY_BOOTS);
+        if (ModList.get().isLoaded(CConstants.FARMERS_DELIGHT)) CreativeModeTabContentsPopulator.mod(Curiosities.MOD_ID + "_fd_compat")
+                .tab(CConstants.FARMERS_DELIGHT_TAB)
+                .addItemsBefore(ofID(CConstants.DIAMOND_KNIFE), ALUMINUM_KNIFE)
+                .addItemsBefore(ofID(CConstants.NETHERITE_KNIFE), INVAR_KNIFE);
+    }
+
+    public static Predicate<ItemStack> modLoaded(ItemLike item, String... modids) {
+        return stack -> of(item).test(stack) && BlockSubRegistryHelper.areModsLoaded(modids);
+    }
+
+    public static Predicate<ItemStack> ofID(ResourceLocation location, String... modids) {
+        return stack -> (BlockSubRegistryHelper.areModsLoaded(modids) && of(BuiltInRegistries.ITEM.get(location)).test(stack));
     }
 }
 

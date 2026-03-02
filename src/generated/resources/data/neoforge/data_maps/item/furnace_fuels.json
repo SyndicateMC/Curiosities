@@ -1,0 +1,37 @@
+{
+  "values": {
+    "curiosities:fancied_acacia_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_bamboo_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_birch_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_cherry_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_crimson_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_dark_oak_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_jungle_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_mangrove_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_oak_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_spruce_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_warped_planks": {
+      "burn_time": 300
+    }
+  }
+}

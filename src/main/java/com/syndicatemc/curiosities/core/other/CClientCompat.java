@@ -1,32 +1,20 @@
 package com.syndicatemc.curiosities.core.other;
 
-import com.syndicatemc.curiosities.client.model.InvarArmorModel;
 import com.syndicatemc.curiosities.client.render.entity.ConcussionBombRenderer;
 import com.syndicatemc.curiosities.core.Curiosities;
 import com.syndicatemc.curiosities.core.registry.CBlocks;
 import com.syndicatemc.curiosities.core.registry.CEntityTypes;
 import com.syndicatemc.curiosities.core.registry.CItems;
-import net.minecraft.ChatFormatting;
-import net.minecraft.client.model.HumanoidModel;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
-import net.minecraft.network.chat.Component;
-import net.minecraft.network.chat.MutableComponent;
-import net.minecraft.world.entity.EquipmentSlot;
-import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.item.ItemStack;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
-import net.neoforged.neoforge.client.extensions.common.IClientItemExtensions;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
-import java.util.List;
-
-import static com.syndicatemc.curiosities.client.model.InvarArmorModel.createLayerDefinition;
 import static com.syndicatemc.curiosities.core.registry.CBlocks.*;
 
 @SuppressWarnings("removal")

@@ -1,8 +1,6 @@
 package com.syndicatemc.curiosities.core.data.server.tags;
 
 import com.syndicatemc.curiosities.core.Curiosities;
-import com.syndicatemc.curiosities.core.registry.datapack.CTrimMaterials;
-import com.teamabnormals.blueprint.core.other.tags.BlueprintTrimMaterialTags;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;

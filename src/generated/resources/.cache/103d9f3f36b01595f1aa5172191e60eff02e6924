@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-19T01:29:34.7543417	Registries
+// 1.21.1	2026-02-28T04:53:55.7549945	Registries
 4b95f23c8e7476ad4be9c75c2736a4f125088d80 data/curiosities/blueprint/structure_repaletters/invar_bastion_decor.json
 f37ad8ff8006855706da4008c41abc294cdcdbd9 data/curiosities/neoforge/biome_modifier/add_feature/aluminum_ore.json
 7fcd09d2a82cc862caf3451461971c6727a63f0f data/curiosities/neoforge/biome_modifier/add_feature/aluminum_ore_buried.json
@@ -11,7 +11,7 @@ f4caf7add5d06508d93e7516e4f9e3c506558b4f data/curiosities/neoforge/biome_modifie
 be564c03790793c0d414ce8d6ad65cd5ec8f3b0a data/curiosities/worldgen/configured_feature/ore_aluminum_buried.json
 34a22104e632194213e80d98566920d787af260f data/curiosities/worldgen/configured_feature/ore_nickel.json
 0e6333124dca59e68e781b38361ff8279c5bd8d9 data/curiosities/worldgen/configured_feature/ore_nickel_buried.json
-1b0268ae7706f07d6934c9fafd712861fc251cba data/curiosities/worldgen/placed_feature/ore_aluminum.json
-f6ce1d1ad2f893eda5ddc434b1d066b5afb3f39c data/curiosities/worldgen/placed_feature/ore_aluminum_buried.json
+468da9f4c32bc9687d788626d8a9b45095e57c1d data/curiosities/worldgen/placed_feature/ore_aluminum.json
+b45ce35ff97863990177c7e8acf2548c8b0baa1d data/curiosities/worldgen/placed_feature/ore_aluminum_buried.json
 7b85b7aaf2197a828c9656afae6b555b9d2d8c91 data/curiosities/worldgen/placed_feature/ore_nickel.json
-662b9c55c998f28892d1f50c9e447d73dfbb70b9 data/curiosities/worldgen/placed_feature/ore_nickel_buried.json
+3582d94e5d80c756beb2b8b5a441eb535186c00c data/curiosities/worldgen/placed_feature/ore_nickel_buried.json

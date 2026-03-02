@@ -7,7 +7,7 @@
       "value": {
         "type": "minecraft:item",
         "name": "curiosities:aluminum_upgrade_smithing_template",
-        "weight": 4
+        "weight": 12
       }
     }
   ],

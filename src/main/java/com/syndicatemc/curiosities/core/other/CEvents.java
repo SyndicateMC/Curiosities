@@ -7,15 +7,9 @@ import com.syndicatemc.curiosities.core.registry.CAttributes;
 import com.syndicatemc.curiosities.core.registry.CItems;
 import com.syndicatemc.curiosities.core.registry.CSoundEvents;
 import net.minecraft.core.BlockPos;
-import net.minecraft.server.level.ServerPlayer;
-import net.minecraft.sounds.SoundEvent;
-import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
-import net.minecraft.world.damagesource.DamageSources;
-import net.minecraft.world.damagesource.DamageType;
-import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.*;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
@@ -26,15 +20,19 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RepeaterBlock;
 import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.phys.EntityHitResult;
+import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
+import net.neoforged.neoforge.common.damagesource.DamageContainer;
 import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent;
+import net.neoforged.neoforge.event.entity.EntityEvent;
+import net.neoforged.neoforge.event.entity.ProjectileImpactEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
-import net.neoforged.neoforge.event.level.BlockDropsEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 @EventBusSubscriber(modid = Curiosities.MOD_ID)
@@ -48,7 +46,7 @@ public class CEvents {
             event.addModifier(Attributes.ENTITY_INTERACTION_RANGE, new AttributeModifier(Curiosities.location("entity_interaction_range"), 1, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND);
         }
         if (item.is(CItemTags.INVAR_TOOLS)) {
-            event.addModifier(CAttributes.ARMOR_PIERCING, new AttributeModifier(Curiosities.location("armor_piercing"), 0.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.MAINHAND);
+            event.addModifier(CAttributes.ARMOR_PIERCING, new AttributeModifier(Curiosities.location("armor_piercing"), 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.MAINHAND);
         }
     }
 
@@ -70,14 +68,11 @@ public class CEvents {
                 float originalDamage = event.getNewDamage();
                 float damageReduction = (float) reciever.getAttributes().getValue(CAttributes.DAMAGE_REDUCTION);
                 float newDamage = originalDamage - damageReduction;
-                float pitchChange = 0.9F + level.random.nextFloat() * 0.2F;
 
                 if (newDamage <= 0) {
                     event.setNewDamage(0);
-                    level.playSound(null, reciever.getX(), reciever.getY(), reciever.getZ(), CSoundEvents.DAMAGE_REDUCE_ALL, SoundSource.PLAYERS, 0.2F, pitchChange);
                 } else {
                     event.setNewDamage(newDamage);
-                    level.playSound(null, reciever.getX(), reciever.getY(), reciever.getZ(), CSoundEvents.DAMAGE_REDUCTION, SoundSource.PLAYERS, 0.2F, pitchChange);
                 }
             }
         }
@@ -91,6 +86,47 @@ public class CEvents {
                 event.setNewDamage(newDamage);
             }
         }
+        if (reciever.getAttributes().hasAttribute(CAttributes.IMMUTABILITY) && (!source.is(DamageTypeTags.BYPASSES_ARMOR) || source.is(DamageTypeTags.IS_FALL)) && reciever.getAttributes().getValue(CAttributes.IMMUTABILITY) > 0) {
+            double chance = calculateImmutabilityChance(reciever);
+            if (chance >= level.random.nextDouble()) {
+                float pitchChange = 0.95F + level.random.nextFloat() * 0.1F;
+                event.setNewDamage(0);
+                level.playSound(null, reciever.getX(), reciever.getY(), reciever.getZ(), CSoundEvents.DAMAGE_REDUCE_ALL, SoundSource.PLAYERS, 0.5F, pitchChange);
+                Curiosities.LOGGER.debug(chance);
+            }
+        }
+    }
+
+//    @SubscribeEvent
+//    public static void onProjectileImpact(ProjectileImpactEvent event) {
+//        HitResult result = event.getRayTraceResult();
+//        Entity projectile = event.getEntity();
+//        if (
+//                !projectile.level().isClientSide &&
+//                result instanceof EntityHitResult entityResult &&
+//                entityResult.getEntity() instanceof LivingEntity reciever &&
+//                !reciever.level().isClientSide &&
+//                reciever.getAttributes().hasAttribute(CAttributes.IMMUTABILITY) &&
+//                reciever.getAttributes().getValue(CAttributes.IMMUTABILITY) > 0 &&
+//                calculateImmutabilityChance(reciever) >= reciever.level().random.nextDouble())
+//        {
+//            event.setCanceled(true);
+//            Vec3 newMovement = new Vec3(-projectile.getDeltaMovement().x * 2, -projectile.getDeltaMovement().y * 2, -projectile.getDeltaMovement().z * 2);
+//            projectile.addDeltaMovement(
+//                    newMovement
+//            );
+//            float pitchChange = 0.95F + reciever.level().random.nextFloat() * 0.1F;
+//            reciever.level().playSound(null, reciever.getX(), reciever.getY(), reciever.getZ(), CSoundEvents.DAMAGE_REDUCE_ALL, SoundSource.PLAYERS, 0.5F, pitchChange);
+//        }
+//    }
+
+    public static double calculateImmutabilityChance(LivingEntity targetEntity) {
+        AttributeMap map = targetEntity.getAttributes();
+        double immute = map.getValue(CAttributes.IMMUTABILITY);
+        double armor = map.getValue(Attributes.ARMOR);
+        double toughness = map.getValue(Attributes.ARMOR_TOUGHNESS);
+
+        return ((armor + toughness / 2 + immute) / 4) * immute * 0.015D;
     }
 
     @SubscribeEvent
@@ -98,6 +134,7 @@ public class CEvents {
         for (var entityType : event.getTypes()) {
             if (event.has(entityType, Attributes.ARMOR)) {
                 event.add(entityType, CAttributes.DAMAGE_REDUCTION);
+                event.add(entityType, CAttributes.IMMUTABILITY);
             }
             event.add(entityType, CAttributes.ARMOR_PIERCING);
         }

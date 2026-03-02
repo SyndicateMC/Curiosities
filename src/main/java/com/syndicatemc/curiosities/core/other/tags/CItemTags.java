@@ -23,4 +23,6 @@ public class CItemTags {
 
     public static final TagKey<Item> ALUMINUM_TOOLS = TagUtil.itemTag(Curiosities.MOD_ID, "aluminum_tools");
     public static final TagKey<Item> INVAR_TOOLS = TagUtil.itemTag(Curiosities.MOD_ID, "invar_tools");
+
+    public static final TagKey<Item> KNIFE = TagUtil.itemTag("c", "tools/knife");
 }

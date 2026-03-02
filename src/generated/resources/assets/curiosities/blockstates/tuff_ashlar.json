@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "layer=1": {
+      "model": "curiosities:block/tuff_ashlar_lower"
+    },
+    "layer=2": {
+      "model": "curiosities:block/tuff_ashlar_mid"
+    },
+    "layer=3": {
+      "model": "curiosities:block/tuff_ashlar_upper"
+    }
+  }
+}

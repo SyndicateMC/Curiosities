@@ -1,0 +1,16 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "woodworks"
+    }
+  ],
+  "type": "woodworks:sawmill",
+  "ingredient": {
+    "tag": "minecraft:birch_logs"
+  },
+  "result": {
+    "count": 4,
+    "id": "curiosities:fancied_birch_planks"
+  }
+}

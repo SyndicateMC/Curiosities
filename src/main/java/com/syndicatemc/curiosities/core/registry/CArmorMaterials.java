@@ -3,16 +3,12 @@ package com.syndicatemc.curiosities.core.registry;
 import com.syndicatemc.curiosities.core.Curiosities;
 import net.minecraft.Util;
 import net.minecraft.core.registries.Registries;
-import net.minecraft.sounds.SoundEvents;
-import net.minecraft.world.damagesource.DamageEffects;
 import net.minecraft.world.item.ArmorItem;
 import net.minecraft.world.item.ArmorMaterial;
-import net.minecraft.world.item.ArmorMaterials;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import org.checkerframework.checker.units.qual.A;
 
 import java.util.EnumMap;
 import java.util.List;
@@ -36,10 +32,10 @@ public class CArmorMaterials {
     ));
     public static final DeferredHolder<ArmorMaterial, ArmorMaterial> INVAR = ARMOR_MATERIALS.register("invar", () -> new ArmorMaterial(
             Util.make(new EnumMap<>(ArmorItem.Type.class), map -> {
-                map.put(ArmorItem.Type.BOOTS, 2);
-                map.put(ArmorItem.Type.LEGGINGS, 5);
-                map.put(ArmorItem.Type.CHESTPLATE, 7);
-                map.put(ArmorItem.Type.HELMET, 2);
+                map.put(ArmorItem.Type.BOOTS, 3);
+                map.put(ArmorItem.Type.LEGGINGS, 6);
+                map.put(ArmorItem.Type.CHESTPLATE, 8);
+                map.put(ArmorItem.Type.HELMET, 3);
             }),
             15,
             CSoundEvents.ARMOR_EQUIP_INVAR,

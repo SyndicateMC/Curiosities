@@ -18,6 +18,7 @@ import net.neoforged.neoforge.registries.DeferredBlock;
 import static net.minecraft.world.item.CreativeModeTabs.*;
 import static net.minecraft.world.item.crafting.Ingredient.of;
 
+@SuppressWarnings("deprecation")
 public class CBlocks {
     public static final CBlockSubRegistryHelper BLOCKS = Curiosities.REGISTRY_HELPER.getBlockSubHelper();
 
@@ -64,12 +65,25 @@ public class CBlocks {
     public static final DeferredBlock<Block> DEEPSLATE_ASHLAR = BLOCKS.createBlock("deepslate_ashlar", () -> new AshlarBlock(CProperties.DEEPSLATE_ASHLAR));
     public static final DeferredBlock<Block> TUFF_ASHLAR = BLOCKS.createBlock("tuff_ashlar", () -> new AshlarBlock(CProperties.TUFF_ASHLAR));
     public static final DeferredBlock<Block> POLISHED_BLACKSTONE_ASHLAR = BLOCKS.createBlock("polished_blackstone_ashlar", () -> new AshlarBlock(CProperties.POLISHED_BLACKSTONE_ASHLAR));
+    public static final DeferredBlock<Block> END_STONE_ASHLAR = BLOCKS.createBlock("end_stone_ashlar", () -> new AshlarBlock(CProperties.END_STONE_ASHLAR));
 
     public static final DeferredBlock<Block> SMOOTH_STONE_BRICKS = BLOCKS.createBlock("smooth_stone_bricks", () -> new Block(CProperties.SMOOTH_STONE));
     public static final DeferredBlock<Block> SMOOTH_STONE_BRICK_STAIRS = BLOCKS.createBlock("smooth_stone_brick_stairs", () -> new StairBlock(CBlocks.SMOOTH_STONE_BRICKS.get().defaultBlockState(), CProperties.SMOOTH_STONE));
     public static final DeferredBlock<Block> SMOOTH_STONE_BRICK_SLAB = BLOCKS.createBlock("smooth_stone_brick_slab", () -> new SlabBlock(CProperties.SMOOTH_STONE));
     public static final DeferredBlock<Block> SMOOTH_STONE_BRICK_WALL = BLOCKS.createBlock("smooth_stone_brick_wall", () -> new WallBlock(CProperties.SMOOTH_STONE));
     public static final DeferredBlock<Block> SMOOTH_STONE_ASHLAR = BLOCKS.createBlock("smooth_stone_ashlar", () -> new AshlarBlock(CProperties.SMOOTH_STONE));
+
+    public static final DeferredBlock<Block> FANCIED_OAK_PLANKS = BLOCKS.createBlock("fancied_oak_planks", () -> new VerticalConnectingPillarBlock(CProperties.OAK));
+    public static final DeferredBlock<Block> FANCIED_SPRUCE_PLANKS = BLOCKS.createBlock("fancied_spruce_planks", () -> new VerticalConnectingPillarBlock(CProperties.SPRUCE));
+    public static final DeferredBlock<Block> FANCIED_BIRCH_PLANKS = BLOCKS.createBlock("fancied_birch_planks", () -> new VerticalConnectingPillarBlock(CProperties.BIRCH));
+    public static final DeferredBlock<Block> FANCIED_JUNGLE_PLANKS = BLOCKS.createBlock("fancied_jungle_planks", () -> new VerticalConnectingPillarBlock(CProperties.JUNGLE));
+    public static final DeferredBlock<Block> FANCIED_ACACIA_PLANKS = BLOCKS.createBlock("fancied_acacia_planks", () -> new VerticalConnectingPillarBlock(CProperties.ACACIA));
+    public static final DeferredBlock<Block> FANCIED_DARK_OAK_PLANKS = BLOCKS.createBlock("fancied_dark_oak_planks", () -> new VerticalConnectingPillarBlock(CProperties.DARK_OAK));
+    public static final DeferredBlock<Block> FANCIED_MANGROVE_PLANKS = BLOCKS.createBlock("fancied_mangrove_planks", () -> new VerticalConnectingPillarBlock(CProperties.MANGROVE));
+    public static final DeferredBlock<Block> FANCIED_CHERRY_PLANKS = BLOCKS.createBlock("fancied_cherry_planks", () -> new VerticalConnectingPillarBlock(CProperties.CHERRY));
+    public static final DeferredBlock<Block> FANCIED_BAMBOO_PLANKS = BLOCKS.createBlock("fancied_bamboo_planks", () -> new VerticalConnectingPillarBlock(CProperties.BAMBOO));
+    public static final DeferredBlock<Block> FANCIED_CRIMSON_PLANKS = BLOCKS.createBlock("fancied_crimson_planks", () -> new VerticalConnectingPillarBlock(CProperties.CRIMSON));
+    public static final DeferredBlock<Block> FANCIED_WARPED_PLANKS = BLOCKS.createBlock("fancied_warped_planks", () -> new VerticalConnectingPillarBlock(CProperties.WARPED));
 
     //vanilla compat
     public static final DeferredBlock<Block> QUARTZ_BRICK_SLAB = BLOCKS.createBlock("quartz_brick_slab", () -> new SlabBlock(CProperties.SMOOTH_STONE));
@@ -130,6 +144,7 @@ public class CBlocks {
         public static final BlockBehaviour.Properties DEEPSLATE_ASHLAR = BlockBehaviour.Properties.ofLegacyCopy(Blocks.DEEPSLATE_BRICKS);
         public static final BlockBehaviour.Properties TUFF_ASHLAR = BlockBehaviour.Properties.ofLegacyCopy(Blocks.TUFF_BRICKS);
         public static final BlockBehaviour.Properties POLISHED_BLACKSTONE_ASHLAR = BlockBehaviour.Properties.ofLegacyCopy(Blocks.POLISHED_BLACKSTONE_BRICKS);
+        public static final BlockBehaviour.Properties END_STONE_ASHLAR = BlockBehaviour.Properties.ofLegacyCopy(Blocks.END_STONE_BRICKS);
 
         public static final BlockBehaviour.Properties STONE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.STONE);
         public static final BlockBehaviour.Properties SMOOTH_STONE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.SMOOTH_STONE);
@@ -142,6 +157,18 @@ public class CBlocks {
         public static final BlockBehaviour.Properties DARK_PRISMARINE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.DARK_PRISMARINE);
         public static final BlockBehaviour.Properties PURPUR = BlockBehaviour.Properties.ofLegacyCopy(Blocks.PURPUR_BLOCK);
         public static final BlockBehaviour.Properties QUARTZ = BlockBehaviour.Properties.ofLegacyCopy(Blocks.QUARTZ_BLOCK);
+
+        public static final BlockBehaviour.Properties OAK = BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_PLANKS);
+        public static final BlockBehaviour.Properties SPRUCE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.SPRUCE_PLANKS);
+        public static final BlockBehaviour.Properties BIRCH = BlockBehaviour.Properties.ofLegacyCopy(Blocks.BIRCH_PLANKS);
+        public static final BlockBehaviour.Properties JUNGLE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.JUNGLE_PLANKS);
+        public static final BlockBehaviour.Properties ACACIA = BlockBehaviour.Properties.ofLegacyCopy(Blocks.ACACIA_PLANKS);
+        public static final BlockBehaviour.Properties DARK_OAK = BlockBehaviour.Properties.ofLegacyCopy(Blocks.DARK_OAK_PLANKS);
+        public static final BlockBehaviour.Properties MANGROVE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.MANGROVE_PLANKS);
+        public static final BlockBehaviour.Properties CHERRY = BlockBehaviour.Properties.ofLegacyCopy(Blocks.CHERRY_PLANKS);
+        public static final BlockBehaviour.Properties BAMBOO = BlockBehaviour.Properties.ofLegacyCopy(Blocks.BAMBOO_PLANKS);
+        public static final BlockBehaviour.Properties CRIMSON = BlockBehaviour.Properties.ofLegacyCopy(Blocks.CRIMSON_PLANKS);
+        public static final BlockBehaviour.Properties WARPED = BlockBehaviour.Properties.ofLegacyCopy(Blocks.WARPED_PLANKS);
     }
 
     public static final class CBlockSetTypes {
@@ -167,7 +194,19 @@ public class CBlocks {
                 .addItemsBefore(of(Items.STONE_BRICK_STAIRS), STONE_ASHLAR)
                 .addItemsBefore(of(Items.DEEPSLATE_BRICK_STAIRS), DEEPSLATE_ASHLAR)
                 .addItemsBefore(of(Items.TUFF_BRICK_STAIRS), TUFF_ASHLAR)
+                .addItemsBefore(of(Items.END_STONE_BRICK_STAIRS), END_STONE_ASHLAR)
                 .addItemsBefore(of(Items.POLISHED_BLACKSTONE_BRICK_STAIRS), POLISHED_BLACKSTONE_ASHLAR)
+                .addItemsAfter(of(Items.OAK_FENCE_GATE), FANCIED_OAK_PLANKS)
+                .addItemsAfter(of(Items.SPRUCE_FENCE_GATE), FANCIED_SPRUCE_PLANKS)
+                .addItemsAfter(of(Items.BIRCH_FENCE_GATE), FANCIED_BIRCH_PLANKS)
+                .addItemsAfter(of(Items.JUNGLE_FENCE_GATE), FANCIED_JUNGLE_PLANKS)
+                .addItemsAfter(of(Items.ACACIA_FENCE_GATE), FANCIED_ACACIA_PLANKS)
+                .addItemsAfter(of(Items.DARK_OAK_FENCE_GATE), FANCIED_DARK_OAK_PLANKS)
+                .addItemsAfter(of(Items.MANGROVE_FENCE_GATE), FANCIED_MANGROVE_PLANKS)
+                .addItemsAfter(of(Items.CHERRY_FENCE_GATE), FANCIED_CHERRY_PLANKS)
+                .addItemsAfter(of(Items.BAMBOO_FENCE_GATE), FANCIED_BAMBOO_PLANKS)
+                .addItemsAfter(of(Items.CRIMSON_FENCE_GATE), FANCIED_CRIMSON_PLANKS)
+                .addItemsAfter(of(Items.WARPED_FENCE_GATE), FANCIED_WARPED_PLANKS)
                 /* vanilla comp */
                 .addItemsAfter(of(Items.STONE_SLAB), STONE_WALL)
                 .addItemsAfter(of(Items.SMOOTH_STONE), SMOOTH_STONE_STAIRS).addItemsAfter(of(Items.SMOOTH_STONE_SLAB), SMOOTH_STONE_WALL)

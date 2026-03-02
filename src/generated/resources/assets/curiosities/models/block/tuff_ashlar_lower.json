@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/cube_bottom_top",
+  "textures": {
+    "bottom": "curiosities:block/tuff_ashlar_bottom",
+    "side": "curiosities:block/tuff_ashlar_lower",
+    "top": "curiosities:block/tuff_ashlar_top"
+  }
+}

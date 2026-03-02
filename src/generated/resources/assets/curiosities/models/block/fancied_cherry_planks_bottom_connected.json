@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "curiosities:block/fancied_cherry_planks_top",
+    "side": "curiosities:block/fancied_cherry_planks_bottom_connected"
+  }
+}

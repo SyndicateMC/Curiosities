@@ -1,0 +1,20 @@
+{
+  "sources": [
+    {
+      "type": "blueprint:paletted_permutations",
+      "palette_key": "clayworks:entity/decorated_pot_trim_palettes/trim_palette",
+      "permutations": {
+        "curiosities_aluminum": "curiosities:entity/decorated_pot_trim_palettes/aluminum",
+        "curiosities_invar": "curiosities:entity/decorated_pot_trim_palettes/invar",
+        "curiosities_nickel": "curiosities:entity/decorated_pot_trim_palettes/nickel"
+      },
+      "sources": [
+        {
+          "type": "minecraft:directory",
+          "prefix": "entity/decorated_pot_trim_patterns/",
+          "source": "entity/decorated_pot_trim_patterns"
+        }
+      ]
+    }
+  ]
+}

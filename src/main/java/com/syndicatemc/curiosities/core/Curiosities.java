@@ -28,7 +28,6 @@ import net.neoforged.neoforge.data.event.GatherDataEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-import java.util.Calendar;
 import java.util.concurrent.CompletableFuture;
 
 @Mod(Curiosities.MOD_ID)
@@ -80,6 +79,7 @@ public class Curiosities {
         generator.addProvider(server, new CRecipeProvider(output, provider));
         generator.addProvider(server, CAdvancementProvider.create(output, provider, helper));
         generator.addProvider(server, new CDataRemolderProvider(output, provider));
+        generator.addProvider(server, new CDataMapProvider(output, provider));
 
         boolean client = event.includeClient();
         generator.addProvider(client, new CBlockStateProvider(output, helper));

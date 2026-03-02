@@ -1,6 +1,6 @@
-// 1.21.1	2026-02-06T16:46:27.4120096	Tags for minecraft:item mod id curiosities
-efe4cd5fe4448ec33cb6d4e2259076bd74bcb391 data/curiosities/tags/item/aluminum_tools.json
-79a136c142c15bb2d7e7f4ca3ce93ad5427cdc3e data/curiosities/tags/item/invar_tools.json
+// 1.21.1	2026-03-01T21:43:23.1902639	Tags for minecraft:item mod id curiosities
+6536dd130894192cb12ec2c54f782d43256880a8 data/curiosities/tags/item/aluminum_tools.json
+a7e024a88452c034194219c55f51fd8086e0f1b7 data/curiosities/tags/item/invar_tools.json
 be6d950b9d7b963f2e8a45735cce7b6f4afeb4ab data/c/tags/item/ingots/aluminum.json
 5e4cf87465089e2ae2c07e31388a4909a76e4331 data/c/tags/item/ingots/invar.json
 4ab99a0a766616dfcdbe93b0080264f0bc09d4da data/c/tags/item/ingots/nickel.json
@@ -12,7 +12,8 @@ ee52be1214c483b7f93b13c5e04c0216de8759d6 data/c/tags/item/nuggets/nickel.json
 35366f515ba452d7af1691a79e7ba4072fe87d3f data/c/tags/item/storage_blocks/aluminum.json
 3e88312f317a76b7bf05ff82a31f0e1f2e6f8e89 data/c/tags/item/storage_blocks/invar.json
 4e2c5551295529ba00da8374a299c9a3f66064ce data/c/tags/item/storage_blocks/nickel.json
-3213c86ba3e5bd0e48de80c7b0f7ad78f1412c8b data/c/tags/item/tools/melee_weapon.json
+89536d1071e9db92ec73b4706001e542efd53e53 data/c/tags/item/tools/knife.json
+eeed8a7738c60dd458bddc75cc8b7f35376bc9c4 data/c/tags/item/tools/melee_weapon.json
 ad5b6d9f0082eed6de4ff0d303c85d78b0dd49e2 data/minecraft/tags/item/axes.json
 096c16f51d00df172d605dcd50e645667f93d7ec data/minecraft/tags/item/chest_armor.json
 7c829f8440047208d3ba305d3b07429563feea97 data/minecraft/tags/item/foot_armor.json

@@ -5,10 +5,7 @@ import com.syndicatemc.curiosities.core.other.tags.CBlockTags;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
-import net.minecraft.world.entity.monster.piglin.StartHuntingHoglin;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
-import net.minecraft.world.level.block.StonecutterBlock;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
@@ -34,12 +31,15 @@ public class CBlockTagsProvider extends BlockTagsProvider {
                 WEIGHT_1S.get(), WEIGHT_5S.get(), WEIGHT_20S.get(),
                 CAGE_LIGHT.get(), SOUL_CAGE_LIGHT.get(), TILE_LIGHT.get(),
                 BIG_CHAIN.get(), HEAVY_LANTERN.get(), HEAVY_SOUL_LANTERN.get(),
-                STONE_ASHLAR.get(), DEEPSLATE_ASHLAR.get(), TUFF_ASHLAR.get(), POLISHED_BLACKSTONE_ASHLAR.get(),
+                STONE_ASHLAR.get(), DEEPSLATE_ASHLAR.get(), TUFF_ASHLAR.get(), POLISHED_BLACKSTONE_ASHLAR.get(), END_STONE_ASHLAR.get(),
                 SMOOTH_STONE_BRICKS.get(), SMOOTH_STONE_ASHLAR.get(), SMOOTH_STONE_BRICK_STAIRS.get(), SMOOTH_STONE_BRICK_SLAB.get(), SMOOTH_STONE_BRICK_WALL.get(),
 
                 SMOOTH_STONE_STAIRS.get(), CUT_SANDSTONE_STAIRS.get(), CUT_RED_SANDSTONE_STAIRS.get(), QUARTZ_BRICK_STAIRS.get(),
                 QUARTZ_BRICK_SLAB.get(),
                 STONE_WALL.get(), SMOOTH_STONE_WALL.get(), POLISHED_GRANITE_WALL.get(), POLISHED_DIORITE_WALL.get(), POLISHED_ANDESITE_WALL.get(), CUT_SANDSTONE_WALL.get(), CUT_RED_SANDSTONE_WALL.get(), PRISMARINE_BRICK_WALL.get(), DARK_PRISMARINE_WALL.get(), QUARTZ_WALL.get(), QUARTZ_BRICK_WALL.get(), PURPUR_WALL.get()
+        );
+        this.tag(BlockTags.MINEABLE_WITH_AXE).add(
+                FANCIED_OAK_PLANKS.get(), FANCIED_SPRUCE_PLANKS.get(), FANCIED_BIRCH_PLANKS.get(), FANCIED_JUNGLE_PLANKS.get(), FANCIED_ACACIA_PLANKS.get(), FANCIED_DARK_OAK_PLANKS.get(), FANCIED_MANGROVE_PLANKS.get(), FANCIED_CHERRY_PLANKS.get(), FANCIED_BAMBOO_PLANKS.get(), FANCIED_CRIMSON_PLANKS.get(), FANCIED_WARPED_PLANKS.get()
         );
         this.tag(BlockTags.NEEDS_STONE_TOOL).add(
                 NICKEL_ORE.get(), DEEPSLATE_NICKEL_ORE.get(),

@@ -2,7 +2,6 @@ package com.syndicatemc.curiosities.core.registry.datapack;
 
 import com.syndicatemc.curiosities.core.Curiosities;
 import com.syndicatemc.curiosities.core.registry.CItems;
-import com.teamabnormals.blueprint.core.api.BlueprintTrims;
 import net.minecraft.Util;
 import net.minecraft.core.Holder;
 import net.minecraft.core.registries.Registries;

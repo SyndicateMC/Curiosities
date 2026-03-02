@@ -33,6 +33,34 @@ description='''${mod_description}'''
 [[dependencies.${mod_id}]]
     modId = "blueprint"
     type = "required"
-    versionRange = "[8.0.0,)"
+    versionRange = "[${blueprint_version},)"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.${mod_id}]]
+    modId = "farmersdelight"
+    type = "optional"
+    versionRange = "[${farmersdelight_version},)"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.${mod_id}]]
+    modId = "clayworks"
+    type = "optional"
+    versionRange = "[${clayworks_version},)"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.${mod_id}]]
+    modId = "woodworks"
+    type = "optional"
+    versionRange = "[${woodworks_version},)"
+    ordering = "AFTER"
+    side = "BOTH"
+
+[[dependencies.${mod_id}]]
+    modId = "gallery"
+    type = "optional"
+    versionRange = "[${gallery_version},)"
     ordering = "AFTER"
     side = "BOTH"

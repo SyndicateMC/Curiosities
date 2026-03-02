@@ -3,14 +3,16 @@ package com.syndicatemc.curiosities.core.data.server;
 import com.google.common.collect.ImmutableList;
 import com.syndicatemc.curiosities.core.Curiosities;
 import com.syndicatemc.curiosities.core.other.CBlockFamilies;
+import com.syndicatemc.curiosities.core.other.CConstants;
 import com.syndicatemc.curiosities.core.other.tags.CItemTags;
 import com.syndicatemc.curiosities.core.registry.CBlocks;
 import com.syndicatemc.curiosities.core.registry.CItems;
 import com.teamabnormals.blueprint.core.data.server.BlueprintRecipeProvider;
+import com.teamabnormals.woodworks.core.data.server.WoodworksRecipeProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.recipes.*;
-import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
@@ -19,6 +21,8 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
+import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
@@ -57,11 +61,11 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
                 .unlockedBy("has_netherite_scrap", has(Items.NETHERITE_SCRAP)).save(output);
 
         ShapedRecipeBuilder.shaped(MISC, CItems.ALUMINUM_UPGRADE_SMITHING_TEMPLATE, 2)
-                .define('A', CItemTags.INGOTS_ALUMINUM)
+                .define('A', CItemTags.NUGGETS_ALUMINUM)
                 .define('L', Tags.Items.LEATHERS)
                 .define('D', Blocks.POLISHED_DEEPSLATE)
                 .define('T', CItems.ALUMINUM_UPGRADE_SMITHING_TEMPLATE)
-                .pattern("ATA").pattern("LDL").pattern("ALA")
+                .pattern("ATA").pattern("ADA").pattern("ALA")
                 .unlockedBy("has_aluminum_upgrade", has(CItems.ALUMINUM_UPGRADE_SMITHING_TEMPLATE)).save(output);
 
         ShapedRecipeBuilder.shaped(REDSTONE, CBlocks.REDSTONE_DIODE, 4)
@@ -160,6 +164,7 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
         ashlarRecipes(output, CBlocks.DEEPSLATE_ASHLAR, Items.COBBLED_DEEPSLATE, Items.DEEPSLATE_BRICKS);
         ashlarRecipes(output, CBlocks.TUFF_ASHLAR, Items.TUFF, Items.TUFF_BRICKS);
         ashlarRecipes(output, CBlocks.POLISHED_BLACKSTONE_ASHLAR, Items.POLISHED_BLACKSTONE, Items.POLISHED_BLACKSTONE_BRICKS);
+        ashlarRecipes(output, CBlocks.END_STONE_ASHLAR, Items.END_STONE, Items.END_STONE_BRICKS);
 
         stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.SMOOTH_STONE_BRICKS, Items.SMOOTH_STONE);
         stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.SMOOTH_STONE_BRICK_SLAB, Items.SMOOTH_STONE, 2);
@@ -171,6 +176,18 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
         stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.SMOOTH_STONE_BRICK_WALL, Items.SMOOTH_STONE);
         cutBuilder(BUILDING_BLOCKS, CBlocks.SMOOTH_STONE_BRICKS, Ingredient.of(Items.SMOOTH_STONE)).unlockedBy("has_smooth_stone", has(Items.SMOOTH_STONE)).save(output);
         generateRecipes(output, CBlockFamilies.SMOOTH_STONE_BRICKS_BLOCK_FAMILY);
+
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_OAK_PLANKS, Items.OAK_SLAB, Items.OAK_PLANKS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_SPRUCE_PLANKS, Items.SPRUCE_SLAB, Items.SPRUCE_PLANKS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_BIRCH_PLANKS, Items.BIRCH_SLAB, Items.BIRCH_PLANKS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_JUNGLE_PLANKS, Items.JUNGLE_SLAB, Items.JUNGLE_PLANKS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_ACACIA_PLANKS, Items.ACACIA_SLAB, Items.ACACIA_PLANKS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_DARK_OAK_PLANKS, Items.DARK_OAK_SLAB, Items.DARK_OAK_PLANKS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_MANGROVE_PLANKS, Items.MANGROVE_SLAB, Items.MANGROVE_PLANKS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_CHERRY_PLANKS, Items.CHERRY_SLAB, Items.CHERRY_PLANKS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_BAMBOO_PLANKS, Items.BAMBOO_SLAB, Items.BAMBOO_PLANKS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_CRIMSON_PLANKS, Items.CRIMSON_SLAB, Items.CRIMSON_PLANKS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_WARPED_PLANKS, Items.WARPED_SLAB, Items.WARPED_PLANKS);
 
         //vanilla compat
         stairsStoneRecipes(output, CBlocks.SMOOTH_STONE_STAIRS, Items.SMOOTH_STONE);
@@ -192,6 +209,33 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
         wallStoneRecipes(output, CBlocks.QUARTZ_WALL, Items.QUARTZ_BLOCK);
         wallStoneRecipes(output, CBlocks.QUARTZ_BRICK_WALL, Items.QUARTZ_BRICKS);
         wallStoneRecipes(output, CBlocks.PURPUR_WALL, Items.PURPUR_BLOCK);
+
+        aluminumSmithingRecipe(output.withConditions(new ModLoadedCondition(CConstants.FARMERS_DELIGHT)), ModItems.IRON_KNIFE.get(), CItems.ALUMINUM_KNIFE.get());
+        invarSmithingRecipe(output.withConditions(new ModLoadedCondition(CConstants.FARMERS_DELIGHT)), ModItems.DIAMOND_KNIFE.get(), CItems.INVAR_KNIFE.get());
+
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.OAK_PLANKS, CBlocks.FANCIED_OAK_PLANKS, 1);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.SPRUCE_PLANKS, CBlocks.FANCIED_SPRUCE_PLANKS, 1);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.BIRCH_PLANKS, CBlocks.FANCIED_BIRCH_PLANKS, 1);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.JUNGLE_PLANKS, CBlocks.FANCIED_JUNGLE_PLANKS, 1);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.ACACIA_PLANKS, CBlocks.FANCIED_ACACIA_PLANKS, 1);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.DARK_OAK_PLANKS, CBlocks.FANCIED_DARK_OAK_PLANKS, 1);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.MANGROVE_PLANKS, CBlocks.FANCIED_MANGROVE_PLANKS, 1);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.CHERRY_PLANKS, CBlocks.FANCIED_CHERRY_PLANKS, 1);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.BAMBOO_PLANKS, CBlocks.FANCIED_BAMBOO_PLANKS, 1);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.CRIMSON_PLANKS, CBlocks.FANCIED_CRIMSON_PLANKS, 1);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.WARPED_PLANKS, CBlocks.FANCIED_CRIMSON_PLANKS, 1);
+
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.OAK_LOGS, CBlocks.FANCIED_OAK_PLANKS, 4);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.SPRUCE_LOGS, CBlocks.FANCIED_SPRUCE_PLANKS, 4);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.BIRCH_LOGS, CBlocks.FANCIED_BIRCH_PLANKS, 4);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.JUNGLE_LOGS, CBlocks.FANCIED_JUNGLE_PLANKS, 4);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.ACACIA_LOGS, CBlocks.FANCIED_ACACIA_PLANKS, 4);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.DARK_OAK_LOGS, CBlocks.FANCIED_DARK_OAK_PLANKS, 4);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.MANGROVE_LOGS, CBlocks.FANCIED_MANGROVE_PLANKS, 4);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.CHERRY_LOGS, CBlocks.FANCIED_CHERRY_PLANKS, 4);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.BAMBOO_BLOCKS, CBlocks.FANCIED_BAMBOO_PLANKS, 2);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.CRIMSON_STEMS, CBlocks.FANCIED_CRIMSON_PLANKS, 4);
+        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.WARPED_STEMS, CBlocks.FANCIED_CRIMSON_PLANKS, 4);
     }
 
     public void oreRecipesAlt(RecipeOutput recipeOutput, List<ItemLike> inputs, RecipeCategory category, ItemLike output, int count, float xp, int cookTime, String group) {
@@ -235,13 +279,20 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
                 .pattern("NIN").pattern("NLN").pattern("NIN")
                 .unlockedBy("has_nickel", has(CItemTags.INGOTS_INVAR)).unlockedBy("has_lantern", has(requirement));
     }
-    protected void ashlarRecipes(RecipeOutput recipeOutput, ItemLike ashlarBlock, ItemLike requirement, ItemLike altRequirement) {
+    public void ashlarRecipes(RecipeOutput recipeOutput, ItemLike ashlarBlock, ItemLike requirement, ItemLike altRequirement) {
         stonecutterRecipe(recipeOutput, BUILDING_BLOCKS, ashlarBlock, requirement);
         stonecutterRecipe(recipeOutput, BUILDING_BLOCKS, ashlarBlock, altRequirement);
         ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, ashlarBlock, 8)
                 .define('B', altRequirement)
                 .pattern("BBB").pattern("B B").pattern("BBB")
                 .unlockedBy("has_bricks", has(altRequirement)).save(recipeOutput);
+    }
+
+    public void fanciedPlanksRecipe(RecipeOutput recipeOutput, ItemLike fanciedPlanks, ItemLike requirement, ItemLike has) {
+        ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, fanciedPlanks, 2)
+                .define('B', requirement)
+                .pattern("BB").pattern("BB")
+                .unlockedBy("has_planks", has(has)).save(recipeOutput);
     }
 
     public void stairsStoneRecipes(RecipeOutput output, ItemLike stairs, ItemLike requirement) {

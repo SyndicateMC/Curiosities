@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-25T20:50:34.3710526	Tags for minecraft:block mod id curiosities
+// 1.21.1	2026-02-28T19:34:02.1177341	Tags for minecraft:block mod id curiosities
 4e2c5551295529ba00da8374a299c9a3f66064ce data/curiosities/tags/block/slap_bass_note_blocks.json
 d65a403f29ae67da339266ebbe480894e79746b5 data/curiosities/tags/block/steel_drum_note_blocks.json
 108ffa23d49cbeef7f88eab7a7de840e5c77bcec data/curiosities/tags/block/trumpet_exposed_note_blocks.json
@@ -11,7 +11,8 @@ eb1f74c2fe5fc43e4d3c9c80491cec638037513b data/curiosities/tags/block/trumpet_oxi
 3e88312f317a76b7bf05ff82a31f0e1f2e6f8e89 data/forge/tags/block/storage_blocks/invar.json
 4e2c5551295529ba00da8374a299c9a3f66064ce data/forge/tags/block/storage_blocks/nickel.json
 86d4096bb0578290019fa8310e05e11e1e1f1b42 data/minecraft/tags/block/doors.json
-1923adf686c64ff3f31cb2d1f1bbac775202a233 data/minecraft/tags/block/mineable/pickaxe.json
+b993039d3ff8c59cfe36738deae4d1fab228cffe data/minecraft/tags/block/mineable/axe.json
+147befde96e772d37e6a2cbb08cbb95f9532a52a data/minecraft/tags/block/mineable/pickaxe.json
 3e88312f317a76b7bf05ff82a31f0e1f2e6f8e89 data/minecraft/tags/block/needs_diamond_tool.json
 596795991f49b4068b3192ce83fe545d3347a498 data/minecraft/tags/block/needs_iron_tool.json
 10b4fc899121f48b459663d227ff86125bbe86cf data/minecraft/tags/block/needs_stone_tool.json

@@ -24,13 +24,15 @@ public class CDataRemolderProvider extends RemolderProvider {
     @Override
     protected void registerEntries(Provider provider) {
         this.entry("village_toolsmith").path("loot_table/chests/village/village_toolsmith").remolder(sequence(
-                addEntry(0, simpleLootEntry(CItems.ALUMINUM_UPGRADE_SMITHING_TEMPLATE.get(), 3))
+                addEntry(0, simpleLootEntry(CItems.ALUMINUM_UPGRADE_SMITHING_TEMPLATE.get(), 9))
         ));
         this.entry("village_weaponsmith").path("loot_table/chests/village/village_weaponsmith").remolder(sequence(
-                addEntry(0, simpleLootEntry(CItems.ALUMINUM_UPGRADE_SMITHING_TEMPLATE.get(), 4))
+                addEntry(0, simpleLootEntry(CItems.ALUMINUM_UPGRADE_SMITHING_TEMPLATE.get(), 12))
         ));
-
         this.entry("village_armorer").path("loot_table/chests/village/village_armorer").remolder(sequence(
+                addEntry(0, simpleLootEntry(CItems.ALUMINUM_UPGRADE_SMITHING_TEMPLATE.get(), 6))
+        ));
+        this.entry("abandoned_mineshaft").path("loot_table/chests/abandoned_mineshaft").remolder(sequence(
                 addEntry(0, simpleLootEntry(CItems.ALUMINUM_UPGRADE_SMITHING_TEMPLATE.get(), 2))
         ));
     }

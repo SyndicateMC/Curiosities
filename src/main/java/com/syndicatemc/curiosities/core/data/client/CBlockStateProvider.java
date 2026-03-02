@@ -1,25 +1,20 @@
 package com.syndicatemc.curiosities.core.data.client;
 
+import com.syndicatemc.curiosities.common.block.AshlarBlock;
 import com.syndicatemc.curiosities.common.block.RedstoneDiodeBlock;
 import com.syndicatemc.curiosities.common.block.RedstoneFuseBlock;
-import com.syndicatemc.curiosities.common.block.TileLightBlock;
+import com.syndicatemc.curiosities.common.block.VerticalConnectingPillarBlock;
 import com.syndicatemc.curiosities.core.Curiosities;
 import com.teamabnormals.blueprint.core.data.client.BlueprintBlockStateProvider;
 import net.minecraft.core.Direction;
-import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.damagesource.DamageEffects;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.properties.BlockStateProperties;
-import net.minecraft.world.level.block.state.properties.DirectionProperty;
-import net.neoforged.neoforge.client.model.generators.BlockModelBuilder;
+import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
-import net.neoforged.neoforge.client.model.generators.ModelProvider;
 import net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
-import net.neoforged.neoforge.registries.DeferredHolder;
 
 import static com.syndicatemc.curiosities.core.registry.CBlocks.*;
 
@@ -86,10 +81,16 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
 
         cubeBottomTopBlock(CONCUSSION_BOMB);
 
-        for (DeferredBlock<?> block : new DeferredBlock[]{
-                STONE_ASHLAR, DEEPSLATE_ASHLAR, TUFF_ASHLAR, POLISHED_BLACKSTONE_ASHLAR, SMOOTH_STONE_ASHLAR
+        for (DeferredBlock<Block> block : new DeferredBlock[]{
+                FANCIED_OAK_PLANKS, FANCIED_SPRUCE_PLANKS, FANCIED_BIRCH_PLANKS, FANCIED_JUNGLE_PLANKS, FANCIED_ACACIA_PLANKS, FANCIED_DARK_OAK_PLANKS, FANCIED_MANGROVE_PLANKS, FANCIED_CHERRY_PLANKS, FANCIED_BAMBOO_PLANKS, FANCIED_CRIMSON_PLANKS, FANCIED_WARPED_PLANKS
         }) {
-            this.simpleBlockItem(block.get(), new ModelFile.ExistingModelFile(Curiosities.location("block/ashlar/" + name(block.get()) + "_upper"), this.models().existingFileHelper));
+            verticalConnectingPillarBlock(block);
+        }
+
+        for (DeferredBlock<Block> block : new DeferredBlock[]{
+                STONE_ASHLAR, DEEPSLATE_ASHLAR, TUFF_ASHLAR, POLISHED_BLACKSTONE_ASHLAR, SMOOTH_STONE_ASHLAR, END_STONE_ASHLAR
+        }) {
+            ashlarBlock(block);
         }
     }
 
@@ -130,7 +131,51 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
         this.generatedItem(block.get(), "item");
     }
 
-    private void ashlarBlock(DeferredBlock<?> block) {
+    public void ashlarBlock(DeferredBlock<?> object) {
+        Block block = object.get();
+        ModelFile lower = models().cubeBottomTop(name(block) + "_lower", suffix(blockTexture(block), "_lower"), suffix(blockTexture(block), "_bottom"), suffix(blockTexture(block), "_top"));
+        ModelFile mid = models().cubeBottomTop(name(block) + "_mid", suffix(blockTexture(block), "_mid"), suffix(blockTexture(block), "_top"), suffix(blockTexture(block), "_bottom"));
+        ModelFile upper = models().cubeBottomTop(name(block) + "_upper", suffix(blockTexture(block), "_upper"), suffix(blockTexture(block), "_bottom"), suffix(blockTexture(block), "_top"));
 
+        this.getVariantBuilder(block).forAllStates((state) -> {
+            int layer = state.getValue(AshlarBlock.LAYER);
+
+            ModelFile model = null;
+            if (layer == 1) model = lower;
+            if (layer == 2) model = mid;
+            if (layer == 3) model = upper;
+
+            return ConfiguredModel.builder().modelFile(model).build();
+        });
+        this.simpleBlockItem(block, upper);
+    }
+
+    public void verticalConnectingPillarBlock(DeferredBlock<Block> object) {
+        Block block = object.get();
+        ModelFile normal = models().cubeColumn(name(block) + "_normal", suffix(blockTexture(block), "_normal"), suffix(blockTexture(block), "_top"));
+        ModelFile bothConnected = models().cubeColumn(name(block) + "_both_connected", suffix(blockTexture(block), "_both_connected"), suffix(blockTexture(block), "_top"));
+        ModelFile topConnected = models().cubeColumn(name(block) + "_top_connected", suffix(blockTexture(block), "_top_connected"), suffix(blockTexture(block), "_top"));
+        ModelFile bottomConnected = models().cubeColumn(name(block) + "_bottom_connected", suffix(blockTexture(block), "_bottom_connected"), suffix(blockTexture(block), "_top"));
+//        ModelFile hNormal = models().cubeColumnHorizontal(name(block) + "_normal", suffix(blockTexture(block), "_normal"), suffix(blockTexture(block), "_top"));
+//        ModelFile hBothConnected = models().cubeColumnHorizontal(name(block) + "_both_connected", suffix(blockTexture(block), "_both_connected"), suffix(blockTexture(block), "_top"));
+//        ModelFile hTopConnected = models().cubeColumnHorizontal(name(block) + "_top_connected", suffix(blockTexture(block), "_top_connected"), suffix(blockTexture(block), "_top"));
+//        ModelFile hBottomConnected = models().cubeColumnHorizontal(name(block) + "_bottom_connected", suffix(blockTexture(block), "_bottom_connected"), suffix(blockTexture(block), "_top"));
+
+        this.getVariantBuilder(block).forAllStates((state) -> {
+            boolean top = state.getValue(VerticalConnectingPillarBlock.TOP_CONNECTED);
+            boolean bottom = state.getValue(VerticalConnectingPillarBlock.BOTTOM_CONNECTED);
+            Direction.Axis axis = state.getValue(RotatedPillarBlock.AXIS);
+
+            ModelFile model = null;
+            if (!top && !bottom) model = normal;
+            if (top && !bottom) model = topConnected;
+            if (!top && bottom) model = bottomConnected;
+            if (top && bottom) model = bothConnected;
+
+            if (axis == Direction.Axis.X) return ConfiguredModel.builder().modelFile(model).rotationX(90).rotationY(90).build();
+            else if (axis == Direction.Axis.Y) return ConfiguredModel.builder().modelFile(model).build();
+            else return ConfiguredModel.builder().modelFile(model).rotationX(90).build();
+        });
+        this.simpleBlockItem(block, normal);
     }
 }

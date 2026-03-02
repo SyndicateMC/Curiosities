@@ -4,7 +4,6 @@ import com.syndicatemc.curiosities.core.Curiosities;
 import com.syndicatemc.curiosities.core.registry.CBlocks;
 import com.teamabnormals.blueprint.core.data.client.BlueprintItemModelProvider;
 import net.minecraft.data.PackOutput;
-import net.minecraft.world.item.HoeItem;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
 import static com.syndicatemc.curiosities.core.registry.CItems.*;
@@ -23,8 +22,8 @@ public class CItemModelProvider extends BlueprintItemModelProvider {
                 CBlocks.ALUMINUM_DOOR, CBlocks.CAGE_LIGHT, CBlocks.SOUL_CAGE_LIGHT, CBlocks.BIG_CHAIN, CBlocks.HEAVY_LANTERN, CBlocks.HEAVY_SOUL_LANTERN
         );
         this.handheldItem(
-                ALUMINUM_SWORD, ALUMINUM_SHOVEL, ALUMINUM_PICKAXE, ALUMINUM_AXE, ALUMINUM_HOE,
-                INVAR_SWORD, INVAR_SHOVEL, INVAR_PICKAXE, INVAR_AXE, INVAR_HOE
+                ALUMINUM_SWORD, ALUMINUM_SHOVEL, ALUMINUM_PICKAXE, ALUMINUM_AXE, ALUMINUM_HOE, ALUMINUM_KNIFE,
+                INVAR_SWORD, INVAR_SHOVEL, INVAR_PICKAXE, INVAR_AXE, INVAR_HOE, INVAR_KNIFE
         );
         this.trimmableArmorItem(
                 ALUMINUM_HELMET, ALUMINUM_CHESTPLATE, ALUMINUM_LEGGINGS, ALUMINUM_BOOTS,

@@ -3,6 +3,7 @@ package com.syndicatemc.curiosities.core.data.client;
 import com.syndicatemc.curiosities.core.Curiosities;
 import com.syndicatemc.curiosities.core.registry.datapack.CTrimMaterials;
 import com.teamabnormals.blueprint.core.api.BlueprintTrims;
+import com.teamabnormals.clayworks.core.api.ClayworksTrims;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -19,5 +20,6 @@ public class CSpriteSourceProvider extends SpriteSourceProvider {
     protected void gather() {
         this.atlas(BlueprintTrims.ARMOR_TRIMS_ATLAS).addSource(BlueprintTrims.materialPatternPermutations(CTrimMaterials.ALUMINUM, CTrimMaterials.NICKEL, CTrimMaterials.INVAR));
         this.atlas(SpriteSourceProvider.BLOCKS_ATLAS).addSource(BlueprintTrims.materialPermutationsForItemLayers(CTrimMaterials.ALUMINUM, CTrimMaterials.NICKEL, CTrimMaterials.INVAR));
+        this.atlas(ClayworksTrims.DECORATED_POT_ATLAS).addSource(ClayworksTrims.materialPatternPermutations(CTrimMaterials.ALUMINUM, CTrimMaterials.NICKEL, CTrimMaterials.INVAR));
     }
 }

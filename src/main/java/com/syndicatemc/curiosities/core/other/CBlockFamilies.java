@@ -1,9 +1,6 @@
 package com.syndicatemc.curiosities.core.other;
 
-import com.syndicatemc.curiosities.core.registry.CBlocks;
 import net.minecraft.data.BlockFamily;
-import net.minecraft.world.level.block.Block;
-import net.neoforged.neoforge.registries.DeferredBlock;
 
 import static com.syndicatemc.curiosities.core.registry.CBlocks.*;
 

@@ -10,6 +10,7 @@ import com.teamabnormals.blueprint.core.util.DataUtil.CustomNoteBlockInstrument;
 public class CCompat {
     public static void registerCompat() {
         registerNoteBlocks();
+        registerFlammables();
     }
 
     private static void registerNoteBlocks() {
@@ -19,5 +20,17 @@ public class CCompat {
         DataUtil.registerNoteBlockInstrument(new CustomNoteBlockInstrument(Curiosities.MOD_ID, source -> source.state().is(CBlockTags.TRUMPET_OXIDIZED_NOTE_BLOCKS), CSoundEvents.TRUMPET_OXIDIZED.get()));
         DataUtil.registerNoteBlockInstrument(new CustomNoteBlockInstrument(Curiosities.MOD_ID, source -> source.state().is(CBlockTags.STEEL_DRUM_NOTE_BLOCKS), CSoundEvents.STEEL_DRUM.get()));
         DataUtil.registerNoteBlockInstrument(new CustomNoteBlockInstrument(Curiosities.MOD_ID, source -> source.state().is(CBlockTags.SLAP_BASE_NOTE_BLOCKS), CSoundEvents.SLAP_BASS.get()));
+    }
+
+    private static void registerFlammables() {
+        DataUtil.registerFlammable(CBlocks.FANCIED_OAK_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_SPRUCE_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_BIRCH_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_JUNGLE_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_ACACIA_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_DARK_OAK_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_MANGROVE_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_CHERRY_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_BAMBOO_PLANKS.get(), 5, 20);
     }
 }

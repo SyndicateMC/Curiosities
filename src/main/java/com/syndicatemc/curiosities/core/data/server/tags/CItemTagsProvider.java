@@ -38,20 +38,21 @@ public class CItemTagsProvider extends BlueprintItemTagsProvider {
 
         this.tag(ItemTags.TRIM_MATERIALS).add(CItems.ALUMINUM_INGOT.get(), CItems.NICKEL_INGOT.get(), CItems.INVAR_INGOT.get());
 
-        this.tag(CItemTags.ALUMINUM_TOOLS).add(CItems.ALUMINUM_SWORD.get(), CItems.ALUMINUM_SHOVEL.get(), CItems.ALUMINUM_PICKAXE.get(), CItems.ALUMINUM_AXE.get(), CItems.ALUMINUM_HOE.get());
-        this.tag(CItemTags.INVAR_TOOLS).add(CItems.INVAR_SWORD.get(), CItems.INVAR_SHOVEL.get(), CItems.INVAR_PICKAXE.get(), CItems.INVAR_AXE.get(), CItems.INVAR_HOE.get());
+        this.tag(CItemTags.ALUMINUM_TOOLS).add(CItems.ALUMINUM_SWORD.get(), CItems.ALUMINUM_SHOVEL.get(), CItems.ALUMINUM_PICKAXE.get(), CItems.ALUMINUM_AXE.get(), CItems.ALUMINUM_HOE.get(), CItems.ALUMINUM_KNIFE.get());
+        this.tag(CItemTags.INVAR_TOOLS).add(CItems.INVAR_SWORD.get(), CItems.INVAR_SHOVEL.get(), CItems.INVAR_PICKAXE.get(), CItems.INVAR_AXE.get(), CItems.INVAR_HOE.get(), CItems.INVAR_KNIFE.get());
 
         this.tag(ItemTags.HEAD_ARMOR).add(CItems.ALUMINUM_HELMET.get(), CItems.INVAR_HELMET.get());
         this.tag(ItemTags.CHEST_ARMOR).add(CItems.ALUMINUM_CHESTPLATE.get(), CItems.INVAR_CHESTPLATE.get());
         this.tag(ItemTags.LEG_ARMOR).add(CItems.ALUMINUM_LEGGINGS.get(), CItems.INVAR_LEGGINGS.get());
         this.tag(ItemTags.FOOT_ARMOR).add(CItems.ALUMINUM_BOOTS.get(), CItems.INVAR_BOOTS.get(), CItems.HEAVY_BOOTS.get());
 
-        this.tag(Tags.Items.MELEE_WEAPON_TOOLS).add(CItems.ALUMINUM_SWORD.get(), CItems.ALUMINUM_AXE.get(), CItems.INVAR_SWORD.get(), CItems.INVAR_AXE.get());
+        this.tag(Tags.Items.MELEE_WEAPON_TOOLS).add(CItems.ALUMINUM_SWORD.get(), CItems.ALUMINUM_AXE.get(), CItems.ALUMINUM_KNIFE.get(), CItems.INVAR_SWORD.get(), CItems.INVAR_AXE.get(), CItems.INVAR_KNIFE.get());
 
         this.tag(ItemTags.AXES).add(CItems.ALUMINUM_AXE.get(), CItems.INVAR_AXE.get());
         this.tag(ItemTags.PICKAXES).add(CItems.ALUMINUM_PICKAXE.get(), CItems.INVAR_PICKAXE.get());
         this.tag(ItemTags.SWORDS).add(CItems.ALUMINUM_SWORD.get(), CItems.INVAR_SWORD.get());
         this.tag(ItemTags.SHOVELS).add(CItems.ALUMINUM_SHOVEL.get(), CItems.INVAR_SHOVEL.get());
         this.tag(ItemTags.HOES).add(CItems.ALUMINUM_HOE.get(), CItems.INVAR_HOE.get());
+        this.tag(CItemTags.KNIFE).add(CItems.ALUMINUM_KNIFE.get(), CItems.INVAR_KNIFE.get());
     }
 }

@@ -1,4 +1,5 @@
-// 1.21.1	2026-01-16T13:18:05.4346448	Remolders (DATA_PACK): curiosities
-92066f16c283629fe92123a2d962ce75954ae0a7 data/curiosities/remolders/village_armorer.json
-bf30532b03b1ba31ff6f0b5be631f186ce74b4d9 data/curiosities/remolders/village_toolsmith.json
-4c8e04b5f8204f682b194c32e4506c732f9496a7 data/curiosities/remolders/village_weaponsmith.json
+// 1.21.1	2026-02-28T03:08:08.3806683	Remolders (DATA_PACK): curiosities
+b4a7519cd5c367782e8754f6f88a85a6087fb44b data/curiosities/remolders/abandoned_mineshaft.json
+c95606dc65b827e57d43ae7a4f2120fade917551 data/curiosities/remolders/village_armorer.json
+d830e6cdd75740836618374996f5075e7a4ff732 data/curiosities/remolders/village_toolsmith.json
+5b2992bbe9385d3c5bc3d0849fa170170d9020dd data/curiosities/remolders/village_weaponsmith.json

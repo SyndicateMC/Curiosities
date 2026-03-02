@@ -55,10 +55,10 @@ public class CFeatures {
         public static final ResourceKey<PlacedFeature> ORE_NICKEL_BURIED = createKey("ore_nickel_buried");
 
         public static void bootstrap(BootstrapContext<PlacedFeature> context) {
-            register(context, ORE_ALUMINUM, CConfiguredFeatures.ORE_ALUMINUM, commonOrePlacement(3, HeightRangePlacement.triangle(VerticalAnchor.absolute(-48), VerticalAnchor.absolute(48))));
-            register(context, ORE_ALUMINUM_BURIED, CConfiguredFeatures.ORE_ALUMINUM_BURIED, commonOrePlacement(3, HeightRangePlacement.triangle(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(32))));
+            register(context, ORE_ALUMINUM, CConfiguredFeatures.ORE_ALUMINUM, commonOrePlacement(5, HeightRangePlacement.triangle(VerticalAnchor.absolute(-48), VerticalAnchor.absolute(48))));
+            register(context, ORE_ALUMINUM_BURIED, CConfiguredFeatures.ORE_ALUMINUM_BURIED, commonOrePlacement(5, HeightRangePlacement.triangle(VerticalAnchor.absolute(-32), VerticalAnchor.absolute(32))));
             register(context, ORE_NICKEL, CConfiguredFeatures.ORE_NICKEL, commonOrePlacement(5, HeightRangePlacement.triangle(VerticalAnchor.absolute(-64), VerticalAnchor.absolute(64))));
-            register(context, ORE_NICKEL_BURIED, CConfiguredFeatures.ORE_NICKEL_BURIED, commonOrePlacement(5, HeightRangePlacement.triangle(VerticalAnchor.absolute(-48), VerticalAnchor.absolute(48))));
+            register(context, ORE_NICKEL_BURIED, CConfiguredFeatures.ORE_NICKEL_BURIED, commonOrePlacement(4, HeightRangePlacement.triangle(VerticalAnchor.absolute(-48), VerticalAnchor.absolute(48))));
         }
 
         public static ResourceKey<PlacedFeature> createKey(String name) {

@@ -1,4 +1,4 @@
-// 1.21.1	2026-02-18T23:47:54.0154554	Item Models: curiosities
+// 1.21.1	2026-03-01T11:55:18.7754648	Item Models: curiosities
 b786e6b4cf8e874b1703edffc57563877565f589 assets/curiosities/models/item/aluminum_axe.json
 d4bf5f31eae5effe6cdd6b7c9dd0ab561099805a assets/curiosities/models/item/aluminum_boots.json
 edea89dbf34ff819d0d594631768b919944f30b0 assets/curiosities/models/item/aluminum_boots_amethyst_trim.json
@@ -36,6 +36,7 @@ f1e6fc4a7a019912c637484e99741d571c380b0e assets/curiosities/models/item/aluminum
 9a680cf0eb8545f8af13354d95423e7cdd156a70 assets/curiosities/models/item/aluminum_helmet_redstone_trim.json
 56a07363e2b8e5ff2121ac9516cbac3b198e23a7 assets/curiosities/models/item/aluminum_hoe.json
 2f190439aa3887d1c594f8ca9b9c370dc77993f2 assets/curiosities/models/item/aluminum_ingot.json
+c2f0f47a3c69d5669b6b70b1535dd2c8d6216640 assets/curiosities/models/item/aluminum_knife.json
 139b2772279c6172803f5cd28fe07921f91457ef assets/curiosities/models/item/aluminum_leggings.json
 ed0557140c6fba78ae99219c56d416a631755b26 assets/curiosities/models/item/aluminum_leggings_amethyst_trim.json
 37cd4647d81a34c89ffd26cc8f0db8bb74faf1d0 assets/curiosities/models/item/aluminum_leggings_copper_trim.json
@@ -103,6 +104,7 @@ fb15492e2cbae05f3db75eeb8656f24d38c7d909 assets/curiosities/models/item/invar_he
 78ba6f8e25aaa9c8380bfa1f378ec5b0863d4241 assets/curiosities/models/item/invar_helmet_redstone_trim.json
 cb11ee002c6c735ae21eb039e4979218505b43bd assets/curiosities/models/item/invar_hoe.json
 2c02e4e8fe725a58771e3158c10c4d2a7974d8e5 assets/curiosities/models/item/invar_ingot.json
+bc518e3f8c99124c66df6e5c6ebfb3326f953805 assets/curiosities/models/item/invar_knife.json
 21044e94c8e484f8c02775e3db8330a516cbd63e assets/curiosities/models/item/invar_leggings.json
 7f978cf8061e93d0c287ad17703da5e048e944f9 assets/curiosities/models/item/invar_leggings_amethyst_trim.json
 b19791cd3252df4468f65ece21d1c30848e117ce assets/curiosities/models/item/invar_leggings_copper_trim.json

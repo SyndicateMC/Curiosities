@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "axis=x,bottom_connected=false,top_connected=false": {
+      "model": "curiosities:block/fancied_crimson_planks_normal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,bottom_connected=false,top_connected=true": {
+      "model": "curiosities:block/fancied_crimson_planks_top_connected",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,bottom_connected=true,top_connected=false": {
+      "model": "curiosities:block/fancied_crimson_planks_bottom_connected",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,bottom_connected=true,top_connected=true": {
+      "model": "curiosities:block/fancied_crimson_planks_both_connected",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,bottom_connected=false,top_connected=false": {
+      "model": "curiosities:block/fancied_crimson_planks_normal"
+    },
+    "axis=y,bottom_connected=false,top_connected=true": {
+      "model": "curiosities:block/fancied_crimson_planks_top_connected"
+    },
+    "axis=y,bottom_connected=true,top_connected=false": {
+      "model": "curiosities:block/fancied_crimson_planks_bottom_connected"
+    },
+    "axis=y,bottom_connected=true,top_connected=true": {
+      "model": "curiosities:block/fancied_crimson_planks_both_connected"
+    },
+    "axis=z,bottom_connected=false,top_connected=false": {
+      "model": "curiosities:block/fancied_crimson_planks_normal",
+      "x": 90
+    },
+    "axis=z,bottom_connected=false,top_connected=true": {
+      "model": "curiosities:block/fancied_crimson_planks_top_connected",
+      "x": 90
+    },
+    "axis=z,bottom_connected=true,top_connected=false": {
+      "model": "curiosities:block/fancied_crimson_planks_bottom_connected",
+      "x": 90
+    },
+    "axis=z,bottom_connected=true,top_connected=true": {
+      "model": "curiosities:block/fancied_crimson_planks_both_connected",
+      "x": 90
+    }
+  }
+}
