@@ -5,6 +5,7 @@ import com.syndicatemc.curiosities.core.other.tags.CBlockTags;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
+import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -33,6 +34,7 @@ public class CBlockTagsProvider extends BlockTagsProvider {
                 BIG_CHAIN.get(), HEAVY_LANTERN.get(), HEAVY_SOUL_LANTERN.get(),
                 STONE_ASHLAR.get(), DEEPSLATE_ASHLAR.get(), TUFF_ASHLAR.get(), POLISHED_BLACKSTONE_ASHLAR.get(), END_STONE_ASHLAR.get(),
                 SMOOTH_STONE_BRICKS.get(), SMOOTH_STONE_ASHLAR.get(), SMOOTH_STONE_BRICK_STAIRS.get(), SMOOTH_STONE_BRICK_SLAB.get(), SMOOTH_STONE_BRICK_WALL.get(),
+                LATERITE_BRICKS.get(), LATERITE_BRICK_STAIRS.get(), LATERITE_BRICK_SLAB.get(), LATERITE_BRICK_WALL.get(),
 
                 SMOOTH_STONE_STAIRS.get(), CUT_SANDSTONE_STAIRS.get(), CUT_RED_SANDSTONE_STAIRS.get(), QUARTZ_BRICK_STAIRS.get(),
                 QUARTZ_BRICK_SLAB.get(),
@@ -41,6 +43,7 @@ public class CBlockTagsProvider extends BlockTagsProvider {
         this.tag(BlockTags.MINEABLE_WITH_AXE).add(
                 FANCIED_OAK_PLANKS.get(), FANCIED_SPRUCE_PLANKS.get(), FANCIED_BIRCH_PLANKS.get(), FANCIED_JUNGLE_PLANKS.get(), FANCIED_ACACIA_PLANKS.get(), FANCIED_DARK_OAK_PLANKS.get(), FANCIED_MANGROVE_PLANKS.get(), FANCIED_CHERRY_PLANKS.get(), FANCIED_BAMBOO_PLANKS.get(), FANCIED_CRIMSON_PLANKS.get(), FANCIED_WARPED_PLANKS.get()
         );
+        this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(LATERITE.get());
         this.tag(BlockTags.NEEDS_STONE_TOOL).add(
                 NICKEL_ORE.get(), DEEPSLATE_NICKEL_ORE.get(),
                 RAW_ALUMINUM_BLOCK.get(), ALUMINUM_BLOCK.get(),
@@ -53,6 +56,20 @@ public class CBlockTagsProvider extends BlockTagsProvider {
         );
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(
                 INVAR_BLOCK.get()
+        );
+
+        this.tag(BlockTags.STAIRS).add(
+                SMOOTH_STONE_BRICK_STAIRS.get(),
+
+                SMOOTH_STONE_STAIRS.get(),
+                CUT_SANDSTONE_STAIRS.get(), CUT_RED_SANDSTONE_STAIRS.get(),
+                QUARTZ_BRICK_STAIRS.get()
+        );
+
+        this.tag(BlockTags.SLABS).add(
+                SMOOTH_STONE_BRICK_SLAB.get(),
+
+                QUARTZ_BRICK_SLAB.get()
         );
 
         this.tag(BlockTags.WALLS).add(

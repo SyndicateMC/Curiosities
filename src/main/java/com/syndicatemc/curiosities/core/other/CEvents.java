@@ -5,13 +5,16 @@ import com.syndicatemc.curiosities.core.CuriositiesConfig;
 import com.syndicatemc.curiosities.core.other.tags.CItemTags;
 import com.syndicatemc.curiosities.core.registry.CAttributes;
 import com.syndicatemc.curiosities.core.registry.CItems;
+import com.syndicatemc.curiosities.core.registry.CMobEffects;
 import com.syndicatemc.curiosities.core.registry.CSoundEvents;
+import com.syndicatemc.curiosities.core.registry.datapack.CDamageTypes;
 import net.minecraft.core.BlockPos;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.tags.DamageTypeTags;
 import net.minecraft.world.damagesource.DamageSource;
+import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.entity.*;
-import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import net.minecraft.world.entity.player.Player;
@@ -20,19 +23,18 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.block.RepeaterBlock;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.phys.EntityHitResult;
-import net.minecraft.world.phys.HitResult;
 import net.minecraft.world.phys.Vec3;
 import net.neoforged.bus.api.EventPriority;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
-import net.neoforged.neoforge.common.damagesource.DamageContainer;
+import net.neoforged.neoforge.common.ItemAbilities;
+import net.neoforged.neoforge.common.ItemAbility;
 import net.neoforged.neoforge.event.ItemAttributeModifierEvent;
 import net.neoforged.neoforge.event.entity.EntityAttributeModificationEvent;
-import net.neoforged.neoforge.event.entity.EntityEvent;
-import net.neoforged.neoforge.event.entity.ProjectileImpactEvent;
 import net.neoforged.neoforge.event.entity.living.LivingDamageEvent;
+import net.neoforged.neoforge.event.entity.player.PlayerEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
+import net.neoforged.neoforge.event.level.BlockEvent;
 import net.neoforged.neoforge.event.tick.PlayerTickEvent;
 
 @EventBusSubscriber(modid = Curiosities.MOD_ID)
@@ -48,85 +50,62 @@ public class CEvents {
         if (item.is(CItemTags.INVAR_TOOLS)) {
             event.addModifier(CAttributes.ARMOR_PIERCING, new AttributeModifier(Curiosities.location("armor_piercing"), 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), EquipmentSlotGroup.MAINHAND);
         }
+        if (item.is(CItemTags.TOPAZ_TOOLS)) {
+            event.addModifier(CAttributes.TEMPO, new AttributeModifier(Curiosities.location("tempo"), 1, AttributeModifier.Operation.ADD_VALUE), EquipmentSlotGroup.MAINHAND);
+        }
     }
 
     @SubscribeEvent
-    public static void onEntityDamage(LivingDamageEvent.Pre event) {
+    public static void onEntityDamagePre(LivingDamageEvent.Pre event) {
         LivingEntity reciever = event.getEntity();
         DamageSource source = event.getSource();
         Entity sourceEntity = source.getEntity();
-        Level level = event.getEntity().level();
+        Level level = reciever.level();
+        float originalDamage = event.getOriginalDamage();
+        float modifiedDamage = event.getNewDamage();
+        float reductionPercent = modifiedDamage / originalDamage;
 
-        if (reciever.getItemBySlot(EquipmentSlot.FEET).is(CItems.HEAVY_BOOTS) && source.is(DamageTypeTags.IS_FALL)) {
-            float originalDamage = event.getNewDamage();
-            float newDamage = originalDamage / 2 - 2;
+        applyTempoDamage(event, sourceEntity, source, modifiedDamage, reductionPercent);
+        calcHeavyBootsFallDamage(event, reciever, source, modifiedDamage);
+        calcDamageReduction(event, reciever, source, modifiedDamage);
+        calcArmorPiercing(event, sourceEntity, originalDamage, modifiedDamage);
+    }
 
+    private static void applyTempoDamage(LivingDamageEvent.Pre event, Entity sourceEntity, DamageSource source, float modifiedDamage, float reductionPercent) {
+        if (sourceEntity instanceof Player player && CUtils.canApplyTempoEffects(player) && source.is(DamageTypes.PLAYER_ATTACK)) {
+            float newDamage = modifiedDamage + (CUtils.getCurrentTempo(player) / 2.0F) * reductionPercent;
+            CUtils.applyTempo(player);
             event.setNewDamage(newDamage);
         }
-        if (reciever.getAttributes().hasAttribute(CAttributes.DAMAGE_REDUCTION) && (!source.is(DamageTypeTags.BYPASSES_ARMOR) || source.is(DamageTypeTags.IS_FALL))) {
-            if (reciever.getAttributes().getValue(CAttributes.DAMAGE_REDUCTION) > 0) {
-                float originalDamage = event.getNewDamage();
-                float damageReduction = (float) reciever.getAttributes().getValue(CAttributes.DAMAGE_REDUCTION);
-                float newDamage = originalDamage - damageReduction;
+    }
 
-                if (newDamage <= 0) {
-                    event.setNewDamage(0);
-                } else {
-                    event.setNewDamage(newDamage);
-                }
-            }
+    private static void calcHeavyBootsFallDamage(LivingDamageEvent.Pre event, LivingEntity reciever, DamageSource source, float modifiedDamage) {
+        if (reciever.getItemBySlot(EquipmentSlot.FEET).is(CItems.HEAVY_BOOTS) && source.is(DamageTypeTags.IS_FALL)) {
+            float newDamage = modifiedDamage / 2 - 2;
+            event.setNewDamage(newDamage);
         }
+    }
+
+    private static void calcArmorPiercing(LivingDamageEvent.Pre event, Entity sourceEntity, float originalDamage, float modifiedDamage) {
         if (sourceEntity instanceof LivingEntity attacker && attacker.getAttributes().hasAttribute(CAttributes.ARMOR_PIERCING)) {
             float armorPiercing = (float)attacker.getAttributes().getValue(CAttributes.ARMOR_PIERCING);
             if (armorPiercing > 1) {
-                float originalDamage = event.getNewDamage();
-                float originalDamageNoRes = event.getOriginalDamage();
-                float armorPiercingDamage = (originalDamageNoRes - originalDamage) * (armorPiercing - 1);
-                float newDamage = originalDamage + armorPiercingDamage;
+                float armorPiercingDamage = (originalDamage - modifiedDamage) * (armorPiercing - 1);
+                float newDamage = modifiedDamage + armorPiercingDamage;
                 event.setNewDamage(newDamage);
-            }
-        }
-        if (reciever.getAttributes().hasAttribute(CAttributes.IMMUTABILITY) && (!source.is(DamageTypeTags.BYPASSES_ARMOR) || source.is(DamageTypeTags.IS_FALL)) && reciever.getAttributes().getValue(CAttributes.IMMUTABILITY) > 0) {
-            double chance = calculateImmutabilityChance(reciever);
-            if (chance >= level.random.nextDouble()) {
-                float pitchChange = 0.95F + level.random.nextFloat() * 0.1F;
-                event.setNewDamage(0);
-                level.playSound(null, reciever.getX(), reciever.getY(), reciever.getZ(), CSoundEvents.DAMAGE_REDUCE_ALL, SoundSource.PLAYERS, 0.5F, pitchChange);
-                Curiosities.LOGGER.debug(chance);
             }
         }
     }
 
-//    @SubscribeEvent
-//    public static void onProjectileImpact(ProjectileImpactEvent event) {
-//        HitResult result = event.getRayTraceResult();
-//        Entity projectile = event.getEntity();
-//        if (
-//                !projectile.level().isClientSide &&
-//                result instanceof EntityHitResult entityResult &&
-//                entityResult.getEntity() instanceof LivingEntity reciever &&
-//                !reciever.level().isClientSide &&
-//                reciever.getAttributes().hasAttribute(CAttributes.IMMUTABILITY) &&
-//                reciever.getAttributes().getValue(CAttributes.IMMUTABILITY) > 0 &&
-//                calculateImmutabilityChance(reciever) >= reciever.level().random.nextDouble())
-//        {
-//            event.setCanceled(true);
-//            Vec3 newMovement = new Vec3(-projectile.getDeltaMovement().x * 2, -projectile.getDeltaMovement().y * 2, -projectile.getDeltaMovement().z * 2);
-//            projectile.addDeltaMovement(
-//                    newMovement
-//            );
-//            float pitchChange = 0.95F + reciever.level().random.nextFloat() * 0.1F;
-//            reciever.level().playSound(null, reciever.getX(), reciever.getY(), reciever.getZ(), CSoundEvents.DAMAGE_REDUCE_ALL, SoundSource.PLAYERS, 0.5F, pitchChange);
-//        }
-//    }
-
-    public static double calculateImmutabilityChance(LivingEntity targetEntity) {
-        AttributeMap map = targetEntity.getAttributes();
-        double immute = map.getValue(CAttributes.IMMUTABILITY);
-        double armor = map.getValue(Attributes.ARMOR);
-        double toughness = map.getValue(Attributes.ARMOR_TOUGHNESS);
-
-        return ((armor + toughness / 2 + immute) / 4) * immute * 0.015D;
+    private static void calcDamageReduction(LivingDamageEvent.Pre event, LivingEntity reciever, DamageSource source, float modifiedDamage) {
+        if (reciever.getAttributes().hasAttribute(CAttributes.DAMAGE_REDUCTION) && (!source.is(DamageTypeTags.BYPASSES_ARMOR) || source.is(DamageTypeTags.IS_FALL))) {
+            if (reciever.getAttributes().getValue(CAttributes.DAMAGE_REDUCTION) > 0) {
+                float damageReduction = (float) reciever.getAttributes().getValue(CAttributes.DAMAGE_REDUCTION);
+                float newDamage = modifiedDamage - damageReduction;
+                if (newDamage <= 0) newDamage = 0;
+                event.setNewDamage(newDamage);
+            }
+        }
     }
 
     @SubscribeEvent
@@ -136,7 +115,8 @@ public class CEvents {
                 event.add(entityType, CAttributes.DAMAGE_REDUCTION);
                 event.add(entityType, CAttributes.IMMUTABILITY);
             }
-            event.add(entityType, CAttributes.ARMOR_PIERCING);
+            if (event.has(entityType, Attributes.ATTACK_DAMAGE)) event.add(entityType, CAttributes.ARMOR_PIERCING);
+            if (event.has(entityType, Attributes.BLOCK_BREAK_SPEED)) event.add(entityType, CAttributes.TEMPO);
         }
     }
 
@@ -150,17 +130,6 @@ public class CEvents {
             Vec3 addedSpeed = new Vec3(0, speed.y * speedMod, 0.0D);
             if (speed.y < -0.1D && speed.y > -CuriositiesConfig.COMMON.heavyBootsFallSpeedMaximum.get()) player.addDeltaMovement(addedSpeed);
         }
-
-//        for (String name : new String[]{
-//                "whalter3", "thewillzi11a3000"
-//        }) {
-//            if (player.getName().getString().equals(name)) {
-//                LightningBolt bolt = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
-//                bolt.setPos(player.getX(), player.getY(), player.getZ());
-//                level.addFreshEntity(bolt);
-//                player.hurt(level.damageSources().source(DamageTypes.FELL_OUT_OF_WORLD), 1);
-//            }
-//        }
     }
 
     @SubscribeEvent
@@ -171,10 +140,34 @@ public class CEvents {
         if (state.is(Blocks.REPEATER)) {
             int flag = state.getValue(RepeaterBlock.DELAY);
             if (flag == 4) {
-                level.playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(), CSoundEvents.FUSE_SLIDER, SoundSource.BLOCKS, 2.0F, 0.75F, 1);
+                level.playSeededSound(null, pos.getCenter().x, pos.getCenter().y, pos.getCenter().z, CSoundEvents.FUSE_SLIDER, SoundSource.BLOCKS, 0.5F, 0.75F, 1);
             } else {
-                level.playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(), CSoundEvents.FUSE_SLIDER, SoundSource.BLOCKS, 2.0F, 0.75F + flag * 0.1F, 1);
+                level.playSeededSound(null, pos.getCenter().x, pos.getCenter().y, pos.getCenter().z, CSoundEvents.FUSE_SLIDER, SoundSource.BLOCKS, 0.5F, 0.75F + flag * 0.1F, 1);
             }
         }
+    }
+
+    @SubscribeEvent
+    public static void playerBreakBlock(BlockEvent.BreakEvent event) {
+        Player player = event.getPlayer();
+        ItemStack stack = player.getMainHandItem();
+        BlockState state = event.getState();
+        if (toolDropCorrectTopaz(player, stack, state)) CUtils.applyTempo(player);
+    }
+
+    @SubscribeEvent
+    public static void playerBreakSpeed(PlayerEvent.BreakSpeed event) {
+        float breakSpeed = event.getNewSpeed();
+        Player player = event.getEntity();
+        ItemStack stack = player.getMainHandItem();
+        BlockState state = event.getState();
+        if (toolDropCorrectTopaz(player, stack, state)) {
+            float modifier = stack.getDestroySpeed(state) * CUtils.getCurrentTempo(player) * (stack.canPerformAction(ItemAbilities.SHOVEL_DIG) ? 0.5F : 1.0F);
+            event.setNewSpeed(breakSpeed + modifier);
+        }
+    }
+
+    private static boolean toolDropCorrectTopaz(Player player, ItemStack stack, BlockState state) {
+        return stack.is(CItemTags.TOPAZ_TOOLS) && stack.isCorrectToolForDrops(state);
     }
 }

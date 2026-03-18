@@ -44,6 +44,7 @@ public class Curiosities {
         CArmorMaterials.ARMOR_MATERIALS.register(bus);
         CFeatures.FEATURES.register(bus);
         CAttributes.ATTRIBUTES.register(bus);
+        CMobEffects.EFFECTS.register(bus);
 
         CConditionsSerializers.CONDITION_SERIALIZERS.register(bus);
 

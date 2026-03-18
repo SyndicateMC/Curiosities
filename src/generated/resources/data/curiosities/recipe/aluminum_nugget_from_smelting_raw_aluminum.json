@@ -3,7 +3,7 @@
   "category": "misc",
   "cookingtime": 300,
   "experience": 0.8,
-  "group": "aluminum_nugget",
+  "group": "aluminum",
   "ingredient": {
     "item": "curiosities:raw_aluminum"
   },

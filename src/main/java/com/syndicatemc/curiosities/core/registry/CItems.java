@@ -11,7 +11,6 @@ import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulat
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.registry.ItemSubRegistryHelper;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.world.item.*;
@@ -20,8 +19,6 @@ import net.minecraft.world.level.ItemLike;
 import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.registries.DeferredHolder;
 import net.neoforged.neoforge.registries.DeferredItem;
-import net.neoforged.neoforge.registries.DeferredRegister;
-import vectorwing.farmersdelight.common.item.KnifeItem;
 
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -46,20 +43,28 @@ public class CItems {
     public static final DeferredItem<Item> NICKEL_NUGGET = ITEMS.createItem("nickel_nugget", () -> new Item(new Item.Properties()));
     public static final DeferredItem<Item> INVAR_INGOT = ITEMS.createItem("invar_ingot", () -> new Item(new Item.Properties().fireResistant()));
     public static final DeferredItem<Item> INVAR_NUGGET = ITEMS.createItem("invar_nugget", () -> new Item(new Item.Properties().fireResistant()));
+    public static final DeferredItem<Item> TOPAZ = ITEMS.createItem("topaz", () -> new Item(new Item.Properties()));
 
-    public static final Tier ALUMINUM = new BlueprintItemTier(BlockTags.INCORRECT_FOR_IRON_TOOL, 250, 8.0F, 2.0F, 14, () -> Ingredient.of(ALUMINUM_INGOT));
-    public static final DeferredItem<Item> ALUMINUM_SWORD = ITEMS.createItem("aluminum_sword", () -> new SwordItem(ALUMINUM, new Item.Properties().attributes(SwordItem.createAttributes(ALUMINUM, 3, -2.4F))));
-    public static final DeferredItem<Item> ALUMINUM_SHOVEL = ITEMS.createItem("aluminum_shovel", () -> new ShovelItem(ALUMINUM, new Item.Properties().attributes(ShovelItem.createAttributes(ALUMINUM, 1.5F, -3.0F))));
-    public static final DeferredItem<Item> ALUMINUM_PICKAXE = ITEMS.createItem("aluminum_pickaxe", () -> new PickaxeItem(ALUMINUM, new Item.Properties().attributes(PickaxeItem.createAttributes(ALUMINUM, 1.0F, -2.8F))));
-    public static final DeferredItem<Item> ALUMINUM_AXE = ITEMS.createItem("aluminum_axe", () -> new AxeItem(ALUMINUM, new Item.Properties().attributes(AxeItem.createAttributes(ALUMINUM, 6.0F, -3.1F))));
-    public static final DeferredItem<Item> ALUMINUM_HOE = ITEMS.createItem("aluminum_hoe", () -> new HoeItem(ALUMINUM, new Item.Properties().attributes(HoeItem.createAttributes(ALUMINUM, -2.0F, -1.0F))));
+    public static final Tier ALUMINUM_TIER = new BlueprintItemTier(BlockTags.INCORRECT_FOR_IRON_TOOL, 250, 8.0F, 2.0F, 14, () -> Ingredient.of(ALUMINUM_INGOT));
+    public static final DeferredItem<Item> ALUMINUM_SWORD = ITEMS.createItem("aluminum_sword", () -> new SwordItem(ALUMINUM_TIER, new Item.Properties().attributes(SwordItem.createAttributes(ALUMINUM_TIER, 3, -2.4F))));
+    public static final DeferredItem<Item> ALUMINUM_SHOVEL = ITEMS.createItem("aluminum_shovel", () -> new ShovelItem(ALUMINUM_TIER, new Item.Properties().attributes(ShovelItem.createAttributes(ALUMINUM_TIER, 1.5F, -3.0F))));
+    public static final DeferredItem<Item> ALUMINUM_PICKAXE = ITEMS.createItem("aluminum_pickaxe", () -> new PickaxeItem(ALUMINUM_TIER, new Item.Properties().attributes(PickaxeItem.createAttributes(ALUMINUM_TIER, 1.0F, -2.8F))));
+    public static final DeferredItem<Item> ALUMINUM_AXE = ITEMS.createItem("aluminum_axe", () -> new AxeItem(ALUMINUM_TIER, new Item.Properties().attributes(AxeItem.createAttributes(ALUMINUM_TIER, 6.0F, -3.1F))));
+    public static final DeferredItem<Item> ALUMINUM_HOE = ITEMS.createItem("aluminum_hoe", () -> new HoeItem(ALUMINUM_TIER, new Item.Properties().attributes(HoeItem.createAttributes(ALUMINUM_TIER, -2.0F, -1.0F))));
 
-    public static final Tier INVAR = new BlueprintItemTier(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 2031, 9.0F, 3.0F, 15, () -> Ingredient.of(INVAR_INGOT));
-    public static final DeferredItem<Item> INVAR_SWORD = ITEMS.createItem("invar_sword", () -> new SwordItem(INVAR, new Item.Properties().attributes(SwordItem.createAttributes(INVAR, 3, -2.4F)).fireResistant()));
-    public static final DeferredItem<Item> INVAR_SHOVEL = ITEMS.createItem("invar_shovel", () -> new ShovelItem(INVAR, new Item.Properties().attributes(ShovelItem.createAttributes(INVAR, 1.5F, -3.0F)).fireResistant()));
-    public static final DeferredItem<Item> INVAR_PICKAXE = ITEMS.createItem("invar_pickaxe", () -> new PickaxeItem(INVAR, new Item.Properties().attributes(PickaxeItem.createAttributes(INVAR, 1.0F, -2.8F)).fireResistant()));
-    public static final DeferredItem<Item> INVAR_AXE = ITEMS.createItem("invar_axe", () -> new AxeItem(INVAR, new Item.Properties().attributes(AxeItem.createAttributes(INVAR, 5.0F, -3.0F)).fireResistant()));
-    public static final DeferredItem<Item> INVAR_HOE = ITEMS.createItem("invar_hoe", () -> new HoeItem(INVAR, new Item.Properties().attributes(HoeItem.createAttributes(INVAR, -3.0F, 0.0F)).fireResistant()));
+    public static final Tier INVAR_TIER = new BlueprintItemTier(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 2031, 9.0F, 3.0F, 15, () -> Ingredient.of(INVAR_INGOT));
+    public static final DeferredItem<Item> INVAR_SWORD = ITEMS.createItem("invar_sword", () -> new SwordItem(INVAR_TIER, new Item.Properties().attributes(SwordItem.createAttributes(INVAR_TIER, 3, -2.4F)).fireResistant()));
+    public static final DeferredItem<Item> INVAR_SHOVEL = ITEMS.createItem("invar_shovel", () -> new ShovelItem(INVAR_TIER, new Item.Properties().attributes(ShovelItem.createAttributes(INVAR_TIER, 1.5F, -3.0F)).fireResistant()));
+    public static final DeferredItem<Item> INVAR_PICKAXE = ITEMS.createItem("invar_pickaxe", () -> new PickaxeItem(INVAR_TIER, new Item.Properties().attributes(PickaxeItem.createAttributes(INVAR_TIER, 1.0F, -2.8F)).fireResistant()));
+    public static final DeferredItem<Item> INVAR_AXE = ITEMS.createItem("invar_axe", () -> new AxeItem(INVAR_TIER, new Item.Properties().attributes(AxeItem.createAttributes(INVAR_TIER, 5.0F, -3.0F)).fireResistant()));
+    public static final DeferredItem<Item> INVAR_HOE = ITEMS.createItem("invar_hoe", () -> new HoeItem(INVAR_TIER, new Item.Properties().attributes(HoeItem.createAttributes(INVAR_TIER, -3.0F, 0.0F)).fireResistant()));
+
+    public static final Tier TOPAZ_TIER = new BlueprintItemTier(BlockTags.INCORRECT_FOR_IRON_TOOL, 1000, 2.5F, 0.5F, 15, () -> Ingredient.of(TOPAZ));
+    public static final DeferredItem<Item> TOPAZ_SWORD = ITEMS.createItem("topaz_sword", () -> new SwordItem(TOPAZ_TIER, new Item.Properties().attributes(SwordItem.createAttributes(TOPAZ_TIER, 3, -2.6F))));
+    public static final DeferredItem<Item> TOPAZ_SHOVEL = ITEMS.createItem("topaz_shovel", () -> new ShovelItem(TOPAZ_TIER, new Item.Properties().attributes(ShovelItem.createAttributes(TOPAZ_TIER, 1.5F, -3.0F))));
+    public static final DeferredItem<Item> TOPAZ_PICKAXE = ITEMS.createItem("topaz_pickaxe", () -> new PickaxeItem(TOPAZ_TIER, new Item.Properties().attributes(PickaxeItem.createAttributes(TOPAZ_TIER, 1.0F, -2.8F))));
+    public static final DeferredItem<Item> TOPAZ_AXE = ITEMS.createItem("topaz_axe", () -> new AxeItem(TOPAZ_TIER, new Item.Properties().attributes(AxeItem.createAttributes(TOPAZ_TIER, 6.0F, -3.3F))));
+    public static final DeferredItem<Item> TOPAZ_HOE = ITEMS.createItem("topaz_hoe", () -> new HoeItem(TOPAZ_TIER, new Item.Properties().attributes(HoeItem.createAttributes(TOPAZ_TIER, -1.0F, -1.0F))));
 
     public static final DeferredItem<ArmorItem> ALUMINUM_HELMET = ITEMS.createItem("aluminum_helmet", () -> new AluminumArmorItem(ArmorItem.Type.HELMET));
     public static final DeferredItem<ArmorItem> ALUMINUM_CHESTPLATE = ITEMS.createItem("aluminum_chestplate", () -> new AluminumArmorItem(ArmorItem.Type.CHESTPLATE));
@@ -76,8 +81,8 @@ public class CItems {
     public static final DeferredItem<Item> ALUMINUM_UPGRADE_SMITHING_TEMPLATE = ITEMS.createItem("aluminum_upgrade_smithing_template", CSmithingTemplateItem::createAluminumUpgradeTemplate);
 
     //fd compat
-    public static final DeferredHolder<Item, Item> ALUMINUM_KNIFE = ITEMS.createItem("aluminum_knife", compat(CConstants.FARMERS_DELIGHT, it -> CFDCompat.ALUMINUM_KNIFE_FACTORY.apply(it), new Item.Properties().attributes(DiggerItem.createAttributes(ALUMINUM, 0.5F, -2.0F))));
-    public static final DeferredHolder<Item, Item> INVAR_KNIFE = ITEMS.createItem("invar_knife", compat(CConstants.FARMERS_DELIGHT, it -> CFDCompat.INVAR_KNIFE_FACTORY.apply(it), new Item.Properties().attributes(DiggerItem.createAttributes(INVAR, 0.5F, -2.0F)).fireResistant()));
+    public static final DeferredHolder<Item, Item> ALUMINUM_KNIFE = ITEMS.createItem("aluminum_knife", compat(CConstants.FARMERS_DELIGHT, it -> CFDCompat.ALUMINUM_KNIFE_FACTORY.apply(it), new Item.Properties().attributes(DiggerItem.createAttributes(ALUMINUM_TIER, 0.5F, -2.0F))));
+    public static final DeferredHolder<Item, Item> INVAR_KNIFE = ITEMS.createItem("invar_knife", compat(CConstants.FARMERS_DELIGHT, it -> CFDCompat.INVAR_KNIFE_FACTORY.apply(it), new Item.Properties().attributes(DiggerItem.createAttributes(INVAR_TIER, 0.5F, -2.0F)).fireResistant()));
 
     public static void setupTabEditors() {
         CreativeModeTabContentsPopulator.mod(Curiosities.MOD_ID)

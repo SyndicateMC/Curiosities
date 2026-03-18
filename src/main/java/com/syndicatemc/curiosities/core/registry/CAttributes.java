@@ -19,4 +19,7 @@ public class CAttributes {
     public static final DeferredHolder<Attribute, Attribute> IMMUTABILITY = ATTRIBUTES.register("immutability", () ->
             new RangedAttribute("attribute.%s.%s".formatted(Curiosities.MOD_ID, "immutability"), 0, 0, 10)
     );
+    public static final DeferredHolder<Attribute, Attribute> TEMPO = ATTRIBUTES.register("tempo", () ->
+            new RangedAttribute("attribute.%s.%s".formatted(Curiosities.MOD_ID, "tempo"), 0, 0, 10)
+    );
 }

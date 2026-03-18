@@ -1,20 +1,27 @@
-// 1.21.1	2026-03-01T21:43:23.1902639	Tags for minecraft:item mod id curiosities
+// 1.21.1	2026-03-17T21:44:46.6065061	Tags for minecraft:item mod id curiosities
 6536dd130894192cb12ec2c54f782d43256880a8 data/curiosities/tags/item/aluminum_tools.json
 a7e024a88452c034194219c55f51fd8086e0f1b7 data/curiosities/tags/item/invar_tools.json
+409b6b8f59f2be297f6d2dfda7463d6d597c8e39 data/curiosities/tags/item/topaz_tools.json
 be6d950b9d7b963f2e8a45735cce7b6f4afeb4ab data/c/tags/item/ingots/aluminum.json
 5e4cf87465089e2ae2c07e31388a4909a76e4331 data/c/tags/item/ingots/invar.json
 4ab99a0a766616dfcdbe93b0080264f0bc09d4da data/c/tags/item/ingots/nickel.json
+d30aec8966f8e1cdb920ecd8baa69117d25ddc88 data/c/tags/item/nuggets.json
 7915c72a7b2c5eb6c3b3ad95b8cf8b9d4ac702a9 data/c/tags/item/nuggets/aluminum.json
 ebdab7a51b0fe2ec8e21c645a4fb5c1f31ad94f7 data/c/tags/item/nuggets/invar.json
 ee52be1214c483b7f93b13c5e04c0216de8759d6 data/c/tags/item/nuggets/nickel.json
 596795991f49b4068b3192ce83fe545d3347a498 data/c/tags/item/ores/aluminum.json
 51022f46f1e9953da21e121dd441006e63abdc03 data/c/tags/item/ores/nickel.json
+5bfb2c4b38b984838cc879fcd1c91c8e4a1288b2 data/c/tags/item/raw_materials.json
+d1f1e92903c337d7933f91cc972cb6fa22e8fac3 data/c/tags/item/raw_materials/aluminum.json
+e4053e0a20354e201ca5bd427ee343cdf2b709c5 data/c/tags/item/raw_materials/nickel.json
 35366f515ba452d7af1691a79e7ba4072fe87d3f data/c/tags/item/storage_blocks/aluminum.json
 3e88312f317a76b7bf05ff82a31f0e1f2e6f8e89 data/c/tags/item/storage_blocks/invar.json
 4e2c5551295529ba00da8374a299c9a3f66064ce data/c/tags/item/storage_blocks/nickel.json
 89536d1071e9db92ec73b4706001e542efd53e53 data/c/tags/item/tools/knife.json
-eeed8a7738c60dd458bddc75cc8b7f35376bc9c4 data/c/tags/item/tools/melee_weapon.json
+867459288fb662fda93b4463458a65f01a7f9925 data/c/tags/item/tools/melee_weapon.json
+05945a1473a938aa88c3bfc485090b7e22f7b3a5 data/c/tags/item/tools/mining_tool.json
 ad5b6d9f0082eed6de4ff0d303c85d78b0dd49e2 data/minecraft/tags/item/axes.json
+ab4b2271ac963f796fe89f436e227ebe314fb4d6 data/minecraft/tags/item/beacon_payment_items.json
 096c16f51d00df172d605dcd50e645667f93d7ec data/minecraft/tags/item/chest_armor.json
 7c829f8440047208d3ba305d3b07429563feea97 data/minecraft/tags/item/foot_armor.json
 a5c4089bc43118b909692520f0b4eebaf9c0f719 data/minecraft/tags/item/head_armor.json
@@ -22,5 +29,8 @@ c7196f0d6c0248bae9a10b9dc9b881639102bfb1 data/minecraft/tags/item/hoes.json
 156f5d8cb6ef93dfe8dae6227db175f49fcf9435 data/minecraft/tags/item/leg_armor.json
 588f1e528aeb32be23e091e2edfa78d24d409dfe data/minecraft/tags/item/pickaxes.json
 4bd5ec6e857fd652dce958348995ef5984c867b4 data/minecraft/tags/item/shovels.json
+a3512232fe5966bd37e1c9a674d63e0ec41ea7fc data/minecraft/tags/item/slabs.json
+d00f4982853beb7e490e59d2cc369143d07c6752 data/minecraft/tags/item/stairs.json
 b71fc81838ac94a6261f3de151dfe85496770bc8 data/minecraft/tags/item/swords.json
 6a545776f153dc28e853b510d5cd034236aa7c2a data/minecraft/tags/item/trim_materials.json
+f0a0c0ad1295a8dafcb47122bcacc969e988907b data/minecraft/tags/item/walls.json

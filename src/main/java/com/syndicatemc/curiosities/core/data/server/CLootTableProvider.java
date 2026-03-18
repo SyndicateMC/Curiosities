@@ -3,22 +3,31 @@ package com.syndicatemc.curiosities.core.data.server;
 import com.google.common.collect.ImmutableList;
 import com.syndicatemc.curiosities.core.Curiosities;
 import com.syndicatemc.curiosities.core.registry.CItems;
+import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.WritableRegistry;
 import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.data.loot.LootTableProvider;
 import net.minecraft.util.ProblemReporter;
 import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.enchantment.Enchantment;
+import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.ValidationContext;
+import net.minecraft.world.level.storage.loot.entries.LootItem;
+import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
+import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
+import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
 import java.util.Set;
@@ -48,8 +57,8 @@ public class CLootTableProvider extends LootTableProvider {
 
         @Override
         public void generate() {
-            this.add(ALUMINUM_ORE.get(), block -> createOreDrop(block, CItems.RAW_ALUMINUM.get()));
-            this.add(DEEPSLATE_ALUMINUM_ORE.get(), block -> createOreDrop(block, CItems.RAW_ALUMINUM.get()));
+            this.add(ALUMINUM_ORE.get(), block -> createMultiOreDrop(block, CItems.RAW_ALUMINUM.get(), 1, 3));
+            this.add(DEEPSLATE_ALUMINUM_ORE.get(), block -> createMultiOreDrop(block, CItems.RAW_ALUMINUM.get(), 2, 3));
             this.add(NICKEL_ORE.get(), block -> createOreDrop(block, CItems.RAW_NICKEL.get()));
             this.add(DEEPSLATE_NICKEL_ORE.get(), block -> createOreDrop(block, CItems.RAW_NICKEL.get()));
 
@@ -73,13 +82,16 @@ public class CLootTableProvider extends LootTableProvider {
                     SMOOTH_STONE_STAIRS, CUT_SANDSTONE_STAIRS, CUT_RED_SANDSTONE_STAIRS, QUARTZ_BRICK_STAIRS,
                     STONE_WALL, SMOOTH_STONE_WALL, POLISHED_GRANITE_WALL, POLISHED_DIORITE_WALL, POLISHED_ANDESITE_WALL, CUT_SANDSTONE_WALL, CUT_RED_SANDSTONE_WALL, PRISMARINE_BRICK_WALL, DARK_PRISMARINE_WALL, QUARTZ_WALL, QUARTZ_BRICK_WALL, PURPUR_WALL,
 
+                    LATERITE, LATERITE_BRICKS, LATERITE_BRICK_STAIRS, LATERITE_BRICK_WALL,
+                    SCULKY_COBBLED_DEEPSLATE, SCULKY_COBBLED_DEEPSLATE_STAIRS, SCULKY_COBBLED_DEEPSLATE_WALL,
+
                     FANCIED_OAK_PLANKS, FANCIED_SPRUCE_PLANKS, FANCIED_BIRCH_PLANKS, FANCIED_JUNGLE_PLANKS, FANCIED_ACACIA_PLANKS, FANCIED_DARK_OAK_PLANKS, FANCIED_MANGROVE_PLANKS, FANCIED_CHERRY_PLANKS, FANCIED_BAMBOO_PLANKS, FANCIED_CRIMSON_PLANKS, FANCIED_WARPED_PLANKS
             }) {
                 this.dropSelf(block.get());
             }
 
             for (DeferredBlock<?> block : new DeferredBlock[]{
-                    CUT_ALUMINUM_SLAB, SMOOTH_STONE_BRICK_SLAB, QUARTZ_BRICK_SLAB
+                    CUT_ALUMINUM_SLAB, SMOOTH_STONE_BRICK_SLAB, QUARTZ_BRICK_SLAB, LATERITE_BRICK_SLAB, SCULKY_COBBLED_DEEPSLATE_SLAB
             }) {
                 this.add(block.get(), this::createSlabItemTable);
             }
@@ -90,6 +102,15 @@ public class CLootTableProvider extends LootTableProvider {
         @Override
         public Iterable<Block> getKnownBlocks() {
             return BuiltInRegistries.BLOCK.stream().filter(block -> BuiltInRegistries.BLOCK.getKey(block).getNamespace().equals(Curiosities.MOD_ID)).collect(Collectors.toSet());
+        }
+
+        public LootTable.Builder createMultiOreDrop(Block block, Item item, int minCount, int maxCount) {
+            HolderLookup.RegistryLookup<Enchantment> registrylookup = this.registries.lookupOrThrow(Registries.ENCHANTMENT);
+            return this.createSilkTouchDispatchTable(block,
+                    this.applyExplosionDecay(block, LootItem.lootTableItem(item)
+                            .apply(SetItemCountFunction.setCount(UniformGenerator.between(minCount, maxCount)))
+                            .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE))))
+            );
         }
     }
 }

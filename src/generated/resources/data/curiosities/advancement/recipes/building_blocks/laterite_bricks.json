@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_laterite": {
+      "conditions": {
+        "items": [
+          {
+            "items": "curiosities:laterite"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "curiosities:laterite_bricks"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_laterite"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "curiosities:laterite_bricks"
+    ]
+  }
+}

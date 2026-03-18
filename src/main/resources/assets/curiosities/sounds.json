@@ -85,6 +85,58 @@
     ],
     "subtitle": "subtitles.block.note_block.note"
   },
+  "block.sculky_deepslate.break": {
+    "sounds": [
+      "curiosities:block/sculky_deepslate/break1",
+      "curiosities:block/sculky_deepslate/break2",
+      "curiosities:block/sculky_deepslate/break3",
+      "curiosities:block/sculky_deepslate/break4"
+    ],
+    "subtitle": "subtitles.block.generic.break"
+  },
+  "block.sculky_deepslate.fall": {
+    "sounds": [
+      "curiosities:block/sculky_deepslate/step1",
+      "curiosities:block/sculky_deepslate/step2",
+      "curiosities:block/sculky_deepslate/step3",
+      "curiosities:block/sculky_deepslate/step4",
+      "curiosities:block/sculky_deepslate/step5",
+      "curiosities:block/sculky_deepslate/step6"
+    ]
+  },
+  "block.sculky_deepslate.hit": {
+    "sounds": [
+      "curiosities:block/sculky_deepslate/step1",
+      "curiosities:block/sculky_deepslate/step2",
+      "curiosities:block/sculky_deepslate/step3",
+      "curiosities:block/sculky_deepslate/step4",
+      "curiosities:block/sculky_deepslate/step5",
+      "curiosities:block/sculky_deepslate/step6"
+    ],
+    "subtitle": "subtitles.block.generic.hit"
+  },
+  "block.sculky_deepslate.place": {
+    "sounds": [
+      "curiosities:block/sculky_deepslate/place1",
+      "curiosities:block/sculky_deepslate/place2",
+      "curiosities:block/sculky_deepslate/place3",
+      "curiosities:block/sculky_deepslate/place4",
+      "curiosities:block/sculky_deepslate/place5",
+      "curiosities:block/sculky_deepslate/place6"
+    ],
+    "subtitle": "subtitles.block.generic.place"
+  },
+  "block.sculky_deepslate.step": {
+    "sounds": [
+      "curiosities:block/sculky_deepslate/step1",
+      "curiosities:block/sculky_deepslate/step2",
+      "curiosities:block/sculky_deepslate/step3",
+      "curiosities:block/sculky_deepslate/step4",
+      "curiosities:block/sculky_deepslate/step5",
+      "curiosities:block/sculky_deepslate/step6"
+    ],
+    "subtitle": "subtitles.block.generic.footsteps"
+  },
   "item.armor.equip_aluminum": {
     "sounds": [
       "item/armor/equip_leather1",

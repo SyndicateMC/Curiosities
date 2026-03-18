@@ -14,6 +14,9 @@ public class CItemTags {
     public static final TagKey<Item> NUGGETS_NICKEL = TagUtil.itemTag("c", "nuggets/nickel");
     public static final TagKey<Item> NUGGETS_INVAR = TagUtil.itemTag("c", "nuggets/invar");
 
+    public static final TagKey<Item> RAW_MATS_ALUMINUM = TagUtil.itemTag("c", "raw_materials/aluminum");
+    public static final TagKey<Item> RAW_MATS_NICKEL = TagUtil.itemTag("c", "raw_materials/nickel");
+
     public static final TagKey<Item> ORES_ALUMINUM = TagUtil.itemTag("c", "ores/aluminum");
     public static final TagKey<Item> ORES_NICKEL = TagUtil.itemTag("c", "ores/nickel");
 
@@ -23,6 +26,7 @@ public class CItemTags {
 
     public static final TagKey<Item> ALUMINUM_TOOLS = TagUtil.itemTag(Curiosities.MOD_ID, "aluminum_tools");
     public static final TagKey<Item> INVAR_TOOLS = TagUtil.itemTag(Curiosities.MOD_ID, "invar_tools");
+    public static final TagKey<Item> TOPAZ_TOOLS = TagUtil.itemTag(Curiosities.MOD_ID, "topaz_tools");
 
     public static final TagKey<Item> KNIFE = TagUtil.itemTag("c", "tools/knife");
 }

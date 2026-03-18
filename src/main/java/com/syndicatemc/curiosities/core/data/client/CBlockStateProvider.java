@@ -30,7 +30,10 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
                 ALUMINUM_BLOCK, RAW_ALUMINUM_BLOCK, NICKEL_BLOCK, RAW_NICKEL_BLOCK, INVAR_BLOCK,
                 ALUMINUM_GRATE, CUT_ALUMINUM,
                 WEIGHT_1S, WEIGHT_5S, WEIGHT_20S,
-                SMOOTH_STONE_BRICKS
+                SMOOTH_STONE_BRICKS,
+
+                LATERITE, LATERITE_BRICKS,
+                SCULKY_COBBLED_DEEPSLATE
         }) {
             this.block(block);
         }
@@ -44,6 +47,12 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
         slabBlock(SMOOTH_STONE_BRICKS.get(), SMOOTH_STONE_BRICK_SLAB.get());
         stairsBlock(SMOOTH_STONE_BRICKS.get(), SMOOTH_STONE_BRICK_STAIRS.get());
         wallBlock(SMOOTH_STONE_BRICKS.get(), SMOOTH_STONE_BRICK_WALL.get());
+        slabBlock(LATERITE_BRICKS.get(), LATERITE_BRICK_SLAB.get());
+        stairsBlock(LATERITE_BRICKS.get(), LATERITE_BRICK_STAIRS.get());
+        wallBlock(LATERITE_BRICKS.get(), LATERITE_BRICK_WALL.get());
+        slabBlock(SCULKY_COBBLED_DEEPSLATE.get(), SCULKY_COBBLED_DEEPSLATE_SLAB.get());
+        stairsBlock(SCULKY_COBBLED_DEEPSLATE.get(), SCULKY_COBBLED_DEEPSLATE_STAIRS.get());
+        wallBlock(SCULKY_COBBLED_DEEPSLATE.get(), SCULKY_COBBLED_DEEPSLATE_WALL.get());
 
         //vanilla compat
         wallBlock(Blocks.STONE, STONE_WALL.get());
@@ -156,21 +165,22 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
         ModelFile bothConnected = models().cubeColumn(name(block) + "_both_connected", suffix(blockTexture(block), "_both_connected"), suffix(blockTexture(block), "_top"));
         ModelFile topConnected = models().cubeColumn(name(block) + "_top_connected", suffix(blockTexture(block), "_top_connected"), suffix(blockTexture(block), "_top"));
         ModelFile bottomConnected = models().cubeColumn(name(block) + "_bottom_connected", suffix(blockTexture(block), "_bottom_connected"), suffix(blockTexture(block), "_top"));
-//        ModelFile hNormal = models().cubeColumnHorizontal(name(block) + "_normal", suffix(blockTexture(block), "_normal"), suffix(blockTexture(block), "_top"));
-//        ModelFile hBothConnected = models().cubeColumnHorizontal(name(block) + "_both_connected", suffix(blockTexture(block), "_both_connected"), suffix(blockTexture(block), "_top"));
-//        ModelFile hTopConnected = models().cubeColumnHorizontal(name(block) + "_top_connected", suffix(blockTexture(block), "_top_connected"), suffix(blockTexture(block), "_top"));
-//        ModelFile hBottomConnected = models().cubeColumnHorizontal(name(block) + "_bottom_connected", suffix(blockTexture(block), "_bottom_connected"), suffix(blockTexture(block), "_top"));
+        ModelFile hNormal = models().cubeColumnHorizontal(name(block) + "_normal_horizontal", suffix(blockTexture(block), "_normal"), suffix(blockTexture(block), "_top"));
+        ModelFile hBothConnected = models().cubeColumnHorizontal(name(block) + "_both_connected_horizontal", suffix(blockTexture(block), "_both_connected"), suffix(blockTexture(block), "_top"));
+        ModelFile hTopConnected = models().cubeColumnHorizontal(name(block) + "_top_connected_horizontal", suffix(blockTexture(block), "_top_connected"), suffix(blockTexture(block), "_top"));
+        ModelFile hBottomConnected = models().cubeColumnHorizontal(name(block) + "_bottom_connected_horizontal", suffix(blockTexture(block), "_bottom_connected"), suffix(blockTexture(block), "_top"));
 
         this.getVariantBuilder(block).forAllStates((state) -> {
             boolean top = state.getValue(VerticalConnectingPillarBlock.TOP_CONNECTED);
             boolean bottom = state.getValue(VerticalConnectingPillarBlock.BOTTOM_CONNECTED);
             Direction.Axis axis = state.getValue(RotatedPillarBlock.AXIS);
+            boolean yAxis = axis == Direction.Axis.Y;
 
             ModelFile model = null;
-            if (!top && !bottom) model = normal;
-            if (top && !bottom) model = topConnected;
-            if (!top && bottom) model = bottomConnected;
-            if (top && bottom) model = bothConnected;
+            if (!top && !bottom) model = yAxis ? normal : hNormal;
+            if (top && !bottom) model = yAxis ? topConnected : hTopConnected;
+            if (!top && bottom) model = yAxis ? bottomConnected : hBottomConnected;
+            if (top && bottom) model = yAxis ? bothConnected : hBothConnected;
 
             if (axis == Direction.Axis.X) return ConfiguredModel.builder().modelFile(model).rotationX(90).rotationY(90).build();
             else if (axis == Direction.Axis.Y) return ConfiguredModel.builder().modelFile(model).build();

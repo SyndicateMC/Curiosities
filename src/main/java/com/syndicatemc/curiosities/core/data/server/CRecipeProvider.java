@@ -12,6 +12,7 @@ import com.teamabnormals.woodworks.core.data.server.WoodworksRecipeProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.recipes.*;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -50,8 +51,8 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
         storageRecipes(output, MISC, CItems.RAW_ALUMINUM, BUILDING_BLOCKS, CBlocks.RAW_ALUMINUM_BLOCK);
         storageRecipes(output, MISC, CItems.RAW_NICKEL, BUILDING_BLOCKS, CBlocks.RAW_NICKEL_BLOCK);
 
-        oreRecipesAlt(output, ALUMINUM_SMELTABLES, MISC, CItems.ALUMINUM_NUGGET, 3,0.8F, 300, "aluminum_nugget");
-        oreRecipesAlt(output, NICKEL_SMELTABLES, MISC, CItems.NICKEL_INGOT, 1,0.8F, 300, "nickel_ingot");
+        oreRecipesAlt(output, ALUMINUM_SMELTABLES, MISC, CItems.ALUMINUM_NUGGET, CItems.ALUMINUM_INGOT, 3, 2,0.8F, 300, "aluminum");
+        oreRecipesAlt(output, NICKEL_SMELTABLES, MISC, CItems.NICKEL_INGOT, 1, 0.8F, 300, "nickel_ingot");
 
         ShapelessRecipeBuilder.shapeless(MISC, CItems.INVAR_INGOT)
                 .requires(Items.NETHERITE_SCRAP, 3)
@@ -177,17 +178,42 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
         cutBuilder(BUILDING_BLOCKS, CBlocks.SMOOTH_STONE_BRICKS, Ingredient.of(Items.SMOOTH_STONE)).unlockedBy("has_smooth_stone", has(Items.SMOOTH_STONE)).save(output);
         generateRecipes(output, CBlockFamilies.SMOOTH_STONE_BRICKS_BLOCK_FAMILY);
 
-        fanciedPlanksRecipe(output, CBlocks.FANCIED_OAK_PLANKS, Items.OAK_SLAB, Items.OAK_PLANKS);
-        fanciedPlanksRecipe(output, CBlocks.FANCIED_SPRUCE_PLANKS, Items.SPRUCE_SLAB, Items.SPRUCE_PLANKS);
-        fanciedPlanksRecipe(output, CBlocks.FANCIED_BIRCH_PLANKS, Items.BIRCH_SLAB, Items.BIRCH_PLANKS);
-        fanciedPlanksRecipe(output, CBlocks.FANCIED_JUNGLE_PLANKS, Items.JUNGLE_SLAB, Items.JUNGLE_PLANKS);
-        fanciedPlanksRecipe(output, CBlocks.FANCIED_ACACIA_PLANKS, Items.ACACIA_SLAB, Items.ACACIA_PLANKS);
-        fanciedPlanksRecipe(output, CBlocks.FANCIED_DARK_OAK_PLANKS, Items.DARK_OAK_SLAB, Items.DARK_OAK_PLANKS);
-        fanciedPlanksRecipe(output, CBlocks.FANCIED_MANGROVE_PLANKS, Items.MANGROVE_SLAB, Items.MANGROVE_PLANKS);
-        fanciedPlanksRecipe(output, CBlocks.FANCIED_CHERRY_PLANKS, Items.CHERRY_SLAB, Items.CHERRY_PLANKS);
-        fanciedPlanksRecipe(output, CBlocks.FANCIED_BAMBOO_PLANKS, Items.BAMBOO_SLAB, Items.BAMBOO_PLANKS);
-        fanciedPlanksRecipe(output, CBlocks.FANCIED_CRIMSON_PLANKS, Items.CRIMSON_SLAB, Items.CRIMSON_PLANKS);
-        fanciedPlanksRecipe(output, CBlocks.FANCIED_WARPED_PLANKS, Items.WARPED_SLAB, Items.WARPED_PLANKS);
+        ShapelessRecipeBuilder.shapeless(BUILDING_BLOCKS, CBlocks.LATERITE, 4)
+                .requires(Items.DIRT, 5)
+                .requires(Items.CLAY_BALL, 2)
+                .requires(Items.RAW_IRON)
+                .requires(CItems.RAW_ALUMINUM)
+                .unlockedBy("has_aluminum", has(CItems.RAW_ALUMINUM)).save(output);
+        cutBuilder(BUILDING_BLOCKS, CBlocks.LATERITE_BRICKS, Ingredient.of(CBlocks.LATERITE)).unlockedBy("has_laterite", has(CBlocks.LATERITE)).save(output);
+        generateRecipes(output, CBlockFamilies.LATERITE_BRICKS_BLOCK_FAMILY);
+        stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_BRICK_SLAB, CBlocks.LATERITE_BRICKS, 2);
+        stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_BRICK_STAIRS, CBlocks.LATERITE_BRICKS);
+        stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_BRICK_WALL, CBlocks.LATERITE_BRICKS);
+
+//        ShapelessRecipeBuilder.shapeless(BUILDING_BLOCKS, CBlocks.SCULKY_COBBLED_DEEPSLATE)
+//                .requires(Items.COBBLED_DEEPSLATE)
+//                .requires(Items.SCULK)
+//                .unlockedBy("has_sculk", has(Items.SCULK)).save(output);
+//        ShapelessRecipeBuilder.shapeless(BUILDING_BLOCKS, CBlocks.SCULKY_COBBLED_DEEPSLATE)
+//                .requires(Items.COBBLED_DEEPSLATE)
+//                .requires(Items.SCULK)
+//                .unlockedBy("has_sculk", has(Items.SCULK)).save(output, getDefaultRecipeId(CBlocks.SCULKY_COBBLED_DEEPSLATE) + "_alt");
+//        generateRecipes(output, CBlockFamilies.SCULKY_COBBLED_DEEPSLATE_BLOCK_FAMILY);
+//        stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.SCULKY_COBBLED_DEEPSLATE_SLAB, CBlocks.SCULKY_COBBLED_DEEPSLATE, 2);
+//        stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.SCULKY_COBBLED_DEEPSLATE_STAIRS, CBlocks.SCULKY_COBBLED_DEEPSLATE);
+//        stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.SCULKY_COBBLED_DEEPSLATE_WALL, CBlocks.SCULKY_COBBLED_DEEPSLATE);
+
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_OAK_PLANKS, Items.OAK_SLAB, Items.OAK_PLANKS, ItemTags.OAK_LOGS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_SPRUCE_PLANKS, Items.SPRUCE_SLAB, Items.SPRUCE_PLANKS, ItemTags.SPRUCE_LOGS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_BIRCH_PLANKS, Items.BIRCH_SLAB, Items.BIRCH_PLANKS, ItemTags.BIRCH_LOGS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_JUNGLE_PLANKS, Items.JUNGLE_SLAB, Items.JUNGLE_PLANKS, ItemTags.JUNGLE_LOGS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_ACACIA_PLANKS, Items.ACACIA_SLAB, Items.ACACIA_PLANKS, ItemTags.ACACIA_LOGS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_DARK_OAK_PLANKS, Items.DARK_OAK_SLAB, Items.DARK_OAK_PLANKS, ItemTags.DARK_OAK_LOGS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_MANGROVE_PLANKS, Items.MANGROVE_SLAB, Items.MANGROVE_PLANKS, ItemTags.MANGROVE_LOGS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_CHERRY_PLANKS, Items.CHERRY_SLAB, Items.CHERRY_PLANKS, ItemTags.CHERRY_LOGS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_BAMBOO_PLANKS, Items.BAMBOO_SLAB, Items.BAMBOO_PLANKS, ItemTags.BAMBOO_BLOCKS, 2);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_CRIMSON_PLANKS, Items.CRIMSON_SLAB, Items.CRIMSON_PLANKS, ItemTags.CRIMSON_STEMS);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_WARPED_PLANKS, Items.WARPED_SLAB, Items.WARPED_PLANKS, ItemTags.WARPED_STEMS);
 
         //vanilla compat
         stairsStoneRecipes(output, CBlocks.SMOOTH_STONE_STAIRS, Items.SMOOTH_STONE);
@@ -212,42 +238,22 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
 
         aluminumSmithingRecipe(output.withConditions(new ModLoadedCondition(CConstants.FARMERS_DELIGHT)), ModItems.IRON_KNIFE.get(), CItems.ALUMINUM_KNIFE.get());
         invarSmithingRecipe(output.withConditions(new ModLoadedCondition(CConstants.FARMERS_DELIGHT)), ModItems.DIAMOND_KNIFE.get(), CItems.INVAR_KNIFE.get());
-
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.OAK_PLANKS, CBlocks.FANCIED_OAK_PLANKS, 1);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.SPRUCE_PLANKS, CBlocks.FANCIED_SPRUCE_PLANKS, 1);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.BIRCH_PLANKS, CBlocks.FANCIED_BIRCH_PLANKS, 1);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.JUNGLE_PLANKS, CBlocks.FANCIED_JUNGLE_PLANKS, 1);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.ACACIA_PLANKS, CBlocks.FANCIED_ACACIA_PLANKS, 1);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.DARK_OAK_PLANKS, CBlocks.FANCIED_DARK_OAK_PLANKS, 1);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.MANGROVE_PLANKS, CBlocks.FANCIED_MANGROVE_PLANKS, 1);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.CHERRY_PLANKS, CBlocks.FANCIED_CHERRY_PLANKS, 1);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.BAMBOO_PLANKS, CBlocks.FANCIED_BAMBOO_PLANKS, 1);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.CRIMSON_PLANKS, CBlocks.FANCIED_CRIMSON_PLANKS, 1);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, Items.WARPED_PLANKS, CBlocks.FANCIED_CRIMSON_PLANKS, 1);
-
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.OAK_LOGS, CBlocks.FANCIED_OAK_PLANKS, 4);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.SPRUCE_LOGS, CBlocks.FANCIED_SPRUCE_PLANKS, 4);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.BIRCH_LOGS, CBlocks.FANCIED_BIRCH_PLANKS, 4);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.JUNGLE_LOGS, CBlocks.FANCIED_JUNGLE_PLANKS, 4);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.ACACIA_LOGS, CBlocks.FANCIED_ACACIA_PLANKS, 4);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.DARK_OAK_LOGS, CBlocks.FANCIED_DARK_OAK_PLANKS, 4);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.MANGROVE_LOGS, CBlocks.FANCIED_MANGROVE_PLANKS, 4);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.CHERRY_LOGS, CBlocks.FANCIED_CHERRY_PLANKS, 4);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.BAMBOO_BLOCKS, CBlocks.FANCIED_BAMBOO_PLANKS, 2);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.CRIMSON_STEMS, CBlocks.FANCIED_CRIMSON_PLANKS, 4);
-        WoodworksRecipeProvider.sawmillRecipe(output, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, ItemTags.WARPED_STEMS, CBlocks.FANCIED_CRIMSON_PLANKS, 4);
     }
 
     public void oreRecipesAlt(RecipeOutput recipeOutput, List<ItemLike> inputs, RecipeCategory category, ItemLike output, int count, float xp, int cookTime, String group) {
+        oreRecipesAlt(recipeOutput, inputs, category, output, output, count, count, xp, cookTime, group);
+    }
+
+    public void oreRecipesAlt(RecipeOutput recipeOutput, List<ItemLike> inputs, RecipeCategory category, ItemLike smeltOutput, ItemLike blastOutput, int smeltCount, int blastCount, float xp, int cookTime, String group) {
         for (ItemLike item : inputs) {
-            SimpleCookingRecipeBuilder.smelting(Ingredient.of(item), category, new ItemStack(output, count), xp, cookTime)
+            SimpleCookingRecipeBuilder.smelting(Ingredient.of(item), category, new ItemStack(smeltOutput, smeltCount), xp, cookTime)
                     .unlockedBy(getHasName(item), has(item))
                     .group(group)
-                    .save(recipeOutput, getDefaultRecipeId(output) + "_from_smelting_" + getDefaultRecipeId(item).getPath());
-            SimpleCookingRecipeBuilder.blasting(Ingredient.of(item), category, new ItemStack(output, count), xp, cookTime / 2)
+                    .save(recipeOutput, getDefaultRecipeId(smeltOutput) + "_from_smelting_" + getDefaultRecipeId(item).getPath());
+            SimpleCookingRecipeBuilder.blasting(Ingredient.of(item), category, new ItemStack(blastOutput, blastCount), xp, cookTime / 2)
                     .unlockedBy(getHasName(item), has(item))
                     .group(group)
-                    .save(recipeOutput, getDefaultRecipeId(output) + "_from_blasting_" + getDefaultRecipeId(item).getPath());
+                    .save(recipeOutput, getDefaultRecipeId(blastOutput) + "_from_blasting_" + getDefaultRecipeId(item).getPath());
         }
     }
 
@@ -288,11 +294,17 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
                 .unlockedBy("has_bricks", has(altRequirement)).save(recipeOutput);
     }
 
-    public void fanciedPlanksRecipe(RecipeOutput recipeOutput, ItemLike fanciedPlanks, ItemLike requirement, ItemLike has) {
+    public void fanciedPlanksRecipe(RecipeOutput recipeOutput, ItemLike fanciedPlanks, ItemLike slabReq, ItemLike plankReq, TagKey<Item> logReq) {
+        fanciedPlanksRecipe(recipeOutput, fanciedPlanks, slabReq, plankReq, logReq, 4);
+    }
+
+    public void fanciedPlanksRecipe(RecipeOutput recipeOutput, ItemLike fanciedPlanks, ItemLike slabReq, ItemLike plankReq, TagKey<Item> logReq, int logOutput) {
         ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, fanciedPlanks, 2)
-                .define('B', requirement)
+                .define('B', slabReq)
                 .pattern("BB").pattern("BB")
-                .unlockedBy("has_planks", has(has)).save(recipeOutput);
+                .unlockedBy("has_planks", has(plankReq)).save(recipeOutput);
+        WoodworksRecipeProvider.sawmillRecipe(recipeOutput, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, plankReq, fanciedPlanks, 1);
+        WoodworksRecipeProvider.sawmillRecipe(recipeOutput, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, logReq, fanciedPlanks, logOutput);
     }
 
     public void stairsStoneRecipes(RecipeOutput output, ItemLike stairs, ItemLike requirement) {

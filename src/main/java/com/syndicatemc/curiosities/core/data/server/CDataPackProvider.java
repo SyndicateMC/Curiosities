@@ -3,6 +3,7 @@ package com.syndicatemc.curiosities.core.data.server;
 import com.syndicatemc.curiosities.core.Curiosities;
 import com.syndicatemc.curiosities.core.registry.CFeatures;
 import com.syndicatemc.curiosities.core.registry.datapack.CBiomeModifiers;
+import com.syndicatemc.curiosities.core.registry.datapack.CDamageTypes;
 import com.syndicatemc.curiosities.core.registry.datapack.CStructureRepaletters;
 import com.syndicatemc.curiosities.core.registry.datapack.CTrimMaterials;
 import com.teamabnormals.blueprint.core.registry.BlueprintDataPackRegistries;
@@ -22,7 +23,8 @@ public class CDataPackProvider extends DatapackBuiltinEntriesProvider {
             .add(Registries.PLACED_FEATURE, CFeatures.CPlacedFeatures::bootstrap)
             .add(NeoForgeRegistries.Keys.BIOME_MODIFIERS, CBiomeModifiers::bootstrap)
             .add(Registries.TRIM_MATERIAL, CTrimMaterials::bootstrap)
-            .add(BlueprintDataPackRegistries.STRUCTURE_REPALETTERS, CStructureRepaletters::bootstrap);
+            .add(BlueprintDataPackRegistries.STRUCTURE_REPALETTERS, CStructureRepaletters::bootstrap)
+            .add(Registries.DAMAGE_TYPE, CDamageTypes::bootstrap);
 
     public CDataPackProvider(PackOutput output, CompletableFuture<Provider> provider) {
         super(output, provider, BUILDER, CStructureRepaletters::applyConditions, Set.of(Curiosities.MOD_ID));

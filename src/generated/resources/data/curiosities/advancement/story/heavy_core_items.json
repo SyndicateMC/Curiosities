@@ -1,0 +1,40 @@
+{
+  "parent": "minecraft:adventure/under_lock_and_key",
+  "criteria": {
+    "heavy_core_items": {
+      "conditions": {
+        "items": [
+          {
+            "items": "curiosities:heavy_boots"
+          },
+          {
+            "items": "minecraft:mace"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    }
+  },
+  "display": {
+    "description": {
+      "translate": "advancements.curiosities.adventure.heavy_core_items.description"
+    },
+    "frame": "challenge",
+    "icon": {
+      "count": 1,
+      "id": "curiosities:heavy_boots"
+    },
+    "title": {
+      "translate": "advancements.curiosities.adventure.heavy_core_items.title"
+    }
+  },
+  "requirements": [
+    [
+      "heavy_core_items"
+    ]
+  ],
+  "rewards": {
+    "experience": 75
+  },
+  "sends_telemetry_event": true
+}

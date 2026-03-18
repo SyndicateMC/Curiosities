@@ -1,5 +1,6 @@
-// 1.21.1	2026-02-28T04:53:55.7549945	Registries
+// 1.21.1	2026-03-13T00:46:21.3214783	Registries
 4b95f23c8e7476ad4be9c75c2736a4f125088d80 data/curiosities/blueprint/structure_repaletters/invar_bastion_decor.json
+5589ae19ffc757272dadbdf7507303582a1b9447 data/curiosities/damage_type/topaz_tempo_add.json
 f37ad8ff8006855706da4008c41abc294cdcdbd9 data/curiosities/neoforge/biome_modifier/add_feature/aluminum_ore.json
 7fcd09d2a82cc862caf3451461971c6727a63f0f data/curiosities/neoforge/biome_modifier/add_feature/aluminum_ore_buried.json
 ef6e8a25ca197638d0bf01f1d71c57a2ecc241b2 data/curiosities/neoforge/biome_modifier/add_feature/nickel_ore.json

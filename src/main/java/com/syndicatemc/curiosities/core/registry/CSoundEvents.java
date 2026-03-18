@@ -3,6 +3,7 @@ package com.syndicatemc.curiosities.core.registry;
 import com.syndicatemc.curiosities.core.Curiosities;
 import com.teamabnormals.blueprint.core.util.registry.SoundSubRegistryHelper;
 import net.minecraft.sounds.SoundEvent;
+import net.neoforged.neoforge.common.util.DeferredSoundType;
 import net.neoforged.neoforge.registries.DeferredHolder;
 
 public class CSoundEvents {
@@ -29,4 +30,14 @@ public class CSoundEvents {
     public static final DeferredHolder<SoundEvent, SoundEvent> TRUMPET_OXIDIZED = SOUND_EVENTS.createSoundEvent("block.note_block.trumpet_oxidized");
     public static final DeferredHolder<SoundEvent, SoundEvent> STEEL_DRUM = SOUND_EVENTS.createSoundEvent("block.note_block.steel_drum");
     public static final DeferredHolder<SoundEvent, SoundEvent> SLAP_BASS = SOUND_EVENTS.createSoundEvent("block.note_block.slap_bass");
+
+    public static final DeferredHolder<SoundEvent, SoundEvent> SCULKY_DEEPSLATE_BREAK = SOUND_EVENTS.createSoundEvent("block.sculky_deepslate.break");
+    public static final DeferredHolder<SoundEvent, SoundEvent> SCULKY_DEEPSLATE_FALL = SOUND_EVENTS.createSoundEvent("block.sculky_deepslate.fall");
+    public static final DeferredHolder<SoundEvent, SoundEvent> SCULKY_DEEPSLATE_HIT = SOUND_EVENTS.createSoundEvent("block.sculky_deepslate.hit");
+    public static final DeferredHolder<SoundEvent, SoundEvent> SCULKY_DEEPSLATE_PLACE = SOUND_EVENTS.createSoundEvent("block.sculky_deepslate.place");
+    public static final DeferredHolder<SoundEvent, SoundEvent> SCULKY_DEEPSLATE_STEP = SOUND_EVENTS.createSoundEvent("block.sculky_deepslate.step");
+
+    public static class CSoundTypes {
+        public static final DeferredSoundType SCULKY_DEEPSLATE = new DeferredSoundType(1.0F, 1.0F, SCULKY_DEEPSLATE_BREAK, SCULKY_DEEPSLATE_STEP, SCULKY_DEEPSLATE_PLACE, SCULKY_DEEPSLATE_HIT, SCULKY_DEEPSLATE_FALL);
+    }
 }

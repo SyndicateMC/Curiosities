@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "curiosities:block/sculky_cobbled_deepslate_slab"
+    },
+    "type=double": {
+      "model": "curiosities:block/sculky_cobbled_deepslate"
+    },
+    "type=top": {
+      "model": "curiosities:block/sculky_cobbled_deepslate_slab_top"
+    }
+  }
+}

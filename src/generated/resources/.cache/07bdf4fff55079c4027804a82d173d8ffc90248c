@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-01T11:55:18.7754648	Item Models: curiosities
+// 1.21.1	2026-03-11T00:32:59.5497849	Item Models: curiosities
 b786e6b4cf8e874b1703edffc57563877565f589 assets/curiosities/models/item/aluminum_axe.json
 d4bf5f31eae5effe6cdd6b7c9dd0ab561099805a assets/curiosities/models/item/aluminum_boots.json
 edea89dbf34ff819d0d594631768b919944f30b0 assets/curiosities/models/item/aluminum_boots_amethyst_trim.json
@@ -125,3 +125,9 @@ ca72d3b2472e0cf127a553bc32bbfd75d68ba742 assets/curiosities/models/item/nickel_i
 38347b25d04cbe58092fc202756df372823039dd assets/curiosities/models/item/raw_aluminum.json
 3299c8d47aa8ecc9caadae877944c893b7c0d5ca assets/curiosities/models/item/raw_nickel.json
 e8d23ff411ba683fff06527a0c73cb95147c97c4 assets/curiosities/models/item/soul_cage_light.json
+ec7def2e68a128797c742e4cf9f18054834ef60e assets/curiosities/models/item/topaz.json
+9ad73c2074a7ac7120e6b81aa6b23f38629e5608 assets/curiosities/models/item/topaz_axe.json
+d07923d53c138adc61e0973a8cfca9a83b00ce72 assets/curiosities/models/item/topaz_hoe.json
+027ba06aab733b317f1ff5ee0038d55b93b7c418 assets/curiosities/models/item/topaz_pickaxe.json
+c74a82fa629a27ccfa4ef888ef6997c331981af9 assets/curiosities/models/item/topaz_shovel.json
+ba9b5756b49a4880b50e4a4896798e760db7ef39 assets/curiosities/models/item/topaz_sword.json

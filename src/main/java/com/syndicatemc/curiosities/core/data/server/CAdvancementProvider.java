@@ -11,6 +11,7 @@ import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.ItemLike;
 import net.neoforged.neoforge.common.data.AdvancementProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
@@ -35,6 +36,11 @@ public class CAdvancementProvider implements AdvancementProvider.AdvancementGene
                 .rewards(AdvancementRewards.Builder.experience(75))
                 .addCriterion("aluminum_armor", InventoryChangeTrigger.TriggerInstance.hasItems(CItems.ALUMINUM_HELMET.get(), CItems.ALUMINUM_CHESTPLATE.get(), CItems.ALUMINUM_LEGGINGS.get(), CItems.ALUMINUM_BOOTS.get()))
                 .save(consumer, Curiosities.MOD_ID + ":story/aluminum_armor");
+
+        createAdvancement("heavy_core_items", "adventure", ResourceLocation.withDefaultNamespace("adventure/under_lock_and_key"), CItems.HEAVY_BOOTS.get(), AdvancementType.CHALLENGE, true, true, false)
+                .rewards(AdvancementRewards.Builder.experience(75))
+                .addCriterion("heavy_core_items", InventoryChangeTrigger.TriggerInstance.hasItems(CItems.HEAVY_BOOTS.get(), Items.MACE))
+                .save(consumer, Curiosities.MOD_ID + ":story/heavy_core_items");
     }
 
     private static Advancement.Builder createAdvancement(String name, String category, AdvancementHolder parent, ItemLike icon, AdvancementType frame, boolean showToast, boolean announceToChat, boolean hidden) {

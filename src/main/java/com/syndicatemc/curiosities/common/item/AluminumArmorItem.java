@@ -22,7 +22,7 @@ public class AluminumArmorItem extends ArmorItem {
             ResourceLocation location = ResourceLocation.withDefaultNamespace("armor." + type.getName());
             builder.add(Attributes.ARMOR, new AttributeModifier(location, CArmorMaterials.ALUMINUM.value().getDefense(slot), AttributeModifier.Operation.ADD_VALUE), equipmentSlotGroup);
             builder.add(Attributes.BLOCK_INTERACTION_RANGE, new AttributeModifier(location, 0.5, AttributeModifier.Operation.ADD_VALUE), equipmentSlotGroup);
-            builder.add(Attributes.BLOCK_BREAK_SPEED, new AttributeModifier(location, 0.2, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), equipmentSlotGroup);
+            builder.add(Attributes.BLOCK_BREAK_SPEED, new AttributeModifier(location, 0.15, AttributeModifier.Operation.ADD_MULTIPLIED_BASE), equipmentSlotGroup);
 
             return builder.build();
         });

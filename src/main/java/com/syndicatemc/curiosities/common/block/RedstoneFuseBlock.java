@@ -40,15 +40,15 @@ public class RedstoneFuseBlock extends DiodeBlock {
             return InteractionResult.PASS;
         } else if (player.isCrouching() && state.getValue(BROKEN) && !(flag1 >= flag)) {
             level.setBlock(pos, state.setValue(BROKEN, false), 3);
-            level.playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(), CSoundEvents.FUSE_FIX, SoundSource.BLOCKS, 2.0F, 1.0F + level.random.nextFloat() * 0.1F, 1);
+            level.playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(), CSoundEvents.FUSE_FIX, SoundSource.BLOCKS, 0.5F, 1.0F + level.random.nextFloat() * 0.1F, 1);
             level.scheduleTick(pos, this, this.getDelay(state), TickPriority.VERY_HIGH);
             return InteractionResult.sidedSuccess(level.isClientSide);
         } else {
             level.setBlock(pos, state.cycle(THRESHOLD), 3);
             if (flag == 14) {
-                level.playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(), CSoundEvents.FUSE_SLIDER, SoundSource.BLOCKS, 2.0F, 1.0F, 1);
+                level.playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(), CSoundEvents.FUSE_SLIDER, SoundSource.BLOCKS, 0.5F, 1.0F, 1);
             } else {
-                level.playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(), CSoundEvents.FUSE_SLIDER, SoundSource.BLOCKS, 2.0F, 1.0F + flag * 0.05F, 1);
+                level.playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(), CSoundEvents.FUSE_SLIDER, SoundSource.BLOCKS, 0.5F, 1.0F + flag * 0.05F, 1);
             }
             level.scheduleTick(pos, this, this.getDelay(state), TickPriority.VERY_HIGH);
             return InteractionResult.sidedSuccess(level.isClientSide);
@@ -68,11 +68,11 @@ public class RedstoneFuseBlock extends DiodeBlock {
         boolean isBroken = state.getValue(BROKEN);
         if (flag3 >= flag2 && !isBroken) {
             level.setBlock(pos, state.setValue(BROKEN, true), 2);
-            level.playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(), CSoundEvents.FUSE_TRIP, SoundSource.BLOCKS, 2.0F, 1.2F + random.nextFloat() * 0.1F, 1);
+            level.playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(), CSoundEvents.FUSE_TRIP, SoundSource.BLOCKS, 0.5F, 1.2F + random.nextFloat() * 0.1F, 1);
         }
         if (flag3 < flag2 && isBroken && this.getAlternateSignal(level, pos, state) > 0) {
             level.setBlock(pos, state.setValue(BROKEN, false), 2);
-            level.playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(), CSoundEvents.FUSE_FIX, SoundSource.BLOCKS, 2.0F, 1.0F + level.random.nextFloat() * 0.1F, 1);
+            level.playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(), CSoundEvents.FUSE_FIX, SoundSource.BLOCKS, 0.5F, 1.0F + level.random.nextFloat() * 0.1F, 1);
         }
         if (flag && !flag1) {
             level.setBlock(pos, state.setValue(POWERED, false), 2);
@@ -89,11 +89,11 @@ public class RedstoneFuseBlock extends DiodeBlock {
         if (state.canSurvive(level, pos)) {
             if (flag1 >= flag && !state.getValue(BROKEN)) {
                 level.setBlock(pos, state.setValue(POWERED, false).setValue(BROKEN, true), 2);
-                level.playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(), CSoundEvents.FUSE_TRIP, SoundSource.BLOCKS, 2.0F, 1.2F + level.random.nextFloat() * 0.1F, 1);
+                level.playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(), CSoundEvents.FUSE_TRIP, SoundSource.BLOCKS, 0.5F, 1.2F + level.random.nextFloat() * 0.1F, 1);
             }
             if (flag1 < flag && state.getValue(BROKEN) && this.getAlternateSignal(level, pos, state) > 0) {
                 level.setBlock(pos, state.setValue(BROKEN, false), 2);
-                level.playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(), CSoundEvents.FUSE_FIX, SoundSource.BLOCKS, 2.0F, 1.0F + level.random.nextFloat() * 0.1F, 1);
+                level.playSeededSound(null, pos.getX(), pos.getY(), pos.getZ(), CSoundEvents.FUSE_FIX, SoundSource.BLOCKS, 0.5F, 1.0F + level.random.nextFloat() * 0.1F, 1);
             }
             this.checkTickOnNeighbor(level, pos, state);
         } else {

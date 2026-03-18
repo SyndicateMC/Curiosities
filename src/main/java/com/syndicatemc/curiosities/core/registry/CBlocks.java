@@ -85,6 +85,17 @@ public class CBlocks {
     public static final DeferredBlock<Block> FANCIED_CRIMSON_PLANKS = BLOCKS.createBlock("fancied_crimson_planks", () -> new VerticalConnectingPillarBlock(CProperties.CRIMSON));
     public static final DeferredBlock<Block> FANCIED_WARPED_PLANKS = BLOCKS.createBlock("fancied_warped_planks", () -> new VerticalConnectingPillarBlock(CProperties.WARPED));
 
+    public static final DeferredBlock<Block> LATERITE = BLOCKS.createBlock("laterite", () -> new Block(CProperties.LATERITE));
+    public static final DeferredBlock<Block> LATERITE_BRICKS = BLOCKS.createBlock("laterite_bricks", () -> new Block(CProperties.LATERITE_BRICKS));
+    public static final DeferredBlock<Block> LATERITE_BRICK_STAIRS = BLOCKS.createBlock("laterite_brick_stairs", () -> new StairBlock(CBlocks.LATERITE_BRICKS.get().defaultBlockState(), CProperties.LATERITE_BRICKS));
+    public static final DeferredBlock<Block> LATERITE_BRICK_SLAB = BLOCKS.createBlock("laterite_brick_slab", () -> new SlabBlock(CProperties.LATERITE_BRICKS));
+    public static final DeferredBlock<Block> LATERITE_BRICK_WALL = BLOCKS.createBlock("laterite_brick_wall", () -> new WallBlock(CProperties.LATERITE_BRICKS));
+
+    public static final DeferredBlock<Block> SCULKY_COBBLED_DEEPSLATE = BLOCKS.createBlock("sculky_cobbled_deepslate", () -> new Block(CProperties.SCULKY_DEEPSLATE));
+    public static final DeferredBlock<Block> SCULKY_COBBLED_DEEPSLATE_STAIRS = BLOCKS.createBlock("sculky_cobbled_deepslate_stairs", () -> new StairBlock(CBlocks.SCULKY_COBBLED_DEEPSLATE.get().defaultBlockState(), CProperties.SCULKY_DEEPSLATE));
+    public static final DeferredBlock<Block> SCULKY_COBBLED_DEEPSLATE_SLAB = BLOCKS.createBlock("sculky_cobbled_deepslate_slab", () -> new SlabBlock(CProperties.SCULKY_DEEPSLATE));
+    public static final DeferredBlock<Block> SCULKY_COBBLED_DEEPSLATE_WALL = BLOCKS.createBlock("sculky_cobbled_deepslate_wall", () -> new WallBlock(CProperties.SCULKY_DEEPSLATE));
+
     //vanilla compat
     public static final DeferredBlock<Block> QUARTZ_BRICK_SLAB = BLOCKS.createBlock("quartz_brick_slab", () -> new SlabBlock(CProperties.SMOOTH_STONE));
 
@@ -138,6 +149,11 @@ public class CBlocks {
         public static final BlockBehaviour.Properties HEAVY_LANTERN = BlockBehaviour.Properties.ofLegacyCopy(Blocks.LANTERN).mapColor(MapColor.STONE);
         public static final BlockBehaviour.Properties HEAVY_SOUL_LANTERN = BlockBehaviour.Properties.ofLegacyCopy(Blocks.SOUL_LANTERN).mapColor(MapColor.STONE);
 
+        public static final BlockBehaviour.Properties LATERITE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.PACKED_MUD).sound(SoundType.ROOTED_DIRT).mapColor(MapColor.TERRACOTTA_RED);
+        public static final BlockBehaviour.Properties LATERITE_BRICKS = BlockBehaviour.Properties.ofLegacyCopy(Blocks.MUD_BRICKS).mapColor(MapColor.TERRACOTTA_RED);
+
+        public static final BlockBehaviour.Properties SCULKY_DEEPSLATE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.DEEPSLATE).sound(CSoundEvents.CSoundTypes.SCULKY_DEEPSLATE).mapColor(MapColor.COLOR_CYAN);
+
         public static final BlockBehaviour.Properties CONCUSSION_BOMB = BlockBehaviour.Properties.ofLegacyCopy(Blocks.TNT).mapColor(MapColor.CRIMSON_HYPHAE);
 
         public static final BlockBehaviour.Properties STONE_ASHLAR = BlockBehaviour.Properties.ofLegacyCopy(Blocks.STONE_BRICKS);
@@ -186,6 +202,7 @@ public class CBlocks {
                 .tab(NATURAL_BLOCKS)
                 .addItemsAfter(of(Items.DEEPSLATE_GOLD_ORE), ALUMINUM_ORE, DEEPSLATE_ALUMINUM_ORE, NICKEL_ORE, DEEPSLATE_NICKEL_ORE)
                 .addItemsAfter(of(Items.RAW_GOLD_BLOCK), RAW_ALUMINUM_BLOCK, RAW_NICKEL_BLOCK)
+                .addItemsBefore(of(Items.SAND), LATERITE)
                 .tab(BUILDING_BLOCKS)
                 .addItemsAfter(of(Items.LIGHT_WEIGHTED_PRESSURE_PLATE), ALUMINUM_BLOCK, SHEET_METAL, ALUMINUM_GRATE, CUT_ALUMINUM, CUT_ALUMINUM_STAIRS, CUT_ALUMINUM_SLAB, ALUMINUM_BARS, ALUMINUM_DOOR, ALUMINUM_TRAPDOOR, NICKEL_BLOCK, NICKEL_BARS)
                 .addItemsAfter(of(Items.DIAMOND_BLOCK), INVAR_BLOCK)
@@ -207,6 +224,8 @@ public class CBlocks {
                 .addItemsAfter(of(Items.BAMBOO_FENCE_GATE), FANCIED_BAMBOO_PLANKS)
                 .addItemsAfter(of(Items.CRIMSON_FENCE_GATE), FANCIED_CRIMSON_PLANKS)
                 .addItemsAfter(of(Items.WARPED_FENCE_GATE), FANCIED_WARPED_PLANKS)
+                .addItemsBefore(of(Items.PACKED_MUD), LATERITE, LATERITE_BRICKS, LATERITE_BRICK_STAIRS, LATERITE_BRICK_SLAB, LATERITE_BRICK_WALL)
+                //.addItemsAfter(of(Items.COBBLED_DEEPSLATE_WALL), SCULKY_COBBLED_DEEPSLATE, SCULKY_COBBLED_DEEPSLATE_STAIRS, SCULKY_COBBLED_DEEPSLATE_SLAB, SCULKY_COBBLED_DEEPSLATE_WALL)
                 /* vanilla comp */
                 .addItemsAfter(of(Items.STONE_SLAB), STONE_WALL)
                 .addItemsAfter(of(Items.SMOOTH_STONE), SMOOTH_STONE_STAIRS).addItemsAfter(of(Items.SMOOTH_STONE_SLAB), SMOOTH_STONE_WALL)

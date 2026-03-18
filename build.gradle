@@ -85,6 +85,9 @@ dependencies {
     implementation("com.teamabnormals:gallery:${minecraft_version}-${gallery_version}")
     implementation("com.teamabnormals:woodworks:${minecraft_version}-${woodworks_version}")
 
+    //implementation("maven.modrinth:mmmmmmmmmmmm:1.21-2.0.11-neoforge")
+    //implementation("maven.modrinth:moonlight:1.21-2.29.20-neoforge")
+
     compileOnly("mezz.jei:jei-${minecraft_version}-neoforge-api:19.27.0.336")
     runtimeOnly("mezz.jei:jei-${minecraft_version}-neoforge:19.21.0.247")
 }
