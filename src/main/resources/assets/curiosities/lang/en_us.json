@@ -154,5 +154,19 @@
   "block.curiosities.dark_prismarine_wall": "Dark Prismarine Wall",
   "block.curiosities.quartz_wall": "Quartz Wall",
   "block.curiosities.quartz_brick_wall": "Quartz Brick Wall",
-  "block.curiosities.purpur_wall": "Purpur Wall"
+  "block.curiosities.purpur_wall": "Purpur Wall",
+
+  "block.curiosities.fancied_aspen_planks": "Fancied Aspen Planks",
+  "block.curiosities.fancied_grimwood_planks": "Fancied Grimwood Planks",
+  "block.curiosities.fancied_kousa_planks": "Fancied Kousa Planks",
+  "block.curiosities.fancied_laurel_planks": "Fancied Laurel Planks",
+  "block.curiosities.fancied_morado_planks": "Fancied Morado Planks",
+  "block.curiosities.fancied_rosewood_planks": "Fancied Rosewood Planks",
+  "block.curiosities.fancied_yucca_planks": "Fancied Yucca Planks",
+  "block.curiosities.fancied_pine_planks": "Fancied Pine Planks",
+  "block.curiosities.fancied_plum_planks": "Fancied Plum Planks",
+  "block.curiosities.fancied_willow_planks": "Fancied Willow Planks",
+  "block.curiosities.fancied_wisteria_planks": "Fancied Wisteria Planks",
+  "block.curiosities.fancied_driftwood_planks": "Fancied Driftwood Planks",
+  "block.curiosities.fancied_river_planks": "Fancied River Planks"
 }

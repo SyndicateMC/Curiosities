@@ -1,0 +1,52 @@
+{
+  "variants": {
+    "axis=x,bottom_connected=false,top_connected=false": {
+      "model": "curiosities:compat/fancied_willow_planks_normal_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,bottom_connected=false,top_connected=true": {
+      "model": "curiosities:compat/fancied_willow_planks_top_connected_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,bottom_connected=true,top_connected=false": {
+      "model": "curiosities:compat/fancied_willow_planks_bottom_connected_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=x,bottom_connected=true,top_connected=true": {
+      "model": "curiosities:compat/fancied_willow_planks_both_connected_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y,bottom_connected=false,top_connected=false": {
+      "model": "curiosities:compat/fancied_willow_planks_normal"
+    },
+    "axis=y,bottom_connected=false,top_connected=true": {
+      "model": "curiosities:compat/fancied_willow_planks_top_connected"
+    },
+    "axis=y,bottom_connected=true,top_connected=false": {
+      "model": "curiosities:compat/fancied_willow_planks_bottom_connected"
+    },
+    "axis=y,bottom_connected=true,top_connected=true": {
+      "model": "curiosities:compat/fancied_willow_planks_both_connected"
+    },
+    "axis=z,bottom_connected=false,top_connected=false": {
+      "model": "curiosities:compat/fancied_willow_planks_normal_horizontal",
+      "x": 90
+    },
+    "axis=z,bottom_connected=false,top_connected=true": {
+      "model": "curiosities:compat/fancied_willow_planks_top_connected_horizontal",
+      "x": 90
+    },
+    "axis=z,bottom_connected=true,top_connected=false": {
+      "model": "curiosities:compat/fancied_willow_planks_bottom_connected_horizontal",
+      "x": 90
+    },
+    "axis=z,bottom_connected=true,top_connected=true": {
+      "model": "curiosities:compat/fancied_willow_planks_both_connected_horizontal",
+      "x": 90
+    }
+  }
+}

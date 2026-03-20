@@ -7,12 +7,14 @@ import com.syndicatemc.curiosities.common.block.VerticalConnectingPillarBlock;
 import com.syndicatemc.curiosities.core.Curiosities;
 import com.teamabnormals.blueprint.core.data.client.BlueprintBlockStateProvider;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder;
+import net.neoforged.neoforge.client.model.generators.VariantBlockStateBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
@@ -101,6 +103,14 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
         }) {
             ashlarBlock(block);
         }
+
+        for (DeferredBlock<Block> block : new DeferredBlock[]{
+                FANCIED_ASPEN_PLANKS, FANCIED_GRIMWOOD_PLANKS, FANCIED_KOUSA_PLANKS, FANCIED_LAUREL_PLANKS, FANCIED_MORADO_PLANKS, FANCIED_ROSEWOOD_PLANKS, FANCIED_YUCCA_PLANKS,
+                FANCIED_PINE_PLANKS, FANCIED_PLUM_PLANKS, FANCIED_WILLOW_PLANKS, FANCIED_WISTERIA_PLANKS,
+                FANCIED_DRIFTWOOD_PLANKS, FANCIED_RIVER_PLANKS
+        }) {
+            fanciedPlanksCompat(block);
+        }
     }
 
     private void redstoneDiodeBlock(DeferredBlock<?> block) {
@@ -158,7 +168,6 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
         });
         this.simpleBlockItem(block, upper);
     }
-
     public void verticalConnectingPillarBlock(DeferredBlock<Block> object) {
         Block block = object.get();
         ModelFile normal = models().cubeColumn(name(block) + "_normal", suffix(blockTexture(block), "_normal"), suffix(blockTexture(block), "_top"));
@@ -170,6 +179,28 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
         ModelFile hTopConnected = models().cubeColumnHorizontal(name(block) + "_top_connected_horizontal", suffix(blockTexture(block), "_top_connected"), suffix(blockTexture(block), "_top"));
         ModelFile hBottomConnected = models().cubeColumnHorizontal(name(block) + "_bottom_connected_horizontal", suffix(blockTexture(block), "_bottom_connected"), suffix(blockTexture(block), "_top"));
 
+        verticalConnectingPillarVariantBuilder(block, normal, hNormal, bothConnected, hBothConnected, topConnected, hTopConnected, bottomConnected, hBottomConnected);
+        this.simpleBlockItem(block, normal);
+    }
+    private void fanciedPlanksCompat(DeferredBlock<Block> object) {
+        Block block = object.get();
+        ModelFile normal = models().cubeColumn("compat/" + name(block) + "_normal", suffix(blockRlWithCustomDir(block, "compat"), "_normal"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
+        ModelFile bothConnected = models().cubeColumn("compat/" + name(block) + "_both_connected", suffix(blockRlWithCustomDir(block, "compat"), "_both_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
+        ModelFile topConnected = models().cubeColumn("compat/" + name(block) + "_top_connected", suffix(blockRlWithCustomDir(block, "compat"), "_top_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
+        ModelFile bottomConnected = models().cubeColumn("compat/" + name(block) + "_bottom_connected", suffix(blockRlWithCustomDir(block, "compat"), "_bottom_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
+        ModelFile hNormal = models().cubeColumnHorizontal("compat/" + name(block) + "_normal_horizontal", suffix(blockRlWithCustomDir(block, "compat"), "_normal"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
+        ModelFile hBothConnected = models().cubeColumnHorizontal("compat/" + name(block) + "_both_connected_horizontal", suffix(blockRlWithCustomDir(block, "compat"), "_both_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
+        ModelFile hTopConnected = models().cubeColumnHorizontal("compat/" + name(block) + "_top_connected_horizontal", suffix(blockRlWithCustomDir(block, "compat"), "_top_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
+        ModelFile hBottomConnected = models().cubeColumnHorizontal("compat/" + name(block) + "_bottom_connected_horizontal", suffix(blockRlWithCustomDir(block, "compat"), "_bottom_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
+
+        verticalConnectingPillarVariantBuilder(block, normal, hNormal, bothConnected, hBothConnected, topConnected, hTopConnected, bottomConnected, hBottomConnected);
+        this.simpleBlockItem(block, normal);
+    }
+    private ResourceLocation blockRlWithCustomDir(Block block, String dir) {
+        ResourceLocation name = BuiltInRegistries.BLOCK.getKey(block);
+        return ResourceLocation.fromNamespaceAndPath(name.getNamespace(), "block/" + dir + "/" + name.getPath());
+    }
+    private void verticalConnectingPillarVariantBuilder(Block block, ModelFile normal, ModelFile hNormal, ModelFile bothConnected, ModelFile hBothConnected, ModelFile topConnected, ModelFile hTopConnected, ModelFile bottomConnected, ModelFile hBottomConnected) {
         this.getVariantBuilder(block).forAllStates((state) -> {
             boolean top = state.getValue(VerticalConnectingPillarBlock.TOP_CONNECTED);
             boolean bottom = state.getValue(VerticalConnectingPillarBlock.BOTTOM_CONNECTED);
@@ -186,6 +217,5 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
             else if (axis == Direction.Axis.Y) return ConfiguredModel.builder().modelFile(model).build();
             else return ConfiguredModel.builder().modelFile(model).rotationX(90).build();
         });
-        this.simpleBlockItem(block, normal);
     }
 }

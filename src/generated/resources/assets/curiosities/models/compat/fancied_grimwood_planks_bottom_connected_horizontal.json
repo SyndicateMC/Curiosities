@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "curiosities:block/compat/fancied_grimwood_planks_top",
+    "side": "curiosities:block/compat/fancied_grimwood_planks_bottom_connected"
+  }
+}

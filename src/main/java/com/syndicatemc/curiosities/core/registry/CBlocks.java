@@ -2,18 +2,29 @@ package com.syndicatemc.curiosities.core.registry;
 
 import com.syndicatemc.curiosities.common.block.*;
 import com.syndicatemc.curiosities.core.Curiosities;
+import com.syndicatemc.curiosities.core.other.CConstants;
+import com.syndicatemc.curiosities.core.other.CConstants.CCompatProperties;
 import com.syndicatemc.curiosities.core.registry.helper.CBlockSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
+import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
+import net.minecraft.core.registries.BuiltInRegistries;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.ConstantInt;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.BlockBehaviour.Properties;
 import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.material.MapColor;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.registries.DeferredBlock;
+
+import java.util.function.Predicate;
 
 import static net.minecraft.world.item.CreativeModeTabs.*;
 import static net.minecraft.world.item.crafting.Ingredient.of;
@@ -117,74 +128,94 @@ public class CBlocks {
     public static final DeferredBlock<Block> QUARTZ_WALL = BLOCKS.createBlock("quartz_wall", () -> new WallBlock(CProperties.QUARTZ));
     public static final DeferredBlock<Block> QUARTZ_BRICK_WALL = BLOCKS.createBlock("quartz_brick_wall", () -> new WallBlock(CProperties.QUARTZ));
 
+    //atmospheric compat
+    public static final DeferredBlock<Block> FANCIED_ASPEN_PLANKS = BLOCKS.createBlock("fancied_aspen_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.ASPEN_PLANKS));
+    public static final DeferredBlock<Block> FANCIED_GRIMWOOD_PLANKS = BLOCKS.createBlock("fancied_grimwood_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.GRIMWOOD_PLANKS));
+    public static final DeferredBlock<Block> FANCIED_KOUSA_PLANKS = BLOCKS.createBlock("fancied_kousa_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.KOUSA_PLANKS));
+    public static final DeferredBlock<Block> FANCIED_LAUREL_PLANKS = BLOCKS.createBlock("fancied_laurel_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.LAUREL_PLANKS));
+    public static final DeferredBlock<Block> FANCIED_MORADO_PLANKS = BLOCKS.createBlock("fancied_morado_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.MORADO_PLANKS));
+    public static final DeferredBlock<Block> FANCIED_ROSEWOOD_PLANKS = BLOCKS.createBlock("fancied_rosewood_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.ROSEWOOD_PLANKS));
+    public static final DeferredBlock<Block> FANCIED_YUCCA_PLANKS = BLOCKS.createBlock("fancied_yucca_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.YUCCA_PLANKS));
+
+    public static final DeferredBlock<Block> FANCIED_PINE_PLANKS = BLOCKS.createBlock("fancied_pine_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.PINE_PLANKS));
+    public static final DeferredBlock<Block> FANCIED_PLUM_PLANKS = BLOCKS.createBlock("fancied_plum_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.PLUM_PLANKS));
+    public static final DeferredBlock<Block> FANCIED_WILLOW_PLANKS = BLOCKS.createBlock("fancied_willow_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.WILLOW_PLANKS));
+    public static final DeferredBlock<Block> FANCIED_WISTERIA_PLANKS = BLOCKS.createBlock("fancied_wisteria_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.WISTERIA_PLANKS));
+
+    public static final DeferredBlock<Block> FANCIED_DRIFTWOOD_PLANKS = BLOCKS.createBlock("fancied_driftwood_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.DRIFTWOOD_PLANKS));
+    public static final DeferredBlock<Block> FANCIED_RIVER_PLANKS = BLOCKS.createBlock("fancied_river_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.RIVER_PLANKS));
 
     public static final class CProperties {
-        public static final BlockBehaviour.Properties ALUMINUM_ORE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.GOLD_ORE).mapColor(MapColor.PODZOL);
-        public static final BlockBehaviour.Properties DEEPSLATE_ALUMINUM_ORE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.DEEPSLATE_GOLD_ORE).mapColor(MapColor.PODZOL);
-        public static final BlockBehaviour.Properties NICKEL_ORE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.IRON_ORE).mapColor(MapColor.TERRACOTTA_YELLOW);
-        public static final BlockBehaviour.Properties DEEPSLATE_NICKEL_ORE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.DEEPSLATE_IRON_ORE).mapColor(MapColor.TERRACOTTA_YELLOW);
+        public static final Properties ALUMINUM_ORE = getPropFrom(Blocks.GOLD_ORE).mapColor(MapColor.PODZOL);
+        public static final Properties DEEPSLATE_ALUMINUM_ORE = getPropFrom(Blocks.DEEPSLATE_GOLD_ORE).mapColor(MapColor.PODZOL);
+        public static final Properties NICKEL_ORE = getPropFrom(Blocks.IRON_ORE).mapColor(MapColor.TERRACOTTA_YELLOW);
+        public static final Properties DEEPSLATE_NICKEL_ORE = getPropFrom(Blocks.DEEPSLATE_IRON_ORE).mapColor(MapColor.TERRACOTTA_YELLOW);
 
-        public static final BlockBehaviour.Properties ALUMINUM_BLOCK = BlockBehaviour.Properties.ofLegacyCopy(Blocks.COPPER_BLOCK).mapColor(MapColor.SNOW);
-        public static final BlockBehaviour.Properties RAW_ALUMINUM_BLOCK = BlockBehaviour.Properties.ofLegacyCopy(Blocks.RAW_COPPER_BLOCK).mapColor(MapColor.PODZOL);
-        public static final BlockBehaviour.Properties NICKEL_BLOCK = BlockBehaviour.Properties.ofLegacyCopy(Blocks.IRON_BLOCK).mapColor(MapColor.SAND);
-        public static final BlockBehaviour.Properties RAW_NICKEL_BLOCK = BlockBehaviour.Properties.ofLegacyCopy(Blocks.IRON_BLOCK).mapColor(MapColor.TERRACOTTA_YELLOW);
-        public static final BlockBehaviour.Properties INVAR_BLOCK = BlockBehaviour.Properties.ofLegacyCopy(Blocks.NETHERITE_BLOCK).mapColor(MapColor.STONE);
+        public static final Properties ALUMINUM_BLOCK = getPropFrom(Blocks.COPPER_BLOCK).mapColor(MapColor.SNOW);
+        public static final Properties RAW_ALUMINUM_BLOCK = getPropFrom(Blocks.RAW_COPPER_BLOCK).mapColor(MapColor.PODZOL);
+        public static final Properties NICKEL_BLOCK = getPropFrom(Blocks.IRON_BLOCK).mapColor(MapColor.SAND);
+        public static final Properties RAW_NICKEL_BLOCK = getPropFrom(Blocks.IRON_BLOCK).mapColor(MapColor.TERRACOTTA_YELLOW);
+        public static final Properties INVAR_BLOCK = getPropFrom(Blocks.NETHERITE_BLOCK).mapColor(MapColor.STONE);
 
-        public static final BlockBehaviour.Properties ALUMINUM_GRATE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.COPPER_GRATE).mapColor(MapColor.SNOW);
-        public static final BlockBehaviour.Properties ALUMINUM_BARS = BlockBehaviour.Properties.ofLegacyCopy(Blocks.IRON_BARS).sound(SoundType.CHAIN).mapColor(MapColor.SNOW);
-        public static final BlockBehaviour.Properties NICKEL_BARS = BlockBehaviour.Properties.ofLegacyCopy(Blocks.IRON_BARS).mapColor(MapColor.TERRACOTTA_YELLOW);
+        public static final Properties ALUMINUM_GRATE = getPropFrom(Blocks.COPPER_GRATE).mapColor(MapColor.SNOW);
+        public static final Properties ALUMINUM_BARS = getPropFrom(Blocks.IRON_BARS).sound(SoundType.CHAIN).mapColor(MapColor.SNOW);
+        public static final Properties NICKEL_BARS = getPropFrom(Blocks.IRON_BARS).mapColor(MapColor.TERRACOTTA_YELLOW);
 
-        public static final BlockBehaviour.Properties REDSTONE_COMPONENTS = BlockBehaviour.Properties.ofLegacyCopy(Blocks.REPEATER);
+        public static final Properties REDSTONE_COMPONENTS = getPropFrom(Blocks.REPEATER);
 
-        public static final BlockBehaviour.Properties WEIGHT = BlockBehaviour.Properties.ofLegacyCopy(Blocks.STONE).sound(SoundType.NETHERITE_BLOCK);
+        public static final Properties WEIGHT = getPropFrom(Blocks.STONE).sound(SoundType.NETHERITE_BLOCK);
 
-        public static final BlockBehaviour.Properties CAGE_LIGHT = BlockBehaviour.Properties.ofLegacyCopy(Blocks.LANTERN).lightLevel(
+        public static final Properties CAGE_LIGHT = getPropFrom(Blocks.LANTERN).lightLevel(
                 state -> state.getValue(BlockStateProperties.LIT) ? state.getValue(CageLightBlock.LIGHT) : 0
         );
-        public static final BlockBehaviour.Properties SOUL_CAGE_LIGHT = BlockBehaviour.Properties.ofLegacyCopy(Blocks.SOUL_LANTERN).lightLevel(
+        public static final Properties SOUL_CAGE_LIGHT = getPropFrom(Blocks.SOUL_LANTERN).lightLevel(
                 state -> state.getValue(BlockStateProperties.LIT) ? state.getValue(CageLightBlock.LIGHT) - 5 : 0
         );
-        public static final BlockBehaviour.Properties TILE_LIGHT = BlockBehaviour.Properties.ofLegacyCopy(Blocks.COPPER_BULB).lightLevel(state -> 14).mapColor(MapColor.SNOW);
-        public static final BlockBehaviour.Properties BIG_CHAIN = BlockBehaviour.Properties.ofLegacyCopy(Blocks.CHAIN);
-        public static final BlockBehaviour.Properties HEAVY_LANTERN = BlockBehaviour.Properties.ofLegacyCopy(Blocks.LANTERN).mapColor(MapColor.STONE);
-        public static final BlockBehaviour.Properties HEAVY_SOUL_LANTERN = BlockBehaviour.Properties.ofLegacyCopy(Blocks.SOUL_LANTERN).mapColor(MapColor.STONE);
+        public static final Properties TILE_LIGHT = getPropFrom(Blocks.COPPER_BULB).lightLevel(state -> 14).mapColor(MapColor.SNOW);
+        public static final Properties BIG_CHAIN = getPropFrom(Blocks.CHAIN);
+        public static final Properties HEAVY_LANTERN = getPropFrom(Blocks.LANTERN).mapColor(MapColor.STONE);
+        public static final Properties HEAVY_SOUL_LANTERN = getPropFrom(Blocks.SOUL_LANTERN).mapColor(MapColor.STONE);
 
-        public static final BlockBehaviour.Properties LATERITE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.PACKED_MUD).sound(SoundType.ROOTED_DIRT).mapColor(MapColor.TERRACOTTA_RED);
-        public static final BlockBehaviour.Properties LATERITE_BRICKS = BlockBehaviour.Properties.ofLegacyCopy(Blocks.MUD_BRICKS).mapColor(MapColor.TERRACOTTA_RED);
+        public static final Properties LATERITE = getPropFrom(Blocks.PACKED_MUD).sound(SoundType.ROOTED_DIRT).mapColor(MapColor.TERRACOTTA_RED);
+        public static final Properties LATERITE_BRICKS = getPropFrom(Blocks.MUD_BRICKS).mapColor(MapColor.TERRACOTTA_RED);
 
-        public static final BlockBehaviour.Properties SCULKY_DEEPSLATE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.DEEPSLATE).sound(CSoundEvents.CSoundTypes.SCULKY_DEEPSLATE).mapColor(MapColor.COLOR_CYAN);
+        public static final Properties SCULKY_DEEPSLATE = getPropFrom(Blocks.DEEPSLATE).sound(CSoundEvents.CSoundTypes.SCULKY_DEEPSLATE).mapColor(MapColor.COLOR_CYAN);
 
-        public static final BlockBehaviour.Properties CONCUSSION_BOMB = BlockBehaviour.Properties.ofLegacyCopy(Blocks.TNT).mapColor(MapColor.CRIMSON_HYPHAE);
+        public static final Properties CONCUSSION_BOMB = getPropFrom(Blocks.TNT).mapColor(MapColor.CRIMSON_HYPHAE);
 
-        public static final BlockBehaviour.Properties STONE_ASHLAR = BlockBehaviour.Properties.ofLegacyCopy(Blocks.STONE_BRICKS);
-        public static final BlockBehaviour.Properties DEEPSLATE_ASHLAR = BlockBehaviour.Properties.ofLegacyCopy(Blocks.DEEPSLATE_BRICKS);
-        public static final BlockBehaviour.Properties TUFF_ASHLAR = BlockBehaviour.Properties.ofLegacyCopy(Blocks.TUFF_BRICKS);
-        public static final BlockBehaviour.Properties POLISHED_BLACKSTONE_ASHLAR = BlockBehaviour.Properties.ofLegacyCopy(Blocks.POLISHED_BLACKSTONE_BRICKS);
-        public static final BlockBehaviour.Properties END_STONE_ASHLAR = BlockBehaviour.Properties.ofLegacyCopy(Blocks.END_STONE_BRICKS);
+        public static final Properties STONE_ASHLAR = getPropFrom(Blocks.STONE_BRICKS);
+        public static final Properties DEEPSLATE_ASHLAR = getPropFrom(Blocks.DEEPSLATE_BRICKS);
+        public static final Properties TUFF_ASHLAR = getPropFrom(Blocks.TUFF_BRICKS);
+        public static final Properties POLISHED_BLACKSTONE_ASHLAR = getPropFrom(Blocks.POLISHED_BLACKSTONE_BRICKS);
+        public static final Properties END_STONE_ASHLAR = getPropFrom(Blocks.END_STONE_BRICKS);
 
-        public static final BlockBehaviour.Properties STONE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.STONE);
-        public static final BlockBehaviour.Properties SMOOTH_STONE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.SMOOTH_STONE);
-        public static final BlockBehaviour.Properties GRANITE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.GRANITE);
-        public static final BlockBehaviour.Properties DIORITE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.DIORITE);
-        public static final BlockBehaviour.Properties ANDESITE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.ANDESITE);
-        public static final BlockBehaviour.Properties SANDSTONE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.SANDSTONE);
-        public static final BlockBehaviour.Properties RED_SANDSTONE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.RED_SANDSTONE);
-        public static final BlockBehaviour.Properties PRISMARINE_BRICKS = BlockBehaviour.Properties.ofLegacyCopy(Blocks.PRISMARINE_BRICKS);
-        public static final BlockBehaviour.Properties DARK_PRISMARINE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.DARK_PRISMARINE);
-        public static final BlockBehaviour.Properties PURPUR = BlockBehaviour.Properties.ofLegacyCopy(Blocks.PURPUR_BLOCK);
-        public static final BlockBehaviour.Properties QUARTZ = BlockBehaviour.Properties.ofLegacyCopy(Blocks.QUARTZ_BLOCK);
+        public static final Properties STONE = getPropFrom(Blocks.STONE);
+        public static final Properties SMOOTH_STONE = getPropFrom(Blocks.SMOOTH_STONE);
+        public static final Properties GRANITE = getPropFrom(Blocks.GRANITE);
+        public static final Properties DIORITE = getPropFrom(Blocks.DIORITE);
+        public static final Properties ANDESITE = getPropFrom(Blocks.ANDESITE);
+        public static final Properties SANDSTONE = getPropFrom(Blocks.SANDSTONE);
+        public static final Properties RED_SANDSTONE = getPropFrom(Blocks.RED_SANDSTONE);
+        public static final Properties PRISMARINE_BRICKS = getPropFrom(Blocks.PRISMARINE_BRICKS);
+        public static final Properties DARK_PRISMARINE = getPropFrom(Blocks.DARK_PRISMARINE);
+        public static final Properties PURPUR = getPropFrom(Blocks.PURPUR_BLOCK);
+        public static final Properties QUARTZ = getPropFrom(Blocks.QUARTZ_BLOCK);
 
-        public static final BlockBehaviour.Properties OAK = BlockBehaviour.Properties.ofLegacyCopy(Blocks.OAK_PLANKS);
-        public static final BlockBehaviour.Properties SPRUCE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.SPRUCE_PLANKS);
-        public static final BlockBehaviour.Properties BIRCH = BlockBehaviour.Properties.ofLegacyCopy(Blocks.BIRCH_PLANKS);
-        public static final BlockBehaviour.Properties JUNGLE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.JUNGLE_PLANKS);
-        public static final BlockBehaviour.Properties ACACIA = BlockBehaviour.Properties.ofLegacyCopy(Blocks.ACACIA_PLANKS);
-        public static final BlockBehaviour.Properties DARK_OAK = BlockBehaviour.Properties.ofLegacyCopy(Blocks.DARK_OAK_PLANKS);
-        public static final BlockBehaviour.Properties MANGROVE = BlockBehaviour.Properties.ofLegacyCopy(Blocks.MANGROVE_PLANKS);
-        public static final BlockBehaviour.Properties CHERRY = BlockBehaviour.Properties.ofLegacyCopy(Blocks.CHERRY_PLANKS);
-        public static final BlockBehaviour.Properties BAMBOO = BlockBehaviour.Properties.ofLegacyCopy(Blocks.BAMBOO_PLANKS);
-        public static final BlockBehaviour.Properties CRIMSON = BlockBehaviour.Properties.ofLegacyCopy(Blocks.CRIMSON_PLANKS);
-        public static final BlockBehaviour.Properties WARPED = BlockBehaviour.Properties.ofLegacyCopy(Blocks.WARPED_PLANKS);
+        public static final Properties OAK = getPropFrom(Blocks.OAK_PLANKS);
+        public static final Properties SPRUCE = getPropFrom(Blocks.SPRUCE_PLANKS);
+        public static final Properties BIRCH = getPropFrom(Blocks.BIRCH_PLANKS);
+        public static final Properties JUNGLE = getPropFrom(Blocks.JUNGLE_PLANKS);
+        public static final Properties ACACIA = getPropFrom(Blocks.ACACIA_PLANKS);
+        public static final Properties DARK_OAK = getPropFrom(Blocks.DARK_OAK_PLANKS);
+        public static final Properties MANGROVE = getPropFrom(Blocks.MANGROVE_PLANKS);
+        public static final Properties CHERRY = getPropFrom(Blocks.CHERRY_PLANKS);
+        public static final Properties BAMBOO = getPropFrom(Blocks.BAMBOO_PLANKS);
+        public static final Properties CRIMSON = getPropFrom(Blocks.CRIMSON_PLANKS);
+        public static final Properties WARPED = getPropFrom(Blocks.WARPED_PLANKS);
+
+        public static Properties getPropFrom(BlockBehaviour block) {
+            return Properties.ofLegacyCopy(block);
+        }
     }
 
     public static final class CBlockSetTypes {
@@ -246,5 +277,28 @@ public class CBlocks {
                 .tab(REDSTONE_BLOCKS)
                 .addItemsAfter(of(Items.COMPARATOR), REDSTONE_DIODE, REDSTONE_FUSE, CAGE_LIGHT)
                 .addItemsAfter(of(Items.NOTE_BLOCK), INVAR_BLOCK, WEIGHT_1S, WEIGHT_5S, WEIGHT_20S);
+        CreativeModeTabContentsPopulator.mod(Curiosities.MOD_ID + "_atmospheric_compat")
+                .tab(BUILDING_BLOCKS)
+                .addItemsAfter(ofID(CConstants.ASPEN_FENCE_GATE), FANCIED_ASPEN_PLANKS)
+                .addItemsAfter(ofID(CConstants.GRIMWOOD_FENCE_GATE), FANCIED_GRIMWOOD_PLANKS)
+                .addItemsAfter(ofID(CConstants.KOUSA_FENCE_GATE), FANCIED_KOUSA_PLANKS)
+                .addItemsAfter(ofID(CConstants.LAUREL_FENCE_GATE), FANCIED_LAUREL_PLANKS)
+                .addItemsAfter(ofID(CConstants.MORADO_FENCE_GATE), FANCIED_MORADO_PLANKS)
+                .addItemsAfter(ofID(CConstants.ROSEWOOD_FENCE_GATE), FANCIED_ROSEWOOD_PLANKS)
+                .addItemsAfter(ofID(CConstants.YUCCA_FENCE_GATE), FANCIED_YUCCA_PLANKS);
+        CreativeModeTabContentsPopulator.mod(Curiosities.MOD_ID + "_environmental_compat")
+                .tab(BUILDING_BLOCKS)
+                .addItemsAfter(ofID(CConstants.PINE_FENCE_GATE), FANCIED_PINE_PLANKS)
+                .addItemsAfter(ofID(CConstants.PLUM_FENCE_GATE), FANCIED_PLUM_PLANKS)
+                .addItemsAfter(ofID(CConstants.WILLOW_FENCE_GATE), FANCIED_WILLOW_PLANKS)
+                .addItemsAfter(ofID(CConstants.WISTERIA_FENCE_GATE), FANCIED_WISTERIA_PLANKS);
+        CreativeModeTabContentsPopulator.mod(Curiosities.MOD_ID + "_upgrade_aquatic_compat")
+                .tab(BUILDING_BLOCKS)
+                .addItemsAfter(ofID(CConstants.DRIFTWOOD_FENCE_GATE), FANCIED_DRIFTWOOD_PLANKS)
+                .addItemsAfter(ofID(CConstants.RIVER_FENCE_GATE), FANCIED_RIVER_PLANKS);
+    }
+
+    public static Predicate<ItemStack> ofID(ResourceLocation location) {
+        return stack -> of(BuiltInRegistries.ITEM.get(location)).test(stack);
     }
 }

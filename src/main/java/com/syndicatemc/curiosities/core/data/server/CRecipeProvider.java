@@ -7,13 +7,17 @@ import com.syndicatemc.curiosities.core.other.CConstants;
 import com.syndicatemc.curiosities.core.other.tags.CItemTags;
 import com.syndicatemc.curiosities.core.registry.CBlocks;
 import com.syndicatemc.curiosities.core.registry.CItems;
-import com.teamabnormals.blueprint.core.api.conditions.ConfigValueCondition;
+import com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags;
+import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
 import com.teamabnormals.blueprint.core.data.server.BlueprintRecipeProvider;
+import com.teamabnormals.environmental.core.other.tags.EnvironmentalItemTags;
+import com.teamabnormals.environmental.core.registry.EnvironmentalBlocks;
+import com.teamabnormals.upgrade_aquatic.core.other.tags.UAItemTags;
+import com.teamabnormals.upgrade_aquatic.core.registry.UABlocks;
 import com.teamabnormals.woodworks.core.data.server.WoodworksRecipeProvider;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.recipes.*;
-import net.minecraft.resources.ResourceLocation;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.tags.TagKey;
 import net.minecraft.world.item.Item;
@@ -23,7 +27,6 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
-import net.neoforged.neoforge.common.conditions.ICondition;
 import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
@@ -239,8 +242,26 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
         wallStoneRecipes(output, CBlocks.QUARTZ_BRICK_WALL, Items.QUARTZ_BRICKS);
         wallStoneRecipes(output, CBlocks.PURPUR_WALL, Items.PURPUR_BLOCK);
 
+        //fd compat
         aluminumSmithingRecipe(output.withConditions(new ModLoadedCondition(CConstants.FARMERS_DELIGHT)), ModItems.IRON_KNIFE.get(), CItems.ALUMINUM_KNIFE.get());
         invarSmithingRecipe(output.withConditions(new ModLoadedCondition(CConstants.FARMERS_DELIGHT)), ModItems.DIAMOND_KNIFE.get(), CItems.INVAR_KNIFE.get());
+
+        //misc bormals compat
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_ASPEN_PLANKS, AtmosphericBlocks.ASPEN_SLAB, AtmosphericBlocks.ASPEN_PLANKS, AtmosphericItemTags.ASPEN_LOGS, CConstants.ATMOSPHERIC);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_GRIMWOOD_PLANKS, AtmosphericBlocks.GRIMWOOD_SLAB, AtmosphericBlocks.GRIMWOOD_PLANKS, AtmosphericItemTags.GRIMWOOD_LOGS, CConstants.ATMOSPHERIC);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_KOUSA_PLANKS, AtmosphericBlocks.KOUSA_SLAB, AtmosphericBlocks.KOUSA_PLANKS, AtmosphericItemTags.KOUSA_LOGS, CConstants.ATMOSPHERIC);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_LAUREL_PLANKS, AtmosphericBlocks.LAUREL_SLAB, AtmosphericBlocks.LAUREL_PLANKS, AtmosphericItemTags.LAUREL_LOGS, CConstants.ATMOSPHERIC);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_MORADO_PLANKS, AtmosphericBlocks.MORADO_SLAB, AtmosphericBlocks.MORADO_PLANKS, AtmosphericItemTags.MORADO_LOGS, CConstants.ATMOSPHERIC);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_ROSEWOOD_PLANKS, AtmosphericBlocks.ROSEWOOD_SLAB, AtmosphericBlocks.ROSEWOOD_PLANKS, AtmosphericItemTags.ROSEWOOD_LOGS, CConstants.ATMOSPHERIC);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_YUCCA_PLANKS, AtmosphericBlocks.YUCCA_SLAB, AtmosphericBlocks.YUCCA_PLANKS, AtmosphericItemTags.YUCCA_LOGS, CConstants.ATMOSPHERIC);
+
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_PINE_PLANKS, EnvironmentalBlocks.PINE_SLAB, EnvironmentalBlocks.PINE_PLANKS, EnvironmentalItemTags.PINE_LOGS, CConstants.ENVIRONMENTAL);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_PLUM_PLANKS, EnvironmentalBlocks.PLUM_SLAB, EnvironmentalBlocks.PLUM_PLANKS, EnvironmentalItemTags.PLUM_LOGS, CConstants.ENVIRONMENTAL);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_WILLOW_PLANKS, EnvironmentalBlocks.WILLOW_SLAB, EnvironmentalBlocks.WILLOW_PLANKS, EnvironmentalItemTags.WILLOW_LOGS, CConstants.ENVIRONMENTAL);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_WISTERIA_PLANKS, EnvironmentalBlocks.WISTERIA_SLAB, EnvironmentalBlocks.WISTERIA_PLANKS, EnvironmentalItemTags.WISTERIA_LOGS, CConstants.ENVIRONMENTAL);
+
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_DRIFTWOOD_PLANKS, UABlocks.DRIFTWOOD_SLAB, UABlocks.DRIFTWOOD_PLANKS, UAItemTags.DRIFTWOOD_LOGS, CConstants.UPGRADE_AQUATIC);
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_RIVER_PLANKS, UABlocks.RIVER_SLAB, UABlocks.RIVER_PLANKS, UAItemTags.RIVER_LOGS, CConstants.UPGRADE_AQUATIC);
     }
 
     public void oreRecipesAlt(RecipeOutput recipeOutput, List<ItemLike> inputs, RecipeCategory category, ItemLike output, int count, float xp, int cookTime, String group) {
@@ -299,6 +320,10 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
 
     public void fanciedPlanksRecipe(RecipeOutput recipeOutput, ItemLike fanciedPlanks, ItemLike slabReq, ItemLike plankReq, TagKey<Item> logReq) {
         fanciedPlanksRecipe(recipeOutput, fanciedPlanks, slabReq, plankReq, logReq, 4);
+    }
+
+    public void fanciedPlanksRecipe(RecipeOutput recipeOutput, ItemLike fanciedPlanks, ItemLike slabReq, ItemLike plankReq, TagKey<Item> logReq, String modid) {
+        fanciedPlanksRecipe(recipeOutput.withConditions(new ModLoadedCondition(modid)), fanciedPlanks, slabReq, plankReq, logReq, 4);
     }
 
     public void fanciedPlanksRecipe(RecipeOutput recipeOutput, ItemLike fanciedPlanks, ItemLike slabReq, ItemLike plankReq, TagKey<Item> logReq, int logOutput) {

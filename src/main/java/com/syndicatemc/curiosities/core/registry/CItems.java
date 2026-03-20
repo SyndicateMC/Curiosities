@@ -113,8 +113,8 @@ public class CItems {
         return stack -> of(item).test(stack) && BlockSubRegistryHelper.areModsLoaded(modids);
     }
 
-    public static Predicate<ItemStack> ofID(ResourceLocation location, String... modids) {
-        return stack -> (BlockSubRegistryHelper.areModsLoaded(modids) && of(BuiltInRegistries.ITEM.get(location)).test(stack));
+    public static Predicate<ItemStack> ofID(ResourceLocation location) {
+        return stack -> of(BuiltInRegistries.ITEM.get(location)).test(stack);
     }
 }
 

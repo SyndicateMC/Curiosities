@@ -85,6 +85,10 @@ dependencies {
     implementation("com.teamabnormals:gallery:${minecraft_version}-${gallery_version}")
     implementation("com.teamabnormals:woodworks:${minecraft_version}-${woodworks_version}")
 
+    implementation("maven.modrinth:atmospheric:7.0.1")
+    implementation("maven.modrinth:environmental:5.0.1")
+    implementation("maven.modrinth:upgrade-aquatic:7.0.1")
+
     //implementation("maven.modrinth:mmmmmmmmmmmm:1.21-2.0.11-neoforge")
     //implementation("maven.modrinth:moonlight:1.21-2.29.20-neoforge")
 
