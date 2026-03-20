@@ -7,6 +7,7 @@ import com.syndicatemc.curiosities.core.other.CConstants;
 import com.syndicatemc.curiosities.core.other.tags.CItemTags;
 import com.syndicatemc.curiosities.core.registry.CBlocks;
 import com.syndicatemc.curiosities.core.registry.CItems;
+import com.teamabnormals.blueprint.core.api.conditions.ConfigValueCondition;
 import com.teamabnormals.blueprint.core.data.server.BlueprintRecipeProvider;
 import com.teamabnormals.woodworks.core.data.server.WoodworksRecipeProvider;
 import net.minecraft.data.PackOutput;
@@ -22,12 +23,14 @@ import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Blocks;
 import net.neoforged.neoforge.common.Tags;
+import net.neoforged.neoforge.common.conditions.ICondition;
 import net.neoforged.neoforge.common.conditions.ModLoadedCondition;
 import vectorwing.farmersdelight.common.registry.ModItems;
 
 import java.util.List;
 import java.util.concurrent.CompletableFuture;
 
+import static com.teamabnormals.woodworks.core.other.WoodworksConditions.SAWMILL_ENABLED;
 import static net.minecraft.data.recipes.RecipeBuilder.getDefaultRecipeId;
 import static net.minecraft.data.recipes.RecipeCategory.*;
 
@@ -303,8 +306,8 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
                 .define('B', slabReq)
                 .pattern("BB").pattern("BB")
                 .unlockedBy("has_planks", has(plankReq)).save(recipeOutput);
-        WoodworksRecipeProvider.sawmillRecipe(recipeOutput, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, plankReq, fanciedPlanks, 1);
-        WoodworksRecipeProvider.sawmillRecipe(recipeOutput, new ModLoadedCondition(CConstants.WOODWORKS), BUILDING_BLOCKS, logReq, fanciedPlanks, logOutput);
+        WoodworksRecipeProvider.sawmillRecipe(recipeOutput.withConditions(new ModLoadedCondition(CConstants.WOODWORKS)), SAWMILL_ENABLED, BUILDING_BLOCKS, plankReq, fanciedPlanks, 1, "", Curiosities.MOD_ID);
+        WoodworksRecipeProvider.sawmillRecipe(recipeOutput.withConditions(new ModLoadedCondition(CConstants.WOODWORKS)), SAWMILL_ENABLED, BUILDING_BLOCKS, logReq, fanciedPlanks, logOutput, "", Curiosities.MOD_ID);
     }
 
     public void stairsStoneRecipes(RecipeOutput output, ItemLike stairs, ItemLike requirement) {

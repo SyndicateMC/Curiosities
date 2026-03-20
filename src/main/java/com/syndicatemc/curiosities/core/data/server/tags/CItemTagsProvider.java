@@ -32,7 +32,7 @@ public class CItemTagsProvider extends BlueprintItemTagsProvider {
         this.copy(CBlockTags.STORAGE_BLOCKS_NICKEL, CItemTags.STORAGE_BLOCKS_NICKEL);
         this.copy(CBlockTags.STORAGE_BLOCKS_INVAR, CItemTags.STORAGE_BLOCKS_INVAR);
 
-        this.tag(Tags.Items.NUGGETS).add(ALUMINUM_INGOT.get(), NICKEL_INGOT.get(), INVAR_INGOT.get());
+        this.tag(Tags.Items.INGOTS).add(ALUMINUM_INGOT.get(), NICKEL_INGOT.get(), INVAR_INGOT.get());
         this.tag(CItemTags.INGOTS_ALUMINUM).add(ALUMINUM_INGOT.get());
         this.tag(CItemTags.INGOTS_NICKEL).add(NICKEL_INGOT.get());
         this.tag(CItemTags.INGOTS_INVAR).add(INVAR_INGOT.get());

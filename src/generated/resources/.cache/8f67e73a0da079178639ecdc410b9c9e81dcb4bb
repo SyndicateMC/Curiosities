@@ -1,11 +1,12 @@
-// 1.21.1	2026-03-17T21:44:46.6065061	Tags for minecraft:item mod id curiosities
+// 1.21.1	2026-03-19T22:35:54.5532039	Tags for minecraft:item mod id curiosities
 6536dd130894192cb12ec2c54f782d43256880a8 data/curiosities/tags/item/aluminum_tools.json
 a7e024a88452c034194219c55f51fd8086e0f1b7 data/curiosities/tags/item/invar_tools.json
 409b6b8f59f2be297f6d2dfda7463d6d597c8e39 data/curiosities/tags/item/topaz_tools.json
+6a545776f153dc28e853b510d5cd034236aa7c2a data/c/tags/item/ingots.json
 be6d950b9d7b963f2e8a45735cce7b6f4afeb4ab data/c/tags/item/ingots/aluminum.json
 5e4cf87465089e2ae2c07e31388a4909a76e4331 data/c/tags/item/ingots/invar.json
 4ab99a0a766616dfcdbe93b0080264f0bc09d4da data/c/tags/item/ingots/nickel.json
-d30aec8966f8e1cdb920ecd8baa69117d25ddc88 data/c/tags/item/nuggets.json
+21dd1ac72679beb5cd82e404dd49c50724a7463a data/c/tags/item/nuggets.json
 7915c72a7b2c5eb6c3b3ad95b8cf8b9d4ac702a9 data/c/tags/item/nuggets/aluminum.json
 ebdab7a51b0fe2ec8e21c645a4fb5c1f31ad94f7 data/c/tags/item/nuggets/invar.json
 ee52be1214c483b7f93b13c5e04c0216de8759d6 data/c/tags/item/nuggets/nickel.json
