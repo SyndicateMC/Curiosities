@@ -1,6 +1,9 @@
 package com.syndicatemc.curiosities.core.data.server;
 
 import com.google.common.collect.ImmutableList;
+import com.soytutta.mynethersdelight.common.registry.MNDBlocks;
+import com.soytutta.mynethersdelight.common.registry.MNDItems;
+import com.soytutta.mynethersdelight.common.tag.MNDTags;
 import com.syndicatemc.curiosities.core.Curiosities;
 import com.syndicatemc.curiosities.core.other.CBlockFamilies;
 import com.syndicatemc.curiosities.core.other.CConstants;
@@ -15,6 +18,7 @@ import com.teamabnormals.environmental.core.registry.EnvironmentalBlocks;
 import com.teamabnormals.upgrade_aquatic.core.other.tags.UAItemTags;
 import com.teamabnormals.upgrade_aquatic.core.registry.UABlocks;
 import com.teamabnormals.woodworks.core.data.server.WoodworksRecipeProvider;
+import gardensofthedead.registry.ModTags;
 import net.minecraft.data.PackOutput;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.data.recipes.*;
@@ -262,6 +266,13 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
 
         fanciedPlanksRecipe(output, CBlocks.FANCIED_DRIFTWOOD_PLANKS, UABlocks.DRIFTWOOD_SLAB, UABlocks.DRIFTWOOD_PLANKS, UAItemTags.DRIFTWOOD_LOGS, CConstants.UPGRADE_AQUATIC);
         fanciedPlanksRecipe(output, CBlocks.FANCIED_RIVER_PLANKS, UABlocks.RIVER_SLAB, UABlocks.RIVER_PLANKS, UAItemTags.RIVER_LOGS, CConstants.UPGRADE_AQUATIC);
+
+        //mnd compat
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_POWDERY_PLANKS, MNDItems.POWDERY_PLANKS_SLAB.get(), MNDItems.POWDERY_PLANKS.get(), MNDTags.BLOCK_OF_POWDERY, CConstants.MY_NETHERS_DELIGHT);
+
+        //gotd compat
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_SOULBLIGHT_PLANKS, gardensofthedead.registry.ModItems.SOULBLIGHT_SLAB.get(), gardensofthedead.registry.ModItems.SOULBLIGHT_PLANKS.get(), ModTags.Items.SOULBLIGHT_STEMS, CConstants.GARDENS_OF_THE_DEAD);
+        fanciedPlanksRecipe(output.withConditions(new ModLoadedCondition(CConstants.GARDENS_OF_THE_DEAD)), CBlocks.FANCIED_WHISTLECANE_PLANKS, gardensofthedead.registry.ModItems.WHISTLECANE_SLAB.get(), gardensofthedead.registry.ModItems.WHISTLECANE_PLANKS.get(), ModTags.Items.WHISTLECANE_BLOCKS, 2);
     }
 
     public void oreRecipesAlt(RecipeOutput recipeOutput, List<ItemLike> inputs, RecipeCategory category, ItemLike output, int count, float xp, int cookTime, String group) {

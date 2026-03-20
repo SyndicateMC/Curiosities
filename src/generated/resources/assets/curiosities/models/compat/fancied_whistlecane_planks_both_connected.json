@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column",
+  "textures": {
+    "end": "curiosities:block/compat/fancied_whistlecane_planks_top",
+    "side": "curiosities:block/compat/fancied_whistlecane_planks_both_connected"
+  }
+}

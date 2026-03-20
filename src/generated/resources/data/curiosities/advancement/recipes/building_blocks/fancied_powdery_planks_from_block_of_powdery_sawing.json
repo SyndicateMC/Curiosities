@@ -1,0 +1,46 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "mynethersdelight"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "woodworks"
+    },
+    {
+      "type": "woodworks:config",
+      "value": "sawmill"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_block_of_powdery": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#mynethersdelight:block_of_powdery"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "curiosities:fancied_powdery_planks_from_block_of_powdery_sawing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_block_of_powdery"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "curiosities:fancied_powdery_planks_from_block_of_powdery_sawing"
+    ]
+  }
+}

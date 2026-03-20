@@ -86,8 +86,14 @@ dependencies {
     implementation("com.teamabnormals:woodworks:${minecraft_version}-${woodworks_version}")
 
     implementation("maven.modrinth:atmospheric:7.0.1")
+    implementation("maven.modrinth:autumnity:6.0.1")
     implementation("maven.modrinth:environmental:5.0.1")
     implementation("maven.modrinth:upgrade-aquatic:7.0.1")
+
+    implementation("maven.modrinth:my-nethers-delight:1.9")
+
+    implementation("maven.modrinth:architectury-api:13.0.8+neoforge")
+    implementation("maven.modrinth:gardens-of-the-dead:YfbXE0Lc")
 
     //implementation("maven.modrinth:mmmmmmmmmmmm:1.21-2.0.11-neoforge")
     //implementation("maven.modrinth:moonlight:1.21-2.29.20-neoforge")

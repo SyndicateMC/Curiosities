@@ -18,11 +18,15 @@
     "curiosities:fancied_morado_planks",
     "curiosities:fancied_rosewood_planks",
     "curiosities:fancied_yucca_planks",
+    "curiosities:fancied_maple_planks",
     "curiosities:fancied_pine_planks",
     "curiosities:fancied_plum_planks",
     "curiosities:fancied_willow_planks",
     "curiosities:fancied_wisteria_planks",
     "curiosities:fancied_driftwood_planks",
-    "curiosities:fancied_river_planks"
+    "curiosities:fancied_river_planks",
+    "curiosities:fancied_powdery_planks",
+    "curiosities:fancied_soulblight_planks",
+    "curiosities:fancied_whistlecane_planks"
   ]
 }

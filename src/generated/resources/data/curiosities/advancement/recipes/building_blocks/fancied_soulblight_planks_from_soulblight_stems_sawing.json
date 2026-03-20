@@ -1,0 +1,46 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "gardens_of_the_dead"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "woodworks"
+    },
+    {
+      "type": "woodworks:config",
+      "value": "sawmill"
+    }
+  ],
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_soulblight_stems": {
+      "conditions": {
+        "items": [
+          {
+            "items": "#gardens_of_the_dead:soulblight_stems"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "curiosities:fancied_soulblight_planks_from_soulblight_stems_sawing"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_soulblight_stems"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "curiosities:fancied_soulblight_planks_from_soulblight_stems_sawing"
+    ]
+  }
+}

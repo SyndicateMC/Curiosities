@@ -32,5 +32,23 @@ public class CCompat {
         DataUtil.registerFlammable(CBlocks.FANCIED_MANGROVE_PLANKS.get(), 5, 20);
         DataUtil.registerFlammable(CBlocks.FANCIED_CHERRY_PLANKS.get(), 5, 20);
         DataUtil.registerFlammable(CBlocks.FANCIED_BAMBOO_PLANKS.get(), 5, 20);
+
+        DataUtil.registerFlammable(CBlocks.FANCIED_ASPEN_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_GRIMWOOD_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_KOUSA_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_LAUREL_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_MORADO_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_ROSEWOOD_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_YUCCA_PLANKS.get(), 5, 20);
+
+        DataUtil.registerFlammable(CBlocks.FANCIED_MAPLE_PLANKS.get(), 5, 20);
+
+        DataUtil.registerFlammable(CBlocks.FANCIED_PINE_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_PLUM_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_WILLOW_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_WISTERIA_PLANKS.get(), 5, 20);
+
+        DataUtil.registerFlammable(CBlocks.FANCIED_DRIFTWOOD_PLANKS.get(), 5, 20);
+        DataUtil.registerFlammable(CBlocks.FANCIED_RIVER_PLANKS.get(), 5, 20);
     }
 }

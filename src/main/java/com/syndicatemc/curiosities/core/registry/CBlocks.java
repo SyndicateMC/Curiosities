@@ -137,6 +137,8 @@ public class CBlocks {
     public static final DeferredBlock<Block> FANCIED_ROSEWOOD_PLANKS = BLOCKS.createBlock("fancied_rosewood_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.ROSEWOOD_PLANKS));
     public static final DeferredBlock<Block> FANCIED_YUCCA_PLANKS = BLOCKS.createBlock("fancied_yucca_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.YUCCA_PLANKS));
 
+    public static final DeferredBlock<Block> FANCIED_MAPLE_PLANKS = BLOCKS.createBlock("fancied_maple_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.MAPLE_PLANKS));
+
     public static final DeferredBlock<Block> FANCIED_PINE_PLANKS = BLOCKS.createBlock("fancied_pine_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.PINE_PLANKS));
     public static final DeferredBlock<Block> FANCIED_PLUM_PLANKS = BLOCKS.createBlock("fancied_plum_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.PLUM_PLANKS));
     public static final DeferredBlock<Block> FANCIED_WILLOW_PLANKS = BLOCKS.createBlock("fancied_willow_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.WILLOW_PLANKS));
@@ -144,6 +146,11 @@ public class CBlocks {
 
     public static final DeferredBlock<Block> FANCIED_DRIFTWOOD_PLANKS = BLOCKS.createBlock("fancied_driftwood_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.DRIFTWOOD_PLANKS));
     public static final DeferredBlock<Block> FANCIED_RIVER_PLANKS = BLOCKS.createBlock("fancied_river_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.RIVER_PLANKS));
+
+    public static final DeferredBlock<Block> FANCIED_POWDERY_PLANKS = BLOCKS.createBlock("fancied_powdery_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.POWDERY_PLANKS));
+
+    public static final DeferredBlock<Block> FANCIED_SOULBLIGHT_PLANKS = BLOCKS.createBlock("fancied_soulblight_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.SOULBLIGHT_PLANKS));
+    public static final DeferredBlock<Block> FANCIED_WHISTLECANE_PLANKS = BLOCKS.createBlock("fancied_whistlecane_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.WHISTLECANE_PLANKS));
 
     public static final class CProperties {
         public static final Properties ALUMINUM_ORE = getPropFrom(Blocks.GOLD_ORE).mapColor(MapColor.PODZOL);
@@ -277,7 +284,7 @@ public class CBlocks {
                 .tab(REDSTONE_BLOCKS)
                 .addItemsAfter(of(Items.COMPARATOR), REDSTONE_DIODE, REDSTONE_FUSE, CAGE_LIGHT)
                 .addItemsAfter(of(Items.NOTE_BLOCK), INVAR_BLOCK, WEIGHT_1S, WEIGHT_5S, WEIGHT_20S);
-        CreativeModeTabContentsPopulator.mod(Curiosities.MOD_ID + "_atmospheric_compat")
+        CreativeModeTabContentsPopulator.mod(CConstants.ATMOSPHERIC + "_" + Curiosities.MOD_ID)
                 .tab(BUILDING_BLOCKS)
                 .addItemsAfter(ofID(CConstants.ASPEN_FENCE_GATE), FANCIED_ASPEN_PLANKS)
                 .addItemsAfter(ofID(CConstants.GRIMWOOD_FENCE_GATE), FANCIED_GRIMWOOD_PLANKS)
@@ -286,16 +293,26 @@ public class CBlocks {
                 .addItemsAfter(ofID(CConstants.MORADO_FENCE_GATE), FANCIED_MORADO_PLANKS)
                 .addItemsAfter(ofID(CConstants.ROSEWOOD_FENCE_GATE), FANCIED_ROSEWOOD_PLANKS)
                 .addItemsAfter(ofID(CConstants.YUCCA_FENCE_GATE), FANCIED_YUCCA_PLANKS);
-        CreativeModeTabContentsPopulator.mod(Curiosities.MOD_ID + "_environmental_compat")
+        CreativeModeTabContentsPopulator.mod(CConstants.AUTUMNITY + "_" + Curiosities.MOD_ID)
+                .tab(BUILDING_BLOCKS)
+                .addItemsAfter(ofID(CConstants.MAPLE_FENCE_GATE), FANCIED_MAPLE_PLANKS);
+        CreativeModeTabContentsPopulator.mod(CConstants.ENVIRONMENTAL + "_" + Curiosities.MOD_ID)
                 .tab(BUILDING_BLOCKS)
                 .addItemsAfter(ofID(CConstants.PINE_FENCE_GATE), FANCIED_PINE_PLANKS)
                 .addItemsAfter(ofID(CConstants.PLUM_FENCE_GATE), FANCIED_PLUM_PLANKS)
                 .addItemsAfter(ofID(CConstants.WILLOW_FENCE_GATE), FANCIED_WILLOW_PLANKS)
                 .addItemsAfter(ofID(CConstants.WISTERIA_FENCE_GATE), FANCIED_WISTERIA_PLANKS);
-        CreativeModeTabContentsPopulator.mod(Curiosities.MOD_ID + "_upgrade_aquatic_compat")
+        CreativeModeTabContentsPopulator.mod(CConstants.UPGRADE_AQUATIC + "_" + Curiosities.MOD_ID)
                 .tab(BUILDING_BLOCKS)
                 .addItemsAfter(ofID(CConstants.DRIFTWOOD_FENCE_GATE), FANCIED_DRIFTWOOD_PLANKS)
                 .addItemsAfter(ofID(CConstants.RIVER_FENCE_GATE), FANCIED_RIVER_PLANKS);
+        CreativeModeTabContentsPopulator.mod(CConstants.MY_NETHERS_DELIGHT + "_" + Curiosities.MOD_ID)
+                .tab(CConstants.MY_NETHERS_DELIGHT_TAB)
+                .addItemsAfter(ofID(CConstants.POWDERY_FENCE_GATE), FANCIED_POWDERY_PLANKS);
+        CreativeModeTabContentsPopulator.mod(CConstants.GARDENS_OF_THE_DEAD + "_" + Curiosities.MOD_ID)
+                .tab(CConstants.GARDENS_OF_THE_DEAD_TAB)
+                .addItemsAfter(ofID(CConstants.SOULBLIGHT_FENCE_GATE), FANCIED_SOULBLIGHT_PLANKS)
+                .addItemsAfter(ofID(CConstants.WHISTLECANE_FENCE_GATE), FANCIED_WHISTLECANE_PLANKS);
     }
 
     public static Predicate<ItemStack> ofID(ResourceLocation location) {

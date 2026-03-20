@@ -1,0 +1,24 @@
+{
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "gardens_of_the_dead"
+    },
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "woodworks"
+    },
+    {
+      "type": "woodworks:config",
+      "value": "sawmill"
+    }
+  ],
+  "type": "woodworks:sawmill",
+  "ingredient": {
+    "item": "gardens_of_the_dead:whistlecane_planks"
+  },
+  "result": {
+    "count": 1,
+    "id": "curiosities:fancied_whistlecane_planks"
+  }
+}
