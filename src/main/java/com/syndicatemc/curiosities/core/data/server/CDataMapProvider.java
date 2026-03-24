@@ -26,7 +26,23 @@ public class CDataMapProvider extends DataMapProvider {
                 .add(CBlocks.FANCIED_MANGROVE_PLANKS.getId(), new FurnaceFuel(300), false)
                 .add(CBlocks.FANCIED_CHERRY_PLANKS.getId(), new FurnaceFuel(300), false)
                 .add(CBlocks.FANCIED_BAMBOO_PLANKS.getId(), new FurnaceFuel(300), false)
-                .add(CBlocks.FANCIED_CRIMSON_PLANKS.getId(), new FurnaceFuel(300), false)
-                .add(CBlocks.FANCIED_WARPED_PLANKS.getId(), new FurnaceFuel(300), false);
+
+                .add(CBlocks.FANCIED_ASPEN_PLANKS.getId(), new FurnaceFuel(300), false)
+                .add(CBlocks.FANCIED_GRIMWOOD_PLANKS.getId(), new FurnaceFuel(300), false)
+                .add(CBlocks.FANCIED_KOUSA_PLANKS.getId(), new FurnaceFuel(300), false)
+                .add(CBlocks.FANCIED_LAUREL_PLANKS.getId(), new FurnaceFuel(300), false)
+                .add(CBlocks.FANCIED_MORADO_PLANKS.getId(), new FurnaceFuel(300), false)
+                .add(CBlocks.FANCIED_ROSEWOOD_PLANKS.getId(), new FurnaceFuel(300), false)
+                .add(CBlocks.FANCIED_YUCCA_PLANKS.getId(), new FurnaceFuel(300), false)
+
+                .add(CBlocks.FANCIED_MAPLE_PLANKS.getId(), new FurnaceFuel(300), false)
+
+                .add(CBlocks.FANCIED_PINE_PLANKS.getId(), new FurnaceFuel(300), false)
+                .add(CBlocks.FANCIED_PLUM_PLANKS.getId(), new FurnaceFuel(300), false)
+                .add(CBlocks.FANCIED_WILLOW_PLANKS.getId(), new FurnaceFuel(300), false)
+                .add(CBlocks.FANCIED_WISTERIA_PLANKS.getId(), new FurnaceFuel(300), false)
+
+                .add(CBlocks.FANCIED_DRIFTWOOD_PLANKS.getId(), new FurnaceFuel(300), false)
+                .add(CBlocks.FANCIED_RIVER_PLANKS.getId(), new FurnaceFuel(300), false);
     }
 }

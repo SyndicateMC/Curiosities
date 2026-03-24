@@ -9,8 +9,11 @@ import com.teamabnormals.blueprint.core.data.client.BlueprintBlockStateProvider;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
+import net.minecraft.data.models.ModelProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockState;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder;
@@ -89,6 +92,8 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
 
         redstoneDiodeBlock(REDSTONE_DIODE);
         redstoneFuseBlock(REDSTONE_FUSE);
+        tikiTorchBlock(TIKI_TORCH, false);
+        tikiTorchBlock(SOUL_TIKI_TORCH, true);
 
         cubeBottomTopBlock(CONCUSSION_BOMB);
 
@@ -114,6 +119,13 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
         }) {
             fanciedPlanksCompat(block);
         }
+
+        incenseBlock(ACRID_INCENSE, ACRID_WALL_INCENSE);
+        incenseBlock(BLAND_INCENSE, BLAND_WALL_INCENSE);
+        incenseBlock(BRIGHT_INCENSE, BRIGHT_WALL_INCENSE);
+        incenseBlock(FRESH_INCENSE, FRESH_WALL_INCENSE);
+        incenseBlock(SWEET_INCENSE, SWEET_WALL_INCENSE);
+        incenseBlock(VERDANT_INCENSE, VERDANT_WALL_INCENSE);
     }
 
     private void redstoneDiodeBlock(DeferredBlock<?> block) {
@@ -187,14 +199,14 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
     }
     private void fanciedPlanksCompat(DeferredBlock<Block> object) {
         Block block = object.get();
-        ModelFile normal = models().cubeColumn("compat/" + name(block) + "_normal", suffix(blockRlWithCustomDir(block, "compat"), "_normal"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
-        ModelFile bothConnected = models().cubeColumn("compat/" + name(block) + "_both_connected", suffix(blockRlWithCustomDir(block, "compat"), "_both_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
-        ModelFile topConnected = models().cubeColumn("compat/" + name(block) + "_top_connected", suffix(blockRlWithCustomDir(block, "compat"), "_top_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
-        ModelFile bottomConnected = models().cubeColumn("compat/" + name(block) + "_bottom_connected", suffix(blockRlWithCustomDir(block, "compat"), "_bottom_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
-        ModelFile hNormal = models().cubeColumnHorizontal("compat/" + name(block) + "_normal_horizontal", suffix(blockRlWithCustomDir(block, "compat"), "_normal"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
-        ModelFile hBothConnected = models().cubeColumnHorizontal("compat/" + name(block) + "_both_connected_horizontal", suffix(blockRlWithCustomDir(block, "compat"), "_both_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
-        ModelFile hTopConnected = models().cubeColumnHorizontal("compat/" + name(block) + "_top_connected_horizontal", suffix(blockRlWithCustomDir(block, "compat"), "_top_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
-        ModelFile hBottomConnected = models().cubeColumnHorizontal("compat/" + name(block) + "_bottom_connected_horizontal", suffix(blockRlWithCustomDir(block, "compat"), "_bottom_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
+        ModelFile normal = models().cubeColumn("block/compat/" + name(block) + "_normal", suffix(blockRlWithCustomDir(block, "compat"), "_normal"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
+        ModelFile bothConnected = models().cubeColumn("block/compat/" + name(block) + "_both_connected", suffix(blockRlWithCustomDir(block, "compat"), "_both_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
+        ModelFile topConnected = models().cubeColumn("block/compat/" + name(block) + "_top_connected", suffix(blockRlWithCustomDir(block, "compat"), "_top_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
+        ModelFile bottomConnected = models().cubeColumn("block/compat/" + name(block) + "_bottom_connected", suffix(blockRlWithCustomDir(block, "compat"), "_bottom_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
+        ModelFile hNormal = models().cubeColumnHorizontal("block/compat/" + name(block) + "_normal_horizontal", suffix(blockRlWithCustomDir(block, "compat"), "_normal"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
+        ModelFile hBothConnected = models().cubeColumnHorizontal("block/compat/" + name(block) + "_both_connected_horizontal", suffix(blockRlWithCustomDir(block, "compat"), "_both_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
+        ModelFile hTopConnected = models().cubeColumnHorizontal("block/compat/" + name(block) + "_top_connected_horizontal", suffix(blockRlWithCustomDir(block, "compat"), "_top_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
+        ModelFile hBottomConnected = models().cubeColumnHorizontal("block/compat/" + name(block) + "_bottom_connected_horizontal", suffix(blockRlWithCustomDir(block, "compat"), "_bottom_connected"), suffix(blockRlWithCustomDir(block, "compat"), "_top"));
 
         verticalConnectingPillarVariantBuilder(block, normal, hNormal, bothConnected, hBothConnected, topConnected, hTopConnected, bottomConnected, hBottomConnected);
         this.simpleBlockItem(block, normal);
@@ -204,7 +216,7 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
         return ResourceLocation.fromNamespaceAndPath(name.getNamespace(), "block/" + dir + "/" + name.getPath());
     }
     private void verticalConnectingPillarVariantBuilder(Block block, ModelFile normal, ModelFile hNormal, ModelFile bothConnected, ModelFile hBothConnected, ModelFile topConnected, ModelFile hTopConnected, ModelFile bottomConnected, ModelFile hBottomConnected) {
-        this.getVariantBuilder(block).forAllStates((state) -> {
+        this.getVariantBuilder(block).forAllStates(state -> {
             boolean top = state.getValue(VerticalConnectingPillarBlock.TOP_CONNECTED);
             boolean bottom = state.getValue(VerticalConnectingPillarBlock.BOTTOM_CONNECTED);
             Direction.Axis axis = state.getValue(RotatedPillarBlock.AXIS);
@@ -220,5 +232,39 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
             else if (axis == Direction.Axis.Y) return ConfiguredModel.builder().modelFile(model).build();
             else return ConfiguredModel.builder().modelFile(model).rotationX(90).build();
         });
+    }
+
+    private void tikiTorchBlock(DeferredBlock<?> object, boolean isSoul) {
+        Block block = object.get();
+        ModelFile.ExistingModelFile model = this.models().getExistingFile(Curiosities.location(isSoul ? "block/soul_tiki_torch" : "block/tiki_torch"));
+        this.getVariantBuilder(block).forAllStates(state -> ConfiguredModel.builder().modelFile(model).build());
+        this.generatedItem(block, "item");
+    }
+
+    private void incenseBlock(DeferredBlock<?> incenseObject, DeferredBlock<?> wallIncenseObject) {
+        Block incense = incenseObject.get();
+        ModelFile incenseModel = this.models().withExistingParent(name(incense), Curiosities.location("block/templates/incense")).texture("incense", Curiosities.location("block/" + name(incense)));
+        this.getVariantBuilder(incense).forAllStates(state -> ConfiguredModel.builder().modelFile(incenseModel).build());
+
+        Block wallIncense = wallIncenseObject.get();
+        ModelFile wallIncenseModel = this.models().withExistingParent(name(wallIncense), Curiosities.location("block/templates/incense_wall")).texture("incense", Curiosities.location("block/" + name(incense)));
+        this.getVariantBuilder(wallIncense).forAllStates(state -> {
+            Direction direction = state.getValue(HorizontalDirectionalBlock.FACING);
+            ConfiguredModel.Builder<?> builder = ConfiguredModel.builder().modelFile(wallIncenseModel);
+            switch (direction) {
+                case NORTH:
+                    builder.rotationY(270);
+                    break;
+                case SOUTH:
+                    builder.rotationY(90);
+                    break;
+                case WEST:
+                    builder.rotationY(180);
+                    break;
+            }
+            return builder.build();
+        });
+
+        this.generatedItem(incense, "item");
     }
 }

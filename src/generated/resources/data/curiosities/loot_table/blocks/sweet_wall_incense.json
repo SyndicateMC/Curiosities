@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "conditions": [
+            {
+              "block": "curiosities:sweet_wall_incense",
+              "condition": "minecraft:block_state_property",
+              "properties": {
+                "lit": "false"
+              }
+            }
+          ],
+          "name": "curiosities:sweet_incense"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "curiosities:blocks/sweet_wall_incense"
+}

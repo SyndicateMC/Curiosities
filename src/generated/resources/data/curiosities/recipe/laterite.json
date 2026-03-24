@@ -6,32 +6,17 @@
       "item": "minecraft:dirt"
     },
     {
-      "item": "minecraft:dirt"
+      "item": "minecraft:clay"
     },
     {
-      "item": "minecraft:dirt"
+      "item": "minecraft:iron_nugget"
     },
     {
-      "item": "minecraft:dirt"
-    },
-    {
-      "item": "minecraft:dirt"
-    },
-    {
-      "item": "minecraft:clay_ball"
-    },
-    {
-      "item": "minecraft:clay_ball"
-    },
-    {
-      "item": "minecraft:raw_iron"
-    },
-    {
-      "item": "curiosities:raw_aluminum"
+      "item": "curiosities:aluminum_nugget"
     }
   ],
   "result": {
-    "count": 4,
+    "count": 2,
     "id": "curiosities:laterite"
   }
 }

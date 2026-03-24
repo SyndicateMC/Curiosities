@@ -48,7 +48,9 @@ public class CBlockTagsProvider extends BlockTagsProvider {
                 FANCIED_PINE_PLANKS.get(), FANCIED_PLUM_PLANKS.get(), FANCIED_WILLOW_PLANKS.get(), FANCIED_WISTERIA_PLANKS.get(),
                 FANCIED_DRIFTWOOD_PLANKS.get(), FANCIED_RIVER_PLANKS.get(),
                 FANCIED_POWDERY_PLANKS.get(),
-                FANCIED_SOULBLIGHT_PLANKS.get(), FANCIED_WHISTLECANE_PLANKS.get()
+                FANCIED_SOULBLIGHT_PLANKS.get(), FANCIED_WHISTLECANE_PLANKS.get(),
+
+                TIKI_TORCH.get(), SOUL_TIKI_TORCH.get()
         );
         this.tag(BlockTags.MINEABLE_WITH_SHOVEL).add(LATERITE.get());
         this.tag(BlockTags.NEEDS_STONE_TOOL).add(
@@ -97,6 +99,8 @@ public class CBlockTagsProvider extends BlockTagsProvider {
 
         this.tag(BlockTags.DOORS).add(ALUMINUM_DOOR.get());
         this.tag(BlockTags.TRAPDOORS).add(ALUMINUM_TRAPDOOR.get());
+
+        this.tag(BlockTags.DIRT).add(LATERITE.get());
 
         this.tag(BlockTags.PIGLIN_REPELLENTS).add(SOUL_CAGE_LIGHT.get(), HEAVY_SOUL_LANTERN.get());
 

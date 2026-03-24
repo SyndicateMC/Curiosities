@@ -7,10 +7,12 @@ import com.syndicatemc.curiosities.core.other.CConstants.CCompatProperties;
 import com.syndicatemc.curiosities.core.registry.helper.CBlockSubRegistryHelper;
 import com.teamabnormals.blueprint.core.util.item.CreativeModeTabContentsPopulator;
 import com.teamabnormals.blueprint.core.util.registry.BlockSubRegistryHelper;
+import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.valueproviders.ConstantInt;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
@@ -65,6 +67,21 @@ public class CBlocks {
     public static final DeferredBlock<Block> TILE_LIGHT = BLOCKS.createBlock("tile_light", () -> new TileLightBlock(CProperties.TILE_LIGHT));
     public static final DeferredBlock<Block> HEAVY_LANTERN = BLOCKS.createBlock("heavy_lantern", () -> new HeavyLanternBlock(CProperties.HEAVY_LANTERN));
     public static final DeferredBlock<Block> HEAVY_SOUL_LANTERN = BLOCKS.createBlock("heavy_soul_lantern", () -> new HeavyLanternBlock(CProperties.HEAVY_SOUL_LANTERN));
+    public static final DeferredBlock<Block> TIKI_TORCH = BLOCKS.createBlock("tiki_torch", () -> new TikiTorchBlock(CProperties.TIKI_TORCH, false));
+    public static final DeferredBlock<Block> SOUL_TIKI_TORCH = BLOCKS.createBlock("soul_tiki_torch", () -> new TikiTorchBlock(CProperties.SOUL_TIKI_TORCH, true));
+
+    public static final DeferredBlock<Block> ACRID_WALL_INCENSE = BLOCKS.createBlockNoItem("acrid_wall_incense", () -> new IncenseWallBlock(CProperties.INCENSE, CMobEffects.ACRID_SMOKE, 10821965));
+    public static final DeferredBlock<Block> ACRID_INCENSE = BLOCKS.createStandingAndWallBlock("acrid_incense", () -> new IncenseBlock(CProperties.INCENSE, CMobEffects.ACRID_SMOKE, 10821965), ACRID_WALL_INCENSE, Direction.DOWN);
+    public static final DeferredBlock<Block> BLAND_WALL_INCENSE = BLOCKS.createBlockNoItem("bland_wall_incense", () -> new IncenseWallBlock(CProperties.INCENSE, CMobEffects.BLAND_SMOKE, 12371141));
+    public static final DeferredBlock<Block> BLAND_INCENSE = BLOCKS.createStandingAndWallBlock("bland_incense", () -> new IncenseBlock(CProperties.INCENSE, CMobEffects.BLAND_SMOKE, 12371141), BLAND_WALL_INCENSE, Direction.DOWN);
+    public static final DeferredBlock<Block> BRIGHT_WALL_INCENSE = BLOCKS.createBlockNoItem("bright_wall_incense", () -> new IncenseWallBlock(CProperties.INCENSE, CMobEffects.BRIGHT_SMOKE, 13547846));
+    public static final DeferredBlock<Block> BRIGHT_INCENSE = BLOCKS.createStandingAndWallBlock("bright_incense", () -> new IncenseBlock(CProperties.INCENSE, CMobEffects.BRIGHT_SMOKE, 13547846), BRIGHT_WALL_INCENSE, Direction.DOWN);
+    public static final DeferredBlock<Block> FRESH_WALL_INCENSE = BLOCKS.createBlockNoItem("fresh_wall_incense", () -> new IncenseWallBlock(CProperties.INCENSE, CMobEffects.FRESH_SMOKE, 6462696));
+    public static final DeferredBlock<Block> FRESH_INCENSE = BLOCKS.createStandingAndWallBlock("fresh_incense", () -> new IncenseBlock(CProperties.INCENSE, CMobEffects.FRESH_SMOKE, 6462696), FRESH_WALL_INCENSE, Direction.DOWN);
+    public static final DeferredBlock<Block> SWEET_WALL_INCENSE = BLOCKS.createBlockNoItem("sweet_wall_incense", () -> new IncenseWallBlock(CProperties.INCENSE, CMobEffects.SWEET_SMOKE, 14126028));
+    public static final DeferredBlock<Block> SWEET_INCENSE = BLOCKS.createStandingAndWallBlock("sweet_incense", () -> new IncenseBlock(CProperties.INCENSE, CMobEffects.SWEET_SMOKE, 14126028), SWEET_WALL_INCENSE, Direction.DOWN);
+    public static final DeferredBlock<Block> VERDANT_WALL_INCENSE = BLOCKS.createBlockNoItem("verdant_wall_incense", () -> new IncenseWallBlock(CProperties.INCENSE, CMobEffects.VERDANT_SMOKE, 7706194));
+    public static final DeferredBlock<Block> VERDANT_INCENSE = BLOCKS.createStandingAndWallBlock("verdant_incense", () -> new IncenseBlock(CProperties.INCENSE, CMobEffects.VERDANT_SMOKE, 7706194), VERDANT_WALL_INCENSE, Direction.DOWN);
 
     public static final DeferredBlock<Block> WEIGHT_1S = BLOCKS.createBlock("weight_1s", () -> new InvarWeightBlock(CProperties.WEIGHT, 20, false));
     public static final DeferredBlock<Block> WEIGHT_5S = BLOCKS.createBlock("weight_5s", () -> new InvarWeightBlock(CProperties.WEIGHT, 100, false));
@@ -151,7 +168,6 @@ public class CBlocks {
 
     public static final DeferredBlock<Block> FANCIED_SOULBLIGHT_PLANKS = BLOCKS.createBlock("fancied_soulblight_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.SOULBLIGHT_PLANKS));
     public static final DeferredBlock<Block> FANCIED_WHISTLECANE_PLANKS = BLOCKS.createBlock("fancied_whistlecane_planks", () -> new VerticalConnectingPillarBlock(CCompatProperties.WHISTLECANE_PLANKS));
-
     public static final class CProperties {
         public static final Properties ALUMINUM_ORE = getPropFrom(Blocks.GOLD_ORE).mapColor(MapColor.PODZOL);
         public static final Properties DEEPSLATE_ALUMINUM_ORE = getPropFrom(Blocks.DEEPSLATE_GOLD_ORE).mapColor(MapColor.PODZOL);
@@ -182,6 +198,10 @@ public class CBlocks {
         public static final Properties BIG_CHAIN = getPropFrom(Blocks.CHAIN);
         public static final Properties HEAVY_LANTERN = getPropFrom(Blocks.LANTERN).mapColor(MapColor.STONE);
         public static final Properties HEAVY_SOUL_LANTERN = getPropFrom(Blocks.SOUL_LANTERN).mapColor(MapColor.STONE);
+        public static final Properties TIKI_TORCH = getPropFrom(Blocks.BAMBOO_FENCE).lightLevel(state -> 15);
+        public static final Properties SOUL_TIKI_TORCH = TIKI_TORCH.lightLevel(state -> 10);
+
+        public static final Properties INCENSE = getPropFrom(Blocks.TORCH).lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 5 : 0);
 
         public static final Properties LATERITE = getPropFrom(Blocks.PACKED_MUD).sound(SoundType.ROOTED_DIRT).mapColor(MapColor.TERRACOTTA_RED);
         public static final Properties LATERITE_BRICKS = getPropFrom(Blocks.MUD_BRICKS).mapColor(MapColor.TERRACOTTA_RED);
@@ -280,10 +300,13 @@ public class CBlocks {
                 // end
                 .tab(FUNCTIONAL_BLOCKS)
                 .addItemsBefore(of(Items.GLOWSTONE), TILE_LIGHT)
-                .addItemsAfter(of(Items.CHAIN), CAGE_LIGHT, SOUL_CAGE_LIGHT, HEAVY_LANTERN, HEAVY_SOUL_LANTERN, BIG_CHAIN)
+                .addItemsAfter(of(Items.CHAIN), TIKI_TORCH, SOUL_TIKI_TORCH, CAGE_LIGHT, SOUL_CAGE_LIGHT, HEAVY_LANTERN, HEAVY_SOUL_LANTERN, BIG_CHAIN)
+                .addItemsAfter(of(Items.INFESTED_DEEPSLATE), ACRID_INCENSE, BLAND_INCENSE, BRIGHT_INCENSE, FRESH_INCENSE, SWEET_INCENSE, VERDANT_INCENSE)
                 .tab(REDSTONE_BLOCKS)
                 .addItemsAfter(of(Items.COMPARATOR), REDSTONE_DIODE, REDSTONE_FUSE, CAGE_LIGHT)
-                .addItemsAfter(of(Items.NOTE_BLOCK), INVAR_BLOCK, WEIGHT_1S, WEIGHT_5S, WEIGHT_20S);
+                .addItemsAfter(of(Items.NOTE_BLOCK), INVAR_BLOCK, WEIGHT_1S, WEIGHT_5S, WEIGHT_20S)
+                .tab(TOOLS_AND_UTILITIES)
+                .addItemsBefore(of(Items.GOAT_HORN), ACRID_INCENSE, BLAND_INCENSE, BRIGHT_INCENSE, FRESH_INCENSE, SWEET_INCENSE, VERDANT_INCENSE);
         CreativeModeTabContentsPopulator.mod(CConstants.ATMOSPHERIC + "_" + Curiosities.MOD_ID)
                 .tab(BUILDING_BLOCKS)
                 .addItemsAfter(ofID(CConstants.ASPEN_FENCE_GATE), FANCIED_ASPEN_PLANKS)

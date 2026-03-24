@@ -1,0 +1,1810 @@
+{
+  "variants": {
+    "lifetime=0,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=0,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=1,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=1,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=10,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=10,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=100,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=100,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=101,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=101,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=102,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=102,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=103,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=103,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=104,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=104,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=105,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=105,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=106,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=106,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=107,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=107,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=108,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=108,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=109,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=109,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=11,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=11,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=110,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=110,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=111,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=111,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=112,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=112,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=113,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=113,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=114,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=114,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=115,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=115,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=116,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=116,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=117,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=117,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=118,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=118,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=119,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=119,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=12,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=12,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=120,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=120,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=121,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=121,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=122,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=122,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=123,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=123,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=124,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=124,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=125,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=125,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=126,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=126,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=127,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=127,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=128,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=128,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=129,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=129,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=13,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=13,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=130,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=130,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=131,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=131,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=132,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=132,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=133,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=133,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=134,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=134,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=135,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=135,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=136,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=136,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=137,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=137,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=138,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=138,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=139,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=139,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=14,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=14,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=140,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=140,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=141,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=141,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=142,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=142,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=143,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=143,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=144,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=144,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=145,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=145,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=146,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=146,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=147,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=147,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=148,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=148,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=149,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=149,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=15,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=15,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=150,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=150,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=151,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=151,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=152,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=152,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=153,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=153,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=154,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=154,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=155,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=155,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=156,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=156,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=157,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=157,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=158,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=158,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=159,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=159,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=16,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=16,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=160,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=160,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=161,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=161,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=162,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=162,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=163,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=163,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=164,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=164,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=165,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=165,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=166,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=166,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=167,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=167,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=168,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=168,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=169,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=169,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=17,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=17,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=170,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=170,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=171,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=171,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=172,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=172,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=173,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=173,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=174,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=174,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=175,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=175,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=176,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=176,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=177,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=177,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=178,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=178,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=179,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=179,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=18,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=18,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=180,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=180,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=181,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=181,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=182,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=182,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=183,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=183,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=184,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=184,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=185,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=185,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=186,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=186,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=187,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=187,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=188,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=188,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=189,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=189,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=19,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=19,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=190,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=190,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=191,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=191,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=192,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=192,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=193,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=193,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=194,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=194,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=195,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=195,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=196,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=196,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=197,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=197,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=198,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=198,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=199,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=199,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=2,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=2,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=20,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=20,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=200,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=200,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=201,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=201,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=202,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=202,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=203,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=203,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=204,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=204,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=205,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=205,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=206,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=206,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=207,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=207,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=208,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=208,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=209,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=209,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=21,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=21,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=210,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=210,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=211,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=211,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=212,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=212,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=213,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=213,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=214,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=214,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=215,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=215,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=216,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=216,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=217,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=217,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=218,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=218,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=219,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=219,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=22,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=22,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=220,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=220,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=221,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=221,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=222,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=222,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=223,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=223,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=224,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=224,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=225,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=225,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=226,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=226,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=227,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=227,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=228,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=228,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=229,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=229,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=23,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=23,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=230,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=230,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=231,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=231,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=232,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=232,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=233,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=233,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=234,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=234,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=235,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=235,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=236,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=236,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=237,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=237,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=238,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=238,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=239,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=239,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=24,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=24,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=240,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=240,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=241,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=241,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=242,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=242,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=243,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=243,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=244,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=244,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=245,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=245,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=246,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=246,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=247,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=247,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=248,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=248,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=249,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=249,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=25,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=25,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=250,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=250,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=251,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=251,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=252,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=252,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=253,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=253,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=254,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=254,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=255,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=255,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=256,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=256,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=257,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=257,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=258,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=258,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=259,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=259,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=26,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=26,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=260,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=260,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=261,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=261,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=262,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=262,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=263,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=263,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=264,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=264,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=265,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=265,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=266,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=266,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=267,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=267,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=268,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=268,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=269,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=269,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=27,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=27,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=270,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=270,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=271,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=271,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=272,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=272,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=273,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=273,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=274,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=274,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=275,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=275,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=276,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=276,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=277,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=277,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=278,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=278,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=279,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=279,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=28,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=28,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=280,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=280,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=281,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=281,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=282,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=282,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=283,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=283,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=284,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=284,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=285,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=285,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=286,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=286,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=287,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=287,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=288,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=288,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=289,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=289,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=29,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=29,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=290,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=290,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=291,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=291,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=292,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=292,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=293,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=293,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=294,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=294,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=295,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=295,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=296,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=296,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=297,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=297,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=298,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=298,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=299,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=299,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=3,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=3,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=30,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=30,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=300,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=300,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=31,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=31,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=32,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=32,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=33,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=33,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=34,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=34,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=35,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=35,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=36,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=36,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=37,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=37,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=38,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=38,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=39,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=39,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=4,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=4,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=40,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=40,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=41,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=41,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=42,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=42,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=43,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=43,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=44,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=44,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=45,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=45,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=46,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=46,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=47,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=47,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=48,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=48,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=49,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=49,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=5,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=5,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=50,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=50,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=51,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=51,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=52,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=52,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=53,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=53,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=54,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=54,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=55,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=55,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=56,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=56,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=57,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=57,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=58,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=58,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=59,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=59,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=6,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=6,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=60,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=60,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=61,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=61,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=62,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=62,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=63,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=63,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=64,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=64,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=65,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=65,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=66,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=66,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=67,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=67,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=68,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=68,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=69,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=69,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=7,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=7,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=70,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=70,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=71,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=71,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=72,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=72,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=73,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=73,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=74,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=74,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=75,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=75,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=76,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=76,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=77,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=77,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=78,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=78,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=79,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=79,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=8,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=8,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=80,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=80,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=81,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=81,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=82,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=82,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=83,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=83,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=84,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=84,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=85,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=85,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=86,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=86,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=87,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=87,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=88,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=88,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=89,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=89,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=9,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=9,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=90,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=90,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=91,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=91,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=92,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=92,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=93,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=93,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=94,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=94,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=95,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=95,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=96,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=96,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=97,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=97,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=98,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=98,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=99,lit=false": {
+      "model": "curiosities:block/verdant_incense"
+    },
+    "lifetime=99,lit=true": {
+      "model": "curiosities:block/verdant_incense"
+    }
+  }
+}

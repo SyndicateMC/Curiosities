@@ -3,6 +3,9 @@
     "curiosities:fancied_acacia_planks": {
       "burn_time": 300
     },
+    "curiosities:fancied_aspen_planks": {
+      "burn_time": 300
+    },
     "curiosities:fancied_bamboo_planks": {
       "burn_time": 300
     },
@@ -12,25 +15,58 @@
     "curiosities:fancied_cherry_planks": {
       "burn_time": 300
     },
-    "curiosities:fancied_crimson_planks": {
+    "curiosities:fancied_dark_oak_planks": {
       "burn_time": 300
     },
-    "curiosities:fancied_dark_oak_planks": {
+    "curiosities:fancied_driftwood_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_grimwood_planks": {
       "burn_time": 300
     },
     "curiosities:fancied_jungle_planks": {
       "burn_time": 300
     },
+    "curiosities:fancied_kousa_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_laurel_planks": {
+      "burn_time": 300
+    },
     "curiosities:fancied_mangrove_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_maple_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_morado_planks": {
       "burn_time": 300
     },
     "curiosities:fancied_oak_planks": {
       "burn_time": 300
     },
+    "curiosities:fancied_pine_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_plum_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_river_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_rosewood_planks": {
+      "burn_time": 300
+    },
     "curiosities:fancied_spruce_planks": {
       "burn_time": 300
     },
-    "curiosities:fancied_warped_planks": {
+    "curiosities:fancied_willow_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_wisteria_planks": {
+      "burn_time": 300
+    },
+    "curiosities:fancied_yucca_planks": {
       "burn_time": 300
     }
   }

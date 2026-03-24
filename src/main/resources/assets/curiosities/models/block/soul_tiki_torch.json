@@ -1,0 +1,9 @@
+{
+  "parent": "curiosities:block/tiki_torch",
+  "textures": {
+    "0": "curiosities:block/tiki_torch",
+    "1": "curiosities:block/tiki_torch_top",
+    "2": "curiosities:block/tiki_soul_flame",
+    "particle": "curiosities:block/tiki_torch"
+  }
+}

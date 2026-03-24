@@ -1,0 +1,6 @@
+{
+  "parent": "curiosities:block/templates/incense_wall",
+  "textures": {
+    "incense": "curiosities:block/fresh_incense"
+  }
+}

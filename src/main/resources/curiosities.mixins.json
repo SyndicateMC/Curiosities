@@ -3,7 +3,9 @@
   "package": "com.syndicatemc.curiosities.core.mixin",
   "compatibilityLevel": "JAVA_21",
   "client": [],
-  "mixins": [],
+  "mixins": [
+    "PlayerMixin"
+  ],
   "server": [],
   "injectors": {
     "defaultRequire": 1

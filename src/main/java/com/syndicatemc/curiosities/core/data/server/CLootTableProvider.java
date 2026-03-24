@@ -3,6 +3,7 @@ package com.syndicatemc.curiosities.core.data.server;
 import com.google.common.collect.ImmutableList;
 import com.syndicatemc.curiosities.core.Curiosities;
 import com.syndicatemc.curiosities.core.registry.CItems;
+import net.minecraft.advancements.critereon.StatePropertiesPredicate;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.HolderLookup.Provider;
 import net.minecraft.core.WritableRegistry;
@@ -19,7 +20,9 @@ import net.minecraft.world.item.enchantment.Enchantments;
 import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.storage.loot.BuiltInLootTables;
+import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.LootTable;
 import net.minecraft.world.level.storage.loot.ValidationContext;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
@@ -27,6 +30,8 @@ import net.minecraft.world.level.storage.loot.entries.LootPoolEntryContainer;
 import net.minecraft.world.level.storage.loot.functions.ApplyBonusCount;
 import net.minecraft.world.level.storage.loot.functions.SetItemCountFunction;
 import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets;
+import net.minecraft.world.level.storage.loot.predicates.LootItemBlockStatePropertyCondition;
+import net.minecraft.world.level.storage.loot.providers.number.ConstantValue;
 import net.minecraft.world.level.storage.loot.providers.number.UniformGenerator;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
@@ -74,6 +79,7 @@ public class CLootTableProvider extends LootTableProvider {
                     WEIGHT_1S, WEIGHT_5S, WEIGHT_20S,
                     CAGE_LIGHT, SOUL_CAGE_LIGHT, TILE_LIGHT,
                     BIG_CHAIN, HEAVY_LANTERN, HEAVY_SOUL_LANTERN,
+                    TIKI_TORCH, SOUL_TIKI_TORCH,
                     CONCUSSION_BOMB,
 
                     STONE_ASHLAR, DEEPSLATE_ASHLAR, TUFF_ASHLAR, POLISHED_BLACKSTONE_ASHLAR, END_STONE_ASHLAR,
@@ -104,6 +110,13 @@ public class CLootTableProvider extends LootTableProvider {
             }
 
             this.add(ALUMINUM_DOOR.get(), this::createDoorTable);
+
+            incenseLootTable(ACRID_INCENSE, ACRID_WALL_INCENSE);
+            incenseLootTable(BLAND_INCENSE, BLAND_WALL_INCENSE);
+            incenseLootTable(BRIGHT_INCENSE, BRIGHT_WALL_INCENSE);
+            incenseLootTable(FRESH_INCENSE, FRESH_WALL_INCENSE);
+            incenseLootTable(SWEET_INCENSE, SWEET_WALL_INCENSE);
+            incenseLootTable(VERDANT_INCENSE, VERDANT_WALL_INCENSE);
         }
 
         @Override
@@ -118,6 +131,20 @@ public class CLootTableProvider extends LootTableProvider {
                             .apply(SetItemCountFunction.setCount(UniformGenerator.between(minCount, maxCount)))
                             .apply(ApplyBonusCount.addOreBonusCount(registrylookup.getOrThrow(Enchantments.FORTUNE))))
             );
+        }
+
+        private void incenseLootTable(DeferredBlock<?> incenseObject, DeferredBlock<?> wallIncenseObject) {
+            Block incense = incenseObject.get();
+            Block wallIncense = wallIncenseObject.get();
+            for (Block block : new Block[]{incense, wallIncense}) {
+                this.add(block, LootTable.lootTable().withPool(this.applyExplosionCondition(block, LootPool.lootPool()
+                        .setRolls(ConstantValue.exactly(1.0F))
+                        .add(LootItem.lootTableItem(incense)
+                                .when(LootItemBlockStatePropertyCondition.hasBlockStateProperties(block)
+                                        .setProperties(StatePropertiesPredicate.Builder.properties()
+                                                .hasProperty(BlockStateProperties.LIT, false))))))
+                );
+            }
         }
     }
 }

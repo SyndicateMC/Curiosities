@@ -99,6 +99,8 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
         cageLightRecipe(CBlocks.SOUL_CAGE_LIGHT, Items.SOUL_TORCH).save(output);
         heavyLanternRecipe(CBlocks.HEAVY_LANTERN, Items.TORCH).save(output);
         heavyLanternRecipe(CBlocks.HEAVY_SOUL_LANTERN, Items.SOUL_TORCH).save(output);
+        tikiTorchRecipe(CBlocks.TIKI_TORCH, Items.TORCH).save(output);
+        tikiTorchRecipe(CBlocks.SOUL_TIKI_TORCH, Items.SOUL_TORCH).save(output);
         ShapedRecipeBuilder.shaped(BUILDING_BLOCKS, CBlocks.TILE_LIGHT, 4)
                 .define('G', Tags.Items.GLASS_BLOCKS_COLORLESS)
                 .define('I', CItemTags.INGOTS_ALUMINUM)
@@ -188,12 +190,12 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
         cutBuilder(BUILDING_BLOCKS, CBlocks.SMOOTH_STONE_BRICKS, Ingredient.of(Items.SMOOTH_STONE)).unlockedBy("has_smooth_stone", has(Items.SMOOTH_STONE)).save(output);
         generateRecipes(output, CBlockFamilies.SMOOTH_STONE_BRICKS_BLOCK_FAMILY);
 
-        ShapelessRecipeBuilder.shapeless(BUILDING_BLOCKS, CBlocks.LATERITE, 4)
-                .requires(Items.DIRT, 5)
-                .requires(Items.CLAY_BALL, 2)
-                .requires(Items.RAW_IRON)
-                .requires(CItems.RAW_ALUMINUM)
-                .unlockedBy("has_aluminum", has(CItems.RAW_ALUMINUM)).save(output);
+        ShapelessRecipeBuilder.shapeless(BUILDING_BLOCKS, CBlocks.LATERITE, 2)
+                .requires(Items.DIRT)
+                .requires(Items.CLAY)
+                .requires(Items.IRON_NUGGET)
+                .requires(CItems.ALUMINUM_NUGGET)
+                .unlockedBy("has_aluminum", has(CItems.ALUMINUM_INGOT)).save(output);
         cutBuilder(BUILDING_BLOCKS, CBlocks.LATERITE_BRICKS, Ingredient.of(CBlocks.LATERITE)).unlockedBy("has_laterite", has(CBlocks.LATERITE)).save(output);
         generateRecipes(output, CBlockFamilies.LATERITE_BRICKS_BLOCK_FAMILY);
         stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_BRICK_SLAB, CBlocks.LATERITE_BRICKS, 2);
@@ -245,6 +247,13 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
         wallStoneRecipes(output, CBlocks.QUARTZ_WALL, Items.QUARTZ_BLOCK);
         wallStoneRecipes(output, CBlocks.QUARTZ_BRICK_WALL, Items.QUARTZ_BRICKS);
         wallStoneRecipes(output, CBlocks.PURPUR_WALL, Items.PURPUR_BLOCK);
+
+        incenseRecipe(output, CBlocks.ACRID_INCENSE, Items.ROTTEN_FLESH, Items.SPIDER_EYE, Items.CRIMSON_ROOTS);
+        incenseRecipe(output, CBlocks.BLAND_INCENSE, Items.OXEYE_DAISY, Items.BONE_MEAL, Items.WHITE_TULIP);
+        incenseRecipe(output, CBlocks.BRIGHT_INCENSE, Items.SUNFLOWER, Items.HONEYCOMB, Items.DANDELION);
+        incenseRecipe(output, CBlocks.FRESH_INCENSE, Items.CORNFLOWER, Items.LAPIS_LAZULI, Items.TUBE_CORAL);
+        incenseRecipe(output, CBlocks.SWEET_INCENSE, Items.LILAC, Items.AMETHYST_SHARD, Items.PEONY);
+        incenseRecipe(output, CBlocks.VERDANT_INCENSE, Items.FERN, Items.SLIME_BALL, Items.SPRUCE_SAPLING);
 
         //fd compat
         aluminumSmithingRecipe(output.withConditions(new ModLoadedCondition(CConstants.FARMERS_DELIGHT)), ModItems.IRON_KNIFE.get(), CItems.ALUMINUM_KNIFE.get());
@@ -320,6 +329,13 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
                 .pattern("NIN").pattern("NLN").pattern("NIN")
                 .unlockedBy("has_nickel", has(CItemTags.INGOTS_INVAR)).unlockedBy("has_lantern", has(requirement));
     }
+    protected static RecipeBuilder tikiTorchRecipe(ItemLike cageLight, ItemLike requirement) {
+        return ShapedRecipeBuilder.shaped(REDSTONE, cageLight)
+                .define('B', Items.BAMBOO)
+                .define('T', requirement)
+                .pattern("BTB").pattern(" B ")
+                .unlockedBy("has_bamboo", has(Items.BAMBOO)).unlockedBy("has_torch", has(requirement));
+    }
     public void ashlarRecipes(RecipeOutput recipeOutput, ItemLike ashlarBlock, ItemLike requirement, ItemLike altRequirement) {
         stonecutterRecipe(recipeOutput, BUILDING_BLOCKS, ashlarBlock, requirement);
         stonecutterRecipe(recipeOutput, BUILDING_BLOCKS, ashlarBlock, altRequirement);
@@ -359,5 +375,16 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
     public void wallStoneRecipes(RecipeOutput output, ItemLike wall, ItemLike requirement) {
         wall(output, BUILDING_BLOCKS, wall, requirement);
         stonecutterRecipe(output, BUILDING_BLOCKS, wall, requirement);
+    }
+
+    public void incenseRecipe(RecipeOutput output, ItemLike incense, ItemLike first, ItemLike second, ItemLike third) {
+        ShapedRecipeBuilder.shaped(TOOLS, incense, 2)
+                .define('S', Tags.Items.RODS_WOODEN)
+                .define('1', first)
+                .define('2', second)
+                .define('3', third)
+                .pattern("12").pattern("S3")
+                .unlockedBy("has_stick", has(Tags.Items.RODS_WOODEN))
+                .save(output);
     }
 }

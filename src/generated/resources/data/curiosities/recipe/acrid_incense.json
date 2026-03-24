@@ -1,0 +1,26 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "1": {
+      "item": "minecraft:rotten_flesh"
+    },
+    "2": {
+      "item": "minecraft:spider_eye"
+    },
+    "3": {
+      "item": "minecraft:crimson_roots"
+    },
+    "S": {
+      "tag": "c:rods/wooden"
+    }
+  },
+  "pattern": [
+    "12",
+    "S3"
+  ],
+  "result": {
+    "count": 2,
+    "id": "curiosities:acrid_incense"
+  }
+}

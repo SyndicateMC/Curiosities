@@ -1,9 +1,12 @@
 package com.syndicatemc.curiosities.core;
 
+import com.google.common.collect.ImmutableList;
 import com.teamabnormals.blueprint.core.annotations.ConfigKey;
 import net.neoforged.neoforge.common.ModConfigSpec;
 import net.neoforged.neoforge.common.ModConfigSpec.ConfigValue;
 import org.apache.commons.lang3.tuple.Pair;
+
+import java.util.List;
 
 public class CuriositiesConfig {
     public static class Common {
@@ -16,6 +19,8 @@ public class CuriositiesConfig {
         public final ConfigValue<Double> heavyBootsFallSpeedCrouching;
         @ConfigKey("heavy_boots_fall_speed_maximum")
         public final ConfigValue<Double> heavyBootsFallSpeedMaximum;
+        @ConfigKey("bland_incense_affected_effects")
+        public final ConfigValue<List<? extends String>> blandIncenseAffectedEffects;
 
         public Common(ModConfigSpec.Builder builder) {
             builder.push("generation");
@@ -28,6 +33,11 @@ public class CuriositiesConfig {
             this.heavyBootsFallSpeed = builder.comment("The exponential fall speed increase the Heavy Boots normally apply").define("Heavy Boots normal fall speed", 0.05D);
             this.heavyBootsFallSpeedCrouching = builder.comment("The exponential fall speed increase the Heavy Boots apply while crouching").define("Heavy Boots crouching fall speed", 0.1D);
             this.heavyBootsFallSpeedMaximum = builder.comment("The maximum downwards velocity before the Heavy Boots stop increasing fall speed").define("Heavy Boots maximum fall speed", 5.0D);
+            builder.pop();
+            builder.push("utilities");
+            this.blandIncenseAffectedEffects = builder.comment("The list of the effects nullified by the Bland Incense effect Bland Smoke.").define("Effect list", ImmutableList.of(
+                    "minecraft:slowness", "minecraft:hunger", "minecraft:poison", "minecraft:wither", "minecraft:weakness", "minecraft:mining_fatigue", "atmospheric:worsening"
+            ));
             builder.pop();
             builder.pop();
         }

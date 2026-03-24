@@ -32,7 +32,10 @@ public class CClientCompat {
                 ALUMINUM_BARS, NICKEL_BARS,
                 REDSTONE_FUSE,
                 CAGE_LIGHT, SOUL_CAGE_LIGHT,
-                BIG_CHAIN, HEAVY_LANTERN, HEAVY_SOUL_LANTERN
+                BIG_CHAIN, HEAVY_LANTERN, HEAVY_SOUL_LANTERN,
+                TIKI_TORCH, SOUL_TIKI_TORCH,
+                ACRID_INCENSE, BLAND_INCENSE, BRIGHT_INCENSE, FRESH_INCENSE, SWEET_INCENSE, VERDANT_INCENSE,
+                ACRID_WALL_INCENSE, BLAND_WALL_INCENSE, BRIGHT_WALL_INCENSE, FRESH_WALL_INCENSE, SWEET_WALL_INCENSE, VERDANT_WALL_INCENSE
         }) {
             ItemBlockRenderTypes.setRenderLayer(block.get(), RenderType.cutout());
         }
