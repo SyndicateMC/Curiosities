@@ -1,0 +1,7 @@
+{
+  "parent": "curiosities:block/templates/censer",
+  "textures": {
+    "main": "curiosities:block/bright_censer",
+    "top": "curiosities:block/bright_censer_top"
+  }
+}

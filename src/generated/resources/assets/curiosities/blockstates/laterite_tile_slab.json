@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "curiosities:block/laterite_tile_slab"
+    },
+    "type=double": {
+      "model": "curiosities:block/laterite_tiles"
+    },
+    "type=top": {
+      "model": "curiosities:block/laterite_tile_slab_top"
+    }
+  }
+}

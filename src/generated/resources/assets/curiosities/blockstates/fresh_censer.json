@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "curiosities:block/fresh_censer"
+    },
+    "hanging=true": {
+      "model": "curiosities:block/fresh_censer_hanging"
+    }
+  }
+}

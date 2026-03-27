@@ -35,6 +35,9 @@ public class CBlockTagsProvider extends BlockTagsProvider {
                 STONE_ASHLAR.get(), DEEPSLATE_ASHLAR.get(), TUFF_ASHLAR.get(), POLISHED_BLACKSTONE_ASHLAR.get(), END_STONE_ASHLAR.get(),
                 SMOOTH_STONE_BRICKS.get(), SMOOTH_STONE_ASHLAR.get(), SMOOTH_STONE_BRICK_STAIRS.get(), SMOOTH_STONE_BRICK_SLAB.get(), SMOOTH_STONE_BRICK_WALL.get(),
                 LATERITE_BRICKS.get(), LATERITE_BRICK_STAIRS.get(), LATERITE_BRICK_SLAB.get(), LATERITE_BRICK_WALL.get(),
+                LATERITE_TILES.get(), LATERITE_TILE_STAIRS.get(), LATERITE_TILE_SLAB.get(), LATERITE_TILE_WALL.get(),
+
+                ACRID_CENSER.get(), BLAND_CENSER.get(), BRIGHT_CENSER.get(), FRESH_CENSER.get(), SWEET_CENSER.get(), VERDANT_CENSER.get(),
 
                 SMOOTH_STONE_STAIRS.get(), CUT_SANDSTONE_STAIRS.get(), CUT_RED_SANDSTONE_STAIRS.get(), QUARTZ_BRICK_STAIRS.get(),
                 QUARTZ_BRICK_SLAB.get(),
@@ -68,6 +71,7 @@ public class CBlockTagsProvider extends BlockTagsProvider {
         );
 
         this.tag(BlockTags.STAIRS).add(
+                LATERITE_BRICK_STAIRS.get(), LATERITE_TILE_STAIRS.get(),
                 SMOOTH_STONE_BRICK_STAIRS.get(),
 
                 SMOOTH_STONE_STAIRS.get(),
@@ -76,12 +80,14 @@ public class CBlockTagsProvider extends BlockTagsProvider {
         );
 
         this.tag(BlockTags.SLABS).add(
+                LATERITE_BRICK_SLAB.get(), LATERITE_TILE_SLAB.get(),
                 SMOOTH_STONE_BRICK_SLAB.get(),
 
                 QUARTZ_BRICK_SLAB.get()
         );
 
         this.tag(BlockTags.WALLS).add(
+                LATERITE_BRICK_WALL.get(), LATERITE_TILE_WALL.get(),
                 SMOOTH_STONE_BRICK_WALL.get(),
 
                 STONE_WALL.get(), SMOOTH_STONE_WALL.get(), POLISHED_GRANITE_WALL.get(), POLISHED_DIORITE_WALL.get(), POLISHED_ANDESITE_WALL.get(),

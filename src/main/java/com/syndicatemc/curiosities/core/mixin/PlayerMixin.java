@@ -18,7 +18,7 @@ public class PlayerMixin {
         if (player.hasEffect(CMobEffects.SWEET_SMOKE)) {
             int nutrition = foodProperties.nutrition();
             float saturation = foodProperties.saturation();
-            float bonus = nutrition * 0.25F;
+            float bonus = nutrition * 0.1F * (player.getEffect(CMobEffects.SWEET_SMOKE).getAmplifier() + 1);
             player.heal(bonus);
             player.getFoodData().eat(Math.round(bonus), saturation * 0.1F);
         }

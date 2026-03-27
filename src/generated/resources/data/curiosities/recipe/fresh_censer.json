@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": {
+      "item": "minecraft:gold_ingot"
+    },
+    "I": {
+      "item": "curiosities:fresh_incense"
+    }
+  },
+  "pattern": [
+    "GIG",
+    "I I",
+    "GIG"
+  ],
+  "result": {
+    "count": 1,
+    "id": "curiosities:fresh_censer"
+  }
+}

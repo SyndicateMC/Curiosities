@@ -7,11 +7,16 @@ import com.syndicatemc.curiosities.core.registry.CEntityTypes;
 import com.syndicatemc.curiosities.core.registry.CItems;
 import net.minecraft.client.renderer.ItemBlockRenderTypes;
 import net.minecraft.client.renderer.RenderType;
+import net.minecraft.network.chat.Component;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.repository.PackSource;
 import net.neoforged.api.distmarker.Dist;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.client.event.EntityRenderersEvent;
 import net.neoforged.neoforge.client.extensions.common.RegisterClientExtensionsEvent;
+import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.entity.player.ItemTooltipEvent;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
@@ -35,7 +40,8 @@ public class CClientCompat {
                 BIG_CHAIN, HEAVY_LANTERN, HEAVY_SOUL_LANTERN,
                 TIKI_TORCH, SOUL_TIKI_TORCH,
                 ACRID_INCENSE, BLAND_INCENSE, BRIGHT_INCENSE, FRESH_INCENSE, SWEET_INCENSE, VERDANT_INCENSE,
-                ACRID_WALL_INCENSE, BLAND_WALL_INCENSE, BRIGHT_WALL_INCENSE, FRESH_WALL_INCENSE, SWEET_WALL_INCENSE, VERDANT_WALL_INCENSE
+                ACRID_WALL_INCENSE, BLAND_WALL_INCENSE, BRIGHT_WALL_INCENSE, FRESH_WALL_INCENSE, SWEET_WALL_INCENSE, VERDANT_WALL_INCENSE,
+                ACRID_CENSER, BLAND_CENSER, BRIGHT_CENSER, FRESH_CENSER, SWEET_CENSER, VERDANT_CENSER
         }) {
             ItemBlockRenderTypes.setRenderLayer(block.get(), RenderType.cutout());
         }

@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "curiosities:block/acrid_censer"
+    },
+    "hanging=true": {
+      "model": "curiosities:block/acrid_censer_hanging"
+    }
+  }
+}

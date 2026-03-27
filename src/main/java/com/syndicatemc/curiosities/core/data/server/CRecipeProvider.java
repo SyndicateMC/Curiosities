@@ -201,6 +201,13 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
         stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_BRICK_SLAB, CBlocks.LATERITE_BRICKS, 2);
         stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_BRICK_STAIRS, CBlocks.LATERITE_BRICKS);
         stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_BRICK_WALL, CBlocks.LATERITE_BRICKS);
+        generateRecipes(output, CBlockFamilies.LATERITE_TILES_BLOCK_FAMILY);
+        stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_TILE_SLAB, CBlocks.LATERITE_BRICKS, 2);
+        stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_TILE_STAIRS, CBlocks.LATERITE_BRICKS);
+        stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_TILE_WALL, CBlocks.LATERITE_BRICKS);
+        stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_TILE_SLAB, CBlocks.LATERITE_TILES, 2);
+        stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_TILE_STAIRS, CBlocks.LATERITE_TILES);
+        stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_TILE_WALL, CBlocks.LATERITE_TILES);
 
 //        ShapelessRecipeBuilder.shapeless(BUILDING_BLOCKS, CBlocks.SCULKY_COBBLED_DEEPSLATE)
 //                .requires(Items.COBBLED_DEEPSLATE)
@@ -254,6 +261,13 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
         incenseRecipe(output, CBlocks.FRESH_INCENSE, Items.CORNFLOWER, Items.LAPIS_LAZULI, Items.TUBE_CORAL);
         incenseRecipe(output, CBlocks.SWEET_INCENSE, Items.LILAC, Items.AMETHYST_SHARD, Items.PEONY);
         incenseRecipe(output, CBlocks.VERDANT_INCENSE, Items.FERN, Items.SLIME_BALL, Items.SPRUCE_SAPLING);
+
+        censerRecipe(output, CBlocks.ACRID_CENSER, CBlocks.ACRID_INCENSE);
+        censerRecipe(output, CBlocks.BLAND_CENSER, CBlocks.BLAND_INCENSE);
+        censerRecipe(output, CBlocks.BRIGHT_CENSER, CBlocks.BRIGHT_INCENSE);
+        censerRecipe(output, CBlocks.FRESH_CENSER, CBlocks.FRESH_INCENSE);
+        censerRecipe(output, CBlocks.SWEET_CENSER, CBlocks.SWEET_INCENSE);
+        censerRecipe(output, CBlocks.VERDANT_CENSER, CBlocks.VERDANT_INCENSE);
 
         //fd compat
         aluminumSmithingRecipe(output.withConditions(new ModLoadedCondition(CConstants.FARMERS_DELIGHT)), ModItems.IRON_KNIFE.get(), CItems.ALUMINUM_KNIFE.get());
@@ -385,6 +399,15 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
                 .define('3', third)
                 .pattern("12").pattern("S3")
                 .unlockedBy("has_stick", has(Tags.Items.RODS_WOODEN))
+                .save(output);
+    }
+
+    public void censerRecipe(RecipeOutput output, ItemLike censer, ItemLike incense) {
+        ShapedRecipeBuilder.shaped(TOOLS, censer)
+                .define('G', Items.GOLD_INGOT)
+                .define('I', incense)
+                .pattern("GIG").pattern("I I").pattern("GIG")
+                .unlockedBy("has_incense", has(incense))
                 .save(output);
     }
 }

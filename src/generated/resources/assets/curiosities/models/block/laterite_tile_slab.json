@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/slab",
+  "textures": {
+    "bottom": "curiosities:block/laterite_tiles",
+    "side": "curiosities:block/laterite_tiles",
+    "top": "curiosities:block/laterite_tiles"
+  }
+}

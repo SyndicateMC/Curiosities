@@ -9,15 +9,12 @@ import com.teamabnormals.blueprint.core.data.client.BlueprintBlockStateProvider;
 import net.minecraft.core.Direction;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
-import net.minecraft.data.models.ModelProvider;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.level.block.*;
-import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.neoforged.neoforge.client.model.generators.ConfiguredModel;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.client.model.generators.MultiPartBlockStateBuilder;
-import net.neoforged.neoforge.client.model.generators.VariantBlockStateBuilder;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.registries.DeferredBlock;
 
@@ -37,7 +34,7 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
                 WEIGHT_1S, WEIGHT_5S, WEIGHT_20S,
                 SMOOTH_STONE_BRICKS,
 
-                LATERITE, LATERITE_BRICKS,
+                LATERITE, LATERITE_BRICKS, LATERITE_TILES,
                 SCULKY_COBBLED_DEEPSLATE
         }) {
             this.block(block);
@@ -55,6 +52,9 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
         slabBlock(LATERITE_BRICKS.get(), LATERITE_BRICK_SLAB.get());
         stairsBlock(LATERITE_BRICKS.get(), LATERITE_BRICK_STAIRS.get());
         wallBlock(LATERITE_BRICKS.get(), LATERITE_BRICK_WALL.get());
+        slabBlock(LATERITE_TILES.get(), LATERITE_TILE_SLAB.get());
+        stairsBlock(LATERITE_TILES.get(), LATERITE_TILE_STAIRS.get());
+        wallBlock(LATERITE_TILES.get(), LATERITE_TILE_WALL.get());
         slabBlock(SCULKY_COBBLED_DEEPSLATE.get(), SCULKY_COBBLED_DEEPSLATE_SLAB.get());
         stairsBlock(SCULKY_COBBLED_DEEPSLATE.get(), SCULKY_COBBLED_DEEPSLATE_STAIRS.get());
         wallBlock(SCULKY_COBBLED_DEEPSLATE.get(), SCULKY_COBBLED_DEEPSLATE_WALL.get());
@@ -126,6 +126,12 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
         incenseBlock(FRESH_INCENSE, FRESH_WALL_INCENSE);
         incenseBlock(SWEET_INCENSE, SWEET_WALL_INCENSE);
         incenseBlock(VERDANT_INCENSE, VERDANT_WALL_INCENSE);
+
+        for (DeferredBlock<Block> block : new DeferredBlock[]{
+                ACRID_CENSER, BLAND_CENSER, BRIGHT_CENSER, FRESH_CENSER, SWEET_CENSER, VERDANT_CENSER
+        }) {
+            censerBlock(block);
+        }
     }
 
     private void redstoneDiodeBlock(DeferredBlock<?> block) {
@@ -266,5 +272,21 @@ public class CBlockStateProvider extends BlueprintBlockStateProvider {
         });
 
         this.generatedItem(incense, "item");
+    }
+    private void censerBlock(DeferredBlock<?> censerObject) {
+        Block censer = censerObject.get();
+        ModelFile censerModel = this.models().withExistingParent(name(censer), Curiosities.location("block/templates/censer"))
+                .texture("main", Curiosities.location("block/" + name(censer)))
+                .texture("top", Curiosities.location("block/" + name(censer) + "_top"));
+        ModelFile hangingCenserModel = this.models().withExistingParent(name(censer) + "_hanging", Curiosities.location("block/templates/hanging_censer"))
+                .texture("main", Curiosities.location("block/" + name(censer)))
+                .texture("top", Curiosities.location("block/" + name(censer) + "_top"))
+                .texture("chain", Curiosities.location("block/censer_chain"));
+        this.getVariantBuilder(censer).forAllStatesExcept(state -> {
+            Boolean hanging = state.getValue(LanternBlock.HANGING);
+            ConfiguredModel.Builder<?> builder = ConfiguredModel.builder().modelFile(hanging ? hangingCenserModel : censerModel);
+            return builder.build();
+        }, BlockStateProperties.WATERLOGGED, BlockStateProperties.LIT);
+        this.generatedItem(censer, "item");
     }
 }

@@ -1,5 +1,7 @@
 {
   "values": [
+    "curiosities:laterite_brick_slab",
+    "curiosities:laterite_tile_slab",
     "curiosities:smooth_stone_brick_slab",
     "curiosities:quartz_brick_slab"
   ]

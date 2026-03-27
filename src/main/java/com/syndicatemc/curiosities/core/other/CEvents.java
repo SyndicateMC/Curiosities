@@ -104,7 +104,7 @@ public class CEvents {
 
     private static void applyAcridDamage(LivingDamageEvent.Pre event, Entity sourceEntity, DamageSource source, float modifiedDamage) {
         if (sourceEntity instanceof Player player && player.hasEffect(CMobEffects.ACRID_SMOKE) && source.is(DamageTypes.PLAYER_ATTACK)) {
-            float newDamage = modifiedDamage * 1.25F;
+            float newDamage = modifiedDamage + modifiedDamage * 0.1F * (player.getEffect(CMobEffects.ACRID_SMOKE).getAmplifier() + 1.0F);
             player.heal(modifiedDamage * 0.1F);
             event.setNewDamage(newDamage);
         }
@@ -150,7 +150,8 @@ public class CEvents {
     public static void onEntityHeal(LivingHealEvent event) {
         LivingEntity entity = event.getEntity();
         float amount = event.getAmount();
-        if (entity instanceof Player player && player.hasEffect(CMobEffects.VERDANT_SMOKE)) event.setAmount(amount * 1.5F);
+        if (entity instanceof Player player && player.hasEffect(CMobEffects.VERDANT_SMOKE))
+            event.setAmount(amount * (1.0F + 0.25F * (player.getEffect(CMobEffects.VERDANT_SMOKE).getAmplifier() + 1)));
     }
 
     @SubscribeEvent
@@ -182,7 +183,7 @@ public class CEvents {
                 for (String effectId : CuriositiesConfig.COMMON.blandIncenseAffectedEffects.get()) {
                     ResourceLocation affectedEffect = CUtils.getLocFromID(effectId);
                     if (effect.is(affectedEffect)) {
-                        player.heal(2.0F);
+                        player.heal(1.0F * (player.getEffect(CMobEffects.BLAND_SMOKE).getAmplifier() + 1));
                         player.removeEffect(effect);
                     }
                 }
@@ -231,7 +232,7 @@ public class CEvents {
         ExperienceOrb orb = event.getOrb();
         int exp = orb.getValue();
         if (player.hasEffect(CMobEffects.BRIGHT_SMOKE)) {
-            player.heal(exp * 0.1F);
+            player.heal(exp * 0.1F * (player.getEffect(CMobEffects.BRIGHT_SMOKE).getAmplifier() + 1));
         }
     }
 
@@ -240,7 +241,7 @@ public class CEvents {
         Player player = event.getEntity();
         int exp = event.getAmount();
         if (player.hasEffect(CMobEffects.BRIGHT_SMOKE)) {
-            event.setAmount(Math.round(exp + exp * 0.25F));
+            event.setAmount(Math.round(exp + exp * 0.1F * (player.getEffect(CMobEffects.BRIGHT_SMOKE).getAmplifier() + 1)));
         }
     }
 
@@ -252,7 +253,7 @@ public class CEvents {
             for (String effectId : CuriositiesConfig.COMMON.blandIncenseAffectedEffects.get()) {
                 ResourceLocation affectedEffect = CUtils.getLocFromID(effectId);
                 if (effect.is(affectedEffect)) {
-                    player.heal(2.0F);
+                    player.heal(1.0F * (player.getEffect(CMobEffects.BLAND_SMOKE).getAmplifier() + 1));
                     event.setResult(DO_NOT_APPLY);
                 }
             }

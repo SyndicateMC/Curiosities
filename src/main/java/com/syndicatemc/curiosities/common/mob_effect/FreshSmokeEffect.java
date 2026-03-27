@@ -10,8 +10,9 @@ public class FreshSmokeEffect extends BlueprintMobEffect {
         super(MobEffectCategory.BENEFICIAL, 6462696);
     }
 
+    @Override
     public boolean applyEffectTick(LivingEntity entity, int amplifier) {
-        if (entity instanceof Player player && player.isInWaterOrRain()) player.heal(0.125F);
+        if (entity instanceof Player player && player.isInWaterOrRain()) player.heal(0.0625F * (amplifier + 1));
         return true;
     }
 

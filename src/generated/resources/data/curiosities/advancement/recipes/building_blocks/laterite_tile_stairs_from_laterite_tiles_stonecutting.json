@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_laterite_tiles": {
+      "conditions": {
+        "items": [
+          {
+            "items": "curiosities:laterite_tiles"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "curiosities:laterite_tile_stairs_from_laterite_tiles_stonecutting"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_laterite_tiles"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "curiosities:laterite_tile_stairs_from_laterite_tiles_stonecutting"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+{
+  "parent": "curiosities:block/templates/censer",
+  "textures": {
+    "main": "curiosities:block/acrid_censer",
+    "top": "curiosities:block/acrid_censer_top"
+  }
+}

@@ -15,9 +15,18 @@ import com.teamabnormals.blueprint.core.util.registry.RegistryHelper;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.DataGenerator;
 import net.minecraft.data.PackOutput;
+import net.minecraft.network.chat.Component;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.PackLocationInfo;
+import net.minecraft.server.packs.PackSelectionConfig;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.PathPackResources;
+import net.minecraft.server.packs.repository.BuiltInPackSource;
+import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.repository.PackSource;
 import net.neoforged.bus.api.IEventBus;
 import net.neoforged.fml.ModContainer;
+import net.neoforged.fml.ModList;
 import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.event.lifecycle.FMLClientSetupEvent;
@@ -25,9 +34,12 @@ import net.neoforged.fml.event.lifecycle.FMLCommonSetupEvent;
 import net.minecraft.core.registries.Registries;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 import net.neoforged.neoforge.data.event.GatherDataEvent;
+import net.neoforged.neoforge.event.AddPackFindersEvent;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
+import java.io.IOException;
+import java.util.Optional;
 import java.util.concurrent.CompletableFuture;
 
 @Mod(Curiosities.MOD_ID)
@@ -51,6 +63,8 @@ public class Curiosities {
         bus.addListener(this::commonSetup);
         bus.addListener(this::clientSetup);
         bus.addListener(this::dataSetup);
+
+        bus.addListener(this::addPackFinders);
 
         container.registerConfig(ModConfig.Type.COMMON, CuriositiesConfig.COMMON_SPEC);
     }
@@ -90,5 +104,29 @@ public class Curiosities {
 
     public static ResourceLocation location(String path) {
         return ResourceLocation.fromNamespaceAndPath(MOD_ID, path);
+    }
+
+    public void addPackFinders(AddPackFindersEvent event) {
+        try {
+            if (event.getPackType() == PackType.CLIENT_RESOURCES) {
+                addBuiltinResourcePack(event, "vanilla_changes", Component.literal("Curiosities Vanilla Changes"));
+                addBuiltinResourcePack(event, "torch_and_fire_changes", Component.literal("Curiosities Torches & Fire Changes"));
+            }
+        } catch (IOException ex) {
+            Curiosities.LOGGER.error("Failed to load Curiosities builtin resource packs.");
+        }
+    }
+
+    private static void addBuiltinResourcePack(AddPackFindersEvent event, String filename, Component displayName) throws IOException {
+        filename = "assets/curiosities/resourcepacks/" + filename;
+        String id = "builtin/" + filename;
+        var resourcePath = ModList.get().getModFileById(MOD_ID).getFile().findResource(filename);
+        var pack = Pack.readMetaAndCreate(
+                new PackLocationInfo(id, displayName, PackSource.BUILT_IN, Optional.empty()),
+                BuiltInPackSource.fromName((path) -> new PathPackResources(path, resourcePath)),
+                PackType.CLIENT_RESOURCES,
+                new PackSelectionConfig(false, Pack.Position.TOP, false)
+        );
+        event.addRepositorySource((packConsumer) -> packConsumer.accept(pack));
     }
 }

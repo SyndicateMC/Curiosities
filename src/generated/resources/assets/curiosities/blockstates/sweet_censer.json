@@ -1,0 +1,10 @@
+{
+  "variants": {
+    "hanging=false": {
+      "model": "curiosities:block/sweet_censer"
+    },
+    "hanging=true": {
+      "model": "curiosities:block/sweet_censer_hanging"
+    }
+  }
+}

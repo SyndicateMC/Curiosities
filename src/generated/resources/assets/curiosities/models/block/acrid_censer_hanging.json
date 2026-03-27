@@ -1,0 +1,8 @@
+{
+  "parent": "curiosities:block/templates/hanging_censer",
+  "textures": {
+    "chain": "curiosities:block/censer_chain",
+    "main": "curiosities:block/acrid_censer",
+    "top": "curiosities:block/acrid_censer_top"
+  }
+}

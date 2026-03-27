@@ -74,9 +74,9 @@ public class IncenseBlock extends BaseTorchBlock {
     @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if (state.getValue(LIT)) {
-            double d0 = (double) pos.getX() + 0.5;
-            double d1 = (double) pos.getY() + 0.7;
-            double d2 = (double) pos.getZ() + 0.5;
+            double d0 = pos.getX() + 0.5;
+            double d1 = pos.getY() + 0.7;
+            double d2 = pos.getZ() + 0.5;
             level.addParticle(ParticleTypes.SMOKE, d0, d1, d2, 0.0, 0.0, 0.0);
             level.addParticle(ColorParticleOption.create(ParticleTypes.ENTITY_EFFECT, FastColor.ARGB32.color(255, this.smokeColor)), d0, d1, d2, 0.0, 0.0, 0.0);
         }
@@ -97,7 +97,7 @@ public class IncenseBlock extends BaseTorchBlock {
     }
     public static ItemInteractionResult light(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         RandomSource random = level.getRandom();
-        level.setBlock(pos, state.setValue(LIT, true).setValue(LIFETIME, 300), 11);
+        level.setBlock(pos, state.setValue(LIT, true), 11);
         if (stack.getItem() instanceof FlintAndSteelItem) {
             stack.hurtAndBreak(1, player, LivingEntity.getSlotForHand(hand));
             level.playSound(player, pos, SoundEvents.FLINTANDSTEEL_USE, SoundSource.BLOCKS, 1.0F, level.getRandom().nextFloat() * 0.4F + 0.8F);
@@ -111,7 +111,7 @@ public class IncenseBlock extends BaseTorchBlock {
 
     public static void incenseFunction(BlockState state, ServerLevel level, BlockPos pos, Holder<MobEffect> effect) {
         for (Player player : level.getEntitiesOfClass(Player.class, new AABB(pos).inflate(2.5D, 2.5D, 2.5D))) {
-            player.addEffect(new MobEffectInstance(effect, 50, 0, false, true));
+            player.addEffect(new MobEffectInstance(effect, 50, 1, false, true));
         }
         if (state.getValue(LIT)) if (state.getValue(LIFETIME) > 1) {
             level.setBlock(pos, state.setValue(LIFETIME, state.getValue(LIFETIME) - 1), 11);

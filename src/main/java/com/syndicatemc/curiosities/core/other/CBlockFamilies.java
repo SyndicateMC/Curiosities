@@ -13,6 +13,8 @@ public class CBlockFamilies {
             .recipeGroupPrefix("stone").recipeUnlockedBy("has_smooth_stone").getFamily();
     public static final BlockFamily LATERITE_BRICKS_BLOCK_FAMILY = new BlockFamily.Builder(LATERITE_BRICKS.get())
             .stairs(LATERITE_BRICK_STAIRS.get()).slab(LATERITE_BRICK_SLAB.get()).wall(LATERITE_BRICK_WALL.get()).getFamily();
+    public static final BlockFamily LATERITE_TILES_BLOCK_FAMILY = new BlockFamily.Builder(LATERITE_TILES.get())
+            .stairs(LATERITE_TILE_STAIRS.get()).slab(LATERITE_TILE_SLAB.get()).wall(LATERITE_TILE_WALL.get()).getFamily();
     public static final BlockFamily SCULKY_COBBLED_DEEPSLATE_BLOCK_FAMILY = new BlockFamily.Builder(SCULKY_COBBLED_DEEPSLATE.get())
             .stairs(SCULKY_COBBLED_DEEPSLATE_STAIRS.get()).slab(SCULKY_COBBLED_DEEPSLATE_SLAB.get()).wall(SCULKY_COBBLED_DEEPSLATE_WALL.get()).getFamily();
 }

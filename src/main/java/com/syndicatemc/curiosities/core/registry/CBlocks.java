@@ -83,6 +83,13 @@ public class CBlocks {
     public static final DeferredBlock<Block> VERDANT_WALL_INCENSE = BLOCKS.createBlockNoItem("verdant_wall_incense", () -> new IncenseWallBlock(CProperties.INCENSE, CMobEffects.VERDANT_SMOKE, 7706194));
     public static final DeferredBlock<Block> VERDANT_INCENSE = BLOCKS.createStandingAndWallBlock("verdant_incense", () -> new IncenseBlock(CProperties.INCENSE, CMobEffects.VERDANT_SMOKE, 7706194), VERDANT_WALL_INCENSE, Direction.DOWN);
 
+    public static final DeferredBlock<Block> ACRID_CENSER = BLOCKS.createBlock("acrid_censer", () -> new CenserBlock(CProperties.CENSER, CMobEffects.ACRID_SMOKE, 10821965));
+    public static final DeferredBlock<Block> BLAND_CENSER = BLOCKS.createBlock("bland_censer", () -> new CenserBlock(CProperties.CENSER, CMobEffects.BLAND_SMOKE, 12371141));
+    public static final DeferredBlock<Block> BRIGHT_CENSER = BLOCKS.createBlock("bright_censer", () -> new CenserBlock(CProperties.CENSER, CMobEffects.BRIGHT_SMOKE, 13547846));
+    public static final DeferredBlock<Block> FRESH_CENSER = BLOCKS.createBlock("fresh_censer", () -> new CenserBlock(CProperties.CENSER, CMobEffects.FRESH_SMOKE, 6462696));
+    public static final DeferredBlock<Block> SWEET_CENSER = BLOCKS.createBlock("sweet_censer", () -> new CenserBlock(CProperties.CENSER, CMobEffects.SWEET_SMOKE, 14126028));
+    public static final DeferredBlock<Block> VERDANT_CENSER = BLOCKS.createBlock("verdant_censer", () -> new CenserBlock(CProperties.CENSER, CMobEffects.VERDANT_SMOKE, 7706194));
+
     public static final DeferredBlock<Block> WEIGHT_1S = BLOCKS.createBlock("weight_1s", () -> new InvarWeightBlock(CProperties.WEIGHT, 20, false));
     public static final DeferredBlock<Block> WEIGHT_5S = BLOCKS.createBlock("weight_5s", () -> new InvarWeightBlock(CProperties.WEIGHT, 100, false));
     public static final DeferredBlock<Block> WEIGHT_20S = BLOCKS.createBlock("weight_20s", () -> new InvarWeightBlock(CProperties.WEIGHT, 400, false));
@@ -118,6 +125,11 @@ public class CBlocks {
     public static final DeferredBlock<Block> LATERITE_BRICK_STAIRS = BLOCKS.createBlock("laterite_brick_stairs", () -> new StairBlock(CBlocks.LATERITE_BRICKS.get().defaultBlockState(), CProperties.LATERITE_BRICKS));
     public static final DeferredBlock<Block> LATERITE_BRICK_SLAB = BLOCKS.createBlock("laterite_brick_slab", () -> new SlabBlock(CProperties.LATERITE_BRICKS));
     public static final DeferredBlock<Block> LATERITE_BRICK_WALL = BLOCKS.createBlock("laterite_brick_wall", () -> new WallBlock(CProperties.LATERITE_BRICKS));
+    public static final DeferredBlock<Block> LATERITE_TILES = BLOCKS.createBlock("laterite_tiles", () -> new Block(CProperties.LATERITE_BRICKS));
+    public static final DeferredBlock<Block> LATERITE_TILE_STAIRS = BLOCKS.createBlock("laterite_tile_stairs", () -> new StairBlock(CBlocks.LATERITE_TILES.get().defaultBlockState(), CProperties.LATERITE_BRICKS));
+    public static final DeferredBlock<Block> LATERITE_TILE_SLAB = BLOCKS.createBlock("laterite_tile_slab", () -> new SlabBlock(CProperties.LATERITE_BRICKS));
+    public static final DeferredBlock<Block> LATERITE_TILE_WALL = BLOCKS.createBlock("laterite_tile_wall", () -> new WallBlock(CProperties.LATERITE_BRICKS));
+
 
     public static final DeferredBlock<Block> SCULKY_COBBLED_DEEPSLATE = BLOCKS.createBlock("sculky_cobbled_deepslate", () -> new Block(CProperties.SCULKY_DEEPSLATE));
     public static final DeferredBlock<Block> SCULKY_COBBLED_DEEPSLATE_STAIRS = BLOCKS.createBlock("sculky_cobbled_deepslate_stairs", () -> new StairBlock(CBlocks.SCULKY_COBBLED_DEEPSLATE.get().defaultBlockState(), CProperties.SCULKY_DEEPSLATE));
@@ -202,6 +214,7 @@ public class CBlocks {
         public static final Properties SOUL_TIKI_TORCH = TIKI_TORCH.lightLevel(state -> 10);
 
         public static final Properties INCENSE = getPropFrom(Blocks.TORCH).lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 5 : 0);
+        public static final Properties CENSER = getPropFrom(Blocks.LANTERN).mapColor(MapColor.GOLD).lightLevel(state -> state.getValue(BlockStateProperties.LIT) ? 10 : 0);
 
         public static final Properties LATERITE = getPropFrom(Blocks.PACKED_MUD).sound(SoundType.ROOTED_DIRT).mapColor(MapColor.TERRACOTTA_RED);
         public static final Properties LATERITE_BRICKS = getPropFrom(Blocks.MUD_BRICKS).mapColor(MapColor.TERRACOTTA_RED);
@@ -282,7 +295,7 @@ public class CBlocks {
                 .addItemsAfter(of(Items.BAMBOO_FENCE_GATE), FANCIED_BAMBOO_PLANKS)
                 .addItemsAfter(of(Items.CRIMSON_FENCE_GATE), FANCIED_CRIMSON_PLANKS)
                 .addItemsAfter(of(Items.WARPED_FENCE_GATE), FANCIED_WARPED_PLANKS)
-                .addItemsBefore(of(Items.PACKED_MUD), LATERITE, LATERITE_BRICKS, LATERITE_BRICK_STAIRS, LATERITE_BRICK_SLAB, LATERITE_BRICK_WALL)
+                .addItemsBefore(of(Items.PACKED_MUD), LATERITE, LATERITE_BRICKS, LATERITE_BRICK_STAIRS, LATERITE_BRICK_SLAB, LATERITE_BRICK_WALL, LATERITE_TILES, LATERITE_TILE_STAIRS, LATERITE_TILE_SLAB, LATERITE_TILE_WALL)
                 //.addItemsAfter(of(Items.COBBLED_DEEPSLATE_WALL), SCULKY_COBBLED_DEEPSLATE, SCULKY_COBBLED_DEEPSLATE_STAIRS, SCULKY_COBBLED_DEEPSLATE_SLAB, SCULKY_COBBLED_DEEPSLATE_WALL)
                 /* vanilla comp */
                 .addItemsAfter(of(Items.STONE_SLAB), STONE_WALL)
@@ -301,12 +314,18 @@ public class CBlocks {
                 .tab(FUNCTIONAL_BLOCKS)
                 .addItemsBefore(of(Items.GLOWSTONE), TILE_LIGHT)
                 .addItemsAfter(of(Items.CHAIN), TIKI_TORCH, SOUL_TIKI_TORCH, CAGE_LIGHT, SOUL_CAGE_LIGHT, HEAVY_LANTERN, HEAVY_SOUL_LANTERN, BIG_CHAIN)
-                .addItemsAfter(of(Items.INFESTED_DEEPSLATE), ACRID_INCENSE, BLAND_INCENSE, BRIGHT_INCENSE, FRESH_INCENSE, SWEET_INCENSE, VERDANT_INCENSE)
+                .addItemsAfter(of(Items.INFESTED_DEEPSLATE),
+                        ACRID_INCENSE, BLAND_INCENSE, BRIGHT_INCENSE, FRESH_INCENSE, SWEET_INCENSE, VERDANT_INCENSE,
+                        ACRID_CENSER, BLAND_CENSER, BRIGHT_CENSER, FRESH_CENSER, SWEET_CENSER, VERDANT_CENSER
+                )
                 .tab(REDSTONE_BLOCKS)
                 .addItemsAfter(of(Items.COMPARATOR), REDSTONE_DIODE, REDSTONE_FUSE, CAGE_LIGHT)
                 .addItemsAfter(of(Items.NOTE_BLOCK), INVAR_BLOCK, WEIGHT_1S, WEIGHT_5S, WEIGHT_20S)
                 .tab(TOOLS_AND_UTILITIES)
-                .addItemsBefore(of(Items.GOAT_HORN), ACRID_INCENSE, BLAND_INCENSE, BRIGHT_INCENSE, FRESH_INCENSE, SWEET_INCENSE, VERDANT_INCENSE);
+                .addItemsBefore(of(Items.GOAT_HORN),
+                        ACRID_INCENSE, BLAND_INCENSE, BRIGHT_INCENSE, FRESH_INCENSE, SWEET_INCENSE, VERDANT_INCENSE,
+                        ACRID_CENSER, BLAND_CENSER, BRIGHT_CENSER, FRESH_CENSER, SWEET_CENSER, VERDANT_CENSER
+                );
         CreativeModeTabContentsPopulator.mod(CConstants.ATMOSPHERIC + "_" + Curiosities.MOD_ID)
                 .tab(BUILDING_BLOCKS)
                 .addItemsAfter(ofID(CConstants.ASPEN_FENCE_GATE), FANCIED_ASPEN_PLANKS)

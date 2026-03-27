@@ -1,0 +1,32 @@
+{
+  "parent": "minecraft:recipes/root",
+  "criteria": {
+    "has_incense": {
+      "conditions": {
+        "items": [
+          {
+            "items": "curiosities:acrid_incense"
+          }
+        ]
+      },
+      "trigger": "minecraft:inventory_changed"
+    },
+    "has_the_recipe": {
+      "conditions": {
+        "recipe": "curiosities:acrid_censer"
+      },
+      "trigger": "minecraft:recipe_unlocked"
+    }
+  },
+  "requirements": [
+    [
+      "has_the_recipe",
+      "has_incense"
+    ]
+  ],
+  "rewards": {
+    "recipes": [
+      "curiosities:acrid_censer"
+    ]
+  }
+}

@@ -103,7 +103,7 @@ public class CItems {
                 .addItemsAfter(of(Items.GOLDEN_BOOTS), ALUMINUM_HELMET, ALUMINUM_CHESTPLATE, ALUMINUM_LEGGINGS, ALUMINUM_BOOTS)
                 .addItemsBefore(of(Items.NETHERITE_HELMET), INVAR_HELMET, INVAR_CHESTPLATE, INVAR_LEGGINGS, INVAR_BOOTS)
                 .addItemsAfter(of(Items.TURTLE_HELMET), HEAVY_BOOTS);
-        if (ModList.get().isLoaded(CConstants.FARMERS_DELIGHT)) CreativeModeTabContentsPopulator.mod(CConstants.FARMERS_DELIGHT + "_" + Curiosities.MOD_ID)
+        CreativeModeTabContentsPopulator.mod(CConstants.FARMERS_DELIGHT + "_" + Curiosities.MOD_ID)
                 .tab(CConstants.FARMERS_DELIGHT_TAB)
                 .addItemsBefore(ofID(CConstants.DIAMOND_KNIFE), ALUMINUM_KNIFE)
                 .addItemsBefore(ofID(CConstants.NETHERITE_KNIFE), INVAR_KNIFE);
