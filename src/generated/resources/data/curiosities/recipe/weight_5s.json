@@ -1,21 +1,26 @@
 {
-  "type": "minecraft:crafting_shaped",
+  "type": "minecraft:crafting_shapeless",
   "category": "redstone",
-  "key": {
-    "N": {
-      "tag": "c:nuggets/invar"
+  "group": "invar",
+  "ingredients": [
+    {
+      "item": "curiosities:weight_1s"
     },
-    "R": {
-      "item": "minecraft:iron_ingot"
+    {
+      "item": "curiosities:weight_1s"
+    },
+    {
+      "item": "curiosities:weight_1s"
+    },
+    {
+      "item": "curiosities:weight_1s"
+    },
+    {
+      "item": "curiosities:weight_1s"
     }
-  },
-  "pattern": [
-    "RNR",
-    "NNN",
-    "RNR"
   ],
   "result": {
-    "count": 4,
+    "count": 1,
     "id": "curiosities:weight_5s"
   }
 }

@@ -93,6 +93,7 @@ public class CBlocks {
     public static final DeferredBlock<Block> WEIGHT_1S = BLOCKS.createBlock("weight_1s", () -> new InvarWeightBlock(CProperties.WEIGHT, 20, false));
     public static final DeferredBlock<Block> WEIGHT_5S = BLOCKS.createBlock("weight_5s", () -> new InvarWeightBlock(CProperties.WEIGHT, 100, false));
     public static final DeferredBlock<Block> WEIGHT_20S = BLOCKS.createBlock("weight_20s", () -> new InvarWeightBlock(CProperties.WEIGHT, 400, false));
+    public static final DeferredBlock<Block> WEIGHT_1M = BLOCKS.createBlock("weight_1m", () -> new InvarWeightBlock(CProperties.WEIGHT, 1200, false));
 
     public static final DeferredBlock<Block> CONCUSSION_BOMB = BLOCKS.createBlock("concussion_bomb", () -> new ConcussionBombBlock(CProperties.CONCUSSION_BOMB));
 
@@ -129,7 +130,6 @@ public class CBlocks {
     public static final DeferredBlock<Block> LATERITE_TILE_STAIRS = BLOCKS.createBlock("laterite_tile_stairs", () -> new StairBlock(CBlocks.LATERITE_TILES.get().defaultBlockState(), CProperties.LATERITE_BRICKS));
     public static final DeferredBlock<Block> LATERITE_TILE_SLAB = BLOCKS.createBlock("laterite_tile_slab", () -> new SlabBlock(CProperties.LATERITE_BRICKS));
     public static final DeferredBlock<Block> LATERITE_TILE_WALL = BLOCKS.createBlock("laterite_tile_wall", () -> new WallBlock(CProperties.LATERITE_BRICKS));
-
 
     public static final DeferredBlock<Block> SCULKY_COBBLED_DEEPSLATE = BLOCKS.createBlock("sculky_cobbled_deepslate", () -> new Block(CProperties.SCULKY_DEEPSLATE));
     public static final DeferredBlock<Block> SCULKY_COBBLED_DEEPSLATE_STAIRS = BLOCKS.createBlock("sculky_cobbled_deepslate_stairs", () -> new StairBlock(CBlocks.SCULKY_COBBLED_DEEPSLATE.get().defaultBlockState(), CProperties.SCULKY_DEEPSLATE));
@@ -320,7 +320,7 @@ public class CBlocks {
                 )
                 .tab(REDSTONE_BLOCKS)
                 .addItemsAfter(of(Items.COMPARATOR), REDSTONE_DIODE, REDSTONE_FUSE, CAGE_LIGHT)
-                .addItemsAfter(of(Items.NOTE_BLOCK), INVAR_BLOCK, WEIGHT_1S, WEIGHT_5S, WEIGHT_20S)
+                .addItemsAfter(of(Items.NOTE_BLOCK), INVAR_BLOCK, WEIGHT_1S, WEIGHT_5S, WEIGHT_20S, WEIGHT_1M)
                 .tab(TOOLS_AND_UTILITIES)
                 .addItemsBefore(of(Items.GOAT_HORN),
                         ACRID_INCENSE, BLAND_INCENSE, BRIGHT_INCENSE, FRESH_INCENSE, SWEET_INCENSE, VERDANT_INCENSE,

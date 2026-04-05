@@ -29,7 +29,7 @@ public class CBlockTagsProvider extends BlockTagsProvider {
                 INVAR_BLOCK.get(),
                 ALUMINUM_GRATE.get(), SHEET_METAL.get(), ALUMINUM_BARS.get(), ALUMINUM_DOOR.get(), ALUMINUM_TRAPDOOR.get(), CUT_ALUMINUM.get(), CUT_ALUMINUM_STAIRS.get(), CUT_ALUMINUM_SLAB.get(),
                 NICKEL_BARS.get(),
-                WEIGHT_1S.get(), WEIGHT_5S.get(), WEIGHT_20S.get(),
+                WEIGHT_1S.get(), WEIGHT_5S.get(), WEIGHT_20S.get(), WEIGHT_1M.get(),
                 CAGE_LIGHT.get(), SOUL_CAGE_LIGHT.get(), TILE_LIGHT.get(),
                 BIG_CHAIN.get(), HEAVY_LANTERN.get(), HEAVY_SOUL_LANTERN.get(),
                 STONE_ASHLAR.get(), DEEPSLATE_ASHLAR.get(), TUFF_ASHLAR.get(), POLISHED_BLACKSTONE_ASHLAR.get(), END_STONE_ASHLAR.get(),

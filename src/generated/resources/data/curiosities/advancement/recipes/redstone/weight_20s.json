@@ -5,7 +5,7 @@
       "conditions": {
         "items": [
           {
-            "items": "#c:ingots/invar"
+            "items": "curiosities:invar_ingot"
           }
         ]
       },

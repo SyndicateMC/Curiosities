@@ -12,6 +12,8 @@ import com.syndicatemc.curiosities.core.registry.CBlocks;
 import com.syndicatemc.curiosities.core.registry.CItems;
 import com.teamabnormals.atmospheric.core.other.tags.AtmosphericItemTags;
 import com.teamabnormals.atmospheric.core.registry.AtmosphericBlocks;
+import com.teamabnormals.autumnity.core.other.tags.AutumnityItemTags;
+import com.teamabnormals.autumnity.core.registry.AutumnityBlocks;
 import com.teamabnormals.blueprint.core.data.server.BlueprintRecipeProvider;
 import com.teamabnormals.environmental.core.other.tags.EnvironmentalItemTags;
 import com.teamabnormals.environmental.core.registry.EnvironmentalBlocks;
@@ -113,22 +115,53 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
                 .pattern("N").pattern("I").pattern("N").unlockedBy("has_invar", has(CItemTags.INGOTS_INVAR))
                 .save(output);
 
-        ShapedRecipeBuilder.shaped(REDSTONE, CBlocks.WEIGHT_1S, 4)
-                .define('N', CItemTags.NUGGETS_INVAR)
-                .define('R', Items.IRON_INGOT)
-                .pattern("R R").pattern(" N ").pattern("R R").unlockedBy("has_invar", has(CItemTags.INGOTS_INVAR))
-                .save(output);
-        ShapedRecipeBuilder.shaped(REDSTONE, CBlocks.WEIGHT_5S, 4)
-                .define('N', CItemTags.NUGGETS_INVAR)
-                .define('R', Items.IRON_INGOT)
-                .pattern("RNR").pattern("NNN").pattern("RNR").unlockedBy("has_invar", has(CItemTags.INGOTS_INVAR))
-                .save(output);
-        ShapedRecipeBuilder.shaped(REDSTONE, CBlocks.WEIGHT_20S, 4)
-                .define('N', CItemTags.NUGGETS_INVAR)
-                .define('I', CItemTags.INGOTS_INVAR)
-                .define('R', Items.IRON_INGOT)
-                .pattern("RNR").pattern("I I").pattern("RNR").unlockedBy("has_invar", has(CItemTags.INGOTS_INVAR))
-                .save(output);
+        ShapelessRecipeBuilder.shapeless(REDSTONE, CBlocks.WEIGHT_1S, 16)
+                .requires(Ingredient.of(CItemTags.NUGGETS_INVAR), 3)
+                .requires(Items.IRON_BLOCK)
+                .group("invar")
+                .unlockedBy("has_invar", has(CItems.INVAR_INGOT)).save(output);
+        ShapelessRecipeBuilder.shapeless(REDSTONE, CBlocks.WEIGHT_1S, 5)
+                .requires(CBlocks.WEIGHT_5S)
+                .group("invar")
+                .unlockedBy("has_invar", has(CItems.INVAR_INGOT)).save(output, getDefaultRecipeId(CBlocks.WEIGHT_1S) + "_from_" + getDefaultRecipeId(CBlocks.WEIGHT_5S).getPath());
+        ShapelessRecipeBuilder.shapeless(REDSTONE, CBlocks.WEIGHT_1S, 20)
+                .requires(CBlocks.WEIGHT_20S)
+                .group("invar")
+                .unlockedBy("has_invar", has(CItems.INVAR_INGOT)).save(output, getDefaultRecipeId(CBlocks.WEIGHT_1S) + "_from_" + getDefaultRecipeId(CBlocks.WEIGHT_20S).getPath());
+        ShapelessRecipeBuilder.shapeless(REDSTONE, CBlocks.WEIGHT_1S, 60)
+                .requires(CBlocks.WEIGHT_1M)
+                .group("invar")
+                .unlockedBy("has_invar", has(CItems.INVAR_INGOT)).save(output, getDefaultRecipeId(CBlocks.WEIGHT_1S) + "_from_" + getDefaultRecipeId(CBlocks.WEIGHT_1M).getPath());
+
+        ShapelessRecipeBuilder.shapeless(REDSTONE, CBlocks.WEIGHT_5S)
+                .requires(CBlocks.WEIGHT_1S, 5)
+                .group("invar")
+                .unlockedBy("has_invar", has(CItems.INVAR_INGOT)).save(output);
+
+        ShapelessRecipeBuilder.shapeless(REDSTONE, CBlocks.WEIGHT_20S)
+                .requires(CBlocks.WEIGHT_5S, 4)
+                .group("invar")
+                .unlockedBy("has_invar", has(CItems.INVAR_INGOT)).save(output);
+        ShapelessRecipeBuilder.shapeless(REDSTONE, CBlocks.WEIGHT_20S)
+                .requires(CBlocks.WEIGHT_5S, 3)
+                .requires(CBlocks.WEIGHT_1S, 5)
+                .group("invar")
+                .unlockedBy("has_invar", has(CItems.INVAR_INGOT)).save(output, getDefaultRecipeId(CBlocks.WEIGHT_20S) + "_alt");
+
+        ShapelessRecipeBuilder.shapeless(REDSTONE, CBlocks.WEIGHT_1M)
+                .requires(CBlocks.WEIGHT_20S, 3)
+                .group("invar")
+                .unlockedBy("has_invar", has(CItems.INVAR_INGOT)).save(output);
+        ShapelessRecipeBuilder.shapeless(REDSTONE, CBlocks.WEIGHT_1M)
+                .requires(CBlocks.WEIGHT_20S, 2)
+                .requires(CBlocks.WEIGHT_5S, 4)
+                .group("invar")
+                .unlockedBy("has_invar", has(CItems.INVAR_INGOT)).save(output, getDefaultRecipeId(CBlocks.WEIGHT_1M) + "_alt");
+        ShapelessRecipeBuilder.shapeless(REDSTONE, CBlocks.WEIGHT_1M)
+                .requires(CBlocks.WEIGHT_20S)
+                .requires(CBlocks.WEIGHT_5S, 8)
+                .group("invar")
+                .unlockedBy("has_invar", has(CItems.INVAR_INGOT)).save(output, getDefaultRecipeId(CBlocks.WEIGHT_1M) + "_alt_2");
 
         aluminumSmithingRecipe(output, Items.LEATHER_HELMET, CItems.ALUMINUM_HELMET.get());
         aluminumSmithingRecipe(output, Items.LEATHER_CHESTPLATE, CItems.ALUMINUM_CHESTPLATE.get());
@@ -201,7 +234,9 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
         stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_BRICK_SLAB, CBlocks.LATERITE_BRICKS, 2);
         stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_BRICK_STAIRS, CBlocks.LATERITE_BRICKS);
         stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_BRICK_WALL, CBlocks.LATERITE_BRICKS);
+        cutBuilder(BUILDING_BLOCKS, CBlocks.LATERITE_TILES, Ingredient.of(CBlocks.LATERITE_BRICKS)).unlockedBy("has_laterite_bricks", has(CBlocks.LATERITE)).save(output);
         generateRecipes(output, CBlockFamilies.LATERITE_TILES_BLOCK_FAMILY);
+        stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_TILES, CBlocks.LATERITE_BRICKS);
         stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_TILE_SLAB, CBlocks.LATERITE_BRICKS, 2);
         stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_TILE_STAIRS, CBlocks.LATERITE_BRICKS);
         stonecutterRecipe(output, BUILDING_BLOCKS, CBlocks.LATERITE_TILE_WALL, CBlocks.LATERITE_BRICKS);
@@ -281,6 +316,8 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
         fanciedPlanksRecipe(output, CBlocks.FANCIED_MORADO_PLANKS, AtmosphericBlocks.MORADO_SLAB, AtmosphericBlocks.MORADO_PLANKS, AtmosphericItemTags.MORADO_LOGS, CConstants.ATMOSPHERIC);
         fanciedPlanksRecipe(output, CBlocks.FANCIED_ROSEWOOD_PLANKS, AtmosphericBlocks.ROSEWOOD_SLAB, AtmosphericBlocks.ROSEWOOD_PLANKS, AtmosphericItemTags.ROSEWOOD_LOGS, CConstants.ATMOSPHERIC);
         fanciedPlanksRecipe(output, CBlocks.FANCIED_YUCCA_PLANKS, AtmosphericBlocks.YUCCA_SLAB, AtmosphericBlocks.YUCCA_PLANKS, AtmosphericItemTags.YUCCA_LOGS, CConstants.ATMOSPHERIC);
+
+        fanciedPlanksRecipe(output, CBlocks.FANCIED_MAPLE_PLANKS, AutumnityBlocks.MAPLE_SLAB, AutumnityBlocks.MAPLE_PLANKS, AutumnityItemTags.MAPLE_LOGS, CConstants.AUTUMNITY);
 
         fanciedPlanksRecipe(output, CBlocks.FANCIED_PINE_PLANKS, EnvironmentalBlocks.PINE_SLAB, EnvironmentalBlocks.PINE_PLANKS, EnvironmentalItemTags.PINE_LOGS, CConstants.ENVIRONMENTAL);
         fanciedPlanksRecipe(output, CBlocks.FANCIED_PLUM_PLANKS, EnvironmentalBlocks.PLUM_SLAB, EnvironmentalBlocks.PLUM_PLANKS, EnvironmentalItemTags.PLUM_LOGS, CConstants.ENVIRONMENTAL);

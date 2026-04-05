@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-26T10:55:53.4822426	Loot Tables
+// 1.21.1	2026-04-03T19:05:55.9829031	Loot Tables
 94134a2c2e06020eebab6e8cdbf49c1499d1a76d data/curiosities/loot_table/blocks/acrid_censer.json
 e7ac10b4d0f1dfd090f76049d2f418f2ba7caa2d data/curiosities/loot_table/blocks/acrid_incense.json
 1a4230948565e980b814d8dbca05eeb300fbab73 data/curiosities/loot_table/blocks/acrid_wall_incense.json
@@ -114,6 +114,7 @@ e04d063eb30da869c30ec521d72a5676c8e788c3 data/curiosities/loot_table/blocks/tiki
 9aa9c93ba6d7adf410e9ad89c296bf1c511afd11 data/curiosities/loot_table/blocks/verdant_censer.json
 aab77f2d727843b4fc4e28ff51589f58fdf483dd data/curiosities/loot_table/blocks/verdant_incense.json
 d1597ce8e54bb1c19952a0e10d919635897efe0d data/curiosities/loot_table/blocks/verdant_wall_incense.json
+dc1b04aca0b27d40f33b15ff336f5c8706d65259 data/curiosities/loot_table/blocks/weight_1m.json
 5d445f98e9cbe1577313af72e2aa307c7b63917a data/curiosities/loot_table/blocks/weight_1s.json
 77834b6ba393fc6f24ee20762e672ca7bd0b34f6 data/curiosities/loot_table/blocks/weight_20s.json
 477317b249c955696d477847c21981ae6d5dc92c data/curiosities/loot_table/blocks/weight_5s.json

@@ -13,6 +13,11 @@ import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeMap;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
+
+import javax.annotation.Nullable;
 
 public class CUtils {
     public static boolean canApplyTempoEffects(Player player) {
@@ -34,5 +39,10 @@ public class CUtils {
     public static ResourceLocation getLocFromID(String id) {
         String[] splitID = id.split(":");
         return ResourceLocation.fromNamespaceAndPath(splitID[0], splitID[1]);
+    }
+
+    @Nullable
+    public static <E extends BlockEntity, A extends BlockEntity> BlockEntityTicker<A> createTickerHelper(BlockEntityType<A> entityType, BlockEntityType<E> otherEntity, BlockEntityTicker<? super E> ticker) {
+        return otherEntity == entityType ? (BlockEntityTicker<A>) ticker : null;
     }
 }

@@ -1,20 +1,13 @@
 package com.syndicatemc.curiosities.common.block;
 
 import com.mojang.serialization.MapCodec;
-import com.syndicatemc.curiosities.core.Curiosities;
-import com.syndicatemc.curiosities.core.registry.CMobEffects;
-import com.syndicatemc.curiosities.core.registry.CSoundEvents;
-import com.teamabnormals.blueprint.common.network.particle.SpawnParticlesPayload;
-import com.teamabnormals.blueprint.core.util.NetworkUtil;
+import com.syndicatemc.curiosities.common.entity.IncenseBlockEntity;
+import com.syndicatemc.curiosities.core.other.CUtils;
+import com.syndicatemc.curiosities.core.registry.CBlockEntityTypes;
 import net.minecraft.core.BlockPos;
-import net.minecraft.core.Direction;
 import net.minecraft.core.Holder;
-import net.minecraft.core.particles.BlockParticleOption;
 import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.core.particles.SimpleParticleType;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.FastColor;
@@ -22,38 +15,37 @@ import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.FlintAndSteelItem;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.BaseTorchBlock;
 import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.CandleBlock;
+import net.minecraft.world.level.block.EntityBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.level.block.state.properties.IntegerProperty;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.neoforged.neoforge.common.ItemAbilities;
+import org.jetbrains.annotations.NotNull;
 
-import java.util.List;
+import javax.annotation.Nullable;
 
-public class IncenseBlock extends BaseTorchBlock {
+public class IncenseBlock extends BaseTorchBlock implements EntityBlock {
     public static final MapCodec<IncenseBlock> CODEC = simpleCodec(IncenseBlock::incenseBlockProvider);
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
-    public static final IntegerProperty LIFETIME = IntegerProperty.create("lifetime", 0, 300);
     protected final Holder<MobEffect> incenseEffect;
     protected final int smokeColor;
 
     public IncenseBlock(BlockBehaviour.Properties properties, Holder<MobEffect> effect, int smokeColor) {
         super(properties);
-        this.registerDefaultState(this.stateDefinition.any().setValue(LIT, false).setValue(LIFETIME, 300));
+        this.registerDefaultState(this.stateDefinition.any().setValue(LIT, false));
         this.incenseEffect = effect;
         this.smokeColor = smokeColor;
     }
@@ -68,7 +60,7 @@ public class IncenseBlock extends BaseTorchBlock {
     }
 
     protected void createBlockStateDefinition(StateDefinition.Builder<Block, BlockState> builder) {
-        builder.add(LIT, LIFETIME);
+        builder.add(LIT);
     }
 
     @Override
@@ -82,9 +74,8 @@ public class IncenseBlock extends BaseTorchBlock {
         }
     }
 
-    @Override
-    protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        incenseFunction(state, level, pos, this.incenseEffect);
+    public Holder<MobEffect> getEffect() {
+        return incenseEffect;
     }
 
     @Override
@@ -109,13 +100,14 @@ public class IncenseBlock extends BaseTorchBlock {
         return ItemInteractionResult.sidedSuccess(level.isClientSide);
     }
 
-    public static void incenseFunction(BlockState state, ServerLevel level, BlockPos pos, Holder<MobEffect> effect) {
-        for (Player player : level.getEntitiesOfClass(Player.class, new AABB(pos).inflate(2.5D, 2.5D, 2.5D))) {
-            player.addEffect(new MobEffectInstance(effect, 50, 1, false, true));
-        }
-        if (state.getValue(LIT)) if (state.getValue(LIFETIME) > 1) {
-            level.setBlock(pos, state.setValue(LIFETIME, state.getValue(LIFETIME) - 1), 11);
-            level.scheduleTick(pos, state.getBlock(), 5);
-        } else level.destroyBlock(pos, false);
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(@NotNull BlockPos blockPos, @NotNull BlockState blockState) {
+        return new IncenseBlockEntity(blockPos, blockState);
+    }
+
+    @Nullable
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state, @NotNull BlockEntityType<T> blockEntity) {
+        return CUtils.createTickerHelper(blockEntity, CBlockEntityTypes.INCENSE.get(), IncenseBlockEntity::tick);
     }
 }

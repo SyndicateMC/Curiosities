@@ -1,35 +1,42 @@
 package com.syndicatemc.curiosities.common.block;
 
+import com.syndicatemc.curiosities.common.entity.CenserBlockEntity;
+import com.syndicatemc.curiosities.core.other.CUtils;
+import com.syndicatemc.curiosities.core.registry.CBlockEntityTypes;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Holder;
 import net.minecraft.core.particles.ColorParticleOption;
 import net.minecraft.core.particles.ParticleTypes;
-import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.FastColor;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.ItemInteractionResult;
 import net.minecraft.world.effect.MobEffect;
-import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.level.BlockGetter;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.EntityBlock;
 import net.minecraft.world.level.block.LanternBlock;
+import net.minecraft.world.level.block.entity.BlockEntity;
+import net.minecraft.world.level.block.entity.BlockEntityTicker;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.StateDefinition;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
-import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
 import net.neoforged.neoforge.common.ItemAbilities;
+import org.jetbrains.annotations.NotNull;
 
-public class CenserBlock extends LanternBlock {
+import javax.annotation.Nullable;
+
+public class CenserBlock extends LanternBlock implements EntityBlock {
     public static final BooleanProperty LIT = BlockStateProperties.LIT;
     protected static final VoxelShape AABB = Shapes.or(
             Block.box(5.0F, 0.0F, 5.0F, 11.0F, 1.0F, 11.0F),
@@ -51,11 +58,6 @@ public class CenserBlock extends LanternBlock {
     }
 
     @Override
-    protected void tick(BlockState state, ServerLevel level, BlockPos pos, RandomSource random) {
-        censerFunction(state, level, pos, this.incenseEffect);
-    }
-
-    @Override
     public void animateTick(BlockState state, Level level, BlockPos pos, RandomSource random) {
         if (state.getValue(LIT)) {
             level.addParticle(ParticleTypes.SMOKE, pos.getX() + 0.5, pos.getY() + 0.625, pos.getZ() + 0.5, 0.0, 0.0, 0.0);
@@ -68,6 +70,10 @@ public class CenserBlock extends LanternBlock {
         }
     }
 
+    public Holder<MobEffect> getEffect() {
+        return incenseEffect;
+    }
+
     @Override
     protected ItemInteractionResult useItemOn(ItemStack stack, BlockState state, Level level, BlockPos pos, Player player, InteractionHand hand, BlockHitResult hitResult) {
         if (stack.canPerformAction(ItemAbilities.FIRESTARTER_LIGHT) && !state.getValue(LIT)) {
@@ -77,16 +83,18 @@ public class CenserBlock extends LanternBlock {
         }
     }
 
-    public static void censerFunction(BlockState state, ServerLevel level, BlockPos pos, Holder<MobEffect> effect) {
-        for (Player player : level.getEntitiesOfClass(Player.class, new AABB(pos).inflate(5.0D, 5.0D, 5.0D))) {
-            player.addEffect(new MobEffectInstance(effect, 50, 0, false, true));
-        }
-        if (state.getValue(LIT)) {
-            level.scheduleTick(pos, state.getBlock(), 5);
-        }
-    }
-
     protected VoxelShape getShape(BlockState state, BlockGetter level, BlockPos pos, CollisionContext context) {
         return AABB;
+    }
+
+    @Nullable
+    @Override
+    public BlockEntity newBlockEntity(@NotNull BlockPos blockPos, @NotNull BlockState blockState) {
+        return new CenserBlockEntity(blockPos, blockState);
+    }
+
+    @Nullable
+    public <T extends BlockEntity> BlockEntityTicker<T> getTicker(@NotNull Level level, @NotNull BlockState state, @NotNull BlockEntityType<T> blockEntity) {
+        return CUtils.createTickerHelper(blockEntity, CBlockEntityTypes.CENSER.get(), CenserBlockEntity::tick);
     }
 }

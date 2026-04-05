@@ -22,6 +22,7 @@
   "block.curiosities.weight_1s": "Invar Weight (1s)",
   "block.curiosities.weight_5s": "Invar Weight (5s)",
   "block.curiosities.weight_20s": "Invar Weight (20s)",
+  "block.curiosities.weight_1m": "Invar Weight (1m)",
   "block.curiosities.cage_light": "Cage Light",
   "block.curiosities.soul_cage_light": "Soul Cage Light",
   "block.curiosities.tile_light": "Tile Light",
@@ -127,9 +128,9 @@
 
   "upgrade.curiosities.aluminum_upgrade": "Aluminum Upgrade",
 
-  "trim_material.curiosities.aluminum": "Aluminum",
-  "trim_material.curiosities.nickel": "Nickel",
-  "trim_material.curiosities.invar": "Invar",
+  "trim_material.curiosities.aluminum": "Aluminum Material",
+  "trim_material.curiosities.nickel": "Nickel Material",
+  "trim_material.curiosities.invar": "Invar Material",
 
   "attribute.curiosities.damage_reduction": "Damage Reduction",
   "attribute.curiosities.armor_piercing": "Armor Piercing",

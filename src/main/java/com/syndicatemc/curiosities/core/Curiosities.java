@@ -51,6 +51,7 @@ public class Curiosities {
     public Curiosities(IEventBus bus, ModContainer container) {
         CBlocks.BLOCKS.register(bus);
         CItems.ITEMS.register(bus);
+        CBlockEntityTypes.BLOCK_ENTITY_TYPES.register(bus);
         CEntityTypes.ENTITY_TYPES.register(bus);
         CSoundEvents.SOUND_EVENTS.register(bus);
         CArmorMaterials.ARMOR_MATERIALS.register(bus);

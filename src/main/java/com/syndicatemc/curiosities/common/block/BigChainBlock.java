@@ -10,8 +10,6 @@ import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.VoxelShape;
 
-import javax.annotation.Nullable;
-
 public class BigChainBlock extends ChainBlock {
     protected static final VoxelShape Y_AXIS_AABB = Block.box(5.0F, 0.0F, 5.0F, 11.0F, 16.0F, 11.0F);
     protected static final VoxelShape Z_AXIS_AABB = Block.box(5.0F, 5.0F, 0.0F, 11.0F, 11.0F, 16.0F);

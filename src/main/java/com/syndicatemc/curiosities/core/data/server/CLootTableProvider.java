@@ -76,7 +76,7 @@ public class CLootTableProvider extends LootTableProvider {
                     NICKEL_BARS,
 
                     REDSTONE_DIODE, REDSTONE_FUSE,
-                    WEIGHT_1S, WEIGHT_5S, WEIGHT_20S,
+                    WEIGHT_1S, WEIGHT_5S, WEIGHT_20S, WEIGHT_1M,
                     CAGE_LIGHT, SOUL_CAGE_LIGHT, TILE_LIGHT,
                     BIG_CHAIN, HEAVY_LANTERN, HEAVY_SOUL_LANTERN,
                     TIKI_TORCH, SOUL_TIKI_TORCH,
