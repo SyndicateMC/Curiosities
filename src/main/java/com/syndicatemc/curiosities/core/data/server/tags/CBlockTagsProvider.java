@@ -7,6 +7,7 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Blocks;
+import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.BlockTagsProvider;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
@@ -67,6 +68,11 @@ public class CBlockTagsProvider extends BlockTagsProvider {
                 ALUMINUM_ORE.get(), DEEPSLATE_ALUMINUM_ORE.get()
         );
         this.tag(BlockTags.NEEDS_DIAMOND_TOOL).add(
+                INVAR_BLOCK.get()
+        );
+        this.tag(Tags.Blocks.STORAGE_BLOCKS).add(
+                RAW_ALUMINUM_BLOCK.get(), ALUMINUM_BLOCK.get(),
+                RAW_NICKEL_BLOCK.get(), NICKEL_BLOCK.get(),
                 INVAR_BLOCK.get()
         );
 
