@@ -1,8 +1,8 @@
 {
 	"ambientocclusion": false,
 	"textures": {
-		"particle": "block/lever",
-		"lever": "block/lever"
+		"particle": "block/new_lever",
+		"lever": "block/new_lever"
 	},
 	"elements": [
 		{
