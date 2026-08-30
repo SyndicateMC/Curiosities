@@ -1,17 +1,17 @@
 {
   "type": "minecraft:crafting_shaped",
-  "category": "redstone",
+  "category": "building",
   "key": {
     "#": {
       "tag": "c:ingots/aluminum"
     }
   },
   "pattern": [
-    "###",
-    "###"
+    "##",
+    "##"
   ],
   "result": {
-    "count": 2,
+    "count": 4,
     "id": "curiosities:aluminum_trapdoor"
   }
 }

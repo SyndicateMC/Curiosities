@@ -1,15 +1,16 @@
-// 1.21.1	2026-04-03T19:05:55.9802485	Tags for minecraft:block mod id curiosities
+// 1.21.1	2026-07-07T22:40:17.0739693	Tags for minecraft:block mod id curiosities
 4e2c5551295529ba00da8374a299c9a3f66064ce data/curiosities/tags/block/slap_bass_note_blocks.json
 d65a403f29ae67da339266ebbe480894e79746b5 data/curiosities/tags/block/steel_drum_note_blocks.json
 108ffa23d49cbeef7f88eab7a7de840e5c77bcec data/curiosities/tags/block/trumpet_exposed_note_blocks.json
 4b6b3e56777f3c354fdb29c8c8e725e6bdda8044 data/curiosities/tags/block/trumpet_note_blocks.json
 eb1f74c2fe5fc43e4d3c9c80491cec638037513b data/curiosities/tags/block/trumpet_oxidized_note_blocks.json
 9df56dbad3822fd6f1c6b0d045cd1fe8af2808f4 data/curiosities/tags/block/trumpet_weathered_note_blocks.json
-596795991f49b4068b3192ce83fe545d3347a498 data/forge/tags/block/ores/aluminum.json
-51022f46f1e9953da21e121dd441006e63abdc03 data/forge/tags/block/ores/nickel.json
-35366f515ba452d7af1691a79e7ba4072fe87d3f data/forge/tags/block/storage_blocks/aluminum.json
-3e88312f317a76b7bf05ff82a31f0e1f2e6f8e89 data/forge/tags/block/storage_blocks/invar.json
-4e2c5551295529ba00da8374a299c9a3f66064ce data/forge/tags/block/storage_blocks/nickel.json
+596795991f49b4068b3192ce83fe545d3347a498 data/c/tags/block/ores/aluminum.json
+51022f46f1e9953da21e121dd441006e63abdc03 data/c/tags/block/ores/nickel.json
+6ae4ca00fb1208b0eb2d1a14aa4c8817c1fe3c56 data/c/tags/block/storage_blocks.json
+35366f515ba452d7af1691a79e7ba4072fe87d3f data/c/tags/block/storage_blocks/aluminum.json
+3e88312f317a76b7bf05ff82a31f0e1f2e6f8e89 data/c/tags/block/storage_blocks/invar.json
+4e2c5551295529ba00da8374a299c9a3f66064ce data/c/tags/block/storage_blocks/nickel.json
 36c9e619e73f20242cd9cc70dd39282f76a65c14 data/minecraft/tags/block/dirt.json
 86d4096bb0578290019fa8310e05e11e1e1f1b42 data/minecraft/tags/block/doors.json
 4c2b173391561a543970446d63ed27e96c5537e1 data/minecraft/tags/block/mineable/axe.json

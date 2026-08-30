@@ -86,7 +86,7 @@ public class CEvents {
         float modifiedDamage = event.getNewDamage();
         float reductionPercent = modifiedDamage / originalDamage;
 
-        applyTempoDamage(event, sourceEntity, source, modifiedDamage, reductionPercent);
+        applyTempoDamage(event, sourceEntity, source, originalDamage, modifiedDamage, reductionPercent);
         applyAcridDamage(event, sourceEntity, source, modifiedDamage);
         calcFreshSmokeDamageRes(event, reciever, source, modifiedDamage);
         calcHeavyBootsFallDamage(event, reciever, source, modifiedDamage);
@@ -94,8 +94,8 @@ public class CEvents {
         calcArmorPiercing(event, sourceEntity, originalDamage, modifiedDamage);
     }
 
-    private static void applyTempoDamage(LivingDamageEvent.Pre event, Entity sourceEntity, DamageSource source, float modifiedDamage, float reductionPercent) {
-        if (sourceEntity instanceof Player player && CUtils.canApplyTempoEffects(player) && source.is(DamageTypes.PLAYER_ATTACK)) {
+    private static void applyTempoDamage(LivingDamageEvent.Pre event, Entity sourceEntity, DamageSource source, float originalDamage, float modifiedDamage, float reductionPercent) {
+        if (sourceEntity instanceof Player player && CUtils.canApplyTempoEffects(player) && source.is(DamageTypes.PLAYER_ATTACK) && originalDamage >= player.getAttributes().getValue(Attributes.ATTACK_DAMAGE) * 0.8F) {
             float newDamage = modifiedDamage + (CUtils.getCurrentTempo(player) / 2.0F) * reductionPercent;
             CUtils.applyTempo(player);
             event.setNewDamage(newDamage);

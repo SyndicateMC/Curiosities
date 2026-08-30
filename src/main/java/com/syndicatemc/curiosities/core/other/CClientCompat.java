@@ -34,7 +34,7 @@ public class CClientCompat {
     public static void registerRenderLayers() {
         for (DeferredBlock<?> block : new DeferredBlock[]{
                 ALUMINUM_GRATE,
-                ALUMINUM_BARS, NICKEL_BARS,
+                ALUMINUM_DOOR, ALUMINUM_BARS, NICKEL_BARS,
                 REDSTONE_FUSE,
                 CAGE_LIGHT, SOUL_CAGE_LIGHT,
                 BIG_CHAIN, HEAVY_LANTERN, HEAVY_SOUL_LANTERN,

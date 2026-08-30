@@ -138,12 +138,12 @@
   "attribute.curiosities.tempo": "Tempo",
 
   "effect.curiosities.tempo": "Tempo",
-  "effect.curiosities.acrid_smoke": "Acrid Smoke",
+  "effect.curiosities.acrid_smoke": "Smoke Brutality",
   "effect.curiosities.bland_smoke": "Bland Smoke",
-  "effect.curiosities.bright_smoke": "Bright Smoke",
-  "effect.curiosities.fresh_smoke": "Fresh Smoke",
+  "effect.curiosities.bright_smoke": "Smoke Knowledge",
+  "effect.curiosities.fresh_smoke": "Smoke Cleanliness",
   "effect.curiosities.sweet_smoke": "Sweet Smoke",
-  "effect.curiosities.verdant_smoke": "Verdant Smoke",
+  "effect.curiosities.verdant_smoke": "Smoke Recovery",
 
   "advancements.curiosities.nether.invar_armor.title": "I am Iron Man",
   "advancements.curiosities.nether.invar_armor.description": "Get a full suit of Invar armor",

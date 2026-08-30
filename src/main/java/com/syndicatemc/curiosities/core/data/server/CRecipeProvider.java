@@ -191,7 +191,7 @@ public class CRecipeProvider extends BlueprintRecipeProvider {
                 .save(output);
 
         doorBuilder(CBlocks.ALUMINUM_DOOR, Ingredient.of(CItemTags.INGOTS_ALUMINUM)).unlockedBy("has_aluminum_ingot", has(CItemTags.INGOTS_ALUMINUM)).save(output);
-        trapdoorBuilder(CBlocks.ALUMINUM_TRAPDOOR, Ingredient.of(CItemTags.INGOTS_ALUMINUM)).unlockedBy("has_aluminum_ingot", has(CItemTags.INGOTS_ALUMINUM)).save(output);
+        cutBuilder(BUILDING_BLOCKS, CBlocks.ALUMINUM_TRAPDOOR, Ingredient.of(CItemTags.INGOTS_ALUMINUM)).unlockedBy("has_aluminum_ingot", has(CItemTags.INGOTS_ALUMINUM)).save(output);
         cutBuilder(BUILDING_BLOCKS, CBlocks.CUT_ALUMINUM, Ingredient.of(CBlocks.ALUMINUM_BLOCK)).unlockedBy("has_aluminum_block", has(CBlocks.ALUMINUM_BLOCK)).save(output);
         //chiseled(output, BUILDING_BLOCKS, CBlocks.SHEET_METAL, CBlocks.CUT_ALUMINUM_SLAB);
         grate(output, CBlocks.ALUMINUM_GRATE.get(), CBlocks.ALUMINUM_BLOCK.get());
