@@ -114,7 +114,7 @@ public class CBlockTagsProvider extends BlockTagsProvider {
 
         this.tag(BlockTags.DIRT).add(LATERITE.get());
 
-        this.tag(BlockTags.PIGLIN_REPELLENTS).add(SOUL_CAGE_LIGHT.get(), HEAVY_SOUL_LANTERN.get());
+        this.tag(BlockTags.PIGLIN_REPELLENTS).add(SOUL_CAGE_LIGHT.get(), HEAVY_SOUL_LANTERN.get(), SOUL_TIKI_TORCH.get());
 
         this.tag(CBlockTags.TRUMPET_NOTE_BLOCKS).add(Blocks.COPPER_BLOCK, Blocks.CUT_COPPER, Blocks.CUT_COPPER_STAIRS, Blocks.CUT_COPPER_SLAB, Blocks.CHISELED_COPPER, Blocks.COPPER_GRATE, Blocks.COPPER_BULB,
                 Blocks.WAXED_COPPER_BLOCK, Blocks.WAXED_CUT_COPPER, Blocks.WAXED_CUT_COPPER_STAIRS, Blocks.WAXED_CUT_COPPER_SLAB, Blocks.WAXED_CHISELED_COPPER, Blocks.WAXED_COPPER_GRATE, Blocks.WAXED_COPPER_BULB);
