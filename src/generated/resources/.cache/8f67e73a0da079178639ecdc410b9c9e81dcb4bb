@@ -1,7 +1,6 @@
-// 1.21.1	2026-03-19T22:35:54.5532039	Tags for minecraft:item mod id curiosities
-6536dd130894192cb12ec2c54f782d43256880a8 data/curiosities/tags/item/aluminum_tools.json
-a7e024a88452c034194219c55f51fd8086e0f1b7 data/curiosities/tags/item/invar_tools.json
-409b6b8f59f2be297f6d2dfda7463d6d597c8e39 data/curiosities/tags/item/topaz_tools.json
+// 1.21.1	2026-09-09T08:20:38.449475889	Tags for minecraft:item mod id curiosities
+8c2c2dbc4cc6cd052677c7f9d71e4182474d8f21 data/c/tags/item/armors.json
+79f2bdc24509fd5acfdbaa424dbf10f4a302a761 data/c/tags/item/enchantables.json
 6a545776f153dc28e853b510d5cd034236aa7c2a data/c/tags/item/ingots.json
 be6d950b9d7b963f2e8a45735cce7b6f4afeb4ab data/c/tags/item/ingots/aluminum.json
 5e4cf87465089e2ae2c07e31388a4909a76e4331 data/c/tags/item/ingots/invar.json
@@ -18,13 +17,36 @@ e4053e0a20354e201ca5bd427ee343cdf2b709c5 data/c/tags/item/raw_materials/nickel.j
 35366f515ba452d7af1691a79e7ba4072fe87d3f data/c/tags/item/storage_blocks/aluminum.json
 3e88312f317a76b7bf05ff82a31f0e1f2e6f8e89 data/c/tags/item/storage_blocks/invar.json
 4e2c5551295529ba00da8374a299c9a3f66064ce data/c/tags/item/storage_blocks/nickel.json
+0a0971cc1f72512768fcfa62f64fa1f213e1df42 data/c/tags/item/tools.json
 89536d1071e9db92ec73b4706001e542efd53e53 data/c/tags/item/tools/knife.json
 867459288fb662fda93b4463458a65f01a7f9925 data/c/tags/item/tools/melee_weapon.json
 05945a1473a938aa88c3bfc485090b7e22f7b3a5 data/c/tags/item/tools/mining_tool.json
+6536dd130894192cb12ec2c54f782d43256880a8 data/curiosities/tags/item/aluminum_tools.json
+a7e024a88452c034194219c55f51fd8086e0f1b7 data/curiosities/tags/item/invar_tools.json
+409b6b8f59f2be297f6d2dfda7463d6d597c8e39 data/curiosities/tags/item/topaz_tools.json
+89536d1071e9db92ec73b4706001e542efd53e53 data/farmersdelight/tags/item/enchantable/knife.json
+89536d1071e9db92ec73b4706001e542efd53e53 data/farmersdelight/tags/item/straw_harvesters.json
+89536d1071e9db92ec73b4706001e542efd53e53 data/farmersdelight/tags/item/tools/knives.json
+5553ddc4d845295530f88d762e68c1e731c3a5d5 data/kitchenprojectiles/tags/item/light_knives.json
+89536d1071e9db92ec73b4706001e542efd53e53 data/kitchenprojectiles/tags/item/throwable_knives.json
 ad5b6d9f0082eed6de4ff0d303c85d78b0dd49e2 data/minecraft/tags/item/axes.json
 ab4b2271ac963f796fe89f436e227ebe314fb4d6 data/minecraft/tags/item/beacon_payment_items.json
 096c16f51d00df172d605dcd50e645667f93d7ec data/minecraft/tags/item/chest_armor.json
-7c829f8440047208d3ba305d3b07429563feea97 data/minecraft/tags/item/foot_armor.json
+8c2c2dbc4cc6cd052677c7f9d71e4182474d8f21 data/minecraft/tags/item/enchantable/armor.json
+096c16f51d00df172d605dcd50e645667f93d7ec data/minecraft/tags/item/enchantable/chest_armor.json
+79f2bdc24509fd5acfdbaa424dbf10f4a302a761 data/minecraft/tags/item/enchantable/durability.json
+8c2c2dbc4cc6cd052677c7f9d71e4182474d8f21 data/minecraft/tags/item/enchantable/equippable.json
+983195558a458624479d41f443232b657df871f0 data/minecraft/tags/item/enchantable/fire_aspect.json
+10d04ffa16b71a54a0f4efea54662b89a588fdc3 data/minecraft/tags/item/enchantable/foot_armor.json
+a5c4089bc43118b909692520f0b4eebaf9c0f719 data/minecraft/tags/item/enchantable/head_armor.json
+156f5d8cb6ef93dfe8dae6227db175f49fcf9435 data/minecraft/tags/item/enchantable/leg_armor.json
+66f956b4ebc6a4224ae3b00d9f8e084a32b1ca70 data/minecraft/tags/item/enchantable/mining.json
+66f956b4ebc6a4224ae3b00d9f8e084a32b1ca70 data/minecraft/tags/item/enchantable/mining_loot.json
+bab4ed3b9b3ab303069c284fddcf6dcba2993e6b data/minecraft/tags/item/enchantable/sharp_weapon.json
+983195558a458624479d41f443232b657df871f0 data/minecraft/tags/item/enchantable/sword.json
+79f2bdc24509fd5acfdbaa424dbf10f4a302a761 data/minecraft/tags/item/enchantable/vanishing.json
+bab4ed3b9b3ab303069c284fddcf6dcba2993e6b data/minecraft/tags/item/enchantable/weapon.json
+10d04ffa16b71a54a0f4efea54662b89a588fdc3 data/minecraft/tags/item/foot_armor.json
 a5c4089bc43118b909692520f0b4eebaf9c0f719 data/minecraft/tags/item/head_armor.json
 c7196f0d6c0248bae9a10b9dc9b881639102bfb1 data/minecraft/tags/item/hoes.json
 156f5d8cb6ef93dfe8dae6227db175f49fcf9435 data/minecraft/tags/item/leg_armor.json
@@ -34,4 +56,5 @@ a3512232fe5966bd37e1c9a674d63e0ec41ea7fc data/minecraft/tags/item/slabs.json
 d00f4982853beb7e490e59d2cc369143d07c6752 data/minecraft/tags/item/stairs.json
 b71fc81838ac94a6261f3de151dfe85496770bc8 data/minecraft/tags/item/swords.json
 6a545776f153dc28e853b510d5cd034236aa7c2a data/minecraft/tags/item/trim_materials.json
+8c2c2dbc4cc6cd052677c7f9d71e4182474d8f21 data/minecraft/tags/item/trimmable_armor.json
 f0a0c0ad1295a8dafcb47122bcacc969e988907b data/minecraft/tags/item/walls.json

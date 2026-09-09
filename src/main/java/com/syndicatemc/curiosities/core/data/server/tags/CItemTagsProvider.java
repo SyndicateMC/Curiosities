@@ -10,7 +10,6 @@ import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.TagsProvider;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
-import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
@@ -214,22 +213,18 @@ public class CItemTagsProvider extends BlueprintItemTagsProvider {
         );
 
         // Farmer's Delight and Kitchen Projectiles compat
-        if (ModList.get().isLoaded("farmersdelight")) {
-            this.tag(FDTags.KNIFE).add(
-                    ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
-            );
-            this.tag(FDTags.ENCHANTABLE_KNIFE).add(
-                    ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
-            );
-            this.tag(FDTags.STRAW_HARVESTERS).add(
-                    ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
-            );
-        }
-        if (ModList.get().isLoaded("kitchenprojectiles")) {
-            this.tag(FDTags.THROWABLE_KNIFE).add(
-                    ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
-            );
-            this.tag(FDTags.LIGHT_KNIFE).add(ALUMINUM_KNIFE.get());
-        }
+        this.tag(FDTags.KNIFE).add(
+                ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
+        );
+        this.tag(FDTags.ENCHANTABLE_KNIFE).add(
+                ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
+        );
+        this.tag(FDTags.STRAW_HARVESTERS).add(
+                ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
+        );
+        this.tag(FDTags.THROWABLE_KNIFE).add(
+                ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
+        );
+        this.tag(FDTags.LIGHT_KNIFE).add(ALUMINUM_KNIFE.get());
     }
 }
