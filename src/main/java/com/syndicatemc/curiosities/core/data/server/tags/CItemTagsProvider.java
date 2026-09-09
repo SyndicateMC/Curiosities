@@ -1,16 +1,16 @@
 package com.syndicatemc.curiosities.core.data.server.tags;
 
 import com.syndicatemc.curiosities.core.Curiosities;
+import com.syndicatemc.curiosities.core.other.compat.FDTags;
 import com.syndicatemc.curiosities.core.other.tags.CBlockTags;
 import com.syndicatemc.curiosities.core.other.tags.CItemTags;
-import com.syndicatemc.curiosities.core.registry.CItems;
 import com.teamabnormals.blueprint.core.data.server.tags.BlueprintItemTagsProvider;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.data.PackOutput;
 import net.minecraft.data.tags.TagsProvider;
-import net.minecraft.tags.BlockTags;
 import net.minecraft.tags.ItemTags;
 import net.minecraft.world.level.block.Block;
+import net.neoforged.fml.ModList;
 import net.neoforged.neoforge.common.Tags;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
 
@@ -53,11 +53,6 @@ public class CItemTagsProvider extends BlueprintItemTagsProvider {
         this.tag(CItemTags.INVAR_TOOLS).add(INVAR_SWORD.get(), INVAR_SHOVEL.get(), INVAR_PICKAXE.get(), INVAR_AXE.get(), INVAR_HOE.get(), INVAR_KNIFE.get());
         this.tag(CItemTags.TOPAZ_TOOLS).add(TOPAZ_SWORD.get(), TOPAZ_SHOVEL.get(), TOPAZ_PICKAXE.get(), TOPAZ_AXE.get(), TOPAZ_HOE.get());
 
-        this.tag(ItemTags.HEAD_ARMOR).add(ALUMINUM_HELMET.get(), INVAR_HELMET.get());
-        this.tag(ItemTags.CHEST_ARMOR).add(ALUMINUM_CHESTPLATE.get(), INVAR_CHESTPLATE.get());
-        this.tag(ItemTags.LEG_ARMOR).add(ALUMINUM_LEGGINGS.get(), INVAR_LEGGINGS.get());
-        this.tag(ItemTags.FOOT_ARMOR).add(ALUMINUM_BOOTS.get(), INVAR_BOOTS.get(), HEAVY_BOOTS.get());
-
         this.tag(Tags.Items.MELEE_WEAPON_TOOLS).add(ALUMINUM_SWORD.get(), ALUMINUM_AXE.get(), ALUMINUM_KNIFE.get(), INVAR_SWORD.get(), INVAR_AXE.get(), INVAR_KNIFE.get(), TOPAZ_SWORD.get(), TOPAZ_AXE.get());
         this.tag(Tags.Items.MINING_TOOL_TOOLS).add(
                 ALUMINUM_SHOVEL.get(), ALUMINUM_PICKAXE.get(), ALUMINUM_AXE.get(), ALUMINUM_HOE.get(), ALUMINUM_KNIFE.get(),
@@ -71,6 +66,128 @@ public class CItemTagsProvider extends BlueprintItemTagsProvider {
         this.tag(ItemTags.SHOVELS).add(ALUMINUM_SHOVEL.get(), INVAR_SHOVEL.get());
         this.tag(ItemTags.HOES).add(ALUMINUM_HOE.get(), INVAR_HOE.get());
         this.tag(CItemTags.KNIFE).add(ALUMINUM_KNIFE.get(), INVAR_KNIFE.get());
+        this.tag(Tags.Items.TOOLS).add(
+                ALUMINUM_AXE.get(), INVAR_AXE.get(),
+                ALUMINUM_PICKAXE.get(), INVAR_PICKAXE.get(),
+                ALUMINUM_SWORD.get(), INVAR_SWORD.get(),
+                ALUMINUM_SHOVEL.get(), INVAR_SHOVEL.get(),
+                ALUMINUM_HOE.get(), INVAR_HOE.get(),
+                ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
+        );
+
+
+        this.tag(Tags.Items.ARMORS).add(
+                ALUMINUM_HELMET.get(), ALUMINUM_CHESTPLATE.get(), ALUMINUM_LEGGINGS.get(), ALUMINUM_BOOTS.get(),
+                INVAR_HELMET.get(), INVAR_CHESTPLATE.get(), INVAR_LEGGINGS.get(), INVAR_BOOTS.get(),
+                HEAVY_BOOTS.get()
+        );
+        this.tag(ItemTags.TRIMMABLE_ARMOR).add(
+                ALUMINUM_HELMET.get(), ALUMINUM_CHESTPLATE.get(), ALUMINUM_LEGGINGS.get(), ALUMINUM_BOOTS.get(),
+                INVAR_HELMET.get(), INVAR_CHESTPLATE.get(), INVAR_LEGGINGS.get(), INVAR_BOOTS.get(),
+                HEAVY_BOOTS.get()
+        );
+        this.tag(ItemTags.ARMOR_ENCHANTABLE).add(
+                ALUMINUM_HELMET.get(), ALUMINUM_CHESTPLATE.get(), ALUMINUM_LEGGINGS.get(), ALUMINUM_BOOTS.get(),
+                INVAR_HELMET.get(), INVAR_CHESTPLATE.get(), INVAR_LEGGINGS.get(), INVAR_BOOTS.get(),
+                HEAVY_BOOTS.get()
+        );
+        this.tag(ItemTags.EQUIPPABLE_ENCHANTABLE).add(
+                ALUMINUM_HELMET.get(), ALUMINUM_CHESTPLATE.get(), ALUMINUM_LEGGINGS.get(), ALUMINUM_BOOTS.get(),
+                INVAR_HELMET.get(), INVAR_CHESTPLATE.get(), INVAR_LEGGINGS.get(), INVAR_BOOTS.get(),
+                HEAVY_BOOTS.get()
+        );
+        this.tag(ItemTags.HEAD_ARMOR).add(
+                ALUMINUM_HELMET.get(), INVAR_HELMET.get()
+        );
+        this.tag(ItemTags.HEAD_ARMOR_ENCHANTABLE).add(
+                ALUMINUM_HELMET.get(), INVAR_HELMET.get()
+        );
+        this.tag(ItemTags.CHEST_ARMOR).add(
+                ALUMINUM_CHESTPLATE.get(), INVAR_CHESTPLATE.get()
+        );
+        this.tag(ItemTags.CHEST_ARMOR_ENCHANTABLE).add(
+                ALUMINUM_CHESTPLATE.get(), INVAR_CHESTPLATE.get()
+        );
+        this.tag(ItemTags.LEG_ARMOR).add(
+                ALUMINUM_LEGGINGS.get(), INVAR_LEGGINGS.get()
+        );
+        this.tag(ItemTags.LEG_ARMOR_ENCHANTABLE).add(
+                ALUMINUM_LEGGINGS.get(), INVAR_LEGGINGS.get()
+        );
+        this.tag(ItemTags.FOOT_ARMOR).add(
+                ALUMINUM_BOOTS.get(), INVAR_BOOTS.get()
+        );
+        this.tag(ItemTags.FOOT_ARMOR_ENCHANTABLE).add(
+                ALUMINUM_BOOTS.get(), INVAR_BOOTS.get()
+        );
+
+
+        this.tag(Tags.Items.ENCHANTABLES).add(
+                ALUMINUM_AXE.get(), INVAR_AXE.get(),
+                ALUMINUM_PICKAXE.get(), INVAR_PICKAXE.get(),
+                ALUMINUM_SWORD.get(), INVAR_SWORD.get(),
+                ALUMINUM_SHOVEL.get(), INVAR_SHOVEL.get(),
+                ALUMINUM_HOE.get(), INVAR_HOE.get(),
+                ALUMINUM_KNIFE.get(), INVAR_KNIFE.get(),
+                ALUMINUM_HELMET.get(), ALUMINUM_CHESTPLATE.get(), ALUMINUM_LEGGINGS.get(), ALUMINUM_BOOTS.get(),
+                INVAR_HELMET.get(), INVAR_CHESTPLATE.get(), INVAR_LEGGINGS.get(), INVAR_BOOTS.get(),
+                HEAVY_BOOTS.get()
+        );
+        this.tag(ItemTags.DURABILITY_ENCHANTABLE).add(
+                ALUMINUM_AXE.get(), INVAR_AXE.get(),
+                ALUMINUM_PICKAXE.get(), INVAR_PICKAXE.get(),
+                ALUMINUM_SWORD.get(), INVAR_SWORD.get(),
+                ALUMINUM_SHOVEL.get(), INVAR_SHOVEL.get(),
+                ALUMINUM_HOE.get(), INVAR_HOE.get(),
+                ALUMINUM_KNIFE.get(), INVAR_KNIFE.get(),
+                ALUMINUM_HELMET.get(), ALUMINUM_CHESTPLATE.get(), ALUMINUM_LEGGINGS.get(), ALUMINUM_BOOTS.get(),
+                INVAR_HELMET.get(), INVAR_CHESTPLATE.get(), INVAR_LEGGINGS.get(), INVAR_BOOTS.get(),
+                HEAVY_BOOTS.get()
+        );
+        this.tag(ItemTags.VANISHING_ENCHANTABLE).add(
+                ALUMINUM_AXE.get(), INVAR_AXE.get(),
+                ALUMINUM_PICKAXE.get(), INVAR_PICKAXE.get(),
+                ALUMINUM_SWORD.get(), INVAR_SWORD.get(),
+                ALUMINUM_SHOVEL.get(), INVAR_SHOVEL.get(),
+                ALUMINUM_HOE.get(), INVAR_HOE.get(),
+                ALUMINUM_KNIFE.get(), INVAR_KNIFE.get(),
+                ALUMINUM_HELMET.get(), ALUMINUM_CHESTPLATE.get(), ALUMINUM_LEGGINGS.get(), ALUMINUM_BOOTS.get(),
+                INVAR_HELMET.get(), INVAR_CHESTPLATE.get(), INVAR_LEGGINGS.get(), INVAR_BOOTS.get(),
+                HEAVY_BOOTS.get()
+        );
+        this.tag(ItemTags.MINING_ENCHANTABLE).add(
+                ALUMINUM_AXE.get(), INVAR_AXE.get(),
+                ALUMINUM_PICKAXE.get(), INVAR_PICKAXE.get(),
+                ALUMINUM_SHOVEL.get(), INVAR_SHOVEL.get(),
+                ALUMINUM_HOE.get(), INVAR_HOE.get(),
+                ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
+        );
+        this.tag(ItemTags.WEAPON_ENCHANTABLE).add(
+                ALUMINUM_AXE.get(), INVAR_AXE.get(),
+                ALUMINUM_SWORD.get(), INVAR_SWORD.get(),
+                ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
+        );
+        this.tag(ItemTags.MINING_LOOT_ENCHANTABLE).add(
+                ALUMINUM_AXE.get(), INVAR_AXE.get(),
+                ALUMINUM_PICKAXE.get(), INVAR_PICKAXE.get(),
+                ALUMINUM_SHOVEL.get(), INVAR_SHOVEL.get(),
+                ALUMINUM_HOE.get(), INVAR_HOE.get(),
+                ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
+        );
+        this.tag(ItemTags.SHARP_WEAPON_ENCHANTABLE).add(
+                ALUMINUM_AXE.get(), INVAR_AXE.get(),
+                ALUMINUM_SWORD.get(), INVAR_SWORD.get(),
+                ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
+        );
+        this.tag(ItemTags.FIRE_ASPECT_ENCHANTABLE).add(
+                ALUMINUM_SWORD.get(), INVAR_SWORD.get(),
+                ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
+        );
+        this.tag(ItemTags.SWORD_ENCHANTABLE).add(
+                ALUMINUM_SWORD.get(), INVAR_SWORD.get(),
+                ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
+        );
+
 
         this.tag(ItemTags.STAIRS).add(
                 SMOOTH_STONE_BRICK_STAIRS.asItem(),
@@ -95,5 +212,24 @@ public class CItemTagsProvider extends BlueprintItemTagsProvider {
                 QUARTZ_WALL.asItem(), QUARTZ_BRICK_WALL.asItem(),
                 PURPUR_WALL.asItem()
         );
+
+        // Farmer's Delight and Kitchen Projectiles compat
+        if (ModList.get().isLoaded("farmersdelight")) {
+            this.tag(FDTags.KNIFE).add(
+                    ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
+            );
+            this.tag(FDTags.ENCHANTABLE_KNIFE).add(
+                    ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
+            );
+            this.tag(FDTags.STRAW_HARVESTERS).add(
+                    ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
+            );
+        }
+        if (ModList.get().isLoaded("kitchenprojectiles")) {
+            this.tag(FDTags.THROWABLE_KNIFE).add(
+                    ALUMINUM_KNIFE.get(), INVAR_KNIFE.get()
+            );
+            this.tag(FDTags.LIGHT_KNIFE).add(ALUMINUM_KNIFE.get());
+        }
     }
 }
