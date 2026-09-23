@@ -1,0 +1,11 @@
+{
+  "item.minecraft.netherite_scrap": "Antik Hurda",
+  "item.minecraft.smithing_template.netherite_upgrade.additions_slot_description": "Herhangi bir antik metal külçesi ekleyin",
+  "item.minecraft.smithing_template.netherite_upgrade.ingredients": "Herhangi Bir Antik Metal Külçesi",
+
+  "attribute.name.player.block_interaction_range": "Blok Erimi",
+  "attribute.name.player.entity_interaction_range": "Varlık Erimi",
+  "attribute.name.player.block_break_speed": "Kazma Hızı",
+
+  "upgrade.minecraft.netherite_upgrade": "Antik Yükseltme"
+}
